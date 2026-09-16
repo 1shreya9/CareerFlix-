@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CareerFlix - Careerpedia</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Career<span>Flix</span></div>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link">Home</a>
+      <a href="mylist.html" class="nav-link">My List</a>
+      <a href="careerpedia.html" class="nav-link active">Careerpedia</a>
+      <a href="funfacts.html" class="nav-link">Fun Facts</a>
+      <a href="profile.html" class="nav-link">My Profile</a>
+    </div>
+    <div class="account-area" onclick="toggleAccountMenu()">
+      <div class="account-circle" id="accountCircle">G</div>
+      <div class="account-menu" id="accountMenu">
+        <p id="accountName">Guest</p>
+        <button onclick="logoutUser()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="pedia-hero">
+    <h1>🎬 Careerpedia</h1>
+    <p class="pedia-tagline">Understand the world behind your future.</p>
+    <div class="pedia-search-box">
+      <input type="text" id="pediaSearchInput" placeholder="🔎 What do you want to understand?" oninput="renderTerms()" />
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <div class="pedia-categories" id="pediaCategories">
+      <button class="pedia-chip active" data-category="All" onclick="selectCategory('All')">All</button>
+      <button class="pedia-chip" data-category="Education" onclick="selectCategory('Education')">🎓 Education</button>
+      <button class="pedia-chip" data-category="Jobs" onclick="selectCategory('Jobs')">💼 Jobs</button>
+      <button class="pedia-chip" data-category="Skills" onclick="selectCategory('Skills')">💻 Skills</button>
+      <button class="pedia-chip" data-category="Applications" onclick="selectCategory('Applications')">📄 Applications</button>
+      <button class="pedia-chip" data-category="Business" onclick="selectCategory('Business')">🚀 Business</button>
+      <button class="pedia-chip" data-category="Medical" onclick="selectCategory('Medical')">🏥 Medical</button>
+      <button class="pedia-chip" data-category="Legal" onclick="selectCategory('Legal')">⚖️ Legal</button>
+      <button class="pedia-chip" data-category="Tech" onclick="selectCategory('Tech')">🖥️ Tech</button>
+      <button class="pedia-chip" data-category="Police & Govt" onclick="selectCategory('Police & Govt')">👮 Police & Govt</button>
+    </div>
+
+    <p id="pediaResultCount" class="section-hint"></p>
+    <div class="pedia-grid" id="pediaGrid"></div>
+    <p id="pediaNoResults" style="display:none; text-align:center; color:#999; margin-top:30px;">No terms found matching your search.</p>
+  </main>
+
+  <!-- TERM DETAIL MODAL -->
+  <div class="modal-overlay" id="termModalOverlay" style="display:none;" onclick="closeTermModalIfBackground(event)">
+    <div class="facts-modal-box">
+      <button class="modal-close" onclick="closeTermModal()">✕</button>
+      <div class="facts-modal-content" style="padding-top:20px;">
+        <p class="facts-modal-role" id="modalTermTitle">Term</p>
+        <div class="facts-scroll-area" id="modalTermBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>CareerFlix &copy; 2026 | Interactive Career Discovery Platform</footer>
+
+  <script src="script.js"></script>
+  <script src="careerpedia.js"></script>
+  <script>
+    let selectedCategory = "All";
+
+    window.onload = function () {
+      const name = getUserName();
+      document.getElementById("accountName").innerText = name;
+      document.getElementById("accountCircle").innerText = name.charAt(0).toUpperCase();
+      renderTerms();
+    };
+
+    function selectCategory(category) {
+      selectedCategory = category;
+      document.querySelectorAll(".pedia-chip").forEach(function (chip) {
+        chip.classList.toggle("active", chip.dataset.category === category);
+      });
+      renderTerms();
+    }
+
+    // Filters by search text AND category, then draws one small
+    // preview card per match. Full details only show in the modal.
+    function renderTerms() {
+      const query = document.getElementById("pediaSearchInput").value.toLowerCase().trim();
+      const grid = document.getElementById("pediaGrid");
+      grid.innerHTML = "";
+
+      const filtered = careerpediaTerms.filter(function (t) {
+        const matchesCategory = selectedCategory === "All" || t.category === selectedCategory;
+        const matchesSearch = query === "" || t.term.toLowerCase().indexOf(query) !== -1 || t.meaning.toLowerCase().indexOf(query) !== -1;
+        return matchesCategory && matchesSearch;
+      });
+
+      document.getElementById("pediaResultCount").innerText = filtered.length + (filtered.length === 1 ? " term" : " terms") + " found - tap a card for full details";
+      document.getElementById("pediaNoResults").style.display = filtered.length === 0 ? "block" : "none";
+
+      filtered.forEach(function (t) { grid.appendChild(buildPreviewCard(t)); });
+    }
+
+    // Small preview card - just icon, term, category, one-line teaser
+    function buildPreviewCard(t) {
+      const card = document.createElement("div");
+      card.className = "pedia-card";
+      card.onclick = function () { openTermModal(t); };
+      card.innerHTML =
+        '<div class="pedia-card-head">' +
+        '  <span class="pedia-card-icon">' + t.icon + '</span>' +
+        '  <div><h3>' + t.term + '</h3><span class="pedia-card-tag">' + t.category + '</span></div>' +
+        '</div>' +
+        '<p class="pedia-card-def">' + t.meaning + '</p>' +
+        '<p class="pedia-card-tip">Tap to learn more ▸</p>';
+      return card;
+    }
+
+    // Full detail modal: Meaning, Simple Words, Example, Why It Matters, Imagine This
+    function openTermModal(t) {
+      document.getElementById("modalTermTitle").innerText = t.icon + " " + t.term.toUpperCase();
+
+      let html = "";
+      html += "<p style='margin-bottom:14px;'><strong style='color:#ffd60a;'>📖 Meaning</strong><br>" + t.meaning + "</p>";
+      if (t.simple) html += "<p style='margin-bottom:14px;'><strong style='color:#ffd60a;'>🗣️ In Simple Words</strong><br>" + t.simple + "</p>";
+      if (t.example) html += "<p style='margin-bottom:14px;'><strong style='color:#ffd60a;'>💡 Example</strong><br>" + t.example + "</p>";
+      if (t.list) {
+        html += "<p style='margin-bottom:6px;'><strong style='color:#ffd60a;'>💡 Examples</strong></p><ul style='margin-bottom:14px;'>";
+        t.list.forEach(function (item) { html += "<li>" + item + "</li>"; });
+        html += "</ul>";
+      }
+      if (t.why) html += "<p style='margin-bottom:14px;'><strong style='color:#ffd60a;'>🎯 Why It Matters</strong><br>" + t.why + "</p>";
+      if (t.imagine) html += "<p style='margin-bottom:14px;'><strong style='color:#ffd60a;'>🎬 Imagine This...</strong><br>" + t.imagine + "</p>";
+
+      document.getElementById("modalTermBody").innerHTML = html;
+      document.getElementById("termModalOverlay").style.display = "flex";
+    }
+
+    function closeTermModal() {
+      document.getElementById("termModalOverlay").style.display = "none";
+    }
+    function closeTermModalIfBackground(event) {
+      if (event.target.id === "termModalOverlay") closeTermModal();
+    }
+
+    function toggleAccountMenu() {
+      const menu = document.getElementById("accountMenu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CareerFlix - My List</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar">
+    <div class="logo">Career<span>Flix</span></div>
+
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link">Home</a>
+      <a href="mylist.html" class="nav-link active">My List</a>
+      <a href="careerpedia.html" class="nav-link">Careerpedia</a>
+      <a href="funfacts.html" class="nav-link">Fun Facts</a>
+      <a href="profile.html" class="nav-link">My Profile</a>
+    </div>
+
+    <div class="account-area" onclick="toggleAccountMenu()">
+      <div class="account-circle" id="accountCircle">G</div>
+      <div class="account-menu" id="accountMenu">
+        <p id="accountName">Guest</p>
+        <button onclick="logoutUser()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="dashboard">
+    <h1 class="mylist-heading">📋 My List</h1>
+    <p class="section-hint">Stories you've saved to explore later.</p>
+
+    <div class="poster-row" id="wishlistRow" style="margin-top:20px;"></div>
+
+    <p id="emptyListMsg" style="display:none; color:#999; margin-top:20px;">
+      Your list is empty. Go to Home and click "♡ Add to My List" on any story you like!
+    </p>
+  </main>
+
+  <!-- ===================== STORY PREVIEW MODAL (same as dashboard) ===================== -->
+  <div class="modal-overlay" id="modalOverlay" style="display:none;" onclick="closeModalIfBackground(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <img class="modal-poster" id="modalPoster" src="" alt="" />
+      <div class="modal-content">
+        <h2 id="modalTitle">Story Title</h2>
+        <p class="modal-meta" id="modalMeta">5 Episodes • Genre</p>
+        <p class="modal-summary" id="modalSummary">Summary goes here.</p>
+        <div class="modal-buttons">
+          <button class="hero-btn" id="modalPlayBtn">▶ Start Exploring</button>
+          <button class="hero-btn hero-btn-secondary" id="modalWishlistBtn" onclick="handleWishlistToggle()">✓ In My List</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>CareerFlix &copy; 2026 | Interactive Career Discovery Platform</footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Same lightweight story info object used on the dashboard -
+    // kept here too so this page doesn't depend on dashboard.html.
+    const storyInfo = {
+      doctor:       { title: "Pulse Point", role: "Doctor", genre: "Medical",  img: "https://images.pexels.com/photos/16571732/pexels-photo-16571732.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Step into the shoes of a young intern doctor and make life-or-death decisions in a busy hospital emergency ward." },
+      cricketer:    { title: "The Final Over", role: "Cricketer", genre: "Sports",   img: "https://images.pexels.com/photos/29881319/pexels-photo-29881319.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Live the journey of an aspiring cricketer, from selection trials to a nail-biting final over." },
+      it:           { title: "Code Red", role: "Software Developer", genre: "IT",       img: "https://images.pexels.com/photos/12899156/pexels-photo-12899156.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Join a software team battling bugs, deadlines, and tricky teammates in your very first tech job." },
+      law:          { title: "Truth on Trial", role: "Lawyer", genre: "Law",      img: "https://images.pexels.com/photos/34817075/pexels-photo-34817075.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Take on your first case as a junior lawyer and navigate ethics, courtroom pressure, and client trust." },
+      teaching:     { title: "The First Bell", role: "School Teacher", genre: "Teaching", img: "https://images.pexels.com/photos/8423020/pexels-photo-8423020.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Step into a school classroom as a new teacher and handle real challenges - from noisy students to worried parents." },
+      paramedic:    { title: "Life on the Line", role: "Paramedic", genre: "Medical",  img: "https://images.pexels.com/photos/8943075/pexels-photo-8943075.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Race against time as an emergency paramedic, making split-second decisions that save lives." },
+      footballer:   { title: "Final Whistle", role: "Football Player", genre: "Sports",   img: "https://images.pexels.com/photos/32190734/pexels-photo-32190734.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Chase your football dream from local trials all the way to a high-pressure penalty shootout." },
+      startup:      { title: "Built From Zero", role: "Startup Founder", genre: "IT",       img: "https://images.pexels.com/photos/7413915/pexels-photo-7413915.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Build a tech startup from scratch - pitch investors, manage a co-founder, and survive your first crisis." },
+      corporatelaw: { title: "Hidden Clause", role: "Corporate Lawyer", genre: "Law",      img: "https://images.pexels.com/photos/5387258/pexels-photo-5387258.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Navigate high-stakes corporate contracts, mergers, and negotiations as a junior corporate lawyer." },
+      college:      { title: "Beyond the Lecture", role: "College Professor", genre: "Teaching", img: "https://images.pexels.com/photos/8199142/pexels-photo-8199142.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Step into a university lecture hall as a new professor and win over a room full of skeptical students." },
+      police:       { title: "Line of Duty", role: "Police Officer", genre: "Police", img: "https://images.pexels.com/photos/23368428/pexels-photo-23368428.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Put on the uniform as a rookie police officer and handle disputes, investigations, and tough moral choices on the beat." },
+      government:   { title: "Civil Duty", role: "Government Officer", genre: "Government", img: "https://images.pexels.com/photos/7821684/pexels-photo-7821684.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Join the civil services and navigate paperwork, corruption offers, angry citizens, and a real emergency response." },
+      business:     { title: "Deal Maker", role: "Business Executive", genre: "Business", img: "https://images.pexels.com/photos/6340621/pexels-photo-6340621.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Rise through the corporate world - close deals, survive month-end targets, and prove your integrity under pressure." },
+      nurse:        { title: "Healing Hands", role: "Nurse", genre: "Medical", img: "https://images.pexels.com/photos/34185202/pexels-photo-34185202.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Care for patients around the clock as a hospital nurse, balancing compassion, urgency, and split-second judgment calls." },
+      basketball:   { title: "Fast Break", role: "Basketball Player", genre: "Sports", img: "https://images.pexels.com/photos/2874717/pexels-photo-2874717.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Chase a spot on the school basketball team through tryouts, tough defense, team conflict, and a last-second finals shot." },
+      cybersecurity:{ title: "Firewall", role: "Cybersecurity Analyst", genre: "IT", img: "https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Defend a company's systems from real cyber threats - investigate breaches, contain attacks, and stop phishing scams." },
+      detective:    { title: "The Investigation", role: "Detective", genre: "Police", img: "https://images.pexels.com/photos/10464475/pexels-photo-10464475.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Crack real cases as a crime branch detective - examine evidence, interrogate suspects, and follow the clues to the truth." }
+    };
+
+    window.onload = function () {
+      const name = getUserName();
+      document.getElementById("accountName").innerText = name;
+      document.getElementById("accountCircle").innerText = name.charAt(0).toUpperCase();
+
+      renderWishlist();
+    };
+
+    // ---------------------------------------------------
+    // Shows a poster card for every story currently in the wishlist
+    // ---------------------------------------------------
+    function renderWishlist() {
+      const list = getWishlist();  // function from script.js
+      const row = document.getElementById("wishlistRow");
+      row.innerHTML = "";
+
+      if (list.length === 0) {
+        document.getElementById("emptyListMsg").style.display = "block";
+        return;
+      }
+      document.getElementById("emptyListMsg").style.display = "none";
+
+      list.forEach(function (storyId) {
+        const info = storyInfo[storyId];
+        if (!info) return;
+
+        const card = document.createElement("div");
+        card.className = "poster-card";
+        card.onclick = function () { openStoryModal(storyId); };
+        card.innerHTML =
+          '<img src="' + info.img + '" alt="' + info.title + '" />' +
+          '<div class="poster-info"><h3>' + info.title + '</h3><p>' + info.role + '</p></div>';
+        row.appendChild(card);
+      });
+    }
+
+    // ---------------------------------------------------
+    // STORY PREVIEW MODAL (same behavior as dashboard.html)
+    // ---------------------------------------------------
+    let modalStoryId = null;
+
+    function openStoryModal(storyId) {
+      const info = storyInfo[storyId];
+      modalStoryId = storyId;
+
+      document.getElementById("modalPoster").src = info.img;
+      document.getElementById("modalTitle").innerText = info.title;
+      document.getElementById("modalMeta").innerText = "5 Episodes • " + info.genre + " • You play: " + info.role;
+      document.getElementById("modalSummary").innerText =
+        "You play as a " + info.role + ". " + info.summary;
+      document.getElementById("modalPlayBtn").onclick = function () { openStory(storyId); };
+
+      updateWishlistButton();
+      document.getElementById("modalOverlay").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modalOverlay").style.display = "none";
+      modalStoryId = null;
+    }
+
+    function closeModalIfBackground(event) {
+      if (event.target.id === "modalOverlay") {
+        closeModal();
+      }
+    }
+
+    function updateWishlistButton() {
+      const btn = document.getElementById("modalWishlistBtn");
+      btn.innerText = isInWishlist(modalStoryId) ? "✓ In My List" : "♡ Add to My List";
+    }
+
+    // On this page, toggling the wishlist should also refresh the
+    // grid immediately (since removing one should make it disappear)
+    function handleWishlistToggle() {
+      toggleWishlist(modalStoryId);
+      updateWishlistButton();
+      renderWishlist();
+    }
+
+    function openStory(storyId) {
+      window.location.href = "story.html?story=" + storyId;
+    }
+
+    function toggleAccountMenu() {
+      const menu = document.getElementById("accountMenu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CareerFlix - Dashboard</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar">
+    <div class="logo">Career<span>Flix</span></div>
+
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link active">Home</a>
+      <a href="mylist.html" class="nav-link">My List</a>
+      <a href="careerpedia.html" class="nav-link">Careerpedia</a>
+      <a href="funfacts.html" class="nav-link">Fun Facts</a>
+      <a href="profile.html" class="nav-link">My Profile</a>
+    </div>
+
+    <!-- Search box: filters the poster cards below as you type -->
+    <input
+      type="text"
+      id="searchBox"
+      class="search-box"
+      placeholder="Search a career story..."
+      oninput="filterStories()"
+    />
+
+    <!-- Simple account icon with a dropdown (Logout) -->
+    <div class="account-area" onclick="toggleAccountMenu()">
+      <div class="account-circle" id="accountCircle">G</div>
+      <div class="account-menu" id="accountMenu">
+        <p id="accountName">Guest</p>
+        <button onclick="logoutUser()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO CAROUSEL ===================== -->
+  <!-- Shows a few "Featured Stories" one at a time, like Netflix's
+       top banner. Left/right arrows move between them. -->
+  <header class="hero-banner" id="heroBanner">
+    <button class="hero-arrow hero-arrow-left" onclick="prevSlide()">&#10094;</button>
+    <button class="hero-arrow hero-arrow-right" onclick="nextSlide()">&#10095;</button>
+
+    <div class="hero-overlay">
+      <p class="hero-tag">FEATURED STORY</p>
+      <h1 class="hero-title" id="heroTitle">Loading...</h1>
+      <p class="hero-subtitle" id="heroSubtitle"></p>
+      <div class="hero-buttons">
+        <button class="hero-btn" id="heroPlayBtn">▶ Start Exploring</button>
+        <button class="hero-btn hero-btn-secondary" id="heroInfoBtn">ℹ More Info</button>
+      </div>
+    </div>
+
+    <div class="hero-dots" id="heroDots"></div>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="dashboard">
+
+    <!-- "Continue Exploring" row - only shows if user already played something -->
+    <section class="poster-section" id="continueSection" style="display:none;">
+      <h2 class="row-title">Continue Exploring</h2>
+      <div class="poster-row" id="continueRow"></div>
+    </section>
+
+    <!-- IT GENRE ROW -->
+    <section class="poster-section">
+      <h2 class="row-title">💻 IT Careers</h2>
+      <div class="poster-row">
+        <div class="poster-card" data-title="Code Red IT" onclick="openStoryModal('it')">
+          <img src="https://images.pexels.com/photos/12899156/pexels-photo-12899156.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Code Red" />
+          <div class="poster-info">
+            <h3>Code Red</h3>
+            <p>5 Episodes • IT</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Built From Zero IT" onclick="openStoryModal('startup')">
+          <img src="https://images.pexels.com/photos/7413915/pexels-photo-7413915.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Built From Zero" />
+          <div class="poster-info">
+            <h3>Built From Zero</h3>
+            <p>5 Episodes • IT</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Firewall IT Cybersecurity" onclick="openStoryModal('cybersecurity')">
+          <img src="https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Firewall" />
+          <div class="poster-info">
+            <h3>Firewall</h3>
+            <p>5 Episodes • IT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPORTS GENRE ROW -->
+    <section class="poster-section">
+      <h2 class="row-title">🏏 Sports Careers</h2>
+      <div class="poster-row">
+        <div class="poster-card" data-title="The Final Over Sports" onclick="openStoryModal('cricketer')">
+          <img src="https://images.pexels.com/photos/29881319/pexels-photo-29881319.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The Final Over" />
+          <div class="poster-info">
+            <h3>The Final Over</h3>
+            <p>5 Episodes • Sports</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Final Whistle Sports" onclick="openStoryModal('footballer')">
+          <img src="https://images.pexels.com/photos/32190734/pexels-photo-32190734.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Final Whistle" />
+          <div class="poster-info">
+            <h3>Final Whistle</h3>
+            <p>5 Episodes • Sports</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Fast Break Sports Basketball" onclick="openStoryModal('basketball')">
+          <img src="https://images.pexels.com/photos/2874717/pexels-photo-2874717.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Fast Break" />
+          <div class="poster-info">
+            <h3>Fast Break</h3>
+            <p>5 Episodes • Sports</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDICAL GENRE ROW -->
+    <section class="poster-section">
+      <h2 class="row-title">🏥 Medical Careers</h2>
+      <div class="poster-row">
+        <div class="poster-card" data-title="Pulse Point Medical" onclick="openStoryModal('doctor')">
+          <img src="https://images.pexels.com/photos/16571732/pexels-photo-16571732.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Pulse Point" />
+          <div class="poster-info">
+            <h3>Pulse Point</h3>
+            <p>5 Episodes • Medical</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Life on the Line Medical" onclick="openStoryModal('paramedic')">
+          <img src="https://images.pexels.com/photos/8943075/pexels-photo-8943075.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Life on the Line" />
+          <div class="poster-info">
+            <h3>Life on the Line</h3>
+            <p>5 Episodes • Medical</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Healing Hands Medical Nurse" onclick="openStoryModal('nurse')">
+          <img src="https://images.pexels.com/photos/34185202/pexels-photo-34185202.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Healing Hands" />
+          <div class="poster-info">
+            <h3>Healing Hands</h3>
+            <p>5 Episodes • Medical</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAW GENRE ROW -->
+    <section class="poster-section">
+      <h2 class="row-title">⚖️ Law Careers</h2>
+      <div class="poster-row">
+        <div class="poster-card" data-title="Truth on Trial Law" onclick="openStoryModal('law')">
+          <img src="https://images.pexels.com/photos/34817075/pexels-photo-34817075.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Truth on Trial" />
+          <div class="poster-info">
+            <h3>Truth on Trial</h3>
+            <p>5 Episodes • Law</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Hidden Clause Law" onclick="openStoryModal('corporatelaw')">
+          <img src="https://images.pexels.com/photos/5387258/pexels-photo-5387258.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Hidden Clause" />
+          <div class="poster-info">
+            <h3>Hidden Clause</h3>
+            <p>5 Episodes • Law</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHING GENRE ROW -->
+    <section class="poster-section">
+      <h2 class="row-title">📚 Teaching Careers</h2>
+      <div class="poster-row">
+        <div class="poster-card" data-title="The First Bell Teaching" onclick="openStoryModal('teaching')">
+          <img src="https://images.pexels.com/photos/8423020/pexels-photo-8423020.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The First Bell" />
+          <div class="poster-info">
+            <h3>The First Bell</h3>
+            <p>5 Episodes • Teaching</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Beyond the Lecture Teaching" onclick="openStoryModal('college')">
+          <img src="https://images.pexels.com/photos/8199142/pexels-photo-8199142.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Beyond the Lecture" />
+          <div class="poster-info">
+            <h3>Beyond the Lecture</h3>
+            <p>5 Episodes • Teaching</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLICE GENRE ROW -->
+    <section class="poster-section">
+      <h2 class="row-title">👮 Police Careers</h2>
+      <div class="poster-row">
+        <div class="poster-card" data-title="Line of Duty Police" onclick="openStoryModal('police')">
+          <img src="https://images.pexels.com/photos/23368428/pexels-photo-23368428.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Line of Duty" />
+          <div class="poster-info">
+            <h3>Line of Duty</h3>
+            <p>5 Episodes • Police</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="The Investigation Police Detective" onclick="openStoryModal('detective')">
+          <img src="https://images.pexels.com/photos/10464475/pexels-photo-10464475.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The Investigation" />
+          <div class="poster-info">
+            <h3>The Investigation</h3>
+            <p>5 Episodes • Police</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOVERNMENT GENRE ROW -->
+    <section class="poster-section">
+      <h2 class="row-title">🏛 Government Careers</h2>
+      <div class="poster-row">
+        <div class="poster-card" data-title="Civil Duty Government" onclick="openStoryModal('government')">
+          <img src="https://images.pexels.com/photos/7821684/pexels-photo-7821684.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Civil Duty" />
+          <div class="poster-info">
+            <h3>Civil Duty</h3>
+            <p>5 Episodes • Government</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS GENRE ROW -->
+    <section class="poster-section">
+      <h2 class="row-title">💼 Business Careers</h2>
+      <div class="poster-row">
+        <div class="poster-card" data-title="Deal Maker Business" onclick="openStoryModal('business')">
+          <img src="https://images.pexels.com/photos/6340621/pexels-photo-6340621.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Deal Maker" />
+          <div class="poster-info">
+            <h3>Deal Maker</h3>
+            <p>5 Episodes • Business</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p id="noResultsMsg" style="display:none; text-align:center; color:#b3b3b3; margin-top:20px;">
+      No stories found matching your search.
+    </p>
+
+  </main>
+
+  <!-- ===================== STORY PREVIEW MODAL ===================== -->
+  <!-- Hidden by default. Opens when any poster card is clicked, shows
+       a short summary before the user commits to starting the story. -->
+  <div class="modal-overlay" id="modalOverlay" style="display:none;" onclick="closeModalIfBackground(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <img class="modal-poster" id="modalPoster" src="" alt="" />
+      <div class="modal-content">
+        <h2 id="modalTitle">Story Title</h2>
+        <p class="modal-meta" id="modalMeta">5 Episodes • Genre</p>
+        <p class="modal-summary" id="modalSummary">Summary goes here.</p>
+        <div class="modal-buttons">
+          <button class="hero-btn" id="modalPlayBtn">▶ Start Exploring</button>
+          <button class="hero-btn hero-btn-secondary" id="modalWishlistBtn" onclick="handleWishlistToggle()">♡ Add to My List</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>CareerFlix &copy; 2026 | Interactive Career Discovery Platform</footer>
+
+  <script src="script.js"></script>
+  <script>
+    // ---------------------------------------------------
+    // A small info object for every story: used by the hero
+    // carousel, the preview modal, and the "Continue Exploring"
+    // row. This is separate from storyData.js (which holds the
+    // full episode content) - the dashboard only needs the basic
+    // details, so we keep a lighter version here.
+    // ---------------------------------------------------
+    const storyInfo = {
+      doctor:       { title: "Pulse Point", role: "Doctor", genre: "Medical",  img: "https://images.pexels.com/photos/16571732/pexels-photo-16571732.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Step into the shoes of a young intern doctor and make life-or-death decisions in a busy hospital emergency ward." },
+      cricketer:    { title: "The Final Over", role: "Cricketer", genre: "Sports",   img: "https://images.pexels.com/photos/29881319/pexels-photo-29881319.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Live the journey of an aspiring cricketer, from selection trials to a nail-biting final over." },
+      it:           { title: "Code Red", role: "Software Developer", genre: "IT",       img: "https://images.pexels.com/photos/12899156/pexels-photo-12899156.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Join a software team battling bugs, deadlines, and tricky teammates in your very first tech job." },
+      law:          { title: "Truth on Trial", role: "Lawyer", genre: "Law",      img: "https://images.pexels.com/photos/34817075/pexels-photo-34817075.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Take on your first case as a junior lawyer and navigate ethics, courtroom pressure, and client trust." },
+      teaching:     { title: "The First Bell", role: "School Teacher", genre: "Teaching", img: "https://images.pexels.com/photos/8423020/pexels-photo-8423020.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Step into a school classroom as a new teacher and handle real challenges - from noisy students to worried parents." },
+      paramedic:    { title: "Life on the Line", role: "Paramedic", genre: "Medical",  img: "https://images.pexels.com/photos/8943075/pexels-photo-8943075.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Race against time as an emergency paramedic, making split-second decisions that save lives." },
+      footballer:   { title: "Final Whistle", role: "Football Player", genre: "Sports",   img: "https://images.pexels.com/photos/32190734/pexels-photo-32190734.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Chase your football dream from local trials all the way to a high-pressure penalty shootout." },
+      startup:      { title: "Built From Zero", role: "Startup Founder", genre: "IT",       img: "https://images.pexels.com/photos/7413915/pexels-photo-7413915.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Build a tech startup from scratch - pitch investors, manage a co-founder, and survive your first crisis." },
+      corporatelaw: { title: "Hidden Clause", role: "Corporate Lawyer", genre: "Law",      img: "https://images.pexels.com/photos/5387258/pexels-photo-5387258.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Navigate high-stakes corporate contracts, mergers, and negotiations as a junior corporate lawyer." },
+      college:      { title: "Beyond the Lecture", role: "College Professor", genre: "Teaching", img: "https://images.pexels.com/photos/8199142/pexels-photo-8199142.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Step into a university lecture hall as a new professor and win over a room full of skeptical students." },
+      police:       { title: "Line of Duty", role: "Police Officer", genre: "Police", img: "https://images.pexels.com/photos/23368428/pexels-photo-23368428.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Put on the uniform as a rookie police officer and handle disputes, investigations, and tough moral choices on the beat." },
+      government:   { title: "Civil Duty", role: "Government Officer", genre: "Government", img: "https://images.pexels.com/photos/7821684/pexels-photo-7821684.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Join the civil services and navigate paperwork, corruption offers, angry citizens, and a real emergency response." },
+      business:     { title: "Deal Maker", role: "Business Executive", genre: "Business", img: "https://images.pexels.com/photos/6340621/pexels-photo-6340621.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Rise through the corporate world - close deals, survive month-end targets, and prove your integrity under pressure." },
+      nurse:        { title: "Healing Hands", role: "Nurse", genre: "Medical", img: "https://images.pexels.com/photos/34185202/pexels-photo-34185202.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Care for patients around the clock as a hospital nurse, balancing compassion, urgency, and split-second judgment calls." },
+      basketball:   { title: "Fast Break", role: "Basketball Player", genre: "Sports", img: "https://images.pexels.com/photos/2874717/pexels-photo-2874717.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Chase a spot on the school basketball team through tryouts, tough defense, team conflict, and a last-second finals shot." },
+      cybersecurity:{ title: "Firewall", role: "Cybersecurity Analyst", genre: "IT", img: "https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Defend a company's systems from real cyber threats - investigate breaches, contain attacks, and stop phishing scams." },
+      detective:    { title: "The Investigation", role: "Detective", genre: "Police", img: "https://images.pexels.com/photos/10464475/pexels-photo-10464475.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Crack real cases as a crime branch detective - examine evidence, interrogate suspects, and follow the clues to the truth." }
+    };
+
+    // Which stories appear in the top hero carousel, in order.
+    const featuredStoryIds = ["doctor", "cricketer", "it", "law", "teaching"];
+    let currentSlide = 0;
+
+    window.onload = function () {
+      const name = getUserName();
+      document.getElementById("accountName").innerText = name;
+      document.getElementById("accountCircle").innerText = name.charAt(0).toUpperCase();
+
+      showContinueExploring();
+      buildHeroDots();
+      showSlide(0);
+
+      // Auto-advance the carousel every 6 seconds
+      setInterval(nextSlide, 6000);
+    };
+
+    // ---------------------------------------------------
+    // HERO CAROUSEL
+    // ---------------------------------------------------
+
+    // Creates one small dot per featured story, used to jump
+    // directly to a slide and to show which slide is active.
+    function buildHeroDots() {
+      const dotsContainer = document.getElementById("heroDots");
+      dotsContainer.innerHTML = "";
+
+      featuredStoryIds.forEach(function (id, index) {
+        const dot = document.createElement("span");
+        dot.className = "hero-dot";
+        dot.onclick = function () { showSlide(index); };
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    // Updates the hero banner to show the story at the given index
+    function showSlide(index) {
+      currentSlide = index;
+      const storyId = featuredStoryIds[index];
+      const info = storyInfo[storyId];
+
+      document.getElementById("heroBanner").style.backgroundImage =
+        "linear-gradient(to top, #141414 5%, rgba(20,20,20,0.3) 60%, rgba(20,20,20,0.6)), url('" + info.img + "')";
+
+      document.getElementById("heroTitle").innerText = info.title;
+      document.getElementById("heroSubtitle").innerText = info.summary;
+
+      document.getElementById("heroPlayBtn").onclick = function () { openStory(storyId); };
+      document.getElementById("heroInfoBtn").onclick = function () { openStoryModal(storyId); };
+
+      // Highlight the matching dot
+      const dots = document.querySelectorAll(".hero-dot");
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("active", i === index);
+      });
+    }
+
+    // Moves to the next/previous slide, wrapping around at the ends
+    function nextSlide() {
+      showSlide((currentSlide + 1) % featuredStoryIds.length);
+    }
+    function prevSlide() {
+      showSlide((currentSlide - 1 + featuredStoryIds.length) % featuredStoryIds.length);
+    }
+
+    // ---------------------------------------------------
+    // STORY PREVIEW MODAL
+    // ---------------------------------------------------
+
+    let modalStoryId = null;  // remembers which story the open modal is showing
+
+    // Opens the preview modal for a given story id, filling in its
+    // poster, title, summary, and setting up the Play/Wishlist buttons.
+    function openStoryModal(storyId) {
+      const info = storyInfo[storyId];
+      modalStoryId = storyId;
+
+      document.getElementById("modalPoster").src = info.img;
+      document.getElementById("modalTitle").innerText = info.title;
+      document.getElementById("modalMeta").innerText = "5 Episodes • " + info.genre + " • You play: " + info.role;
+      document.getElementById("modalSummary").innerText =
+        "You play as a " + info.role + ". " + info.summary;
+      document.getElementById("modalPlayBtn").onclick = function () { openStory(storyId); };
+
+      updateWishlistButton();
+
+      document.getElementById("modalOverlay").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modalOverlay").style.display = "none";
+      modalStoryId = null;
+    }
+
+    // Clicking the dark background (not the box itself) also closes it
+    function closeModalIfBackground(event) {
+      if (event.target.id === "modalOverlay") {
+        closeModal();
+      }
+    }
+
+    // Updates the wishlist button's text/icon based on whether the
+    // currently-open story is already saved
+    function updateWishlistButton() {
+      const btn = document.getElementById("modalWishlistBtn");
+      if (isInWishlist(modalStoryId)) {
+        btn.innerText = "✓ In My List";
+      } else {
+        btn.innerText = "♡ Add to My List";
+      }
+    }
+
+    // Called when the wishlist button inside the modal is clicked
+    function handleWishlistToggle() {
+      toggleWishlist(modalStoryId);   // function from script.js
+      updateWishlistButton();
+    }
+
+    // Redirect to the story player page for the given story id
+    function openStory(storyId) {
+      window.location.href = "story.html?story=" + storyId;
+    }
+
+    // Show/hide the small account dropdown menu
+    function toggleAccountMenu() {
+      const menu = document.getElementById("accountMenu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // If the user has already played a story before, show a
+    // "Continue Exploring" card for it at the top of the dashboard.
+    function showContinueExploring() {
+      const lastId = getLastPlayed();  // function from script.js
+      if (!lastId || !storyInfo[lastId]) return;
+
+      const info = storyInfo[lastId];
+
+      document.getElementById("continueSection").style.display = "block";
+      document.getElementById("continueRow").innerHTML =
+        '<div class="poster-card" onclick="openStoryModal(\'' + lastId + '\')">' +
+        '  <img src="' + info.img + '" alt="' + info.title + '" />' +
+        '  <div class="poster-info"><h3>' + info.title + '</h3><p>Play again</p></div>' +
+        '</div>';
+    }
+
+    // Filters the poster cards on screen as the user types in the search box.
+    function filterStories() {
+      const query = document.getElementById("searchBox").value.toLowerCase();
+      const cards = document.querySelectorAll(".poster-card");
+      let anyVisible = false;
+
+      cards.forEach(function (card) {
+        const title = (card.dataset.title || "").toLowerCase();
+        if (title.indexOf(query) !== -1) {
+          card.style.display = "block";
+          anyVisible = true;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      document.getElementById("noResultsMsg").style.display = anyVisible ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>

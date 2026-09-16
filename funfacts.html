@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CareerFlix - Fun Facts</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar">
+    <div class="logo">Career<span>Flix</span></div>
+
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link">Home</a>
+      <a href="mylist.html" class="nav-link">My List</a>
+      <a href="careerpedia.html" class="nav-link">Careerpedia</a>
+      <a href="funfacts.html" class="nav-link active">Fun Facts</a>
+      <a href="profile.html" class="nav-link">My Profile</a>
+    </div>
+
+    <div class="account-area" onclick="toggleAccountMenu()">
+      <div class="account-circle" id="accountCircle">G</div>
+      <div class="account-menu" id="accountMenu">
+        <p id="accountName">Guest</p>
+        <button onclick="logoutUser()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="dashboard">
+    <h1 class="funfacts-heading">💡 Career Fun Facts</h1>
+    <p class="section-hint">Real facts about every career you can explore on CareerFlix. Tap a card to read them.</p>
+
+    <div class="postcard-grid" id="postcardGrid"></div>
+  </main>
+
+  <!-- ===================== FUN FACTS POPUP (scrollable!) ===================== -->
+  <div class="modal-overlay" id="factsOverlay" style="display:none;" onclick="closeFactsIfBackground(event)">
+    <div class="facts-modal-box">
+      <button class="modal-close" onclick="closeFactsModal()">✕</button>
+      <img class="facts-modal-img" id="factsModalImg" src="" alt="" />
+      <div class="facts-modal-content">
+        <p class="facts-modal-role" id="factsModalRole">Role Name</p>
+        <div class="facts-scroll-area" id="factsScrollArea">
+          <ul id="factsModalList"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>CareerFlix &copy; 2026 | Interactive Career Discovery Platform</footer>
+
+  <script src="script.js"></script>
+  <script src="funFacts.js"></script>
+  <script>
+    // One postcard per career role - reuses the same photos already
+    // used elsewhere in the app for that career's story.
+    const roleCards = [
+      { role: "Doctor", img: "https://images.pexels.com/photos/16571732/pexels-photo-16571732.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Paramedic", img: "https://images.pexels.com/photos/8943075/pexels-photo-8943075.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Cricketer", img: "https://images.pexels.com/photos/29881319/pexels-photo-29881319.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Football Player", img: "https://images.pexels.com/photos/32190734/pexels-photo-32190734.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Software Developer", img: "https://images.pexels.com/photos/12899156/pexels-photo-12899156.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Startup Founder", img: "https://images.pexels.com/photos/7413915/pexels-photo-7413915.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Lawyer", img: "https://images.pexels.com/photos/34817075/pexels-photo-34817075.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Corporate Lawyer", img: "https://images.pexels.com/photos/5387258/pexels-photo-5387258.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "School Teacher", img: "https://images.pexels.com/photos/8423020/pexels-photo-8423020.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "College Professor", img: "https://images.pexels.com/photos/8199142/pexels-photo-8199142.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Police Officer", img: "https://images.pexels.com/photos/23368428/pexels-photo-23368428.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Government Officer", img: "https://images.pexels.com/photos/7821684/pexels-photo-7821684.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Business Executive", img: "https://images.pexels.com/photos/6340621/pexels-photo-6340621.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Nurse", img: "https://images.pexels.com/photos/34185202/pexels-photo-34185202.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Basketball Player", img: "https://images.pexels.com/photos/2874717/pexels-photo-2874717.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Cybersecurity Analyst", img: "https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&w=500" },
+      { role: "Detective", img: "https://images.pexels.com/photos/10464475/pexels-photo-10464475.jpeg?auto=compress&cs=tinysrgb&w=500" }
+    ];
+
+    window.onload = function () {
+      const name = getUserName();
+      document.getElementById("accountName").innerText = name;
+      document.getElementById("accountCircle").innerText = name.charAt(0).toUpperCase();
+
+      renderPostcards();
+    };
+
+    // ---------------------------------------------------
+    // Builds one "postcard" per career role - a photo with the
+    // role name overlaid, similar to a poster card elsewhere in
+    // the app but styled like a postcard/note.
+    // ---------------------------------------------------
+    function renderPostcards() {
+      const grid = document.getElementById("postcardGrid");
+      grid.innerHTML = "";
+
+      roleCards.forEach(function (card) {
+        const div = document.createElement("div");
+        div.className = "postcard";
+        div.onclick = function () { openFactsModal(card.role, card.img); };
+        div.innerHTML =
+          '<img src="' + card.img + '" alt="' + card.role + '" />' +
+          '<div class="postcard-overlay">' +
+          '  <h3>' + card.role + '</h3>' +
+          '  <p>💡 Tap for Fun Facts</p>' +
+          '</div>';
+        grid.appendChild(div);
+      });
+    }
+
+    // ---------------------------------------------------
+    // Opens the scrollable facts popup for a given role
+    // ---------------------------------------------------
+    function openFactsModal(role, img) {
+      document.getElementById("factsModalImg").src = img;
+      document.getElementById("factsModalRole").innerText = "💡 " + role;
+
+      const list = document.getElementById("factsModalList");
+      list.innerHTML = "";
+
+      const facts = careerFunFacts[role] || [];
+      facts.forEach(function (fact) {
+        const li = document.createElement("li");
+        li.innerText = fact;
+        list.appendChild(li);
+      });
+
+      // Always scroll back to the top when opening a new role's facts
+      document.getElementById("factsScrollArea").scrollTop = 0;
+
+      document.getElementById("factsOverlay").style.display = "flex";
+    }
+
+    function closeFactsModal() {
+      document.getElementById("factsOverlay").style.display = "none";
+    }
+
+    function closeFactsIfBackground(event) {
+      if (event.target.id === "factsOverlay") {
+        closeFactsModal();
+      }
+    }
+
+    function toggleAccountMenu() {
+      const menu = document.getElementById("accountMenu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>

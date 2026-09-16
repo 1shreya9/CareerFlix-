@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CareerFlix - Story</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="logo">Career<span>Flix</span></div>
+    <a href="dashboard.html" class="back-btn">⬅ Back to Dashboard</a>
+  </header>
+
+  <!-- CHARACTER SETUP SCREEN (shown before Episode 1 starts) -->
+  <main class="setup-screen" id="setupScreen">
+    <h1>Who are you in this story?</h1>
+    <p class="section-hint" id="setupHint">Choose a name and how you'd like your character to look.</p>
+
+    <input type="text" id="playerNameInput" class="setup-input" placeholder="Enter your character's name" />
+
+    <p class="setup-label">Character look:</p>
+    <div class="gender-buttons">
+      <button class="gender-btn active" id="genderMaleBtn" onclick="selectGender('male')">
+        <img id="maleAvatarPreview" src="" alt="Male avatar" />
+        <span>Male</span>
+      </button>
+      <button class="gender-btn" id="genderFemaleBtn" onclick="selectGender('female')">
+        <img id="femaleAvatarPreview" src="" alt="Female avatar" />
+        <span>Female</span>
+      </button>
+    </div>
+
+    <p class="setup-label">Read this story in:</p>
+    <div class="language-buttons">
+      <button class="lang-btn active" id="langHinglishBtn" onclick="selectLanguage('hinglish')">Hinglish</button>
+      <button class="lang-btn" id="langHindiBtn" onclick="selectLanguage('hindi')">हिंदी</button>
+      <button class="lang-btn" id="langEnglishBtn" onclick="selectLanguage('english')">English</button>
+    </div>
+    <p class="section-hint" id="languageAvailabilityNote"></p>
+
+    <button class="hero-btn" onclick="beginStory()">▶ Enter the Story</button>
+  </main>
+
+  <!-- MAIN STORY SCREEN -->
+  <main class="story-screen" id="storyScreen" style="display:none;">
+
+    <!-- All the episode content sits inside this panel so it reads as
+         one designed "card" over the background photo, instead of
+         floating text with empty space on either side. -->
+    <div class="story-content-panel">
+      <div class="episode-counter" id="episodeCounter">Episode 1 of 5</div>
+      <div class="location-tag" id="locationTag">📍 Location</div>
+
+      <p class="scene-text" id="sceneText">Loading story...</p>
+
+      <!-- Character dialogue box -->
+      <!-- This ONE box is reused again and again: first for the conversation
+           before the choice, and again for the character's reaction after
+           the choice. Only the image/name/text inside it changes. -->
+      <div class="dialogue-section" id="dialogueSection">
+        <div class="dialogue-box">
+          <img class="char-face" id="charFace" src="" alt="Character" />
+          <div class="dialogue-text">
+            <strong id="charName">Character</strong>
+            <p id="dialogueText">...</p>
+          </div>
+        </div>
+        <button class="next-line-btn" id="dialogueNextBtn" onclick="advanceDialogue()">Next ▶</button>
+      </div>
+
+      <!-- Choice buttons appear only after the conversation finishes -->
+      <div class="choices" id="choicesBox" style="display:none;"></div>
+    </div>
+
+  </main>
+
+  <!-- EPISODE TRANSITION SCREEN ("Episode 1 Completed! Starting Episode 2...") -->
+  <main class="transition-screen" id="transitionScreen" style="display:none;">
+    <div class="transition-box">
+      <p class="transition-completed" id="transitionCompletedText">Episode 1 Completed!</p>
+      <p class="transition-next" id="transitionNextText">Starting Episode 2...</p>
+    </div>
+  </main>
+
+  <!-- STORY INTRO SCREEN ("Who am I / what's happening" - shown once,
+       right after character setup, before Episode 1) -->
+  <main class="story-intro-screen" id="storyIntroScreen" style="display:none;">
+    <div class="story-intro-box">
+      <p class="intro-label">YOUR STORY BEGINS</p>
+      <h1 id="introTitle">Story Title</h1>
+      <p id="introText">Intro text goes here.</p>
+      <button class="hero-btn" onclick="startFirstEpisode()">▶ Begin Episode 1</button>
+    </div>
+  </main>
+
+  <!-- FINAL RESULT SCREEN -->
+  <main class="result-screen" id="resultScreen" style="display:none;">
+    <h1>🏆 Story Complete!</h1>
+    <p class="score-text" id="scoreText">You scored 0 / 5</p>
+
+    <h3>What could have been done better:</h3>
+    <ul id="reviewList"></ul>
+
+    <button onclick="window.location.href='profile.html'">View My Career Profile 🎯</button>
+    <button onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="storyData.js"></script>
+  <script src="translations.js"></script>
+  <script>
+    // =====================================================
+    // STORY ENGINE
+    // This handles: showing episodes, playing character
+    // conversations line-by-line, showing choices, and
+    // finally showing the score.
+    // =====================================================
+
+    let currentStory = null;   // the whole story object (doctor/cricketer)
+    let currentEpisode = 0;    // which episode we are on (0 = first)
+    let score = 0;             // how many correct choices so far
+    let wrongFeedbacks = [];   // list of "better advice" tips for the final screen
+
+    // ---- Character personalization variables ----
+    let playerName = "";        // the name the user chose for their character
+    let selectedGender = "male"; // "male" or "female" - just picks which avatar to use
+    let playerAvatar = "";      // the avatar image URL matching selectedGender
+
+    // ---- Language variables ----
+    let selectedLanguage = "hinglish";   // "hinglish", "hindi", or "english"
+    let currentStoryId = "";             // needed to look up translations.js
+
+    // ---- Dialogue Queue variables ----
+    // A "queue" here is simply an array of dialogue lines that we show
+    // one at a time. dialogueIndex tells us which line we are showing.
+    let dialogueQueue = [];
+    let dialogueIndex = 0;
+    let onQueueFinished = null;   // function to call once all lines are shown
+    let currentTranslationInfo = [];  // matches dialogueQueue - tells us how to translate each line
+
+    window.onload = function () {
+      const storyId = getQueryParam("story");
+      currentStoryId = storyId;
+      currentStory = storiesData[storyId];
+
+      if (!currentStory) {
+        document.getElementById("setupHint").innerText = "Story not found!";
+        return;
+      }
+
+      // Show the character setup screen first, pre-filled with the
+      // story's default character name
+      document.getElementById("playerNameInput").placeholder = currentStory.youDefaultName;
+      document.getElementById("maleAvatarPreview").src = currentStory.youAvatarMale;
+      document.getElementById("femaleAvatarPreview").src = currentStory.youAvatarFemale;
+
+      // Let the user know if Hindi/English aren't available for this
+      // particular story yet (translations.js only covers some stories)
+      updateLanguageAvailabilityNote();
+    };
+
+    // Called when the user clicks one of the two avatar options
+    function selectGender(gender) {
+      selectedGender = gender;
+      document.getElementById("genderMaleBtn").classList.toggle("active", gender === "male");
+      document.getElementById("genderFemaleBtn").classList.toggle("active", gender === "female");
+    }
+
+    // Called when the user clicks Hinglish/Hindi/English
+    function selectLanguage(lang) {
+      selectedLanguage = lang;
+      document.getElementById("langHinglishBtn").classList.toggle("active", lang === "hinglish");
+      document.getElementById("langHindiBtn").classList.toggle("active", lang === "hindi");
+      document.getElementById("langEnglishBtn").classList.toggle("active", lang === "english");
+      updateLanguageAvailabilityNote();
+    }
+
+    // Shows a small note if the chosen language isn't translated yet
+    // for this particular story (falls back to Hinglish automatically)
+    function updateLanguageAvailabilityNote() {
+      const note = document.getElementById("languageAvailabilityNote");
+      const hasTranslation = !!storyTranslations[currentStoryId];
+
+      if (selectedLanguage !== "hinglish" && !hasTranslation) {
+        note.innerText = "This story isn't translated yet - it will show in Hinglish instead.";
+      } else {
+        note.innerText = "";
+      }
+    }
+
+    // ---------------------------------------------------
+    // getLocalizedText()
+    // Given the ORIGINAL Hinglish text and its position in the
+    // story (episode index, and which part - scene/dialogue/choice/
+    // reaction/betterAdvice, and which index within that part),
+    // this looks up translations.js for the selected language.
+    // If no translation exists (story not translated yet, or
+    // Hinglish is selected), it just returns the original text.
+    // ---------------------------------------------------
+    function getLocalizedText(originalText, episodeIndex, part, partIndex) {
+      if (selectedLanguage === "hinglish") return originalText;
+
+      const storyTr = storyTranslations[currentStoryId];
+      if (!storyTr) return originalText;   // this story has no translations yet
+
+      const epTr = storyTr.episodes[episodeIndex];
+      if (!epTr) return originalText;
+
+      if (part === "scene") {
+        return epTr.scene ? epTr.scene[selectedLanguage] : originalText;
+      }
+      if (part === "dialogue") {
+        const d = epTr.dialogues[partIndex];
+        return d ? d[selectedLanguage] : originalText;
+      }
+      if (part === "choiceText") {
+        const c = epTr.choices[partIndex];
+        return c ? c.text[selectedLanguage] : originalText;
+      }
+      if (part === "reaction") {
+        const c = epTr.choices[partIndex];
+        return c ? c.reaction[selectedLanguage] : originalText;
+      }
+      if (part === "betterAdvice") {
+        return epTr.betterAdvice ? epTr.betterAdvice[selectedLanguage] : originalText;
+      }
+      return originalText;
+    }
+
+    // Called when the user clicks "Enter the Story"
+    function beginStory() {
+      const typedName = document.getElementById("playerNameInput").value.trim();
+
+      // If they didn't type a name, fall back to the story's default name
+      playerName = typedName === "" ? currentStory.youDefaultName : typedName;
+      playerAvatar = selectedGender === "male" ? currentStory.youAvatarMale : currentStory.youAvatarFemale;
+
+      document.getElementById("setupScreen").style.display = "none";
+      showStoryIntro();
+    }
+
+    // ---------------------------------------------------
+    // STORY INTRO SCREEN
+    // Shown once, right after character setup, before Episode 1.
+    // Answers "who am I / what's happening" using the story's
+    // existing summary field (no new content needed per story).
+    // ---------------------------------------------------
+    function showStoryIntro() {
+      document.getElementById("introTitle").innerText = currentStory.title;
+
+      const personalizedSummary = personalizeText(currentStory.summary || "");
+      document.getElementById("introText").innerText =
+        "You are " + playerName + ", a " + currentStory.role + ". " + personalizedSummary;
+
+      document.getElementById("storyIntroScreen").style.display = "flex";
+    }
+
+    // Called when the user clicks "Begin Episode 1"
+    function startFirstEpisode() {
+      document.getElementById("storyIntroScreen").style.display = "none";
+      document.getElementById("storyScreen").style.display = "block";
+      renderEpisode();
+    }
+
+    // ---------------------------------------------------
+    // personalizeText()
+    // Every story's dialogue was written using a default character
+    // name (e.g. "Kabir"). This function replaces every occurrence
+    // of that default name with whatever name the user chose,
+    // wherever it appears in scene text or dialogue lines - so we
+    // don't need to rewrite the story content itself.
+    // ---------------------------------------------------
+    function personalizeText(text) {
+      if (!text) return text;
+      const defaultName = currentStory.youDefaultName;
+      // split()+join() replaces EVERY occurrence, not just the first
+      return text.split(defaultName).join(playerName);
+    }
+
+    // ---------------------------------------------------
+    // Shows a new episode: updates background, scene text,
+    // then starts playing that episode's conversation.
+    // ---------------------------------------------------
+    function renderEpisode() {
+      const ep = currentStory.episodes[currentEpisode];
+
+      document.getElementById("episodeCounter").innerText =
+        "Episode " + (currentEpisode + 1) + " of " + currentStory.episodes.length;
+
+      document.getElementById("locationTag").innerText = "📍 " + ep.location;
+
+      // Real photo background + dark overlay layer so text stays readable
+      document.getElementById("storyScreen").style.backgroundImage =
+        "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('" + ep.bgImage + "')";
+
+      const localizedScene = getLocalizedText(ep.scene, currentEpisode, "scene", 0);
+      document.getElementById("sceneText").innerText = personalizeText(localizedScene);
+
+      // Hide choices until the conversation is finished
+      document.getElementById("choicesBox").style.display = "none";
+      document.getElementById("choicesBox").innerHTML = "";
+
+      // Build a matching "translation info" list so each dialogue line
+      // knows how to look itself up in translations.js (which part,
+      // and which index within that part)
+      const dialogueTranslationInfo = ep.dialogues.map(function (d, idx) {
+        return { part: "dialogue", partIndex: idx };
+      });
+
+      // Start playing the episode's conversation lines one by one.
+      // Once all lines are shown, showChoicesForEpisode() runs.
+      playQueue(ep.dialogues, showChoicesForEpisode, "Next ▶", dialogueTranslationInfo);
+    }
+
+    // ---------------------------------------------------
+    // playQueue()
+    // Starts showing a list of dialogue lines, one at a time.
+    // queueArr        -> array of {speaker, avatar, text}
+    // onDoneFn        -> function to run after the LAST line
+    // lastLineLabel   -> what the button should say on the last line
+    // translationInfo -> array matching queueArr, telling us how to
+    //                    look up each line's translation (part + index)
+    // ---------------------------------------------------
+    function playQueue(queueArr, onDoneFn, lastLineLabel, translationInfo) {
+      dialogueQueue = queueArr;
+      dialogueIndex = 0;
+      onQueueFinished = onDoneFn;
+      currentTranslationInfo = translationInfo;
+
+      document.getElementById("dialogueSection").style.display = "block";
+      document.getElementById("dialogueNextBtn").dataset.lastLabel = lastLineLabel;
+
+      showCurrentLine();
+    }
+
+    // Displays whichever line dialogueIndex is pointing to right now
+    function showCurrentLine() {
+      const line = dialogueQueue[dialogueIndex];
+      const info = currentTranslationInfo[dialogueIndex];
+
+      // If this line belongs to the user's own character (marked by
+      // "(You)" in the speaker label), use the chosen player avatar
+      // instead of the story's default one.
+      const isPlayerLine = line.speaker.indexOf("(You)") !== -1;
+
+      // Note: speaker NAMES stay as written (not translated) even in
+      // Hindi/English mode - only the spoken line content changes.
+      const localizedLine = getLocalizedText(line.text, currentEpisode, info.part, info.partIndex);
+
+      document.getElementById("charFace").src = isPlayerLine ? playerAvatar : line.avatar;
+      document.getElementById("charName").innerText = personalizeText(line.speaker);
+      document.getElementById("dialogueText").innerText = personalizeText(localizedLine);
+
+      const isLastLine = dialogueIndex === dialogueQueue.length - 1;
+      const lastLabel = document.getElementById("dialogueNextBtn").dataset.lastLabel;
+      document.getElementById("dialogueNextBtn").innerText = isLastLine ? lastLabel : "Next ▶";
+    }
+
+    // Called when user clicks the "Next ▶" button under the dialogue box
+    function advanceDialogue() {
+      dialogueIndex = dialogueIndex + 1;
+
+      if (dialogueIndex < dialogueQueue.length) {
+        showCurrentLine();
+      } else {
+        // No more lines left - hide the dialogue box and move to the next step
+        document.getElementById("dialogueSection").style.display = "none";
+        onQueueFinished();
+      }
+    }
+
+    // ---------------------------------------------------
+    // Shows the 2 choice buttons after the conversation ends
+    // ---------------------------------------------------
+    function showChoicesForEpisode() {
+      const ep = currentStory.episodes[currentEpisode];
+      const choicesBox = document.getElementById("choicesBox");
+
+      choicesBox.innerHTML = "";
+      choicesBox.style.display = "block";
+
+      ep.choices.forEach(function (choice, index) {
+        const localizedChoiceText = getLocalizedText(choice.text, currentEpisode, "choiceText", index);
+        const btn = document.createElement("button");
+        btn.className = "choice-btn";
+        btn.innerText = personalizeText(localizedChoiceText);
+        btn.onclick = function () { selectChoice(index); };
+        choicesBox.appendChild(btn);
+      });
+    }
+
+    // ---------------------------------------------------
+    // Called when the user picks a choice button
+    // ---------------------------------------------------
+    function selectChoice(index) {
+      const ep = currentStory.episodes[currentEpisode];
+      const choice = ep.choices[index];
+
+      // Count this choice towards the lifetime total (used by the
+      // "Decision Maker" achievement) and add its skill points
+      incrementChoiceCount();
+      addSkills(choice.skills);
+
+      if (choice.correct) {
+        score = score + 1;
+      } else {
+        const localizedAdvice = getLocalizedText(ep.betterAdvice, currentEpisode, "betterAdvice", 0);
+        wrongFeedbacks.push({
+          episode: currentEpisode + 1,
+          betterOption: personalizeText(localizedAdvice)
+        });
+      }
+
+      // Hide the choice buttons
+      document.getElementById("choicesBox").style.display = "none";
+
+      // Is this the LAST episode? Then the button should say "See My Result"
+      const isLastEpisode = currentEpisode === currentStory.episodes.length - 1;
+      const buttonLabel = isLastEpisode ? "See My Result 🏆" : "Next Episode ➡";
+
+      // Play the character's reaction line (just ONE line) to this choice
+      playQueue([choice.reaction], goToNextEpisode, buttonLabel, [{ part: "reaction", partIndex: index }]);
+    }
+
+    // ---------------------------------------------------
+    // Called after the reaction line is done being shown
+    // ---------------------------------------------------
+    function goToNextEpisode() {
+      document.getElementById("dialogueSection").style.display = "none";
+
+      const completedEpisodeNumber = currentEpisode + 1;  // 1-indexed, for display
+      currentEpisode = currentEpisode + 1;
+
+      if (currentEpisode < currentStory.episodes.length) {
+        showEpisodeTransition(completedEpisodeNumber, currentEpisode + 1);
+      } else {
+        showFinalResult();
+      }
+    }
+
+    // ---------------------------------------------------
+    // Shows a short "Episode X Completed! Starting Episode Y..."
+    // screen between episodes, then automatically continues.
+    // ---------------------------------------------------
+    function showEpisodeTransition(completedNum, nextNum) {
+      document.getElementById("storyScreen").style.display = "none";
+
+      document.getElementById("transitionCompletedText").innerText =
+        "Episode " + completedNum + " Completed!";
+      document.getElementById("transitionNextText").innerText =
+        "Starting Episode " + nextNum + "...";
+
+      document.getElementById("transitionScreen").style.display = "flex";
+
+      // Wait a moment on the transition screen, then move to the next episode
+      setTimeout(function () {
+        document.getElementById("transitionScreen").style.display = "none";
+        document.getElementById("storyScreen").style.display = "block";
+        renderEpisode();
+      }, 1800);
+    }
+
+    // ---------------------------------------------------
+    // Shows the final score screen
+    // ---------------------------------------------------
+    function showFinalResult() {
+      document.getElementById("storyScreen").style.display = "none";
+      document.getElementById("resultScreen").style.display = "block";
+
+      document.getElementById("scoreText").innerText =
+        "You scored " + score + " / " + currentStory.episodes.length;
+
+      const reviewList = document.getElementById("reviewList");
+      reviewList.innerHTML = "";
+
+      if (wrongFeedbacks.length === 0) {
+        reviewList.innerHTML = "<li>Great job! You made the best choice in every episode. 🎉</li>";
+      } else {
+        wrongFeedbacks.forEach(function (item) {
+          const li = document.createElement("li");
+          li.innerText = "Episode " + item.episode + ": " + item.betterOption;
+          reviewList.appendChild(li);
+        });
+      }
+
+      // Save this story as "last played" so the dashboard can show a
+      // "Continue Exploring" card next time the user logs in.
+      saveLastPlayed(getQueryParam("story"));
+
+      // Mark this story as completed - used on the Profile page
+      addCompletedStory(getQueryParam("story"));
+    }
+  </script>
+
+</body>
+</html>

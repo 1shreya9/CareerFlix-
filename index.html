@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CareerFlix - Login</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-body">
+
+  <div class="login-top">
+    <div class="logo big-logo">▶ Career<span>Flix</span></div>
+  </div>
+
+  <div class="login-box">
+    <h2>Unlimited Careers. One Login Away.</h2>
+    <p>Explore careers like never before - as a story, not a lecture.</p>
+
+    <!-- Two tabs: Login and Sign Up. Clicking one shows its form,
+         hides the other. Both forms live on this same page. -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="loginTabBtn" onclick="switchTab('login')">Login</button>
+      <button class="auth-tab" id="signupTabBtn" onclick="switchTab('signup')">Sign Up</button>
+    </div>
+
+    <!-- ---------- LOGIN FORM ---------- -->
+    <div id="loginForm">
+      <input type="text" id="loginUsername" placeholder="Username" autocomplete="off" />
+      <div class="password-wrapper">
+        <input type="password" id="loginPassword" placeholder="Password" autocomplete="new-password" />
+        <span class="eye-icon" onclick="togglePasswordVisibility('loginPassword', this)">👁</span>
+      </div>
+      <button onclick="handleLogin()">Login</button>
+    </div>
+
+    <!-- ---------- SIGN UP FORM (hidden until tab is clicked) ---------- -->
+    <div id="signupForm" style="display:none;">
+      <input type="text" id="signupUsername" placeholder="Choose a username" autocomplete="off" />
+      <input type="email" id="signupEmail" placeholder="Email address (must be @gmail.com)" autocomplete="off" />
+      <div class="password-wrapper">
+        <input type="password" id="signupPassword" placeholder="Password: 8+ chars, 1 capital, 1 number, 1 special" autocomplete="new-password" />
+        <span class="eye-icon" onclick="togglePasswordVisibility('signupPassword', this)">👁</span>
+      </div>
+      <button onclick="handleSignup()">Create Account</button>
+    </div>
+
+    <p id="errorMsg" class="error"></p>
+  </div>
+
+  <footer>CareerFlix &copy; 2026 | Interactive Career Discovery Platform</footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Toggles a password field between hidden (••••) and visible text
+    function togglePasswordVisibility(inputId, eyeSpan) {
+      const input = document.getElementById(inputId);
+      if (input.type === "password") {
+        input.type = "text";
+        eyeSpan.innerText = "🙈";
+      } else {
+        input.type = "password";
+        eyeSpan.innerText = "👁";
+      }
+    }
+
+    // Switches between the Login tab and the Sign Up tab
+    function switchTab(tab) {
+      document.getElementById("errorMsg").innerText = "";
+
+      const isLogin = tab === "login";
+      document.getElementById("loginForm").style.display = isLogin ? "block" : "none";
+      document.getElementById("signupForm").style.display = isLogin ? "none" : "block";
+
+      document.getElementById("loginTabBtn").classList.toggle("active", isLogin);
+      document.getElementById("signupTabBtn").classList.toggle("active", !isLogin);
+    }
+
+    // Runs when "Login" button is clicked
+    function handleLogin() {
+      const username = document.getElementById("loginUsername").value.trim();
+      const password = document.getElementById("loginPassword").value;
+
+      if (username === "" || password === "") {
+        document.getElementById("errorMsg").innerText = "Please fill in both fields.";
+        return;
+      }
+
+      // loginExistingUser() is a function from script.js. It checks
+      // the username/password against what was saved during Sign Up.
+      const result = loginExistingUser(username, password);
+
+      if (result.success) {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("errorMsg").innerText = result.message;
+      }
+    }
+
+    // Runs when "Create Account" button is clicked
+    function handleSignup() {
+      const username = document.getElementById("signupUsername").value.trim();
+      const email = document.getElementById("signupEmail").value.trim();
+      const password = document.getElementById("signupPassword").value;
+
+      if (username === "" || email === "" || password === "") {
+        document.getElementById("errorMsg").innerText = "Please fill in all fields.";
+        return;
+      }
+
+      // Email must be a Gmail address - checked using a Regular Expression (regex).
+      // ^[^\s@]+   -> one or more characters that are NOT a space or @ symbol
+      // @gmail\.com$ -> must end exactly with "@gmail.com"
+      const gmailPattern = /^[^\s@]+@gmail\.com$/;
+      if (!gmailPattern.test(email)) {
+        document.getElementById("errorMsg").innerText = "Please use a valid Gmail address (must end with @gmail.com).";
+        return;
+      }
+
+      // Password must be at least 8 characters, with at least:
+      // - 1 uppercase letter   (?=.*[A-Z])
+      // - 1 number             (?=.*[0-9])
+      // - 1 special character  (?=.*[!@#$%^&*])
+      const passwordPattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/;
+      if (!passwordPattern.test(password)) {
+        document.getElementById("errorMsg").innerText =
+          "Password must be at least 8 characters, with 1 capital letter, 1 number, and 1 special character (e.g. @, #, $, %, !, &, *).";
+        return;
+      }
+
+      // signUpUser() is a function from script.js. It saves the new
+      // account into LocalStorage (username, email, password).
+      const result = signUpUser(username, email, password);
+
+      if (result.success) {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("errorMsg").innerText = result.message;
+      }
+    }
+  </script>
+
+</body>
+</html>
