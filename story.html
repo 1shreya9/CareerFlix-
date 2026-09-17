@@ -149,9 +149,13 @@
         return;
       }
 
-      // Show the character setup screen first, pre-filled with the
-      // story's default character name
-      document.getElementById("playerNameInput").placeholder = currentStory.youDefaultName;
+      // Show the character setup screen first. Keep the placeholder as a
+      // clear instruction rather than replacing it with the story's
+      // default name - leaving it blank still falls back to that name
+      // (see playerName assignment below), but now that only shows up
+      // as a hint in parentheses instead of looking like a suggestion.
+      document.getElementById("playerNameInput").placeholder =
+        "Enter your name (or leave blank for " + currentStory.youDefaultName + ")";
       document.getElementById("maleAvatarPreview").src = currentStory.youAvatarMale;
       document.getElementById("femaleAvatarPreview").src = currentStory.youAvatarFemale;
 

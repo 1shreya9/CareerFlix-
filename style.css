@@ -1213,7 +1213,7 @@ footer {
   color: #ffd60a;
 }
 
-/* Scrollable Fun Facts popup */
+/* Fun Facts popup - one fact at a time, with a real photo per fact */
 .facts-modal-box {
   background: #181818;
   max-width: 550px;
@@ -1227,14 +1227,16 @@ footer {
   flex-direction: column;
 }
 
-.facts-modal-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
+.facts-modal-role {
+  font-size: 19px;
+  font-weight: bold;
+  color: #ffd60a;
+  margin-bottom: 14px;
   flex-shrink: 0;
+  padding-right: 30px; /* keep clear of the close button */
 }
 
+/* Still used by the Careerpedia term-detail modal (see careerpedia.html) */
 .facts-modal-content {
   padding: 20px;
   overflow: hidden;
@@ -1243,16 +1245,6 @@ footer {
   min-height: 0;
 }
 
-.facts-modal-role {
-  font-size: 19px;
-  font-weight: bold;
-  color: #ffd60a;
-  margin-bottom: 14px;
-  flex-shrink: 0;
-}
-
-/* THIS is what makes the facts scrollable - fixes the earlier
-   issue where facts got cut off with no way to see the rest */
 .facts-scroll-area {
   flex: 1;
   min-height: 0;
@@ -1277,6 +1269,60 @@ footer {
 
 .facts-scroll-area li {
   margin-bottom: 12px;
+}
+
+.fact-card {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.fact-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: #222; /* shows while the photo loads */
+}
+
+.fact-card-text {
+  font-size: 15px;
+  color: #dcdcdc;
+  line-height: 1.7;
+  margin-top: 16px;
+}
+
+.fact-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #2a2a2a;
+  flex-shrink: 0;
+}
+
+.fact-nav-btn {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.fact-nav-btn:hover {
+  background: #ff1a28;
+}
+
+.fact-counter {
+  font-size: 13px;
+  color: #aaa;
 }
 
 

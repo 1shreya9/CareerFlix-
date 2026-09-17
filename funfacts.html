@@ -35,15 +35,22 @@
     <div class="postcard-grid" id="postcardGrid"></div>
   </main>
 
-  <!-- ===================== FUN FACTS POPUP (scrollable!) ===================== -->
+  <!-- ===================== FUN FACTS POPUP (one fact at a time, with Next/Prev) ===================== -->
   <div class="modal-overlay" id="factsOverlay" style="display:none;" onclick="closeFactsIfBackground(event)">
     <div class="facts-modal-box">
       <button class="modal-close" onclick="closeFactsModal()">✕</button>
-      <img class="facts-modal-img" id="factsModalImg" src="" alt="" />
       <div class="facts-modal-content">
         <p class="facts-modal-role" id="factsModalRole">Role Name</p>
-        <div class="facts-scroll-area" id="factsScrollArea">
-          <ul id="factsModalList"></ul>
+
+        <div class="fact-card">
+          <img class="fact-card-img" id="factImage" src="" alt="" />
+          <p class="fact-card-text" id="factText"></p>
+        </div>
+
+        <div class="fact-nav">
+          <button class="fact-nav-btn" id="prevFactBtn" onclick="prevFact()">‹ Prev</button>
+          <span class="fact-counter" id="factCounter">1 / 10</span>
+          <button class="fact-nav-btn" id="nextFactBtn" onclick="nextFact()">Next ›</button>
         </div>
       </div>
     </div>
@@ -108,26 +115,45 @@
     }
 
     // ---------------------------------------------------
-    // Opens the scrollable facts popup for a given role
+    // Opens the Fun Facts popup for a given role. Facts are now
+    // browsed one at a time (with a real photo per fact) instead
+    // of one long scrollable list.
     // ---------------------------------------------------
-    function openFactsModal(role, img) {
-      document.getElementById("factsModalImg").src = img;
+    let currentFacts = [];
+    let currentFactIndex = 0;
+
+    function openFactsModal(role, fallbackImg) {
       document.getElementById("factsModalRole").innerText = "💡 " + role;
 
-      const list = document.getElementById("factsModalList");
-      list.innerHTML = "";
+      currentFacts = careerFunFacts[role] || [];
+      currentFactIndex = 0;
 
-      const facts = careerFunFacts[role] || [];
-      facts.forEach(function (fact) {
-        const li = document.createElement("li");
-        li.innerText = fact;
-        list.appendChild(li);
-      });
-
-      // Always scroll back to the top when opening a new role's facts
-      document.getElementById("factsScrollArea").scrollTop = 0;
-
+      renderCurrentFact(fallbackImg);
       document.getElementById("factsOverlay").style.display = "flex";
+    }
+
+    function renderCurrentFact(fallbackImg) {
+      if (currentFacts.length === 0) return;
+
+      const fact = currentFacts[currentFactIndex];
+      document.getElementById("factImage").src = fact.img || fallbackImg || "";
+      document.getElementById("factText").innerText = fact.text;
+      document.getElementById("factCounter").innerText =
+        (currentFactIndex + 1) + " / " + currentFacts.length;
+    }
+
+    // Next wraps back to the first fact after the last one, so the
+    // user can keep clicking Next in a loop through the same role.
+    function nextFact() {
+      if (currentFacts.length === 0) return;
+      currentFactIndex = (currentFactIndex + 1) % currentFacts.length;
+      renderCurrentFact();
+    }
+
+    function prevFact() {
+      if (currentFacts.length === 0) return;
+      currentFactIndex = (currentFactIndex - 1 + currentFacts.length) % currentFacts.length;
+      renderCurrentFact();
     }
 
     function closeFactsModal() {

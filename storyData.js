@@ -84,6 +84,24 @@ const AV = {
   // (shopkeepers, clients, villagers, etc.) across any story ----
   citizen: "https://api.dicebear.com/9.x/adventurer/svg?seed=GenericCitizen&backgroundColor=dddddd",
 
+  // ---- NEW: Pilot story (Aviation) ----
+  captMehta:   "https://api.dicebear.com/9.x/adventurer/svg?seed=CaptainMehtaPilot&backgroundColor=b6d7ff",
+  zoyaPilot:   "https://api.dicebear.com/9.x/adventurer/svg?seed=ZoyaCoPilot&backgroundColor=ffd6ec",
+  aaravPilot:  "https://api.dicebear.com/9.x/adventurer/svg?seed=AaravPilotTrainee&backgroundColor=d6e8ff",
+  kunalPilot:  "https://api.dicebear.com/9.x/adventurer/svg?seed=KunalDispatchFriend&backgroundColor=c9f7d1",
+
+  // ---- NEW: Air Force story (Defence) ----
+  wingCmdrArora: "https://api.dicebear.com/9.x/adventurer/svg?seed=WingCommanderArora&backgroundColor=cde0ff",
+  foRakesh:      "https://api.dicebear.com/9.x/adventurer/svg?seed=FlyingOfficerRakesh&backgroundColor=ffe0b3",
+  dhruvAF:       "https://api.dicebear.com/9.x/adventurer/svg?seed=DhruvAirForceCadet&backgroundColor=d6e8ff",
+  yashADC:       "https://api.dicebear.com/9.x/adventurer/svg?seed=YashFighterController&backgroundColor=c9f7d1",
+
+  // ---- NEW: Army story (Defence) ----
+  colRanawat:  "https://api.dicebear.com/9.x/adventurer/svg?seed=ColonelRanawat&backgroundColor=c9d9b3",
+  majorTara:   "https://api.dicebear.com/9.x/adventurer/svg?seed=MajorTaraArmy&backgroundColor=ffe0cc",
+  yuvraj:      "https://api.dicebear.com/9.x/adventurer/svg?seed=YuvrajArmyCadet&backgroundColor=d6e8ff",
+  devSignals:  "https://api.dicebear.com/9.x/adventurer/svg?seed=DevSignalsOfficer&backgroundColor=c9f7d1",
+
   // ---- NEW: Nurse story ----
   sisterGrace: "https://api.dicebear.com/9.x/adventurer/svg?seed=SisterGrace&backgroundColor=ffe0ec",
   nurseHeena:  "https://api.dicebear.com/9.x/adventurer/svg?seed=NurseHeena&backgroundColor=e0f7ff",
@@ -2171,6 +2189,384 @@ const storiesData = {
             reaction: { speaker: "Inspector Rathore", avatar: AV.inspectorRathore, text: "Vivaan, shortcuts lena galat logon ko saza dilwa sakta hai, thorough investigation zaroori hai." } }
         ],
         betterAdvice: "Detective ke kaam mein hamesha thorough aur fair investigation ka commitment rakhna chahiye, shortcuts nahi dhoondne chahiye."
+      }
+    ]
+  },
+
+  // ==================================================
+  // STORY 18: AVIATION - "Cleared for Takeoff"
+  // Characters: Captain Mehta (mentor), Zoya (Senior FO), Kunal (best
+  // friend, works in Dispatch/Ops), Aarav (You)
+  // NOTE: Written directly in English (not Hinglish) - Hindi/Hinglish
+  // versions can be added to translations.js later, same as other stories.
+  // ==================================================
+  pilot: {
+    title: "Cleared for Takeoff",
+    genre: "Aviation",
+    youDefaultName: "Aarav",
+    role: "Commercial Pilot",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AaravPilotTrainee&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AaravPilotTrainee&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/4269510/pexels-photo-4269510.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Fly as a young first officer through a real squall line, clear-air turbulence near the coffin corner, and a tight fuel decision - with your best friend from flight school on the radio in Ops.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Flight Briefing Room",
+        bgImage: "https://images.pexels.com/photos/4269510/pexels-photo-4269510.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Pre-flight briefing. A line of embedded thunderstorms is building along the route, with tops likely above the aircraft's maximum altitude - meaning there's no climbing over it today. The aircraft is also loaded close to its maximum takeoff weight.",
+        dialogues: [
+          { speaker: "Kunal (Dispatch)", avatar: AV.kunalPilot, text: "Aarav, bhai, look at this SIGMET before you sign anything. Cell tops near forty-five thousand feet - way above our ceiling, so there's no topping this line today." },
+          { speaker: "Captain Mehta", avatar: AV.captMehta, text: "And we're already close to max takeoff weight with today's cargo. Extra fuel for a longer weather diversion means we'd have to offload some of that cargo." },
+          { speaker: "Zoya (Senior FO)", avatar: AV.zoyaPilot, text: "Ops will push back on offloading revenue cargo, Aarav. It's your first big call of the day." },
+          { speaker: "Kunal (Dispatch)", avatar: AV.kunalPilot, text: "I've got your back either way, but tell me what you want to do before the loaders finish." },
+          { speaker: "Aarav (You)", avatar: AV.aaravPilot, text: "A storm line this tall never behaves exactly like the forecast... so the real question is what we do if it's worse than expected." }
+        ],
+        choices: [
+          { text: "Ask for some cargo to be offloaded to carry extra contingency fuel, accepting the commercial cost for a bigger weather-deviation margin", correct: true,
+            skills: { technical: 2, communication: 1, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Good call, Aarav. Against a line we can't top, extra fuel margin buys us room to deviate wide if the cells are worse than forecast - cargo can go on the next flight, a diversion can't be undone." } },
+          { text: "Keep the full cargo load and plan on the standard fuel reserve, expecting only a small deviation", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 1, leadership: 0 },
+            reaction: { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Aarav, 'expecting a small deviation' against a line we can't climb over is exactly the assumption that gets crews into a fuel squeeze later. We plan for the deviation being bigger, not smaller." } }
+        ],
+        betterAdvice: "When a storm line's tops are above your aircraft's ceiling, plan extra fuel margin before departure - don't assume the actual deviation will match the smallest forecast estimate."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Approaching the Squall Line",
+        bgImage: "https://images.pexels.com/photos/18257035/pexels-photo-18257035.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Airborne and approaching the storm line. The onboard weather radar shows one strong cell dead ahead - but the picture behind it looks strangely quiet.",
+        dialogues: [
+          { speaker: "Zoya (Senior FO)", avatar: AV.zoyaPilot, text: "That cell's showing strong returns, but it doesn't look too wide on the scope. A quick ten-mile jog around it and we're back on track." },
+          { speaker: "Kunal (Radio, Dispatch)", avatar: AV.kunalPilot, text: "Aarav, satellite loop on my end shows this cell growing fast, and there's a second one hiding right behind it that your radar might not be painting yet." },
+          { speaker: "Captain Mehta", avatar: AV.captMehta, text: "That's attenuation, Aarav - a strong enough cell can eat the radar beam and hide what's directly behind it. Your call on how wide we go." },
+          { speaker: "Aarav (You)", avatar: AV.aaravPilot, text: "The book says twenty miles clear of a cell like this, more for anything severe... but that costs us time and fuel we just fought to keep." }
+        ],
+        choices: [
+          { text: "Request a wide deviation of at least 25-30 nautical miles from the cell, treating the quiet area behind it as unconfirmed rather than clear", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Exactly right, Aarav. A calm patch right behind a strong cell is more often the radar's blind spot than actual clear air - we treat it as unknown, not as safe." } },
+          { text: "Take a tight 10-mile deviation around the visible cell to save time and fuel, since the area behind it looks clear on radar", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Aarav, that 'clear' patch behind a strong cell is exactly where a radar beam gets absorbed. Ten miles isn't enough margin - the gust front and hail can reach further than the return you can see." } }
+        ],
+        betterAdvice: "A strong storm cell can hide a second cell behind it on radar (attenuation) - always keep a wide buffer and never treat an unusually quiet area right behind a strong return as confirmed clear air."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Cruise Altitude - Clear Air Turbulence",
+        bgImage: "https://images.pexels.com/photos/2589047/pexels-photo-2589047.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Well past the storm line now, cruising near the edge of a strong jet stream in a completely clear sky, when the aircraft is suddenly hit by severe turbulence with no warning.",
+        dialogues: [
+          { speaker: "Zoya (Senior FO)", avatar: AV.zoyaPilot, text: "No cloud, no radar return - this is clear-air turbulence off the jet stream boundary. It came out of nowhere." },
+          { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Aarav, we're heavy and high tonight - close to what pilots call the 'coffin corner'. Up here, the gap between the stall-buffet speed and the Mach-buffet speed is razor thin." },
+          { speaker: "Kunal (Radio, Dispatch)", avatar: AV.kunalPilot, text: "Aarav, whatever you do, don't try to muscle this - I've read too many reports where a big power or altitude change in rough air made things worse, not better." },
+          { speaker: "Aarav (You)", avatar: AV.aaravPilot, text: "It's tempting to just push the power up and climb out of it fast... but if that margin really is that thin up here, a big speed change could tip us the wrong way." }
+        ],
+        choices: [
+          { text: "Reduce to the recommended turbulence penetration speed, hold a steady pitch attitude instead of chasing a fixed altitude, and inform ATC calmly", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Textbook, Aarav. Near the coffin corner, small and steady beats fast and aggressive - slowing to penetration speed and holding attitude keeps us clear of both the stall buffet and the Mach buffet." } },
+          { text: "Push the throttles up and climb quickly to try to get above the rough air as fast as possible", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 1 },
+            reaction: { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Aarav, at this weight and altitude that's the one thing we can't do - a hard climb this high can push our speed straight into the Mach buffet margin we're already short on. Slow and steady is what protects the aircraft here." } }
+        ],
+        betterAdvice: "Near the 'coffin corner' at high altitude, the safe margin between a low-speed stall buffet and a high-speed Mach buffet is very narrow - respond to severe turbulence by slowing to penetration speed and holding attitude, never with a big sudden power or altitude change."
+      },
+
+      // ---------- EPISODE 4 ----------
+      {
+        location: "The Fuel Math",
+        bgImage: "https://images.pexels.com/photos/19898942/pexels-photo-19898942.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "After the wide storm deviation and a short holding pattern for the turbulence, fuel is now closer to the legal reserve than planned. The destination is reporting poor visibility that is forecast to improve - but hasn't yet.",
+        dialogues: [
+          { speaker: "Kunal (Radio, Dispatch)", avatar: AV.kunalPilot, text: "Aarav, running your numbers here - you're still above minimum reserve, but only just. The nearest suitable alternate is twelve minutes off your current track." },
+          { speaker: "Zoya (Senior FO)", avatar: AV.zoyaPilot, text: "Forecast says the fog at destination should lift in twenty minutes. If we hold a little longer, we might land as planned." },
+          { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Aarav, this decision has to be made now, while we're comfortably above reserve - not later, once we're staring at the minimum. What's the call?" }
+        ],
+        choices: [
+          { text: "Divert now to the nearest suitable alternate while still comfortably above the required fuel reserve, rather than waiting on the forecast", correct: true,
+            skills: { technical: 1, communication: 1, problemSolving: 2, leadership: 3 },
+            reaction: { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Right decision, Aarav. A diversion decided early, with fuel to spare, is a routine flight. The same decision made at minimum fuel is an emergency - we never let the fuel gauge make the call for us." } },
+          { text: "Continue holding for the destination, betting the fog lifts before reaching minimum fuel, to avoid the cost and delay of a diversion", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Aarav, 'the forecast should improve' is not a fuel plan. Every extra minute we hold on that bet is a minute we can't get back if the fog doesn't lift on schedule." } }
+        ],
+        betterAdvice: "Decide on a diversion while you still have comfortable fuel margin, not once you're near minimum reserve - a diversion decided early is routine; the same decision made at the last moment is an emergency."
+      },
+
+      // ---------- EPISODE 5 ----------
+      {
+        location: "Final Approach in Gusty Crosswind",
+        bgImage: "https://images.pexels.com/photos/3942318/pexels-photo-3942318.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Cleared for the approach into the alternate airport, ATC reports gusty crosswinds right at the aircraft's limit, with a possible wind shear warning from the aircraft ahead.",
+        dialogues: [
+          { speaker: "ATC (Radio)", avatar: AV.citizen, text: "Traffic ahead of you reported wind shear on short final, gains and losses of fifteen knots. Winds are two-two-zero at twenty-six, gusting thirty-six." },
+          { speaker: "Zoya (Senior FO)", avatar: AV.zoyaPilot, text: "That's right at our limit, Aarav, and now with a shear report on top of it." },
+          { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Aarav, your approach, your call - do we continue and stay ready to go around, or break it off now before we're committed?" }
+        ],
+        choices: [
+          { text: "Continue the approach only if it stays stable, with the go-around already briefed and the throttles primed to react to any shear indication", correct: true,
+            skills: { technical: 1, communication: 1, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Well flown, Aarav. Stabilized-approach discipline with the go-around already briefed is what keeps a shear report from turning into a real problem." } },
+          { text: "Continue the approach without changing the plan, since the wind is still technically within the crosswind limit", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Captain Mehta", avatar: AV.captMehta, text: "Aarav, a shear report changes the picture even when the crosswind number alone is still within limits. We brief for it and stay ready to go around, we don't just carry on as planned." } }
+        ],
+        betterAdvice: "A wind shear report changes an approach even if the crosswind number is still technically within limits - always brief the go-around and stay ready to react, rather than continuing the original plan unchanged."
+      }
+    ]
+  },
+
+  // ==================================================
+  // STORY 19: DEFENCE (AIR FORCE) - "Wings of Honour"
+  // Characters: Wing Commander Arora (mentor), Flying Officer Rakesh,
+  // Yash (best friend, orbiting spotter/relay pilot), Dhruv (You)
+  // NOTE: Written directly in English (not Hinglish).
+  // ==================================================
+  airforce: {
+    title: "Wings of Honour",
+    genre: "Defence",
+    youDefaultName: "Dhruv",
+    role: "Air Force Officer",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=DhruvAirForceCadet&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=DhruvAirForceCadet&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/30698431/pexels-photo-30698431.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Fly a rescue helicopter into the mountains as a young Air Force pilot, racing an avalanche and thin high-altitude air to reach stranded survivors - with your Academy friend orbiting overhead as your only link to base.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Airbase - Emergency Scramble",
+        bgImage: "https://images.pexels.com/photos/18403815/pexels-photo-18403815.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A distress call comes in - an avalanche has trapped a group near a trekking route at over 14,000 feet. The helicopter must carry rescue gear, but the landing zone's altitude sharply cuts how much weight the aircraft can safely lift.",
+        dialogues: [
+          { speaker: "Wing Cmdr Arora", avatar: AV.wingCmdrArora, text: "Dhruv, that LZ altitude is right at the edge of our power charts. Full fuel and full rescue gear together will put us over the safe hover weight up there." },
+          { speaker: "Flying Officer Rakesh", avatar: AV.foRakesh, text: "Every extra kilo of gear could matter once we're up there, sir. Hate to leave anything behind." },
+          { speaker: "Yash (Spotter Aircraft)", avatar: AV.yashADC, text: "Dhruv, yaar, I'll be circling above you the whole way for relay - but the power chart doesn't care how much we want to bring. Check it properly before you load." },
+          { speaker: "Dhruv (You)", avatar: AV.dhruvAF, text: "More gear and more fuel both sound safer on the ground... but up there, thin air means the engine simply can't give us the same lift." }
+        ],
+        choices: [
+          { text: "Work out the actual weight limit from the density-altitude power chart, and trim gear and fuel to stay within it rather than loading for maximum capability", correct: true,
+            skills: { technical: 3, communication: 0, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Wing Cmdr Arora", avatar: AV.wingCmdrArora, text: "That's the discipline that keeps rescue crews alive, Dhruv. At that altitude the thin air cuts how much lift the rotor can generate - you fly to what the chart allows, not to what feels useful on the ground." } },
+          { text: "Load full fuel and all available rescue gear, trusting the engine to manage once airborne since more supplies means more capability", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 1 },
+            reaction: { speaker: "Wing Cmdr Arora", avatar: AV.wingCmdrArora, text: "Dhruv, 'trusting the engine' isn't a plan at that altitude. If we're over the power-available weight when we reach the LZ, we simply won't be able to hover - and that's not something we find out the hard way." } }
+        ],
+        betterAdvice: "At high density altitude, thinner air sharply reduces the power and lift a helicopter can generate - always calculate the safe weight from the actual power chart rather than loading for maximum capability and hoping the engine manages."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Threading the Valley",
+        bgImage: "https://images.pexels.com/photos/13528320/pexels-photo-13528320.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Strong winds are funnelling through the mountain valley ahead. There are two ways in: a shorter track along the leeward side of the ridge, or a longer one along the windward side.",
+        dialogues: [
+          { speaker: "Flying Officer Rakesh", avatar: AV.foRakesh, text: "The leeward route cuts a good ten minutes off our time to the LZ, Dhruv." },
+          { speaker: "Yash (Spotter Aircraft, Radio)", avatar: AV.yashADC, text: "Dhruv, from up here I can see rotor cloud sitting right over that leeward slope - that usually means nasty turbulence and sink underneath it." },
+          { speaker: "Dhruv (You)", avatar: AV.dhruvAF, text: "Ten minutes matters for the people trapped up there... but if that leeward side has the downdrafts I think it does, we could lose a lot more than ten minutes." }
+        ],
+        choices: [
+          { text: "Take the longer windward route along the ridge, accepting the extra time to avoid the rotor turbulence and downdrafts forming on the leeward side", correct: true,
+            skills: { technical: 3, communication: 0, problemSolving: 1, leadership: 1 },
+            reaction: { speaker: "Wing Cmdr Arora (Debrief note)", avatar: AV.wingCmdrArora, text: "Correct call, Dhruv. In strong wind, the leeward side of a ridge often hides rotor turbulence and downdrafts strong enough to overpower a helicopter's climb power. Ten extra minutes windward beats a fight you might not win leeward." } },
+          { text: "Take the shorter leeward route to reach the survivors faster, since the visible sky looks mostly clear from the cockpit", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Wing Cmdr Arora (Debrief note)", avatar: AV.wingCmdrArora, text: "Dhruv, clear sky doesn't mean clear air on a leeward slope in strong wind - the rotor cloud Yash spotted was the warning sign. That downdraft could have overpowered our climb before we even saw it coming." } }
+        ],
+        betterAdvice: "In strong mountain winds, the leeward side of a ridge can hide severe rotor turbulence and downdrafts even under a clear sky - always favour the windward route, even if it costs extra time."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "The Hover",
+        bgImage: "https://images.pexels.com/photos/2589047/pexels-photo-2589047.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The helicopter reaches the landing zone - a narrow rocky ledge above the avalanche site. Standard rescue procedure calls for a full hover for winching, but the power margin up here is tighter than back at base.",
+        dialogues: [
+          { speaker: "Flying Officer Rakesh", avatar: AV.foRakesh, text: "Standard technique is a full hover out of ground effect for the winch, Dhruv - that's how we always train for this." },
+          { speaker: "Dhruv (You)", avatar: AV.dhruvAF, text: "A full hover needs the most power of any technique though - and our margin right now is thinner than it was in training." },
+          { speaker: "Yash (Spotter Aircraft, Radio)", avatar: AV.yashADC, text: "Dhruv, whatever you decide, decide it before you commit to the ledge, not halfway through the approach." }
+        ],
+        choices: [
+          { text: "Recheck the power margin for today's actual weight and altitude, and if it's tight, use a one-skid touch on the ledge instead of a full hover to reduce the power demand", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Wing Cmdr Arora (Debrief note)", avatar: AV.wingCmdrArora, text: "Exactly right, Dhruv. Standard procedure assumes standard conditions - a full hover out of ground effect demands the most power of any technique, and today's margin didn't have room for it. You adapted the technique to what the aircraft could actually do." } },
+          { text: "Go with the standard full hover technique as trained, since it's the procedure the squadron always uses for this kind of rescue", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Wing Cmdr Arora (Debrief note)", avatar: AV.wingCmdrArora, text: "Dhruv, 'that's the procedure' doesn't override today's power chart. A full hover needed more power than we had in hand up there - the technique has to match the conditions, not just the training manual." } }
+        ],
+        betterAdvice: "A full out-of-ground-effect hover demands more power than any other landing technique - at high density altitude with a tight power margin, always re-check the numbers and be ready to use a lower-power technique instead of defaulting to standard procedure."
+      },
+
+      // ---------- EPISODE 4 ----------
+      {
+        location: "Weight and the Winch",
+        bgImage: "https://images.pexels.com/photos/3942318/pexels-photo-3942318.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Five survivors need evacuation, but the calculated safe payload at this altitude only allows two people per lift with a proper power margin. Clouds are building fast, threatening to close the LZ.",
+        dialogues: [
+          { speaker: "Flying Officer Rakesh", avatar: AV.foRakesh, text: "Dhruv, that cloud bank is moving in fast - if we don't take everyone now, we might not get a second trip in today." },
+          { speaker: "Yash (Spotter Aircraft, Radio)", avatar: AV.yashADC, text: "Dhruv, I know the weather's a real worry, but that payload number came from the same chart that got us up here safely." },
+          { speaker: "Dhruv (You)", avatar: AV.dhruvAF, text: "Taking everyone in one lift would mean flying well past what the chart says we can safely carry at this altitude..." }
+        ],
+        choices: [
+          { text: "Stick to the calculated safe payload of two per trip and plan a second lift, even with the risk the weather may close in before it happens", correct: true,
+            skills: { technical: 2, communication: 1, problemSolving: 1, leadership: 3 },
+            reaction: { speaker: "Wing Cmdr Arora (Debrief note)", avatar: AV.wingCmdrArora, text: "That was the harder call, Dhruv, and the right one. Overloading past the power margin up there risks losing the hover entirely - with everyone aboard. Managing the weather risk through communication is always safer than breaking the payload limit." } },
+          { text: "Overload slightly beyond the calculated limit to evacuate all five survivors in a single lift before the weather closes the LZ", correct: false,
+            skills: { technical: 1, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Wing Cmdr Arora (Debrief note)", avatar: AV.wingCmdrArora, text: "Dhruv, that chart number exists precisely for moments like this. Going over it doesn't just risk a rough landing - up there, it can mean losing the hover altogether, with everyone still aboard." } }
+        ],
+        betterAdvice: "A calculated safe payload at high altitude should never be exceeded to save time, even under weather pressure - losing hover capability with survivors aboard is a far greater risk than managing a second trip."
+      },
+
+      // ---------- EPISODE 5 ----------
+      {
+        location: "Relay Through the Valley",
+        bgImage: "https://images.pexels.com/photos/19898942/pexels-photo-19898942.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "On the return flight with the first two survivors aboard, the valley walls block direct radio contact with base. Even Yash's relay signal from above starts to break up as Dhruv flies low through the pass.",
+        dialogues: [
+          { speaker: "Yash (Spotter Aircraft, Radio - breaking up)", avatar: AV.yashADC, text: "Dhruv... signal's patchy down there... stick to the... briefed track..." },
+          { speaker: "Flying Officer Rakesh", avatar: AV.foRakesh, text: "We could climb a bit to get a clearer signal to base, Dhruv, this silence is unsettling." },
+          { speaker: "Dhruv (You)", avatar: AV.dhruvAF, text: "Climbing might fix the radio, but it also means leaving the safe route we planned before we even took off..." }
+        ],
+        choices: [
+          { text: "Stay on the pre-briefed safe track through the valley and report position at each planned checkpoint, rather than deviating to chase a stronger signal", correct: true,
+            skills: { technical: 1, communication: 2, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Wing Cmdr Arora (Debrief note)", avatar: AV.wingCmdrArora, text: "Right instinct, Dhruv. A known safe route with a temporary silence beats an unplanned climb chasing a signal in mountainous terrain. You re-established contact exactly where the plan said you would." } },
+          { text: "Climb out of the valley immediately to regain a stronger signal to base, even though it means leaving the briefed route", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Wing Cmdr Arora (Debrief note)", avatar: AV.wingCmdrArora, text: "Dhruv, chasing a radio signal off the briefed track in mountain terrain trades a manageable problem for an unknown one. A short silence is far safer than an unplanned deviation up here." } }
+        ],
+        betterAdvice: "A temporary loss of radio contact in mountainous terrain is safer than deviating from a pre-briefed route to chase a stronger signal - trust the plan and re-establish contact at the next known checkpoint."
+      }
+    ]
+  },
+
+  // ==================================================
+  // STORY 20: DEFENCE (ARMY) - "The Last Convoy"
+  // Characters: Colonel Ranawat (mentor), Major Tara Bisht, Dev
+  // (best friend, Signals Officer), Yuvraj (You)
+  // NOTE: Written directly in English (not Hinglish).
+  // ==================================================
+  defence: {
+    title: "The Last Convoy",
+    genre: "Defence",
+    youDefaultName: "Yuvraj",
+    role: "Army Officer",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=YuvrajArmyCadet&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=YuvrajArmyCadet&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Race the closing winter as a young Army officer, repairing a landslide-hit supply road to a forward border post before the pass shuts for the season - with your Academy friend on the radio keeping the convoy connected.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "The Road Is Gone",
+        bgImage: "https://images.pexels.com/photos/13742003/pexels-photo-13742003.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A landslide has torn away part of the only supply road to a forward border post. With winter closing the pass in two days, Yuvraj's team must assess whether the remaining road edge can still carry vehicles.",
+        dialogues: [
+          { speaker: "Dev (Signals, Radio)", avatar: AV.devSignals, text: "Yuvraj, yaar, command wants a status update by evening - the post's supplies run out if this convoy doesn't get through before the pass closes." },
+          { speaker: "Major Tara", avatar: AV.majorTara, text: "The remaining edge looks intact, Yuvraj, but we don't know how deep the damage runs underneath." },
+          { speaker: "Yuvraj (You)", avatar: AV.yuvraj, text: "It might hold a jeep and still give way under a loaded truck - we won't know just by looking at it." }
+        ],
+        choices: [
+          { text: "Send a light reconnaissance vehicle across first to test the edge's stability before committing any of the heavier supply trucks", correct: true,
+            skills: { technical: 3, communication: 0, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Major Tara", avatar: AV.majorTara, text: "Good call, Yuvraj. Ground that holds a light vehicle can still fail under a loaded truck - testing light to heavy is the only way to know what that edge can actually take." } },
+          { text: "Send the heaviest supply truck across first, since time is short and a smaller test vehicle would just cost precious hours", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Major Tara", avatar: AV.majorTara, text: "Yuvraj, if that edge fails, we want to lose a jeep finding out - not our heaviest loaded truck. Testing light before heavy costs minutes, not the whole convoy." } }
+        ],
+        betterAdvice: "Ground of unknown stability should always be tested with a lighter vehicle before committing heavier loads - what holds a jeep may still fail under a loaded truck."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Racing the Weather",
+        bgImage: "https://images.pexels.com/photos/10854007/pexels-photo-10854007.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The repair work is behind schedule as daylight fades, with snow forecast to close the pass by tomorrow evening. This is also a sensitive sector where bright lighting at night could give away the post's exact position.",
+        dialogues: [
+          { speaker: "Major Tara", avatar: AV.majorTara, text: "We could rig floodlights and push through the night at full pace, Yuvraj - we'd finish hours sooner." },
+          { speaker: "Dev (Signals, Radio)", avatar: AV.devSignals, text: "Yuvraj, command's reminder came through again - no bright lighting near this sector after dark, sensitive terrain, you know the standing order." },
+          { speaker: "Yuvraj (You)", avatar: AV.yuvraj, text: "We need the hours, but that order exists for a reason too..." }
+        ],
+        choices: [
+          { text: "Continue work overnight at a slower, careful pace using only shielded, low lighting, respecting the blackout discipline for this sector", correct: true,
+            skills: { technical: 1, communication: 1, problemSolving: 1, leadership: 3 },
+            reaction: { speaker: "Major Tara", avatar: AV.majorTara, text: "Right decision, Yuvraj. In a sensitive sector, discipline isn't something we trade away for a few extra hours, no matter how tight the deadline feels." } },
+          { text: "Rig full floodlights and push the repair at maximum pace overnight, since finishing before the pass closes matters more tonight", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Major Tara", avatar: AV.majorTara, text: "Yuvraj, that standing order wasn't a suggestion. Lighting up this sector for speed could cost us far more than the hours we saved." } }
+        ],
+        betterAdvice: "Security discipline in a sensitive sector should never be traded for speed, even under a hard deadline - work at whatever pace stays within it, not the fastest pace possible."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Loading the Convoy",
+        bgImage: "https://images.pexels.com/photos/13742003/pexels-photo-13742003.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The bypass is patched by morning. The engineers say the repair 'should hold', and the convoy of supply trucks is ready to cross the freshly repaired section.",
+        dialogues: [
+          { speaker: "Major Tara", avatar: AV.majorTara, text: "Engineers signed off on it, Yuvraj - should we send the convoy across together and make up some lost time?" },
+          { speaker: "Dev (Signals, Radio)", avatar: AV.devSignals, text: "Yuvraj, post says they're down to their last day of rations. Every hour saved on this crossing counts for them." },
+          { speaker: "Yuvraj (You)", avatar: AV.yuvraj, text: "'Should hold' isn't the same as tested - and that ground hasn't carried a single vehicle yet." }
+        ],
+        choices: [
+          { text: "Cross one vehicle at a time with spacing, watching the repaired surface for movement or cracking before waving the next one across", correct: true,
+            skills: { technical: 3, communication: 0, problemSolving: 1, leadership: 1 },
+            reaction: { speaker: "Major Tara", avatar: AV.majorTara, text: "Exactly right, Yuvraj. 'Should hold' is an estimate, not a test - freshly repaired ground needs to prove itself vehicle by vehicle before we trust it with the whole convoy at once." } },
+          { text: "Send the full convoy across together to save time, trusting the engineers' assessment that the repair should hold", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Major Tara", avatar: AV.majorTara, text: "Yuvraj, 'should hold' was never a guarantee. If that ground gives way under the third truck, we lose far more than the time we were trying to save." } }
+        ],
+        betterAdvice: "An engineer's assessment that repaired ground 'should hold' is an estimate, not a test - always prove freshly repaired ground vehicle by vehicle rather than trusting it with a full convoy at once."
+      },
+
+      // ---------- EPISODE 4 ----------
+      {
+        location: "What Goes First",
+        bgImage: "https://images.pexels.com/photos/10854007/pexels-photo-10854007.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The narrow bypass can only safely carry a limited weight per crossing, meaning not everything can go across today. The post urgently needs both fuel for heating and medical supplies, but only one can go in this first limited crossing.",
+        dialogues: [
+          { speaker: "Dev (Signals, Radio)", avatar: AV.devSignals, text: "Yuvraj, post says temperatures are dropping fast tonight - they're worried about the heating fuel running out before the next crossing." },
+          { speaker: "Major Tara", avatar: AV.majorTara, text: "But their medical stock is thin too, Yuvraj, and cold weather makes injuries and illness more likely, not less." },
+          { speaker: "Yuvraj (You)", avatar: AV.yuvraj, text: "We genuinely can't send both today - whichever I choose, someone at that post has to wait." }
+        ],
+        choices: [
+          { text: "Prioritise medical and emergency supplies on the first crossing, and send the fuel on the next trip as soon as the bypass allows", correct: true,
+            skills: { technical: 0, communication: 1, problemSolving: 1, leadership: 3 },
+            reaction: { speaker: "Major Tara", avatar: AV.majorTara, text: "The harder call, Yuvraj, but the right one. Fuel shortage is serious but can be managed with rationing for a day - a medical emergency with no supplies on hand cannot wait for a second crossing." } },
+          { text: "Prioritise fuel on the first crossing since the post's heating is the most urgent need in this cold, and send medical supplies next", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Major Tara", avatar: AV.majorTara, text: "Yuvraj, cold is uncomfortable, but a medical need with empty shelves is dangerous. If something urgent comes up at the post tonight, we'll wish we'd sent the medical stock first." } }
+        ],
+        betterAdvice: "When transport capacity is limited, medical and emergency supplies should always take priority over comfort or operational supplies like fuel, since medical needs can turn urgent without warning."
+      },
+
+      // ---------- EPISODE 5 ----------
+      {
+        location: "Post Secured Before the Snow",
+        bgImage: "https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The convoy reaches the border post just as the first snow of the season begins to fall, sealing the pass behind them. Back at battalion headquarters, Yuvraj now has to write the after-action report on the crossing.",
+        dialogues: [
+          { speaker: "Colonel Ranawat", avatar: AV.colRanawat, text: "Convoy's in, Yuvraj, post is stocked for the winter. Well managed, all of it." },
+          { speaker: "Dev (Signals, Radio)", avatar: AV.devSignals, text: "Yuvraj, that repaired section is going to need proper engineering work before next season - your call on how much of that goes in the report." },
+          { speaker: "Major Tara", avatar: AV.majorTara, text: "It got the job done, Yuvraj, but it was closer than the report needs to say, if you'd rather keep it simple." }
+        ],
+        choices: [
+          { text: "File a detailed, honest report on the road's true condition and how close the crossing came to failing, so the engineers can fix it properly before next season", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 0, leadership: 2 },
+            reaction: { speaker: "Colonel Ranawat", avatar: AV.colRanawat, text: "That's the report I want to see, Yuvraj. An honest account protects the next crew who has to use that road, and it protects the judgment behind every call you made this week too." } },
+          { text: "Keep the report simple and downplay how risky the crossing actually was, to avoid drawing extra scrutiny onto the operation", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Colonel Ranawat", avatar: AV.colRanawat, text: "Yuvraj, a softened report doesn't make that road any safer - it just means the next team finds out the hard way, without the warning you could have given them." } }
+        ],
+        betterAdvice: "An honest, detailed report on a risky operation protects the next team that relies on the same ground or plan - downplaying the risk to avoid scrutiny only removes a warning someone else needed."
       }
     ]
   }
