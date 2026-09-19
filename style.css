@@ -297,6 +297,7 @@ body {
 }
 
 .poster-card {
+  position: relative;
   min-width: 220px;
   max-width: 220px;
   background: #1f1f1f;
@@ -305,6 +306,89 @@ body {
   cursor: pointer;
   transition: transform 0.25s;
   flex-shrink: 0;
+}
+
+/* Small "Trending" / "New" pill shown on top of a poster image */
+.poster-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  z-index: 2;
+}
+.poster-badge.trending { background: #e50914; color: #fff; }
+.poster-badge.new-release { background: #2bb673; color: #fff; }
+
+/* Rank number used in the Trending Now row (Netflix Top 10 style) */
+.trend-rank {
+  position: absolute;
+  bottom: -6px;
+  left: -4px;
+  font-size: 64px;
+  font-weight: 800;
+  color: #000;
+  -webkit-text-stroke: 2px #4d4d4d;
+  line-height: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* =========================================================
+   FAQ ACCORDION (below the story rows)
+   ========================================================= */
+.faq-section {
+  padding: 10px 30px 10px 30px;
+}
+.faq-section h2 {
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+.faq-item {
+  background: #2a2a2a;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+.faq-question .faq-icon {
+  font-size: 24px;
+  font-weight: 300;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 20px;
+  color: #cfcfcf;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding-bottom: 18px;
+}
+@media (max-width: 600px) {
+  .faq-section { padding: 10px 16px; }
+  .trend-rank { font-size: 46px; }
 }
 .poster-card:hover {
   transform: scale(1.06);
@@ -1531,3 +1615,131 @@ footer {
 }
 .journey-stat-box .num { font-size: 30px; font-weight: bold; color: #b33939; }
 .journey-stat-box .label { font-size: 12px; color: #999; margin-top: 4px; }
+
+
+/* ===============================================
+   SETTINGS - dropdown button + Settings page
+   =============================================== */
+
+/* "Settings" button inside the account dropdown (Logout stays red) */
+.account-menu button.settings-btn {
+  background: #333 !important;
+  margin-bottom: 6px;
+}
+.account-menu button.settings-btn:hover {
+  background: #4a4a4a !important;
+}
+
+.settings-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid #2a2a2a;
+}
+.settings-row:first-of-type {
+  border-top: none;
+}
+.settings-row-text {
+  flex: 1 1 240px;
+}
+.settings-row-text strong {
+  display: block;
+  font-size: 15px;
+}
+.settings-row-text span {
+  font-size: 12px;
+  color: #999;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 380px;
+  margin-bottom: 22px;
+}
+.settings-form label {
+  font-size: 13px;
+  color: #ccc;
+}
+.settings-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #262626;
+  color: white;
+  font-size: 14px;
+}
+.settings-input:focus {
+  outline: none;
+  border-color: #b33939;
+}
+
+.s-btn {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #b33939;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.s-btn:hover {
+  background: #8f2d2d;
+  transform: scale(1.03);
+}
+.s-btn.secondary {
+  background: #333;
+}
+.s-btn.secondary:hover {
+  background: #4a4a4a;
+}
+.s-btn.danger {
+  background: transparent;
+  border: 1px solid #b33939;
+  color: #ff6b6b;
+}
+.s-btn.danger:hover {
+  background: #b33939;
+  color: white;
+}
+
+.s-msg {
+  font-size: 13px;
+  min-height: 18px;
+  margin-top: 2px;
+}
+.s-msg.ok  { color: #4cd964; }
+.s-msg.err { color: #ff6b6b; }
+
+.settings-sub {
+  font-size: 15px;
+  margin: 6px 0 12px 0;
+  color: #ddd;
+}
+.account-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.account-info div {
+  background: #141414;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.account-info small {
+  display: block;
+  color: #999;
+  font-size: 11px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.danger-zone {
+  border: 1px solid #5a2222;
+}

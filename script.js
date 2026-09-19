@@ -347,3 +347,148 @@ function getAchievements() {
     }
   ];
 }
+
+
+// =====================================================
+// SETTINGS HELPERS (used by settings.html)
+// Everything the Settings page can change or clear lives here,
+// so settings.html only has to call these functions and show
+// the message they return. Same LocalStorage-only approach as
+// the rest of the project (see the note above the signup code).
+// =====================================================
+
+// Same rules as the Sign Up form on index.html
+const GMAIL_PATTERN = /^[^\s@]+@gmail\.com$/;
+const PASSWORD_PATTERN = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/;
+const PASSWORD_RULE_TEXT =
+  "Password must be at least 8 characters, with 1 capital letter, 1 number, and 1 special character (e.g. @, #, $, %, !, &, *).";
+
+function saveAllUsers(users) {
+  localStorage.setItem("careerflix_users", JSON.stringify(users));
+}
+
+// Returns { username, email } for the logged-in user, or null if the
+// user is browsing as a Guest (Guests have no saved account).
+function getCurrentAccount() {
+  const username = getUserName();
+  const users = getAllUsers();
+  if (!users[username]) {
+    return null;
+  }
+  return { username: username, email: users[username].email };
+}
+
+// Every settings function below returns { success: true/false, message: "..." }
+function changeUsername(newName) {
+  newName = newName.trim();
+  const account = getCurrentAccount();
+
+  if (!account) return { success: false, message: "No account found. Please login again." };
+  if (newName === "") return { success: false, message: "Username cannot be empty." };
+  if (newName === account.username) return { success: false, message: "That is already your username." };
+
+  const users = getAllUsers();
+  if (users[newName]) return { success: false, message: "This username is already taken." };
+
+  users[newName] = users[account.username];   // move the account to the new name
+  delete users[account.username];
+  saveAllUsers(users);
+  saveUserName(newName);
+  return { success: true, message: "Username updated." };
+}
+
+function changeEmail(newEmail) {
+  newEmail = newEmail.trim();
+  const account = getCurrentAccount();
+
+  if (!account) return { success: false, message: "No account found. Please login again." };
+  if (!GMAIL_PATTERN.test(newEmail)) {
+    return { success: false, message: "Please use a valid Gmail address (must end with @gmail.com)." };
+  }
+
+  const users = getAllUsers();
+  users[account.username].email = newEmail;
+  saveAllUsers(users);
+  return { success: true, message: "Email updated." };
+}
+
+function changePassword(currentPassword, newPassword, confirmPassword) {
+  const account = getCurrentAccount();
+  if (!account) return { success: false, message: "No account found. Please login again." };
+
+  const users = getAllUsers();
+  if (users[account.username].password !== currentPassword) {
+    return { success: false, message: "Current password is incorrect." };
+  }
+  if (!PASSWORD_PATTERN.test(newPassword)) {
+    return { success: false, message: PASSWORD_RULE_TEXT };
+  }
+  if (newPassword !== confirmPassword) {
+    return { success: false, message: "New password and confirm password do not match." };
+  }
+  if (newPassword === currentPassword) {
+    return { success: false, message: "New password must be different from the current one." };
+  }
+
+  users[account.username].password = newPassword;
+  saveAllUsers(users);
+  return { success: true, message: "Password changed successfully." };
+}
+
+// ---------- Clear history / progress ----------
+
+// Removes the "Continue Exploring" card from the dashboard
+function clearLastPlayed() {
+  localStorage.removeItem("careerflix_lastplayed");
+}
+
+// Empties "My List"
+function clearWishlist() {
+  localStorage.removeItem("careerflix_wishlist");
+}
+
+// Clears completed stories, choice count and skill points
+// (this also locks all achievements again, because badges are
+// worked out from these three values)
+function clearStoryProgress() {
+  localStorage.removeItem("careerflix_completed");
+  localStorage.removeItem("careerflix_choicecount");
+  localStorage.removeItem("careerflix_skills");
+}
+
+// Clears everything above in one go
+function clearAllProgress() {
+  clearLastPlayed();
+  clearWishlist();
+  clearStoryProgress();
+}
+
+// Deletes the account itself plus all saved data, then the caller
+// should send the user back to the login page.
+function deleteAccount() {
+  const account = getCurrentAccount();
+  if (account) {
+    const users = getAllUsers();
+    delete users[account.username];
+    saveAllUsers(users);
+  }
+  clearAllProgress();
+  localStorage.removeItem("careerflix_language");
+  localStorage.removeItem("careerflix_username");
+}
+
+// ---------- Preferences ----------
+
+// Default story language ("hinglish", "hindi" or "english").
+// story.html uses this as the pre-selected language.
+function getPreferredLanguage() {
+  const lang = localStorage.getItem("careerflix_language");
+  if (lang === "hindi" || lang === "english" || lang === "hinglish") {
+    return lang;
+  }
+  return "hinglish";
+}
+
+function savePreferredLanguage(lang) {
+  localStorage.setItem("careerflix_language", lang);
+}

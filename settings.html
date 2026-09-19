@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CareerFlix - Settings</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar">
+    <div class="logo">Career<span>Flix</span></div>
+
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link">Home</a>
+      <a href="mylist.html" class="nav-link">My List</a>
+      <a href="careerpedia.html" class="nav-link">Careerpedia</a>
+      <a href="funfacts.html" class="nav-link">Fun Facts</a>
+      <a href="profile.html" class="nav-link">My Profile</a>
+    </div>
+
+    <div class="account-area" onclick="toggleAccountMenu()">
+      <div class="account-circle" id="accountCircle">G</div>
+      <div class="account-menu" id="accountMenu">
+        <p id="accountName">Guest</p>
+        <button class="settings-btn" onclick="window.location.href='settings.html'">⚙ Settings</button>
+        <button onclick="logoutUser()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="profile-page">
+
+    <h1>⚙ Settings</h1>
+
+    <!-- ================= MANAGE ACCOUNT ================= -->
+    <section class="profile-section">
+      <h2>👤 Manage Account</h2>
+      <p class="section-hint">Update your username, email or password.</p>
+
+      <!-- Shown only when the user is browsing as a Guest -->
+      <p id="guestNote" class="section-hint" style="display:none; margin-bottom:0;">
+        You're using CareerFlix as a Guest, so there is no account to manage. Log out and use
+        <strong>Sign Up</strong> to create one.
+      </p>
+
+      <div id="accountBox" style="display:none;">
+        <div class="account-info">
+          <div><small>Username</small><span id="infoUsername"></span></div>
+          <div><small>Email</small><span id="infoEmail"></span></div>
+        </div>
+
+        <h3 class="settings-sub">Change Username</h3>
+        <div class="settings-form">
+          <label for="newUsername">New username</label>
+          <input type="text" id="newUsername" class="settings-input" placeholder="Enter new username" />
+          <div><button class="s-btn" onclick="handleChangeUsername()">Update Username</button></div>
+          <p class="s-msg" id="usernameMsg"></p>
+        </div>
+
+        <h3 class="settings-sub">Change Email</h3>
+        <div class="settings-form">
+          <label for="newEmail">New Gmail address</label>
+          <input type="email" id="newEmail" class="settings-input" placeholder="yourname@gmail.com" />
+          <div><button class="s-btn" onclick="handleChangeEmail()">Update Email</button></div>
+          <p class="s-msg" id="emailMsg"></p>
+        </div>
+
+        <h3 class="settings-sub">Change Password</h3>
+        <div class="settings-form" style="margin-bottom:0;">
+          <label for="currentPassword">Current password</label>
+          <input type="password" id="currentPassword" class="settings-input" />
+          <label for="newPassword">New password</label>
+          <input type="password" id="newPassword" class="settings-input" />
+          <label for="confirmPassword">Confirm new password</label>
+          <input type="password" id="confirmPassword" class="settings-input" />
+          <div><button class="s-btn" onclick="handleChangePassword()">Update Password</button></div>
+          <p class="s-msg" id="passwordMsg"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PREFERENCES ================= -->
+    <section class="profile-section">
+      <h2>🌐 Preferences</h2>
+      <p class="section-hint">Choose the language stories should open in by default. You can still change it before starting any story.</p>
+
+      <div class="language-buttons">
+        <button class="lang-btn" id="langHinglishBtn" onclick="chooseLanguage('hinglish')">Hinglish</button>
+        <button class="lang-btn" id="langHindiBtn" onclick="chooseLanguage('hindi')">हिंदी</button>
+        <button class="lang-btn" id="langEnglishBtn" onclick="chooseLanguage('english')">English</button>
+      </div>
+      <p class="s-msg" id="languageMsg"></p>
+    </section>
+
+    <!-- ================= CLEAR HISTORY & DATA ================= -->
+    <section class="profile-section">
+      <h2>🕘 Clear History &amp; Data</h2>
+      <p class="section-hint">Choose exactly what you want to reset. These actions cannot be undone.</p>
+
+      <div class="settings-row">
+        <div class="settings-row-text">
+          <strong>Clear "Continue Exploring"</strong>
+          <span>Removes the last played story card from the Home page. <em id="sumLastPlayed"></em></span>
+        </div>
+        <button class="s-btn secondary" onclick="handleClear('lastplayed')">Clear</button>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-text">
+          <strong>Empty My List</strong>
+          <span>Removes every story you saved. <em id="sumSaved"></em></span>
+        </div>
+        <button class="s-btn secondary" onclick="handleClear('wishlist')">Clear</button>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-text">
+          <strong>Reset Story Progress</strong>
+          <span>Clears completed stories, choices made, skill points and achievements. <em id="sumProgress"></em></span>
+        </div>
+        <button class="s-btn secondary" onclick="handleClear('progress')">Reset</button>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-text">
+          <strong>Clear Everything</strong>
+          <span>Does all of the above at once. Your account stays.</span>
+        </div>
+        <button class="s-btn danger" onclick="handleClear('all')">Clear All</button>
+      </div>
+
+      <p class="s-msg" id="clearMsg"></p>
+    </section>
+
+    <!-- ================= DELETE ACCOUNT ================= -->
+    <section class="profile-section danger-zone" id="dangerSection" style="display:none;">
+      <h2>⚠ Delete Account</h2>
+      <p class="section-hint">
+        This permanently deletes your account and all saved progress on this browser. Enter your password to confirm.
+      </p>
+      <div class="settings-form" style="margin-bottom:0;">
+        <input type="password" id="deletePassword" class="settings-input" placeholder="Your password" />
+        <div><button class="s-btn danger" onclick="handleDeleteAccount()">Delete My Account</button></div>
+        <p class="s-msg" id="deleteMsg"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>CareerFlix &copy; 2026 | Interactive Career Discovery Platform</footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Same page load pattern as the other pages: show the user's
+    // name/initial in the top-right account circle, then fill the page.
+    window.onload = function () {
+      updateNavAccount();
+      renderAccount();
+      highlightLanguage();
+      renderDataSummary();
+    };
+
+    function updateNavAccount() {
+      const name = getUserName();
+      document.getElementById("accountName").innerText = name;
+      document.getElementById("accountCircle").innerText = name.charAt(0).toUpperCase();
+    }
+
+    // Show/hide the small account dropdown menu
+    function toggleAccountMenu() {
+      const menu = document.getElementById("accountMenu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // Small helper: shows a green (success) or red (error) message
+    // under a section using the { success, message } result object.
+    function showMsg(elementId, result) {
+      const el = document.getElementById(elementId);
+      el.className = "s-msg " + (result.success ? "ok" : "err");
+      el.textContent = result.message;
+    }
+
+    // ---------------------------------------------------
+    // MANAGE ACCOUNT
+    // ---------------------------------------------------
+    function renderAccount() {
+      const account = getCurrentAccount();   // from script.js (null for Guests)
+
+      document.getElementById("guestNote").style.display = account ? "none" : "block";
+      document.getElementById("accountBox").style.display = account ? "block" : "none";
+      document.getElementById("dangerSection").style.display = account ? "block" : "none";
+
+      if (account) {
+        document.getElementById("infoUsername").textContent = account.username;
+        document.getElementById("infoEmail").textContent = account.email;
+      }
+    }
+
+    function handleChangeUsername() {
+      const input = document.getElementById("newUsername");
+      const result = changeUsername(input.value);
+      showMsg("usernameMsg", result);
+      if (result.success) {
+        input.value = "";
+        updateNavAccount();
+        renderAccount();
+      }
+    }
+
+    function handleChangeEmail() {
+      const input = document.getElementById("newEmail");
+      const result = changeEmail(input.value);
+      showMsg("emailMsg", result);
+      if (result.success) {
+        input.value = "";
+        renderAccount();
+      }
+    }
+
+    function handleChangePassword() {
+      const result = changePassword(
+        document.getElementById("currentPassword").value,
+        document.getElementById("newPassword").value,
+        document.getElementById("confirmPassword").value
+      );
+      showMsg("passwordMsg", result);
+      if (result.success) {
+        document.getElementById("currentPassword").value = "";
+        document.getElementById("newPassword").value = "";
+        document.getElementById("confirmPassword").value = "";
+      }
+    }
+
+    // ---------------------------------------------------
+    // PREFERENCES - default story language
+    // ---------------------------------------------------
+    function highlightLanguage() {
+      const lang = getPreferredLanguage();
+      document.getElementById("langHinglishBtn").classList.toggle("active", lang === "hinglish");
+      document.getElementById("langHindiBtn").classList.toggle("active", lang === "hindi");
+      document.getElementById("langEnglishBtn").classList.toggle("active", lang === "english");
+    }
+
+    function chooseLanguage(lang) {
+      savePreferredLanguage(lang);
+      highlightLanguage();
+      showMsg("languageMsg", { success: true, message: "Default story language saved." });
+    }
+
+    // ---------------------------------------------------
+    // CLEAR HISTORY & DATA
+    // ---------------------------------------------------
+
+    // Shows small live counts next to each clear option
+    function renderDataSummary() {
+      document.getElementById("sumLastPlayed").textContent =
+        getLastPlayed() ? "(1 story remembered)" : "(nothing to clear)";
+
+      const saved = getWishlist().length;
+      document.getElementById("sumSaved").textContent = "(" + saved + " saved)";
+
+      document.getElementById("sumProgress").textContent =
+        "(" + getCompletedStories().length + " completed, " + getChoiceCount() + " choices)";
+    }
+
+    function handleClear(kind) {
+      const questions = {
+        lastplayed: "Clear your \"Continue Exploring\" history?",
+        wishlist:   "Remove all stories from My List?",
+        progress:   "Reset all story progress, skill points and achievements?",
+        all:        "Clear ALL history, My List and story progress? This cannot be undone."
+      };
+
+      if (!confirm(questions[kind])) return;
+
+      if (kind === "lastplayed") clearLastPlayed();
+      if (kind === "wishlist")   clearWishlist();
+      if (kind === "progress")   clearStoryProgress();
+      if (kind === "all")        clearAllProgress();
+
+      renderDataSummary();
+      showMsg("clearMsg", { success: true, message: "Done - your data has been cleared." });
+    }
+
+    // ---------------------------------------------------
+    // DELETE ACCOUNT
+    // ---------------------------------------------------
+    function handleDeleteAccount() {
+      const account = getCurrentAccount();
+      if (!account) return;
+
+      const typed = document.getElementById("deletePassword").value;
+      if (getAllUsers()[account.username].password !== typed) {
+        showMsg("deleteMsg", { success: false, message: "Incorrect password." });
+        return;
+      }
+
+      if (!confirm("Delete your account permanently? All your progress will be lost.")) return;
+
+      deleteAccount();                        // from script.js
+      window.location.href = "index.html";    // back to login
+    }
+  </script>
+
+</body>
+</html>

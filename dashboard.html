@@ -28,11 +28,12 @@
       oninput="filterStories()"
     />
 
-    <!-- Simple account icon with a dropdown (Logout) -->
+    <!-- Simple account icon with a dropdown (Settings + Logout) -->
     <div class="account-area" onclick="toggleAccountMenu()">
       <div class="account-circle" id="accountCircle">G</div>
       <div class="account-menu" id="accountMenu">
         <p id="accountName">Guest</p>
+        <button class="settings-btn" onclick="window.location.href='settings.html'">⚙ Settings</button>
         <button onclick="logoutUser()">Logout</button>
       </div>
     </div>
@@ -65,6 +66,84 @@
     <section class="poster-section" id="continueSection" style="display:none;">
       <h2 class="row-title">Continue Exploring</h2>
       <div class="poster-row" id="continueRow"></div>
+    </section>
+
+    <!-- TRENDING NOW ROW -->
+    <section class="poster-section">
+      <h2 class="row-title">🔥 Trending Now</h2>
+      <div class="poster-row">
+        <div class="poster-card" data-title="Pulse Point Medical Trending" onclick="openStoryModal('doctor')">
+          <span class="trend-rank">1</span>
+          <img src="https://images.pexels.com/photos/16571732/pexels-photo-16571732.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Pulse Point" />
+          <div class="poster-info">
+            <h3>Pulse Point</h3>
+            <p>5 Episodes • Medical</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Cleared for Takeoff Aviation Trending" onclick="openStoryModal('pilot')">
+          <span class="trend-rank">2</span>
+          <img src="https://images.pexels.com/photos/4269510/pexels-photo-4269510.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Cleared for Takeoff" />
+          <div class="poster-info">
+            <h3>Cleared for Takeoff</h3>
+            <p>5 Episodes • Aviation</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Code Red IT Trending" onclick="openStoryModal('it')">
+          <span class="trend-rank">3</span>
+          <img src="https://images.pexels.com/photos/12899156/pexels-photo-12899156.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Code Red" />
+          <div class="poster-info">
+            <h3>Code Red</h3>
+            <p>5 Episodes • IT</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="The Investigation Police Trending" onclick="openStoryModal('detective')">
+          <span class="trend-rank">4</span>
+          <img src="https://images.pexels.com/photos/10464475/pexels-photo-10464475.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The Investigation" />
+          <div class="poster-info">
+            <h3>The Investigation</h3>
+            <p>5 Episodes • Police</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="The Final Over Sports Trending" onclick="openStoryModal('cricketer')">
+          <span class="trend-rank">5</span>
+          <img src="https://images.pexels.com/photos/29881319/pexels-photo-29881319.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The Final Over" />
+          <div class="poster-info">
+            <h3>The Final Over</h3>
+            <p>5 Episodes • Sports</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST RELEASES ROW -->
+    <section class="poster-section">
+      <h2 class="row-title">🆕 Latest Releases</h2>
+      <div class="poster-row">
+        <div class="poster-card" data-title="Wings of Honour Defence New" onclick="openStoryModal('airforce')">
+          <span class="poster-badge new-release">NEW</span>
+          <img src="https://images.pexels.com/photos/30698431/pexels-photo-30698431.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Wings of Honour" />
+          <div class="poster-info">
+            <h3>Wings of Honour</h3>
+            <p>5 Episodes • Defence</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="The Last Convoy Defence New" onclick="openStoryModal('defence')">
+          <span class="poster-badge new-release">NEW</span>
+          <img src="https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The Last Convoy" />
+          <div class="poster-info">
+            <h3>The Last Convoy</h3>
+            <p>5 Episodes • Defence</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Firewall IT Cybersecurity New" onclick="openStoryModal('cybersecurity')">
+          <span class="poster-badge new-release">NEW</span>
+          <img src="https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Firewall" />
+          <div class="poster-info">
+            <h3>Firewall</h3>
+            <p>5 Episodes • IT</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- AVIATION & DEFENCE GENRE ROW -->
@@ -274,6 +353,67 @@
       No stories found matching your search.
     </p>
 
+    <!-- ===================== FAQ SECTION ===================== -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What is CareerFlix?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          CareerFlix is an interactive, story-driven platform that lets you experience what different careers
+          are really like - from a doctor's first night shift to a pilot flying through a storm - by making
+          choices inside 5-episode stories and seeing how they play out.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Is CareerFlix free to use?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes. CareerFlix is completely free to explore - there's no subscription, payment, or sign-up fee
+          required to play any story.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Where can I use CareerFlix?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          CareerFlix runs right in your browser on any phone, tablet, or computer - no download or
+          installation needed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How does a story work?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Every story has 5 episodes. You play as the main character, make decisions at key moments, and see
+          how each choice changes the scene - just like a real day in that job.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Is CareerFlix good for students choosing a career?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes - it's built for exactly that. Instead of just reading a job description, students get to
+          "live" a realistic day in each career and see the real dilemmas and decisions that come with it.
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ===================== STORY PREVIEW MODAL ===================== -->
@@ -472,6 +612,13 @@
         '  <img src="' + info.img + '" alt="' + info.title + '" />' +
         '  <div class="poster-info"><h3>' + info.title + '</h3><p>Play again</p></div>' +
         '</div>';
+    }
+
+    // Opens/closes one FAQ accordion item when its question row is clicked.
+    function toggleFaq(questionEl) {
+      const item = questionEl.closest(".faq-item");
+      item.classList.toggle("open");
+      questionEl.querySelector(".faq-icon").innerText = item.classList.contains("open") ? "\u2715" : "+";
     }
 
     // Filters the poster cards on screen as the user types in the search box.

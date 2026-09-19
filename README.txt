@@ -1,6 +1,33 @@
 CAREERFLIX - CODE EXPLANATION (FOR VIVA)
 ==========================================
 
+LATEST UPDATE - DASHBOARD CLEAN-UP + SETTINGS PAGE
+--------------------------------------------------------------------------
+1. DASHBOARD (dashboard.html):
+   - Trending Now now shows only 5 stories (ranks 1-5).
+   - Latest Releases now shows only 3 stories and sits directly below
+     Trending Now instead of at the bottom of the page.
+   - The FAQ question "What career stories are available?" (the one
+     about how many stories there are) was removed.
+
+2. SETTINGS PAGE (settings.html - NEW PAGE):
+   - The top-right account dropdown (Dashboard, My List, Careerpedia,
+     Fun Facts) now has a "Settings" button above "Logout".
+   - Manage Account: change username, change Gmail (same @gmail.com
+     regex as signup), change password (needs current password + the
+     same 8 chars / capital / number / special-character rule).
+   - Preferences: default story language (Hinglish / Hindi / English).
+     story.html reads it with getPreferredLanguage() and pre-selects it.
+   - Clear History & Data: clear "Continue Exploring", empty My List,
+     reset story progress (completed stories, choices, skills,
+     achievements), or clear everything.
+   - Delete Account: needs the password, removes the account and all
+     saved data, then returns to the login page.
+   - All the logic lives in script.js under "SETTINGS HELPERS" - each
+     function returns { success, message } and settings.html only shows
+     that message. Everything is still LocalStorage only (no server).
+
+
 LATEST UPDATE - CAREERPEDIA (career glossary) + 4 NEW STORIES + SECURITY
 --------------------------------------------------------------------------
 1. CAREERPEDIA (careerpedia.html + careerpedia.js - NEW PAGE):

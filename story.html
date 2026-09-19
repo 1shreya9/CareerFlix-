@@ -159,9 +159,10 @@
       document.getElementById("maleAvatarPreview").src = currentStory.youAvatarMale;
       document.getElementById("femaleAvatarPreview").src = currentStory.youAvatarFemale;
 
-      // Let the user know if Hindi/English aren't available for this
-      // particular story yet (translations.js only covers some stories)
-      updateLanguageAvailabilityNote();
+      // Pre-select the language chosen in Settings (defaults to Hinglish).
+      // selectLanguage() also shows the "not translated yet" note if needed
+      // (translations.js only covers some stories).
+      selectLanguage(getPreferredLanguage());
     };
 
     // Called when the user clicks one of the two avatar options
@@ -247,15 +248,19 @@
     // ---------------------------------------------------
     // STORY INTRO SCREEN
     // Shown once, right after character setup, before Episode 1.
-    // Answers "who am I / what's happening" using the story's
-    // existing summary field (no new content needed per story).
+    // Uses the story's dedicated "narration" field - a short,
+    // scene-setting narrator passage written specifically for
+    // this story (place, mood, stakes) - instead of just reusing
+    // the poster's marketing summary. Falls back to summary if a
+    // story doesn't have one yet.
     // ---------------------------------------------------
     function showStoryIntro() {
       document.getElementById("introTitle").innerText = currentStory.title;
 
-      const personalizedSummary = personalizeText(currentStory.summary || "");
+      const narrationSource = currentStory.narration || currentStory.summary || "";
+      const personalizedNarration = personalizeText(narrationSource);
       document.getElementById("introText").innerText =
-        "You are " + playerName + ", a " + currentStory.role + ". " + personalizedSummary;
+        "You are " + playerName + ", a " + currentStory.role + ". " + personalizedNarration;
 
       document.getElementById("storyIntroScreen").style.display = "flex";
     }

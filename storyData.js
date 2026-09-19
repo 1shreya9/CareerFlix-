@@ -158,6 +158,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RiyaIntern&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/16571732/pexels-photo-16571732.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Step into the shoes of a young intern doctor and make life-or-death decisions in a busy hospital emergency ward.",
+    narration: "Raat ke 9 baje, Emergency Ward ki roshni tez aur clinical hai. Riya apni duty ke sirf kuch hafton baad hi yahan khadi hai, jab ek patient chest pain ke saath rush kiya jaata hai - aur agle kuch ghante uski training ki sabse badi pariksha ban jaate hain.",
 
     episodes: [
       // ---------- EPISODE 1 ----------
@@ -283,6 +284,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=ArjunPlayerF&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/29881319/pexels-photo-29881319.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Live the journey of an aspiring cricketer, from selection trials to a nail-biting final over.",
+    narration: "Dhool bhare maidan par district-level selection trial shuru hone wala hai. Arjun ke haath mein bat hai, dil mein dar aur ummeed dono - ek achha selection uski poori cricket career ka rukh badal sakta hai.",
 
     episodes: [
       // ---------- EPISODE 1 ----------
@@ -406,6 +408,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=YashInternF&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/12899156/pexels-photo-12899156.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Join a software team battling bugs, deadlines, and tricky teammates in your very first tech job.",
+    narration: "Yash apna laptop kholta hai office ke pehle din, ID card abhi bhi naya-naya chamak raha hai. Lekin welcome hote hi Ankit Sir ek purana, uljha hua bug uske haath thama dete hain - aur ghadi tick-tick karne lagti hai.",
 
     episodes: [
       {
@@ -519,6 +522,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AryanJuniorF&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/34817075/pexels-photo-34817075.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Take on your first case as a junior lawyer and navigate ethics, courtroom pressure, and client trust.",
+    narration: "Aryan ki mez par ek naya case file khuli hai. Client saamne baithi apni poori kahani sunaa rahi hai - aadhi sach, aadha darr mein chhupa - aur Aryan ko decide karna hai kis taraf khada hona hai.",
 
     episodes: [
       {
@@ -632,6 +636,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AnjaliTeacher&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/8423020/pexels-photo-8423020.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Step into a school classroom as a new teacher and handle real challenges - from noisy students to worried parents.",
+    narration: "Ghanti bajti hai aur Anjali pehli baar teacher ki tarah classroom mein kadam rakhti hai. Bachon ka shor kam hone ka naam nahi le raha - aur usse abhi pata chalna hai ki ek achhi teacher hona sirf syllabus padhaane se kahin zyada hai.",
 
     episodes: [
       {
@@ -745,6 +750,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=KabirEMTF&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/8943075/pexels-photo-8943075.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Race against time as an emergency paramedic, making split-second decisions that save lives.",
+    narration: "Sirens goonj rahe hain jab Kabir ki ambulance accident site par rukti hai. Bheed, chaos aur ek ghayal insaan - har second maayne rakhta hai, aur Kabir ke faisle hi is insaan ki zindagi tay karenge.",
 
     episodes: [
       {
@@ -858,6 +864,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=KiranFootballF&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/32190734/pexels-photo-32190734.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Chase your football dream from local trials all the way to a high-pressure penalty shootout.",
+    narration: "Local club ke trial ground par Kiran warm-up kar raha hai, dil zor se dhadak raha hai. Coach ki nazrein har player par hain - aur Kiran jaanta hai ki agle kuch minute uske football sapne ko zinda ya khatam kar sakte hain.",
 
     episodes: [
       {
@@ -971,6 +978,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=ArnavFounderF&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/7413915/pexels-photo-7413915.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Build a tech startup from scratch - pitch investors, manage a co-founder, and survive your first crisis.",
+    narration: "Ek chhoti si room mein, laptop screens ki roshni mein, Arnav aur Simran apna app idea final kar rahe hain. Yeh sirf ek idea nahi hai - yeh unka pehla kadam hai kuch bada banane ki taraf, aur har decision abhi se maayne rakhta hai.",
 
     episodes: [
       {
@@ -1084,6 +1092,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RohanCorporateF&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/5387258/pexels-photo-5387258.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Navigate high-stakes corporate contracts, mergers, and negotiations as a junior corporate lawyer.",
+    narration: "Conference room mein kaagzon ka dher hai - ek badi company merger deal, jiski har clause crores rupaye ka farak daal sakti hai. Rohan ko dhyaan se padhna hai, kyunki ek chhoti si galti bhi bahut bhaari pad sakti hai.",
 
     episodes: [
       {
@@ -1197,6 +1206,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=KaranProfessorF&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/8199142/pexels-photo-8199142.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Step into a university lecture hall as a new professor and win over a room full of skeptical students.",
+    narration: "Karan bade lecture hall mein khada hai, apna pehla lecture dene ke liye. Kai students apne phone mein khoe hain, kuch skeptical nazron se dekh rahe hain - aur Karan ko unka dhyaan jeetna hai, sirf ek period mein.",
 
     episodes: [
       {
@@ -1306,6 +1316,7 @@ const storiesData = {
     genre: "Police",
     posterImage: "https://images.pexels.com/photos/23368428/pexels-photo-23368428.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Put on the uniform as a rookie police officer and handle disputes, investigations, and tough moral choices on the beat.",
+    narration: "Training khatam ho chuki hai, aur Ishaan aaj pehli baar wardi pehan kar patrolling duty par nikal raha hai. Sadkon par asli duniya uska intezaar kar rahi hai - jahan har faisla sirf kanoon ka nahi, insaaniyat ka bhi sawaal hoga.",
     youDefaultName: "Ishaan",
     role: "Police Officer",
     youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshaanPolice&backgroundColor=cceeff",
@@ -1434,6 +1445,7 @@ const storiesData = {
     genre: "Government",
     posterImage: "https://images.pexels.com/photos/7821684/pexels-photo-7821684.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Join the civil services and navigate paperwork, corruption offers, angry citizens, and a real emergency response.",
+    narration: "Meher apni naukri ke pehle din tehsil office mein kadam rakhti hai. Bahar logon ki lambi line lagi hai, sab apni-apni pareshaaniyon ke saath - aur Meher ko sikhna hai ki system ke andar rehte hue bhi sahi kaam kaise kiya jaaye.",
     youDefaultName: "Meher",
     role: "Government Officer",
     youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=MeherOfficerM&backgroundColor=ccf0ff",
@@ -1562,6 +1574,7 @@ const storiesData = {
     genre: "Business",
     posterImage: "https://images.pexels.com/photos/6340621/pexels-photo-6340621.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Rise through the corporate world - close deals, survive month-end targets, and prove your integrity under pressure.",
+    narration: "Naina apni nayi job ke pehle hi din ek bade client meeting mein baithi hai. Table ke us paar baithe log sirf numbers nahi, uski capability bhi test kar rahe hain - aur is deal ka result uski poori career ki disha tay kar sakta hai.",
     youDefaultName: "Naina",
     role: "Business Executive",
     youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=NainaBusinessM&backgroundColor=ccffe6",
@@ -1691,6 +1704,7 @@ const storiesData = {
     role: "Nurse",
     posterImage: "https://images.pexels.com/photos/34185202/pexels-photo-34185202.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Care for patients around the clock as a hospital nurse, balancing compassion, urgency, and split-second judgment calls.",
+    narration: "Subah ka round shuru hota hai, aur Tanvi ward mein kai patients ke beech apni duty par nikal padti hai. Har bed ke peeche ek kahani hai - aur Tanvi ko compassion aur urgency, dono ke beech balance banana hai, har single minute.",
     youDefaultName: "Tanvi",
     youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=TanviNurseM&backgroundColor=d6e8ff",
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=TanviNurse&backgroundColor=fff0d6",
@@ -1819,6 +1833,7 @@ const storiesData = {
     role: "Basketball Player",
     posterImage: "https://images.pexels.com/photos/2874717/pexels-photo-2874717.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Chase a spot on the school basketball team through tryouts, tough defense, team conflict, and a last-second finals shot.",
+    narration: "Court par squeak karte shoes ki awaaz goonjti hai jab Zara school basketball team ke try-outs mein apni jagah banane ki koshish karti hai. Competition tough hai, aur Zara ko sirf skill nahi, apna dil bhi maidan par dikhana hoga.",
     youDefaultName: "Zara",
     youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=ZaraBballM&backgroundColor=ffd6d6",
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=ZaraBball&backgroundColor=d6e8ff",
@@ -1947,6 +1962,7 @@ const storiesData = {
     role: "Cybersecurity Analyst",
     posterImage: "https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Defend a company's systems from real cyber threats - investigate breaches, contain attacks, and stop phishing scams.",
+    narration: "Devansh apni naukri ke pehle hi din security office mein baitha hai jab screen par ek suspicious login alert flash hota hai. Kuch seconds mein usse decide karna hai - false alarm, ya company ke systems par ek asli hamla shuru ho chuka hai.",
     youDefaultName: "Devansh",
     youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=DevanshSecM&backgroundColor=d6ffe6",
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=DevanshSecF&backgroundColor=ffd6e6",
@@ -2075,6 +2091,7 @@ const storiesData = {
     role: "Detective",
     posterImage: "https://images.pexels.com/photos/10464475/pexels-photo-10464475.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Crack real cases as a crime branch detective - examine evidence, interrogate suspects, and follow the clues to the truth.",
+    narration: "Vivaan ki mez par ek naya case file rakhi jaati hai - ek showroom se jewellery chori. Sabooton ke tukde bikhre pade hain, aur Vivaan ko unhe jodkar sach tak pahunchna hai, ek kadam ek baar mein.",
     youDefaultName: "Vivaan",
     youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=VivaanDetectiveM&backgroundColor=d6f0ff",
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=VivaanDetectiveF&backgroundColor=ffd6ec",
@@ -2209,6 +2226,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AaravPilotTrainee&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/4269510/pexels-photo-4269510.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Fly as a young first officer through a real squall line, clear-air turbulence near the coffin corner, and a tight fuel decision - with your best friend from flight school on the radio in Ops.",
+    narration: "The briefing room is quiet except for the hum of weather radar screens. Aarav has flown this route before, but tonight a line of storms taller than the aircraft can climb is building right across it - and every choice from here on will test more than just flying skill.",
 
     episodes: [
       // ---------- EPISODE 1 ----------
@@ -2337,6 +2355,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=DhruvAirForceCadet&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/30698431/pexels-photo-30698431.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Fly a rescue helicopter into the mountains as a young Air Force pilot, racing an avalanche and thin high-altitude air to reach stranded survivors - with your Academy friend orbiting overhead as your only link to base.",
+    narration: "The alarm cuts through the airbase like a siren through fog - a distress call, trekkers trapped by an avalanche above 14,000 feet. Dhruv straps into the cockpit knowing that thin mountain air leaves no room for a single wasted second, or a single wrong call.",
 
     episodes: [
       // ---------- EPISODE 1 ----------
@@ -2462,6 +2481,7 @@ const storiesData = {
     youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=YuvrajArmyCadet&backgroundColor=ffd6e8",
     posterImage: "https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Race the closing winter as a young Army officer, repairing a landslide-hit supply road to a forward border post before the pass shuts for the season - with your Academy friend on the radio keeping the convoy connected.",
+    narration: "Winter is closing the mountain pass in two days, and the only road to a forward post has just been torn open by a landslide. Yuvraj stands at the broken edge with his team, knowing that whatever he decides here will decide whether the convoy - and the post beyond it - makes it through before the snow seals them off.",
 
     episodes: [
       // ---------- EPISODE 1 ----------
