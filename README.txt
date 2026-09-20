@@ -1,6 +1,92 @@
 CAREERFLIX - CODE EXPLANATION (FOR VIVA)
 ==========================================
 
+LATEST UPDATE - 4 CHOICES PER EPISODE + RANDOM ORDER
+--------------------------------------------------------------------------
+1. EVERY EPISODE NOW HAS 4 CHOICES (all 45 stories, 175 episodes):
+   - the original right choice and the original wrong choice
+     (still in storyData.js),
+   - one extra tempting-but-wrong choice, and
+   - one FUNNY choice (marked funny: true). The character's reaction
+     to it is also light-hearted but still explains the right approach.
+   The two new choices live in a new file, extraChoices.js. It has one
+   entry per story per episode, and applyExtraChoices() adds them to
+   storiesData when the page loads. story.html loads it right after
+   translations.js.
+
+2. RANDOM POSITION (story.html - showChoicesForEpisode): the buttons are
+   shuffled (Fisher-Yates) every time an episode is shown, so the right
+   answer can be the 1st, 2nd, 3rd or 4th button. Each button remembers
+   its original index, so score, skill points, reactions and translations
+   still work correctly.
+
+3. SCORING: extra and funny choices are always wrong (0 skill points)
+   and show the episode's "better advice" on the result screen.
+
+4. TRANSLATIONS: the doctor story (the only translated one) also has
+   Hindi and English text for its new choices (extraTranslations inside
+   extraChoices.js). Other stories use their original language, as before.
+
+5. TO ADD CHOICES FOR A NEW STORY: add an entry with the story id in
+   extraChoices.js - one [ wrong, funny ] pair for every episode.
+
+
+LATEST UPDATE - AVIATION & DEFENCE IN CAREERPEDIA + FUN FACTS
+--------------------------------------------------------------------------
+1. CAREERPEDIA (careerpedia.js + careerpedia.html): new category chip
+   "✈️ Aviation & Defence" with 9 terms - CPL, DGCA, Flight Hours, ATC,
+   NDA, SSB, CDS, Short Service Commission and NCC. They use the same
+   fields as the other terms (meaning, simple, list, why, imagine).
+
+2. FUN FACTS (funFacts.js + funfacts.html): 5 new role postcards, each
+   with 10 facts and a photo per fact - Commercial Pilot, Air Force
+   Officer, Army Officer, Air Traffic Controller and Naval Officer
+   (the role names match the "role" field of the 5 Aviation & Defence
+   stories in storyData.js). To add a role: add its facts in funFacts.js
+   and one line in the roleCards list in funfacts.html.
+
+
+LATEST UPDATE - 45 STORIES (5 PER GENRE) + DASHBOARD ORDER
+--------------------------------------------------------------------------
+1. DASHBOARD ORDER (dashboard.html): Trending Now -> Latest Releases ->
+   Continue Exploring -> genre rows. Latest Releases now shows 5 stories
+   (the newest ones: Tower Control, Steady Hands, Data Detective,
+   The Last Verdict, Green Warden).
+
+2. 25 NEW STORIES (storyData.js), 3 episodes each, so every genre now has
+   exactly 5 stories (9 genres x 5 = 45 stories):
+   - Aviation & Defence: Tower Control (atc), Deep Blue Watch (navy)
+   - IT: Data Detective (datascience), Launch Day (appdev)
+   - Sports: Photo Finish (athlete), Match Point (tennis)
+   - Medical: Steady Hands (surgeon), Right Dose (pharmacist)
+   - Law: The Last Verdict (judge), Voice for Many (legalaid),
+     Cyber Court (cyberlaw)
+   - Teaching: Every Child Counts (specialedu), The Principal's Office
+     (principal), The Toppers' Batch (coachmentor)
+   - Police: Trace the Signal (cybercell), Trace Evidence (forensic),
+     Night Beat (nightbeat)
+   - Government: Right on Track (railways), Green Warden (forestofficer),
+     Tax Trail (taxofficer), Green Channel (customs)
+   - Business: Market Open (finance), Balance Sheet (ca), Brand New
+     (marketing), People First (hr)
+   New avatars are added to the AV object at the top of storyData.js.
+   In the new stories the correct choice is NOT always the first button.
+
+3. WHERE A NEW STORY HAS TO BE ADDED (same 5 places for every story):
+   storyData.js (story + avatars), dashboard.html (poster card +
+   storyInfo), mylist.html (storyInfo), profile.html (storyDisplayInfo),
+   script.js (GENRE_STORY_IDS for badges).
+   storyInfo now has an "episodes" number, used by the popup
+   ("3 Episodes" / default 5).
+
+4. ACHIEVEMENTS (script.js): GENRE_STORY_IDS now lists all 5 stories of
+   every genre. Medical Expert, Sports Champion, Legal Eagle and Master
+   Educator need all 5 stories of that genre, and Completionist needs
+   all 45 (the number is read from ALL_STORY_IDS).
+
+5. FAQ: "Every story has 3 to 5 episodes."
+
+
 LATEST UPDATE - DASHBOARD CLEAN-UP + SETTINGS PAGE
 --------------------------------------------------------------------------
 1. DASHBOARD (dashboard.html):

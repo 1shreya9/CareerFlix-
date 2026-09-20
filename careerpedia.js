@@ -265,6 +265,52 @@ const careerpediaTerms = [
   { term: "Investigation", icon: "🕵️", category: "Police & Govt",
     meaning: "The systematic process of gathering facts and evidence to understand what happened in a case.",
     simple: "Carefully digging into a case to find out the truth.",
-    why: "Thorough investigation prevents wrongly accusing an innocent person." }
+    why: "Thorough investigation prevents wrongly accusing an innocent person." },
+
+  // ---------------- AVIATION & DEFENCE TERMS ----------------
+  { term: "CPL", icon: "🪪", category: "Aviation & Defence",
+    meaning: "Commercial Pilot Licence - the licence that allows a pilot to be paid to fly an aircraft. In India it is issued by the DGCA.",
+    simple: "The licence you need before an airline (or any company) can pay you to fly.",
+    list: ["Class 12 with Physics and Maths", "Around 200 hours of flying", "Medical fitness certificate", "Pass the DGCA ground exams"],
+    imagine: "You train at a flying school, log your flying hours, clear the exams and get your CPL. Now you can apply to airlines as a first officer." },
+
+  { term: "DGCA", icon: "🏛️", category: "Aviation & Defence",
+    meaning: "Directorate General of Civil Aviation - India's aviation regulator that gives pilot licences, approves aircraft and sets safety rules.",
+    simple: "The government body that decides who can fly, and which planes are safe to fly, in India.",
+    why: "Every pilot licence and every airline must follow DGCA rules." },
+
+  { term: "Flight Hours", icon: "⏱️", category: "Aviation & Defence",
+    meaning: "The total time a pilot has spent flying, recorded in a logbook.",
+    simple: "Your flying experience, counted in hours - the more you have, the more trusted you are.",
+    why: "Licences, airline jobs and promotions all depend on how many hours you have logged." },
+
+  { term: "ATC", icon: "🗼", category: "Aviation & Defence",
+    meaning: "Air Traffic Control - the service that guides aircraft on the ground and in the sky to keep them safely apart.",
+    simple: "The people in the tower who tell planes when to take off, where to fly and when to land.",
+    imagine: "Ten planes are approaching the same airport. The controller gives each one a height, a path and a landing order so none of them ever come close to each other." },
+
+  { term: "NDA", icon: "🎖️", category: "Aviation & Defence",
+    meaning: "National Defence Academy - the joint training academy near Pune where future Army, Navy and Air Force officers begin their training after Class 12.",
+    simple: "The place where teenagers train together to become officers in the Army, Navy or Air Force.",
+    list: ["Entry after Class 12 through the UPSC NDA exam", "Followed by an SSB interview", "Training covers academics, fitness and leadership"] },
+
+  { term: "SSB", icon: "🧭", category: "Aviation & Defence",
+    meaning: "Services Selection Board - a five-day selection process for armed forces officers that tests personality, teamwork and leadership through psychological tests, group tasks and interviews.",
+    simple: "A multi-day test that checks not just your marks but how you think, lead and behave under pressure.",
+    why: "Even after clearing the written exam, candidates must pass the SSB to become officers." },
+
+  { term: "CDS", icon: "📝", category: "Aviation & Defence",
+    meaning: "Combined Defence Services Examination - a UPSC exam that graduates take to join officer training academies of the Army, Navy and Air Force.",
+    simple: "The exam graduates take to become armed forces officers.",
+    example: "After his degree, he appeared for the CDS exam and then went for his SSB interview." },
+
+  { term: "Short Service Commission", icon: "📅", category: "Aviation & Defence",
+    meaning: "A way of joining the armed forces as an officer for a fixed period - usually 10 to 14 years - with the option of extension or moving to a permanent commission.",
+    simple: "Serving as an officer for a fixed number of years instead of a full career." },
+
+  { term: "NCC", icon: "🪖", category: "Aviation & Defence",
+    meaning: "National Cadet Corps - a youth organisation in schools and colleges that gives basic military-style training, discipline and leadership experience.",
+    simple: "A school or college programme where you learn drill, discipline and teamwork.",
+    why: "Cadets with NCC certificates can get an advantage in some armed forces selections." }
 
 ];

@@ -201,19 +201,24 @@ function getChoiceCount() {
 
 // Story ids grouped by genre - used by the genre-specific badges below.
 const GENRE_STORY_IDS = {
-  medical:  ["doctor", "paramedic", "nurse"],
-  sports:   ["cricketer", "footballer", "basketball"],
-  it:       ["it", "startup", "cybersecurity"],
-  law:      ["law", "corporatelaw"],
-  teaching: ["teaching", "college"]
+  aviation:   ["pilot", "airforce", "defence", "atc", "navy"],
+  medical:    ["doctor", "paramedic", "nurse", "surgeon", "pharmacist"],
+  sports:     ["cricketer", "footballer", "basketball", "athlete", "tennis"],
+  it:         ["it", "startup", "cybersecurity", "datascience", "appdev"],
+  law:        ["law", "corporatelaw", "judge", "legalaid", "cyberlaw"],
+  teaching:   ["teaching", "college", "specialedu", "principal", "coachmentor"],
+  police:     ["police", "detective", "cybercell", "forensic", "nightbeat"],
+  government: ["government", "railways", "forestofficer", "taxofficer", "customs"],
+  business:   ["business", "finance", "ca", "marketing", "hr"]
 };
+// Every story in the app (9 genres x 5 stories = 45)
 const ALL_STORY_IDS = [].concat(
-  GENRE_STORY_IDS.medical, GENRE_STORY_IDS.sports, GENRE_STORY_IDS.it,
-  GENRE_STORY_IDS.law, GENRE_STORY_IDS.teaching,
-  ["police", "government", "business", "detective"]
+  GENRE_STORY_IDS.aviation, GENRE_STORY_IDS.medical, GENRE_STORY_IDS.sports,
+  GENRE_STORY_IDS.it, GENRE_STORY_IDS.law, GENRE_STORY_IDS.teaching,
+  GENRE_STORY_IDS.police, GENRE_STORY_IDS.government, GENRE_STORY_IDS.business
 );
 
-// Checks if the user has completed BOTH stories in a given genre group
+// Checks if the user has completed ALL the stories in a given genre group
 function hasCompletedBoth(completed, genreIds) {
   return genreIds.every(function (id) { return completed.indexOf(id) !== -1; });
 }
@@ -251,7 +256,7 @@ function getAchievements() {
       id: "tech_explorer",
       icon: "💻",
       title: "Tech Explorer",
-      description: "Complete a technology career story (Code Red, Built From Zero, or Firewall).",
+      description: "Complete any technology career story (for example Code Red, Firewall or Data Detective).",
       unlocked: hasCompletedAny(completed, GENRE_STORY_IDS.it)
     },
     {
@@ -272,28 +277,28 @@ function getAchievements() {
       id: "medical_expert",
       icon: "🏥",
       title: "Medical Expert",
-      description: "Complete all 3 medical stories (Pulse Point, Life on the Line, and Healing Hands).",
+      description: "Complete all 5 medical stories.",
       unlocked: hasCompletedBoth(completed, GENRE_STORY_IDS.medical)
     },
     {
       id: "sports_champion",
       icon: "🏆",
       title: "Sports Champion",
-      description: "Complete all 3 sports stories (The Final Over, Final Whistle, and Fast Break).",
+      description: "Complete all 5 sports stories.",
       unlocked: hasCompletedBoth(completed, GENRE_STORY_IDS.sports)
     },
     {
       id: "legal_eagle",
       icon: "⚖️",
       title: "Legal Eagle",
-      description: "Complete both law stories (Truth on Trial and Hidden Clause).",
+      description: "Complete all 5 law stories.",
       unlocked: hasCompletedBoth(completed, GENRE_STORY_IDS.law)
     },
     {
       id: "master_educator",
       icon: "📚",
       title: "Master Educator",
-      description: "Complete both teaching stories (The First Bell and Beyond the Lecture).",
+      description: "Complete all 5 teaching stories.",
       unlocked: hasCompletedBoth(completed, GENRE_STORY_IDS.teaching)
     },
     {
@@ -314,7 +319,7 @@ function getAchievements() {
       id: "completionist",
       icon: "🌟",
       title: "Completionist",
-      description: "Complete all 17 CareerFlix stories.",
+      description: "Complete all " + ALL_STORY_IDS.length + " CareerFlix stories.",
       unlocked: ALL_STORY_IDS.every(function (id) { return completed.indexOf(id) !== -1; })
     },
     {

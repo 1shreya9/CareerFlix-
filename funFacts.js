@@ -232,6 +232,73 @@ const careerFunFacts = {
     { text: "Negotiation skills are consistently ranked among the most valuable skills for business executives.", img: "https://images.pexels.com/photos/6340621/pexels-photo-6340621.jpeg?auto=compress&cs=tinysrgb&w=600" },
     { text: "Industry conferences and networking events are common ways executives build professional relationships.", img: "https://images.pexels.com/photos/6340621/pexels-photo-6340621.jpeg?auto=compress&cs=tinysrgb&w=600" },
     { text: "Work-life balance has become a growing area of focus for business leaders, given the demanding nature of executive roles.", img: "https://images.pexels.com/photos/6340621/pexels-photo-6340621.jpeg?auto=compress&cs=tinysrgb&w=600" }
+  ],
+
+  // ---------------- AVIATION & DEFENCE ----------------
+
+  "Commercial Pilot": [
+    { text: "The Wright brothers made the first powered, controlled flight on 17 December 1903 - it lasted just 12 seconds.", img: "https://images.pexels.com/photos/4269510/pexels-photo-4269510.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Pilots run through written checklists before every flight, even after thousands of hours of experience - it is one of aviation's most important safety habits.", img: "https://images.pexels.com/photos/18257035/pexels-photo-18257035.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "In India, a pilot needs a Commercial Pilot Licence (CPL) issued by the DGCA before they can be paid to fly.", img: "https://images.pexels.com/photos/2589047/pexels-photo-2589047.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "English is the international language of aviation radio, so pilots and controllers all over the world can understand each other.", img: "https://images.pexels.com/photos/19898942/pexels-photo-19898942.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Passenger jets usually cruise at around 30,000 to 40,000 feet, far above most weather.", img: "https://images.pexels.com/photos/3942318/pexels-photo-3942318.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "At cruise, a passenger jet typically flies at about 800 to 900 km/h.", img: "https://images.pexels.com/photos/4269510/pexels-photo-4269510.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Autopilot handles much of a long flight, but the pilots stay in charge, monitor every system and take over whenever needed.", img: "https://images.pexels.com/photos/18257035/pexels-photo-18257035.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Pilots use the phonetic alphabet - Alfa, Bravo, Charlie - so letters are never mistaken over a noisy radio.", img: "https://images.pexels.com/photos/2589047/pexels-photo-2589047.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Flight recorders, often called black boxes, are actually painted bright orange so they are easy to find after an accident.", img: "https://images.pexels.com/photos/19898942/pexels-photo-19898942.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Pilots must pass regular medical fitness checks to keep their licence valid.", img: "https://images.pexels.com/photos/3942318/pexels-photo-3942318.jpeg?auto=compress&cs=tinysrgb&w=600" }
+  ],
+
+  "Air Force Officer": [
+    { text: "The Indian Air Force was established on 8 October 1932, and Air Force Day is still celebrated on that date.", img: "https://images.pexels.com/photos/30698431/pexels-photo-30698431.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "The Indian Air Force motto, \"Touch the Sky with Glory\", comes from the Bhagavad Gita.", img: "https://images.pexels.com/photos/18403815/pexels-photo-18403815.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "You can become an Air Force officer through the NDA after Class 12, or through the CDS or AFCAT exams after graduation.", img: "https://images.pexels.com/photos/13528320/pexels-photo-13528320.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Flying officers are trained at the Air Force Academy in Dundigal, near Hyderabad.", img: "https://images.pexels.com/photos/2589047/pexels-photo-2589047.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "The Air Force has its own rank names - Flying Officer, Flight Lieutenant, Squadron Leader, Wing Commander and Group Captain are officer ranks.", img: "https://images.pexels.com/photos/3942318/pexels-photo-3942318.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Officers join different branches: Flying (pilots), Technical, and Ground Duty.", img: "https://images.pexels.com/photos/19898942/pexels-photo-19898942.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Air Force helicopters regularly carry out rescue and relief work during floods, earthquakes and other disasters.", img: "https://images.pexels.com/photos/30698431/pexels-photo-30698431.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Air Force helicopter crews supply posts on the Siachen Glacier, one of the highest battlefields in the world.", img: "https://images.pexels.com/photos/18403815/pexels-photo-18403815.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Fighter pilots wear G-suits and train their bodies to handle forces of up to about nine times their body weight during sharp turns.", img: "https://images.pexels.com/photos/13528320/pexels-photo-13528320.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "The Surya Kiran aerobatic team of the Indian Air Force performs at air shows in India and abroad.", img: "https://images.pexels.com/photos/2589047/pexels-photo-2589047.jpeg?auto=compress&cs=tinysrgb&w=600" }
+  ],
+
+  "Army Officer": [
+    { text: "Army Day in India is celebrated on 15 January, marking the day in 1949 when General Cariappa became the first Indian Commander-in-Chief.", img: "https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "The motto of the Indian Army is \"Service Before Self\".", img: "https://images.pexels.com/photos/13742003/pexels-photo-13742003.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Army officers are trained at the Indian Military Academy in Dehradun and the Officers Training Academy in Chennai.", img: "https://images.pexels.com/photos/10854007/pexels-photo-10854007.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "You can join as an officer through the NDA after Class 12, or the CDS and technical entry schemes after graduation.", img: "https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "An Army officer starts as a Lieutenant and can rise through Captain, Major, Colonel and Brigadier all the way to General.", img: "https://images.pexels.com/photos/13742003/pexels-photo-13742003.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "The selection process, called the SSB interview, lasts five days and tests personality, teamwork and leadership - not just marks.", img: "https://images.pexels.com/photos/10854007/pexels-photo-10854007.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "The Indian Army is organised into regiments such as the Sikh Regiment, Madras Regiment and Gorkha Rifles, each with its own traditions.", img: "https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Soldiers serving at Siachen work at altitudes above 5,000 metres, where temperatures can fall far below -40 degrees Celsius.", img: "https://images.pexels.com/photos/13742003/pexels-photo-13742003.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "The Army's engineers have built bridges in Ladakh that are counted among the highest in the world.", img: "https://images.pexels.com/photos/10854007/pexels-photo-10854007.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "The Army is often the first on the ground after floods, earthquakes and landslides, helping with rescue and relief.", img: "https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=600" }
+  ],
+
+  "Air Traffic Controller": [
+    { text: "Air traffic controllers guide planes using radar, radio and their own eyes from the control tower.", img: "https://images.pexels.com/photos/7899923/pexels-photo-7899923.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "The first air traffic control tower is widely credited to Croydon Airport near London, around 1920.", img: "https://images.pexels.com/photos/33797802/pexels-photo-33797802.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Controllers use standard phrases such as \"cleared to land\" so instructions can never be misunderstood.", img: "https://images.pexels.com/photos/29867096/pexels-photo-29867096.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Aircraft are kept apart by minimum distances - at cruising levels, planes are commonly separated by 1,000 feet vertically.", img: "https://images.pexels.com/photos/1815388/pexels-photo-1815388.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "A runway number shows its compass direction divided by ten - runway 27 points toward 270 degrees, which is west.", img: "https://images.pexels.com/photos/7899923/pexels-photo-7899923.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "As a flight travels, controllers hand it over like a relay: from the tower to approach control and then to area control.", img: "https://images.pexels.com/photos/33797802/pexels-photo-33797802.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "When a pilot says \"Mayday\", controllers give that aircraft priority over all other traffic.", img: "https://images.pexels.com/photos/29867096/pexels-photo-29867096.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "A transponder code of 7700 tells controllers that an aircraft has a general emergency.", img: "https://images.pexels.com/photos/1815388/pexels-photo-1815388.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Airspace never closes, so controllers work in shifts around the clock, every day of the year.", img: "https://images.pexels.com/photos/7899923/pexels-photo-7899923.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "In India, the Airports Authority of India (AAI) recruits air traffic controllers, usually through a national exam for science and engineering graduates.", img: "https://images.pexels.com/photos/33797802/pexels-photo-33797802.jpeg?auto=compress&cs=tinysrgb&w=600" }
+  ],
+
+  "Naval Officer": [
+    { text: "Indian Navy Day is celebrated on 4 December, remembering the navy's role in the 1971 war.", img: "https://images.pexels.com/photos/18959222/pexels-photo-18959222.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "The Indian Navy's motto is \"Sham No Varunah\", which means \"May the Lord of Water be auspicious unto us\".", img: "https://images.pexels.com/photos/13342949/pexels-photo-13342949.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Naval officers are trained at the Indian Naval Academy in Ezhimala, Kerala.", img: "https://images.pexels.com/photos/28424608/pexels-photo-28424608.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "You can join as an officer through the NDA, the CDS exam, or the 10+2 B.Tech cadet entry scheme.", img: "https://images.pexels.com/photos/18959221/pexels-photo-18959221.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Ships measure speed in knots - one knot is one nautical mile per hour, and a nautical mile is 1,852 metres.", img: "https://images.pexels.com/photos/37687292/pexels-photo-37687292.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "On a ship, left is called port and right is called starboard - and ships show a red light on the port side and a green light on the starboard side.", img: "https://images.pexels.com/photos/18959222/pexels-photo-18959222.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Naval officers can serve on surface ships, on submarines, or as naval aviators flying from ships.", img: "https://images.pexels.com/photos/13342949/pexels-photo-13342949.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "INS Vikrant, commissioned in 2022, is India's first aircraft carrier built in India.", img: "https://images.pexels.com/photos/28424608/pexels-photo-28424608.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "Since 2008, Indian Navy warships have patrolled the Gulf of Aden to protect merchant ships from piracy.", img: "https://images.pexels.com/photos/18959221/pexels-photo-18959221.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { text: "VHF channel 16 is the international distress and calling channel at sea, and ships have a duty to help people in danger.", img: "https://images.pexels.com/photos/37687292/pexels-photo-37687292.jpeg?auto=compress&cs=tinysrgb&w=600" }
   ]
 
 };

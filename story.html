@@ -109,6 +109,7 @@
   <script src="script.js"></script>
   <script src="storyData.js"></script>
   <script src="translations.js"></script>
+  <script src="extraChoices.js"></script>
   <script>
     // =====================================================
     // STORY ENGINE
@@ -380,7 +381,11 @@
     }
 
     // ---------------------------------------------------
-    // Shows the 2 choice buttons after the conversation ends
+    // Shows the choice buttons (4 per episode) after the conversation
+    // ends. The order is SHUFFLED every time, so the right answer can
+    // be in the 1st, 2nd, 3rd or 4th position. Each button still
+    // remembers its ORIGINAL index in ep.choices, which is what the
+    // score, skills, reaction and translations use.
     // ---------------------------------------------------
     function showChoicesForEpisode() {
       const ep = currentStory.episodes[currentEpisode];
@@ -389,7 +394,15 @@
       choicesBox.innerHTML = "";
       choicesBox.style.display = "block";
 
-      ep.choices.forEach(function (choice, index) {
+      // Fisher-Yates shuffle of the choice positions [0, 1, 2, 3]
+      const order = ep.choices.map(function (_, i) { return i; });
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = order[i]; order[i] = order[j]; order[j] = temp;
+      }
+
+      order.forEach(function (index) {
+        const choice = ep.choices[index];
         const localizedChoiceText = getLocalizedText(choice.text, currentEpisode, "choiceText", index);
         const btn = document.createElement("button");
         btn.className = "choice-btn";

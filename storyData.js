@@ -140,7 +140,137 @@ const AV = {
   // ---- NEW: Chartered Accountant story ----
   caRajivSir: "https://api.dicebear.com/9.x/adventurer/svg?seed=CARajivSir&backgroundColor=ffccd9",
   kavya:      "https://api.dicebear.com/9.x/adventurer/svg?seed=KavyaTrainee&backgroundColor=ccffe0",
-  ritika:     "https://api.dicebear.com/9.x/adventurer/svg?seed=RitikaCA&backgroundColor=e0ccff"
+  ritika:     "https://api.dicebear.com/9.x/adventurer/svg?seed=RitikaCA&backgroundColor=e0ccff",
+
+  // =====================================================
+  // AVATARS FOR THE 25 NEW STORIES (3 episodes each)
+  // =====================================================
+  // ---- Tower Control (Air Traffic Controller) ----
+  atcYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=MeeraAtcYou&backgroundColor=d6e8ff",
+  atcRao: "https://api.dicebear.com/9.x/adventurer/svg?seed=SupervisorRaoATC&backgroundColor=c9c9ff",
+  atcKabir: "https://api.dicebear.com/9.x/adventurer/svg?seed=CaptainKabirRadio&backgroundColor=ffe5b4",
+  atcTanvi: "https://api.dicebear.com/9.x/adventurer/svg?seed=TanviGround&backgroundColor=ffd6e8",
+  // ---- Deep Blue Watch (Naval Officer) ----
+  navyYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=RohanNavyYou&backgroundColor=d6e8ff",
+  navyNair: "https://api.dicebear.com/9.x/adventurer/svg?seed=CommanderNairNavy&backgroundColor=c9c9ff",
+  navySana: "https://api.dicebear.com/9.x/adventurer/svg?seed=SubLtSanaRadar&backgroundColor=ffd6e8",
+  navyBose: "https://api.dicebear.com/9.x/adventurer/svg?seed=ChiefBoseNavy&backgroundColor=ffe5b4",
+  // ---- Data Detective (Data Analyst) ----
+  datascienceYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=AnanyaDatascienceYou&backgroundColor=d6e8ff",
+  datascienceVikas: "https://api.dicebear.com/9.x/adventurer/svg?seed=ManagerVikasData&backgroundColor=c9c9ff",
+  datascienceIsha: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshaSeniorAnalyst&backgroundColor=ffd6e8",
+  datascienceDev: "https://api.dicebear.com/9.x/adventurer/svg?seed=DevSalesHead&backgroundColor=ffe5b4",
+  // ---- Launch Day (Mobile App Developer) ----
+  appdevYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=NeelAppdevYou&backgroundColor=d6e8ff",
+  appdevSamira: "https://api.dicebear.com/9.x/adventurer/svg?seed=TeamLeadSamira&backgroundColor=c9c9ff",
+  appdevJoseph: "https://api.dicebear.com/9.x/adventurer/svg?seed=JosephQATester&backgroundColor=ffe5b4",
+  appdevPooja: "https://api.dicebear.com/9.x/adventurer/svg?seed=PoojaProductMgr&backgroundColor=ffd6e8",
+  // ---- Photo Finish (Track Athlete) ----
+  athleteYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=AdityaAthleteYou&backgroundColor=d6e8ff",
+  athleteRamesh: "https://api.dicebear.com/9.x/adventurer/svg?seed=CoachRameshTrack&backgroundColor=c9c9ff",
+  athleteSana: "https://api.dicebear.com/9.x/adventurer/svg?seed=SanaTrainingPartner&backgroundColor=ffd6e8",
+  athleteIyer: "https://api.dicebear.com/9.x/adventurer/svg?seed=DrIyerPhysio&backgroundColor=ffe5b4",
+  // ---- Match Point (Tennis Player) ----
+  tennisYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshaanTennisYou&backgroundColor=d6e8ff",
+  tennisFernandes: "https://api.dicebear.com/9.x/adventurer/svg?seed=CoachFernandesTennis&backgroundColor=c9c9ff",
+  tennisTara: "https://api.dicebear.com/9.x/adventurer/svg?seed=TaraDoublesPartner&backgroundColor=ffd6e8",
+  tennisUmpire: "https://api.dicebear.com/9.x/adventurer/svg?seed=ChairUmpireTennis&backgroundColor=dddddd",
+  // ---- Steady Hands (Surgeon) ----
+  surgeonYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=NikhilSurgeonYou&backgroundColor=d6e8ff",
+  surgeonMenon: "https://api.dicebear.com/9.x/adventurer/svg?seed=DrMenonSurgeon&backgroundColor=c9c9ff",
+  surgeonLatha: "https://api.dicebear.com/9.x/adventurer/svg?seed=NurseLathaOT&backgroundColor=ffd6a5",
+  surgeonBatra: "https://api.dicebear.com/9.x/adventurer/svg?seed=DrBatraAnaesthetist&backgroundColor=d0f4de",
+  // ---- Right Dose (Pharmacist) ----
+  pharmacistYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=AishaPharmacistYou&backgroundColor=d6e8ff",
+  pharmacistKapoor: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrKapoorPharmacist&backgroundColor=c9c9ff",
+  pharmacistVerma: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrsVermaCustomer&backgroundColor=ffe5b4",
+  pharmacistRao: "https://api.dicebear.com/9.x/adventurer/svg?seed=DrRaoPhysician&backgroundColor=b6e3f4",
+  // ---- The Last Verdict (Judge) ----
+  judgeYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=VidyaJudgeYou&backgroundColor=d6e8ff",
+  judgeBhatt: "https://api.dicebear.com/9.x/adventurer/svg?seed=JusticeBhattJudge&backgroundColor=c9c9ff",
+  judgePrakash: "https://api.dicebear.com/9.x/adventurer/svg?seed=CourtMasterPrakash&backgroundColor=ffe5b4",
+  judgeRana: "https://api.dicebear.com/9.x/adventurer/svg?seed=AdvocateRanaLaw&backgroundColor=ffd6e8",
+  // ---- Voice for Many (Legal Aid Lawyer) ----
+  legalaidYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=FarhanLegalaidYou&backgroundColor=d6e8ff",
+  legalaidSunita: "https://api.dicebear.com/9.x/adventurer/svg?seed=DirectorSunitaLegalAid&backgroundColor=c9c9ff",
+  legalaidRamesh: "https://api.dicebear.com/9.x/adventurer/svg?seed=RameshClientWorker&backgroundColor=ffe5b4",
+  legalaidAhuja: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrAhujaLawyer&backgroundColor=d6d6ff",
+  // ---- Cyber Court (Cyber Law Advocate) ----
+  cyberlawYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=RheaCyberlawYou&backgroundColor=d6e8ff",
+  cyberlawKhanna: "https://api.dicebear.com/9.x/adventurer/svg?seed=AdvKhannaCyber&backgroundColor=c9c9ff",
+  cyberlawNisha: "https://api.dicebear.com/9.x/adventurer/svg?seed=NishaClientCyber&backgroundColor=ffd6e8",
+  cyberlawSameer: "https://api.dicebear.com/9.x/adventurer/svg?seed=SameerITExpert&backgroundColor=d0f4de",
+  // ---- Every Child Counts (Special Educator) ----
+  specialeduYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=MansiSpecialeduYou&backgroundColor=d6e8ff",
+  specialeduDsouza: "https://api.dicebear.com/9.x/adventurer/svg?seed=CoordinatorDSouza&backgroundColor=c9c9ff",
+  specialeduAarush: "https://api.dicebear.com/9.x/adventurer/svg?seed=AarushStudentSE&backgroundColor=ffe5b4",
+  specialeduKulkarni: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrsKulkarniParent&backgroundColor=ffd6e8",
+  // ---- The Principal's Office (School Principal) ----
+  principalYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=SunilPrincipalYou&backgroundColor=d6e8ff",
+  principalIyer: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrsIyerTeacher&backgroundColor=ffd6e8",
+  principalMalhotra: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrMalhotraParent&backgroundColor=ffe5b4",
+  principalGupta: "https://api.dicebear.com/9.x/adventurer/svg?seed=VicePrincipalGupta&backgroundColor=c9c9ff",
+  // ---- The Toppers' Batch (Coaching Mentor) ----
+  coachmentorYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=RajatCoachmentorYou&backgroundColor=d6e8ff",
+  coachmentorSharma: "https://api.dicebear.com/9.x/adventurer/svg?seed=DirectorSharmaCoaching&backgroundColor=c9c9ff",
+  coachmentorSimran: "https://api.dicebear.com/9.x/adventurer/svg?seed=SimranStudentCoach&backgroundColor=ffd6e8",
+  coachmentorAryan: "https://api.dicebear.com/9.x/adventurer/svg?seed=AryanTopperCoach&backgroundColor=ffe5b4",
+  // ---- Trace the Signal (Cyber Crime Officer) ----
+  cybercellYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=JaiCybercellYou&backgroundColor=d6e8ff",
+  cybercellMalhotra: "https://api.dicebear.com/9.x/adventurer/svg?seed=SPMalhotraCyber&backgroundColor=c9c9ff",
+  cybercellNeha: "https://api.dicebear.com/9.x/adventurer/svg?seed=ConstableNehaTech&backgroundColor=d0f4de",
+  cybercellGupta: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrGuptaVictim&backgroundColor=ffe5b4",
+  // ---- Trace Evidence (Forensic Scientist) ----
+  forensicYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=IraForensicYou&backgroundColor=d6e8ff",
+  forensicBhatia: "https://api.dicebear.com/9.x/adventurer/svg?seed=InspectorBhatiaForensic&backgroundColor=d6d6ff",
+  forensicChandra: "https://api.dicebear.com/9.x/adventurer/svg?seed=DrChandraLab&backgroundColor=c9c9ff",
+  forensicRavi: "https://api.dicebear.com/9.x/adventurer/svg?seed=RaviLabAssistant&backgroundColor=ffe5b4",
+  // ---- Night Beat (Beat Constable) ----
+  nightbeatYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=KaranNightbeatYou&backgroundColor=d6e8ff",
+  nightbeatYadav: "https://api.dicebear.com/9.x/adventurer/svg?seed=SIYadavPatrol&backgroundColor=c9c9ff",
+  nightbeatPillai: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrsPillaiResident&backgroundColor=ffd6e8",
+  nightbeatRafiq: "https://api.dicebear.com/9.x/adventurer/svg?seed=RafiqShopkeeper&backgroundColor=ffe5b4",
+  // ---- Right on Track (Railway Station Master) ----
+  railwaysYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=VishalRailwaysYou&backgroundColor=d6e8ff",
+  railwaysPandey: "https://api.dicebear.com/9.x/adventurer/svg?seed=StationMasterPandey&backgroundColor=c9c9ff",
+  railwaysRaju: "https://api.dicebear.com/9.x/adventurer/svg?seed=RajuSignalMaintainer&backgroundColor=ffe5b4",
+  railwaysIqbal: "https://api.dicebear.com/9.x/adventurer/svg?seed=GuardIqbalRail&backgroundColor=d0f4de",
+  // ---- Green Warden (Forest Range Officer) ----
+  forestofficerYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=AryaForestofficerYou&backgroundColor=d6e8ff",
+  forestofficerGowda: "https://api.dicebear.com/9.x/adventurer/svg?seed=RangerGowdaForest&backgroundColor=c9c9ff",
+  forestofficerMohan: "https://api.dicebear.com/9.x/adventurer/svg?seed=SarpanchMohanForest&backgroundColor=ffe5b4",
+  forestofficerNandini: "https://api.dicebear.com/9.x/adventurer/svg?seed=DrNandiniBiologist&backgroundColor=d0f4de",
+  // ---- Tax Trail (Income Tax Officer) ----
+  taxofficerYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=MeenalTaxofficerYou&backgroundColor=d6e8ff",
+  taxofficerShukla: "https://api.dicebear.com/9.x/adventurer/svg?seed=CommissionerShukla&backgroundColor=c9c9ff",
+  taxofficerBansal: "https://api.dicebear.com/9.x/adventurer/svg?seed=CABansalRep&backgroundColor=ffe5b4",
+  taxofficerRohit: "https://api.dicebear.com/9.x/adventurer/svg?seed=InspectorRohitTax&backgroundColor=d0f4de",
+  // ---- Green Channel (Customs Officer) ----
+  customsYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=DevCustomsYou&backgroundColor=d6e8ff",
+  customsKulkarni: "https://api.dicebear.com/9.x/adventurer/svg?seed=SuperintendentKulkarni&backgroundColor=c9c9ff",
+  customsPassenger: "https://api.dicebear.com/9.x/adventurer/svg?seed=PassengerCustoms&backgroundColor=ffe5b4",
+  customsElder: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrDSouzaElderly&backgroundColor=ffd6a5",
+  customsBhoomi: "https://api.dicebear.com/9.x/adventurer/svg?seed=ConstableBhoomiK9&backgroundColor=d0f4de",
+  // ---- Market Open (Financial Analyst) ----
+  financeYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=RahulFinanceYou&backgroundColor=d6e8ff",
+  financeKapoor: "https://api.dicebear.com/9.x/adventurer/svg?seed=MsKapoorPortfolio&backgroundColor=c9c9ff",
+  financeSameer: "https://api.dicebear.com/9.x/adventurer/svg?seed=SameerSeniorTrader&backgroundColor=ffe5b4",
+  financeAnand: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrAnandClient&backgroundColor=ffd6e8",
+  // ---- Balance Sheet (Chartered Accountant) ----
+  caYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=RitikaCaYou&backgroundColor=d6e8ff",
+  caCaRajivSir: "https://api.dicebear.com/9.x/adventurer/svg?seed=CARajivSir&backgroundColor=ffccd9",
+  caKavya: "https://api.dicebear.com/9.x/adventurer/svg?seed=KavyaTrainee&backgroundColor=ccffe0",
+  caClient: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrSethiClient&backgroundColor=ffe5b4",
+  // ---- Brand New (Marketing Manager) ----
+  marketingYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshikaMarketingYou&backgroundColor=d6e8ff",
+  marketingSen: "https://api.dicebear.com/9.x/adventurer/svg?seed=MarketingHeadSen&backgroundColor=c9c9ff",
+  marketingRohit: "https://api.dicebear.com/9.x/adventurer/svg?seed=RohitDesigner&backgroundColor=ffe5b4",
+  marketingTandon: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrTandonAgency&backgroundColor=d0f4de",
+  // ---- People First (HR Manager) ----
+  hrYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=NandiniHrYou&backgroundColor=d6e8ff",
+  hrSushma: "https://api.dicebear.com/9.x/adventurer/svg?seed=TeamLeadSushma&backgroundColor=ffd6e8",
+  hrArun: "https://api.dicebear.com/9.x/adventurer/svg?seed=ArunEmployeeHR&backgroundColor=ffe5b4",
+  hrCeo: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrKapoorDirector&backgroundColor=c9c9ff"
 };
 
 const storiesData = {
@@ -2588,6 +2718,2118 @@ const storiesData = {
         ],
         betterAdvice: "An honest, detailed report on a risky operation protects the next team that relies on the same ground or plan - downplaying the risk to avoid scrutiny only removes a warning someone else needed."
       }
+    ]
+  },
+
+  // ==================================================
+  // AVIATION - "Tower Control" (3 episodes)
+  // Role: Air Traffic Controller
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  atc: {
+    title: "Tower Control",
+    genre: "Aviation",
+    youDefaultName: "Meera",
+    role: "Air Traffic Controller",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=MeeraAtcM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=MeeraAtcF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/7899923/pexels-photo-7899923.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Guide planes safely through a busy airport as a young air traffic controller - keep runways clear, separate crossing aircraft, and handle a fuel emergency in the middle of a storm.",
+    narration: "The evening rush has just begun at the airport. From the glass-walled control tower, Meera can see a dozen aircraft lights on her screen and hear every pilot on the radio. One wrong instruction can put two planes in the same piece of sky - so every word she says tonight has to be clear, calm and correct.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Control Tower - Runway Rush",
+        bgImage: "https://images.pexels.com/photos/7899923/pexels-photo-7899923.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Flight 412 is lined up on the runway, waiting for takeoff. Flight 908 is on final approach, three miles from touchdown. The crew of 412 is still finishing a checklist and has not started rolling.",
+        dialogues: [
+          { speaker: "Supervisor Rao", avatar: AV.atcRao, text: "Meera, look at your radar. 908 is three miles out and coming in fast, and 412 is still sitting on the runway." },
+          { speaker: "Captain Kabir (Radio)", avatar: AV.atcKabir, text: "Tower, 412 - sorry, we need about one more minute before we can go." },
+          { speaker: "Tanvi (Ground Controller)", avatar: AV.atcTanvi, text: "Meera, the runway is occupied. Nothing else can use it until 412 is gone." },
+          { speaker: "Meera (You)", avatar: AV.atcYou, text: "I can't let 908 land on an occupied runway... but a go-around costs time and fuel. I need to decide now." }
+        ],
+        choices: [
+          { text: "Tell 412 to vacate or hold, and instruct 908 to go around because the runway will not be clear in time", correct: true,
+            skills: { technical: 2, communication: 1, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Supervisor Rao", avatar: AV.atcRao, text: "Correct, Meera. When the runway will not be clear, the arriving aircraft goes around - early, not at the last second. A go-around is routine; a runway collision is not." } },
+          { text: "Let 908 continue and hope that 412 starts rolling in time", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 1, leadership: 0 },
+            reaction: { speaker: "Supervisor Rao", avatar: AV.atcRao, text: "Hope is not a separation standard, Meera. If 412 is slow, 908 is on the runway with them. We never plan around what we hope a crew will do." } }
+        ],
+        betterAdvice: "If the runway will not be clear before an arriving aircraft reaches it, send the arrival around early - never assume the departing crew will be fast enough."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Radar Room - Conflict Alert",
+        bgImage: "https://images.pexels.com/photos/29867096/pexels-photo-29867096.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Two aircraft at the same flight level are heading toward the same point in the sky. The radar shows a conflict alert flashing red, and the aircraft will be too close in about four minutes.",
+        dialogues: [
+          { speaker: "Supervisor Rao", avatar: AV.atcRao, text: "The alert is flashing, Meera. Both aircraft are on the same level and converging." },
+          { speaker: "Tanvi (Ground Controller)", avatar: AV.atcTanvi, text: "They haven't seen each other yet. Their cockpit systems may warn them, but it's your job to fix it first." },
+          { speaker: "Meera (You)", avatar: AV.atcYou, text: "Four minutes is enough time, but only if I act now with a clear instruction." }
+        ],
+        choices: [
+          { text: "Wait a minute to see whether the pilots notice and sort it out themselves", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Supervisor Rao", avatar: AV.atcRao, text: "Meera, waiting turns a comfortable fix into an emergency. We separate aircraft - we don't wait for pilots to do it for us." } },
+          { text: "Give one aircraft a clear turn and the other a level change using standard phraseology, then pass traffic information to both", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Supervisor Rao", avatar: AV.atcRao, text: "Exactly. A short, standard, unmistakable instruction and traffic information for both crews resolves it cleanly. Early and clear is the whole job." } }
+        ],
+        betterAdvice: "When two aircraft are on a conflicting path, act early with clear standard instructions and give both crews traffic information - never wait for them to resolve it."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Tower - Storm at Night",
+        bgImage: "https://images.pexels.com/photos/33797802/pexels-photo-33797802.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A thunderstorm has delayed arrivals and a long line of aircraft is waiting to land. Suddenly a pilot calls: 'Mayday, Mayday, Mayday - low fuel, we need to land immediately.'",
+        dialogues: [
+          { speaker: "Captain Kabir (Radio)", avatar: AV.atcKabir, text: "Tower, Mayday, Mayday, Mayday. Fuel is critically low, request immediate landing." },
+          { speaker: "Tanvi (Ground Controller)", avatar: AV.atcTanvi, text: "Meera, there are six other aircraft in the queue. Some of them have been waiting for twenty minutes." },
+          { speaker: "Supervisor Rao", avatar: AV.atcRao, text: "This is the moment the training is for. What is your call?" },
+          { speaker: "Meera (You)", avatar: AV.atcYou, text: "A Mayday changes everything. I have to think about safety first, and the queue second." }
+        ],
+        choices: [
+          { text: "Give the Mayday aircraft priority, clear the path, ask number of persons on board and fuel remaining, and alert emergency services", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Supervisor Rao", avatar: AV.atcRao, text: "Right. A fuel Mayday gets priority over everything. Clear the way, gather the key details and alert the fire service - the queue can wait, the emergency can't." } },
+          { text: "Keep the normal landing order because the others have been waiting longer", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Supervisor Rao", avatar: AV.atcRao, text: "Meera, waiting time doesn't outrank an emergency. A Mayday means the crew's life is at risk - it gets priority, every time." } }
+        ],
+        betterAdvice: "An aircraft that declares an emergency such as a fuel Mayday gets immediate priority - clear the way, get the key details and alert emergency services."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // DEFENCE - "Deep Blue Watch" (3 episodes)
+  // Role: Naval Officer
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  navy: {
+    title: "Deep Blue Watch",
+    genre: "Defence",
+    youDefaultName: "Rohan",
+    role: "Naval Officer",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RohanNavyM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RohanNavyF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/18959222/pexels-photo-18959222.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Stand the night watch on a naval patrol ship - track an unknown vessel on radar, handle an engine problem far from port, and decide how to answer a fishing boat's distress call.",
+    narration: "The ship has been at sea for six days. Tonight Sub-Lieutenant Rohan has the bridge watch: black water on every side, a radar screen full of small dots, and a crew that trusts him to spot trouble before it finds them. At sea, there is no one to call for help - the ship must solve its own problems.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Ship's Bridge - Midnight Watch",
+        bgImage: "https://images.pexels.com/photos/18959222/pexels-photo-18959222.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "On the midnight watch, radar shows a vessel without any identification signal moving fast toward the ship's patrol area.",
+        dialogues: [
+          { speaker: "Sub-Lt. Sana (Radar Officer)", avatar: AV.navySana, text: "Rohan, new contact, bearing two-one-zero, speed eighteen knots. No identification signal at all." },
+          { speaker: "Chief Petty Officer Bose", avatar: AV.navyBose, text: "Could be a fishing boat with its transponder off. Or it could be something else, sir." },
+          { speaker: "Commander Nair", avatar: AV.navyNair, text: "You have the watch, Rohan. Tell me what you do first." },
+          { speaker: "Rohan (You)", avatar: AV.navyYou, text: "I can't assume it's harmless just because it usually is. I also can't overreact and wake the entire ship." }
+        ],
+        choices: [
+          { text: "Keep tracking it on radar, hail it on the radio, increase lookouts and inform the Commander with the details", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Commander Nair", avatar: AV.navyNair, text: "Textbook. Track it, talk to it, watch it and report it. You stayed calm, gathered facts and kept the chain of command informed." } },
+          { text: "Ignore it because unidentified boats are common in these waters", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Commander Nair", avatar: AV.navyNair, text: "Rohan, 'usually harmless' is how surprises begin. An unidentified fast contact always gets tracked, challenged and reported." } }
+        ],
+        betterAdvice: "Never dismiss an unidentified contact - track it, hail it, increase lookouts and report it up the chain of command with facts."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Engine Room - Overheating",
+        bgImage: "https://images.pexels.com/photos/13342949/pexels-photo-13342949.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Two days from port, the chief engineer reports that one engine is overheating. The ship still has a patrol area to cover and time is tight.",
+        dialogues: [
+          { speaker: "Chief Petty Officer Bose", avatar: AV.navyBose, text: "Sir, the port engine temperature is climbing. If we keep the same speed, it may seize." },
+          { speaker: "Commander Nair", avatar: AV.navyNair, text: "We are supposed to be on station by morning, Rohan. But a ship with a dead engine helps nobody." },
+          { speaker: "Sub-Lt. Sana (Radar Officer)", avatar: AV.navySana, text: "We can shift to the standby engine and reduce speed, but we will arrive late." },
+          { speaker: "Rohan (You)", avatar: AV.navyYou, text: "Reaching the position on time matters, but not more than the ship and its crew." }
+        ],
+        choices: [
+          { text: "Keep full speed to stay on schedule and hope the engine holds", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 1 },
+            reaction: { speaker: "Commander Nair", avatar: AV.navyNair, text: "Rohan, if that engine fails at full power, we lose speed, time and possibly the ship's safety. Never trade the ship for the schedule." } },
+          { text: "Reduce speed, switch to the standby engine, and report the delay and the reason to headquarters", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Commander Nair", avatar: AV.navyNair, text: "Sensible. A damaged engine at sea is a crisis you can avoid. Late and safe beats on time and stranded." } }
+        ],
+        betterAdvice: "When machinery is overheating, reduce load, switch to standby equipment and report the delay honestly - never risk the ship to stay on schedule."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Open Sea - Distress Call",
+        bgImage: "https://images.pexels.com/photos/28424608/pexels-photo-28424608.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A weather warning is in force and waves are rising. A small fishing boat radios that its engine has failed and it is drifting toward rocks, forty minutes away from the patrol ship.",
+        dialogues: [
+          { speaker: "Sub-Lt. Sana (Radar Officer)", avatar: AV.navySana, text: "Distress call on channel sixteen, sir. A fishing boat, seven people on board, engine failed." },
+          { speaker: "Commander Nair", avatar: AV.navyNair, text: "The weather is getting worse, Rohan. Our own ship needs to stay safe too." },
+          { speaker: "Chief Petty Officer Bose", avatar: AV.navyBose, text: "We can launch the rescue boat and pass a tow line, sir - if the sea state stays within limits." },
+          { speaker: "Rohan (You)", avatar: AV.navyYou, text: "Every sailor has a duty to help someone in danger at sea - but we need a careful plan, not a reckless one." }
+        ],
+        choices: [
+          { text: "Inform headquarters, proceed to the boat at safe speed, and assess the sea state before launching the rescue boat and tow", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Commander Nair", avatar: AV.navyNair, text: "Exactly right. Rescue is a duty, but a planned one. Inform command, get there safely, judge the conditions, then act." } },
+          { text: "Ignore the call and stay on patrol because the storm is dangerous", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Commander Nair", avatar: AV.navyNair, text: "Rohan, seven lives are drifting toward rocks. Helping people in distress at sea is a duty - we manage the risk, we don't walk away." } }
+        ],
+        betterAdvice: "Every ship has a duty to respond to a distress call - inform command, approach safely and assess conditions before launching a rescue."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // IT - "Data Detective" (3 episodes)
+  // Role: Data Analyst
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  datascience: {
+    title: "Data Detective",
+    genre: "IT",
+    youDefaultName: "Ananya",
+    role: "Data Analyst",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AnanyaDatascienceM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AnanyaDatascienceF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/669614/pexels-photo-669614.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Work as a data analyst at a growing online store - question a suspicious sales spike, present honest charts under pressure, and decide whether a 95% accurate model is really as good as it looks.",
+    narration: "Ananya's first month as a data analyst has been spent cleaning spreadsheets. Today her dashboard shows something dramatic - sales have jumped 40% overnight. Everyone in the company is excited. Ananya, however, has learned that when numbers look too good, that's exactly when to look closer.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Analytics Desk - The Sudden Spike",
+        bgImage: "https://images.pexels.com/photos/669614/pexels-photo-669614.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Sales appear to have jumped 40% in a single day. The sales team is celebrating and wants the number in the evening report.",
+        dialogues: [
+          { speaker: "Dev (Sales Head)", avatar: AV.datascienceDev, text: "Ananya, 40 percent growth overnight! Put it in the report - the CEO will love it." },
+          { speaker: "Isha (Senior Analyst)", avatar: AV.datascienceIsha, text: "That is a big jump for one day. Have you checked how the data was loaded?" },
+          { speaker: "Manager Vikas", avatar: AV.datascienceVikas, text: "Whatever you decide, the report has your name on it." },
+          { speaker: "Ananya (You)", avatar: AV.datascienceYou, text: "It's possible the campaign really worked. It's also possible something in the data is wrong." }
+        ],
+        choices: [
+          { text: "Check the data first for duplicate rows and join errors, then report the verified number", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 3, leadership: 0 },
+            reaction: { speaker: "Manager Vikas", avatar: AV.datascienceVikas, text: "Good instinct. Duplicate orders from a bad data load would have inflated everything. Verify first, celebrate second." } },
+          { text: "Send the 40 percent number right away because it looks great", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Manager Vikas", avatar: AV.datascienceVikas, text: "Ananya, unverified numbers that look great are the most dangerous ones. If it turns out to be duplicates, the report loses trust." } }
+        ],
+        betterAdvice: "When a number looks unusually good, check the data quality first - duplicates and join errors often create fake spikes."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Meeting Room - The Honest Chart",
+        bgImage: "https://images.pexels.com/photos/669609/pexels-photo-669609.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Sales have actually dropped for two months. The Sales Head asks Ananya to show only the best three weeks and to cut the chart's axis so the drop looks small.",
+        dialogues: [
+          { speaker: "Dev (Sales Head)", avatar: AV.datascienceDev, text: "Just show the good weeks. Nobody needs to see the bad ones right now." },
+          { speaker: "Isha (Senior Analyst)", avatar: AV.datascienceIsha, text: "A chart with a chopped axis and hidden weeks can mislead people into bad decisions." },
+          { speaker: "Manager Vikas", avatar: AV.datascienceVikas, text: "Analysts are trusted because they tell the truth with numbers. Your call, Ananya." },
+          { speaker: "Ananya (You)", avatar: AV.datascienceYou, text: "I want to help Dev, but a misleading chart helps nobody." }
+        ],
+        choices: [
+          { text: "Show only the best weeks and trim the axis as requested", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Manager Vikas", avatar: AV.datascienceVikas, text: "Ananya, once people catch you cherry-picking, they stop trusting every chart you make. Honest data is your entire value." } },
+          { text: "Show the full period on an honest chart, explain the dip clearly and add possible reasons and next steps", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Manager Vikas", avatar: AV.datascienceVikas, text: "That's the job. Bad news presented with context and a plan builds far more trust than a pretty chart hiding the truth." } }
+        ],
+        betterAdvice: "Present the full picture honestly with context and next steps - cherry-picked data and misleading axes damage trust in the analyst."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Data Lab - The Churn Model",
+        bgImage: "https://images.pexels.com/photos/669612/pexels-photo-669612.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Ananya has built a model to predict which customers will leave. It shows 95% accuracy, but only 5% of customers actually leave in the data.",
+        dialogues: [
+          { speaker: "Isha (Senior Analyst)", avatar: AV.datascienceIsha, text: "95 percent accuracy sounds fantastic. Now tell me how many of the leaving customers it actually caught." },
+          { speaker: "Ananya (You)", avatar: AV.datascienceYou, text: "Let me check... it caught very few of them. It mostly predicts 'will stay' for everybody." },
+          { speaker: "Manager Vikas", avatar: AV.datascienceVikas, text: "So the model is right 95 percent of the time - by guessing 'stay' for everyone. What do you do?" },
+          { speaker: "Ananya (You)", avatar: AV.datascienceYou, text: "A model that never finds the customers who leave is useless, however good the accuracy number looks." }
+        ],
+        choices: [
+          { text: "Measure precision and recall for the leaving customers, rebalance the data and improve the model before using it", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 3, leadership: 0 },
+            reaction: { speaker: "Isha (Senior Analyst)", avatar: AV.datascienceIsha, text: "Exactly. With imbalanced data, accuracy alone is misleading. Recall on the group you care about tells the real story." } },
+          { text: "Deploy the model because 95 percent accuracy is excellent", correct: false,
+            skills: { technical: 1, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Isha (Senior Analyst)", avatar: AV.datascienceIsha, text: "Ananya, a model that says 'stay' for everyone scores 95 percent and catches nobody who leaves. Always check the metrics that match the goal." } }
+        ],
+        betterAdvice: "With imbalanced data, accuracy can be misleading - check precision and recall for the group you actually care about before deploying a model."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // IT - "Launch Day" (3 episodes)
+  // Role: Mobile App Developer
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  appdev: {
+    title: "Launch Day",
+    genre: "IT",
+    youDefaultName: "Neel",
+    role: "Mobile App Developer",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=NeelAppdevM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=NeelAppdevF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/5474282/pexels-photo-5474282.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Ship a mobile app to real users - handle a last-minute feature request, deal with a crash on older phones, and figure out why users are complaining after launch.",
+    narration: "The app Neel's team has built for six months goes live tomorrow morning. The office is buzzing with pizza and nerves. Neel knows the difference between a good launch and a bad one is rarely the code itself - it's the decisions made in the last twenty-four hours.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Team Room - Day Before Launch",
+        bgImage: "https://images.pexels.com/photos/5474282/pexels-photo-5474282.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Twelve hours before launch, the Product Manager asks Neel to add one more feature - a dark mode. It seems small, but it touches almost every screen.",
+        dialogues: [
+          { speaker: "Pooja (Product Manager)", avatar: AV.appdevPooja, text: "Neel, dark mode is trending. Can you squeeze it in tonight? Only a few colours to change." },
+          { speaker: "Team Lead Samira", avatar: AV.appdevSamira, text: "A few colours on almost every screen, the night before a launch. Think about testing time." },
+          { speaker: "Neel (You)", avatar: AV.appdevYou, text: "I could probably code it in a few hours... but nobody could test it properly before launch." }
+        ],
+        choices: [
+          { text: "Explain the testing risk, propose launching as planned and shipping dark mode in the next update after proper testing", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Team Lead Samira", avatar: AV.appdevSamira, text: "Well handled. You didn't just say no - you offered a plan. Protecting a stable launch while still delivering the idea is exactly right." } },
+          { text: "Quietly add dark mode tonight and push it without telling anyone", correct: false,
+            skills: { technical: 1, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Team Lead Samira", avatar: AV.appdevSamira, text: "Neel, untested code shipped silently the night before launch is how launch-day disasters happen. Always tell the team about risk." } }
+        ],
+        betterAdvice: "Before a launch, explain the risk of last-minute features and propose shipping them after proper testing rather than pushing untested code."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "QA Desk - The Old Phone Crash",
+        bgImage: "https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Joseph finds that the app crashes when it opens on older Android phones. Around ten percent of the expected users have such phones. The launch is in six hours.",
+        dialogues: [
+          { speaker: "Joseph (QA Tester)", avatar: AV.appdevJoseph, text: "Neel, the app crashes on startup on older Android versions. It works fine on the newer ones." },
+          { speaker: "Pooja (Product Manager)", avatar: AV.appdevPooja, text: "It's only ten percent of users. Can we launch anyway?" },
+          { speaker: "Team Lead Samira", avatar: AV.appdevSamira, text: "Ten percent of a hundred thousand users is ten thousand people whose first impression is a crash." },
+          { speaker: "Neel (You)", avatar: AV.appdevYou, text: "We can either fix it fast, or find a safer way to launch." }
+        ],
+        choices: [
+          { text: "Ignore the crash because most phones work fine", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Team Lead Samira", avatar: AV.appdevSamira, text: "Neel, ten thousand crashing installs means ten thousand bad reviews on day one. Never ignore a startup crash." } },
+          { text: "Fix the crash if possible, or do a staged rollout that excludes the affected phones until the fix is ready", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Team Lead Samira", avatar: AV.appdevSamira, text: "Smart. A staged rollout lets you launch on time without giving thousands of people a broken app. Fix, then widen the release." } }
+        ],
+        betterAdvice: "Never ship a known startup crash - fix it or use a staged rollout that keeps affected devices out until it is resolved."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Post-Launch - Angry Reviews",
+        bgImage: "https://images.pexels.com/photos/5496463/pexels-photo-5496463.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Two days after launch, reviews are coming in saying the app is slow. Nobody is sure why - some people say it's the network, some say it's a new bug.",
+        dialogues: [
+          { speaker: "Pooja (Product Manager)", avatar: AV.appdevPooja, text: "The rating is falling. People are saying the app is slow. We need to fix it now." },
+          { speaker: "Joseph (QA Tester)", avatar: AV.appdevJoseph, text: "I can't reproduce the slowness on any of our test phones." },
+          { speaker: "Team Lead Samira", avatar: AV.appdevSamira, text: "Everyone has a theory. What actually tells us where the slowness is?" },
+          { speaker: "Neel (You)", avatar: AV.appdevYou, text: "Guessing and rewriting code without evidence could make things worse." }
+        ],
+        choices: [
+          { text: "Check crash and performance logs and analytics to find which screens and devices are slow, then fix that specific issue", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 3, leadership: 0 },
+            reaction: { speaker: "Team Lead Samira", avatar: AV.appdevSamira, text: "That's the professional approach. Logs and analytics point at the real problem so you fix one thing well instead of rewriting everything." } },
+          { text: "Rewrite the main screens from scratch, hoping that will make the app faster", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 1, leadership: 0 },
+            reaction: { speaker: "Team Lead Samira", avatar: AV.appdevSamira, text: "Neel, rewriting without knowing the cause risks new bugs and wastes days. Measure first, then fix exactly what's slow." } }
+        ],
+        betterAdvice: "When users report a problem, use logs and analytics to find the real cause before changing code - guessing and rewriting can create new bugs."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // SPORTS - "Photo Finish" (3 episodes)
+  // Role: Track Athlete
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  athlete: {
+    title: "Photo Finish",
+    genre: "Sports",
+    youDefaultName: "Aditya",
+    role: "Track Athlete",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AdityaAthleteM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AdityaAthleteF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/5274777/pexels-photo-5274777.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Train and race as a 400-metre runner - stay calm at the start, handle a pulled muscle honestly, and run your own race in a national final where a fraction of a second decides everything.",
+    narration: "The 400 metres is called the hardest sprint in athletics - fast enough to burn, long enough to hurt. Aditya has trained at dawn for three years for one thing: a place in the national final. Tonight, every decision on and off the track decides whether he crosses the line first or just short.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Track - Qualifying Heat",
+        bgImage: "https://images.pexels.com/photos/5274777/pexels-photo-5274777.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "At the qualifying heat, the runners settle into their blocks. Aditya's nerves are high, and last week he was disqualified in another race for a false start.",
+        dialogues: [
+          { speaker: "Coach Ramesh", avatar: AV.athleteRamesh, text: "Aditya, breathe. You know the start routine. Nothing else matters right now." },
+          { speaker: "Sana (Training Partner)", avatar: AV.athleteSana, text: "You jumped the gun last week. Don't try to anticipate the pistol today." },
+          { speaker: "Aditya (You)", avatar: AV.athleteYou, text: "If I wait too long, I lose half a second. If I jump, I'm out. I need to stay in control." }
+        ],
+        choices: [
+          { text: "Try to leave a fraction early to gain an advantage on the others", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Coach Ramesh", avatar: AV.athleteRamesh, text: "Aditya, a false start means disqualification - zero points, zero race. The gun is your signal, not your guess." } },
+          { text: "Follow the start routine, focus on reacting to the sound of the gun and not guessing it", correct: true,
+            skills: { technical: 3, communication: 0, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Coach Ramesh", avatar: AV.athleteRamesh, text: "That's how champions start. React, don't predict. A clean start beats a fast false start every single time." } }
+        ],
+        betterAdvice: "In sprint starts, react to the gun instead of anticipating it - a false start ends the race before it begins."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Physio Room - The Pulled Muscle",
+        bgImage: "https://images.pexels.com/photos/3718433/pexels-photo-3718433.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Two days before the final, Aditya feels a sharp pull at the back of his thigh during training. He hasn't told anyone yet.",
+        dialogues: [
+          { speaker: "Dr. Iyer (Physio)", avatar: AV.athleteIyer, text: "You are limping, Aditya. What happened during the last set?" },
+          { speaker: "Sana (Training Partner)", avatar: AV.athleteSana, text: "He said it was nothing, but he stopped halfway through the last run." },
+          { speaker: "Coach Ramesh", avatar: AV.athleteRamesh, text: "Whatever it is, I need the truth. It's the only way I can protect your career." },
+          { speaker: "Aditya (You)", avatar: AV.athleteYou, text: "The final is in two days. If I say something, they may pull me out. But if I hide it, it may get worse." }
+        ],
+        choices: [
+          { text: "Tell the coach and physio exactly what happened so they can assess it and plan safe treatment", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Dr. Iyer (Physio)", avatar: AV.athleteIyer, text: "That took courage and it was the right call. A small strain treated early can be fine for the final. Hidden, it can end a season." } },
+          { text: "Hide the pain and run the final anyway", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 1 },
+            reaction: { speaker: "Dr. Iyer (Physio)", avatar: AV.athleteIyer, text: "Aditya, running on a hidden muscle injury can turn a small strain into a long tear. Speaking up is part of being an athlete." } }
+        ],
+        betterAdvice: "Report an injury immediately to the coach and physio - hiding pain can turn a small strain into a career-threatening injury."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Stadium - National Final",
+        bgImage: "https://images.pexels.com/photos/104675/pexels-photo-104675.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "In the national final, the athlete in lane five sprints out extremely fast in the first 150 metres. Coach Ramesh's race plan was to stay smooth and finish strong.",
+        dialogues: [
+          { speaker: "Coach Ramesh", avatar: AV.athleteRamesh, text: "Remember the plan, Aditya. Smooth through the first bend, build on the back straight, empty the tank in the last hundred." },
+          { speaker: "Sana (Training Partner)", avatar: AV.athleteSana, text: "Lane five always goes out too fast. He usually pays for it at the end." },
+          { speaker: "Aditya (You)", avatar: AV.athleteYou, text: "It's hard to watch him pull ahead. But I trained for my race, not his." }
+        ],
+        choices: [
+          { text: "Chase lane five's pace from the start so he doesn't get away", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Coach Ramesh", avatar: AV.athleteRamesh, text: "Aditya, running someone else's race burns your legs before the home straight. In a 400, pacing is the strategy." } },
+          { text: "Stick to the race plan, stay relaxed on the bend and attack in the final 100 metres", correct: true,
+            skills: { technical: 3, communication: 0, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Coach Ramesh", avatar: AV.athleteRamesh, text: "Perfect execution. You ran your own race and used your strength when it counted. That is how you win a 400." } }
+        ],
+        betterAdvice: "In a 400 metres race, stick to your own pacing plan - chasing an early leader's speed drains you before the final straight."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // SPORTS - "Match Point" (3 episodes)
+  // Role: Tennis Player
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  tennis: {
+    title: "Match Point",
+    genre: "Sports",
+    youDefaultName: "Ishaan",
+    role: "Tennis Player",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshaanTennisM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshaanTennisF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/5739161/pexels-photo-5739161.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Play through a big tournament as a young tennis player - fix a serve that breaks under pressure, stay calm after a bad line call, and win a tie-break by playing smart, not just hard.",
+    narration: "Tennis is a lonely game. No teammates, no substitutions - just you, the ball, and the voice in your head. Ishaan has reached the semi-final of the state championship for the first time, and the hardest opponent tonight is not across the net, it's his own nerves.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Practice Court - Serve Trouble",
+        bgImage: "https://images.pexels.com/photos/5739161/pexels-photo-5739161.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "In practice, Ishaan is double-faulting again and again on his second serve. Every time he misses, he hits the next one even harder.",
+        dialogues: [
+          { speaker: "Coach Fernandes", avatar: AV.tennisFernandes, text: "That's the fourth double fault in a row, Ishaan. What is going on with your toss?" },
+          { speaker: "Tara (Doubles Partner)", avatar: AV.tennisTara, text: "You're swinging out of your shoes. Nobody wins by hitting the second serve at full power." },
+          { speaker: "Ishaan (You)", avatar: AV.tennisYou, text: "I'm scared of losing the point, so I'm trying to hit it perfectly. That's making it worse." }
+        ],
+        choices: [
+          { text: "Hit the second serve even harder so it lands with power", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Coach Fernandes", avatar: AV.tennisFernandes, text: "Ishaan, more power without control just adds more double faults. Fix the toss and add spin - the pace will come later." } },
+          { text: "Slow down, reset with a consistent ball toss, and use a safer second serve with spin and margin", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Coach Fernandes", avatar: AV.tennisFernandes, text: "That's it. A second serve is about getting the ball in play with spin, not winning the point outright. Consistency first." } }
+        ],
+        betterAdvice: "On a second serve, prioritise consistency - a repeatable toss with spin and margin beats trying to hit a perfect power shot."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Semi-Final - The Bad Call",
+        bgImage: "https://images.pexels.com/photos/30555521/pexels-photo-30555521.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "At a crucial point, a line judge calls Ishaan's shot out, but it looked in. He feels the anger rising and the crowd starts to murmur.",
+        dialogues: [
+          { speaker: "Chair Umpire", avatar: AV.tennisUmpire, text: "Ball out. Score is thirty-forty." },
+          { speaker: "Tara (Doubles Partner)", avatar: AV.tennisTara, text: "That was in, Ishaan. Everyone saw it." },
+          { speaker: "Coach Fernandes", avatar: AV.tennisFernandes, text: "Anger is going to cost you the next three points if you let it. What's your plan?" },
+          { speaker: "Ishaan (You)", avatar: AV.tennisYou, text: "I can complain and lose focus, or I can handle it properly and keep playing." }
+        ],
+        choices: [
+          { text: "Politely ask the umpire to check the mark or use the review if available, then take a breath and refocus for the next point", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Coach Fernandes", avatar: AV.tennisFernandes, text: "Exactly. Use the process, then let it go. The rules protect you when you stay calm - anger only helps your opponent." } },
+          { text: "Argue loudly with the umpire and refuse to continue until they change the call", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Coach Fernandes", avatar: AV.tennisFernandes, text: "Ishaan, arguing gets you a code violation and lost focus. The call is made - use the review, then move on to the next point." } }
+        ],
+        betterAdvice: "After a bad line call, use the official review process politely and then refocus - arguing costs focus and can earn a penalty."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Semi-Final - The Tie-Break",
+        bgImage: "https://images.pexels.com/photos/8422410/pexels-photo-8422410.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The match is at 5-5 in the final-set tie-break. Ishaan notices that his opponent's backhand becomes shaky under pressure.",
+        dialogues: [
+          { speaker: "Coach Fernandes", avatar: AV.tennisFernandes, text: "You've seen it too, haven't you? His backhand breaks down when the ball is deep." },
+          { speaker: "Tara (Doubles Partner)", avatar: AV.tennisTara, text: "He'll try to rush you. Don't go for a highlight shot." },
+          { speaker: "Ishaan (You)", avatar: AV.tennisYou, text: "I can go for a big winner every point, or I can make him miss by hitting solid, deep balls to his weaker side." }
+        ],
+        choices: [
+          { text: "Go for a huge risky winner on every point to end it quickly", correct: false,
+            skills: { technical: 1, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Coach Fernandes", avatar: AV.tennisFernandes, text: "Ishaan, every risky winner that misses is a free point for him. In a tie-break, force the errors instead of forcing the shots." } },
+          { text: "Play percentage tennis - keep deep and solid, target the weaker backhand and wait for a short ball to attack", correct: true,
+            skills: { technical: 3, communication: 0, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "Coach Fernandes", avatar: AV.tennisFernandes, text: "Smart tennis. You didn't need brilliance, just patience and a plan. Make him play the shots he doesn't want to." } }
+        ],
+        betterAdvice: "In a tie-break, play the percentages - target the opponent's weaker shot with deep, solid balls instead of going for a risky winner on every point."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // MEDICAL - "Steady Hands" (3 episodes)
+  // Role: Surgeon
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  surgeon: {
+    title: "Steady Hands",
+    genre: "Medical",
+    youDefaultName: "Nikhil",
+    role: "Surgeon",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=NikhilSurgeonM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=NikhilSurgeonF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/6291246/pexels-photo-6291246.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Step into the operating theatre as a young surgeon - run the safety checklist before the first cut, stay calm when bleeding starts, and talk honestly to a worried family after a complication.",
+    narration: "Nikhil has scrubbed in on hundreds of operations as an assistant. Today, for the first time, he is operating under supervision as the lead surgeon. His hands are steady, but he knows surgery is not only about skill - it's about checklists, teamwork and telling the truth.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Operation Theatre - Before the First Cut",
+        bgImage: "https://images.pexels.com/photos/6291246/pexels-photo-6291246.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The patient is asleep and the team is ready. The schedule is tight - two more surgeries are lined up after this one. Nurse Latha begins reading out the surgical safety checklist.",
+        dialogues: [
+          { speaker: "Nurse Latha", avatar: AV.surgeonLatha, text: "Sir, shall I go through the checklist? Patient name, procedure, site, allergies, blood availability." },
+          { speaker: "Dr. Batra (Anaesthetist)", avatar: AV.surgeonBatra, text: "We are already ten minutes behind, Nikhil. Everything looks fine on my side." },
+          { speaker: "Dr. Menon (Senior Surgeon)", avatar: AV.surgeonMenon, text: "You are the lead surgeon today. It's your decision how this room runs." },
+          { speaker: "Nikhil (You)", avatar: AV.surgeonYou, text: "We're late, but this is the moment where the biggest mistakes are prevented." }
+        ],
+        choices: [
+          { text: "Skip the checklist to save time since everyone already knows the case", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Menon (Senior Surgeon)", avatar: AV.surgeonMenon, text: "Nikhil, 'we all know the case' is exactly when mistakes slip through. The checklist is there for the days everybody feels sure." } },
+          { text: "Complete the full safety checklist out loud, confirming patient, procedure, surgical site and allergies before starting", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 1, leadership: 1 },
+            reaction: { speaker: "Dr. Menon (Senior Surgeon)", avatar: AV.surgeonMenon, text: "Correct. The checklist takes two minutes and prevents wrong-site and wrong-patient errors. No schedule is worth skipping it." } }
+        ],
+        betterAdvice: "Always complete the surgical safety checklist before the first cut - it prevents wrong-site and wrong-patient errors, however busy the schedule."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Operation Theatre - Sudden Bleeding",
+        bgImage: "https://images.pexels.com/photos/4094199/pexels-photo-4094199.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Halfway through the operation, a blood vessel starts bleeding more than expected. The monitor beeps faster and the room goes quiet.",
+        dialogues: [
+          { speaker: "Dr. Batra (Anaesthetist)", avatar: AV.surgeonBatra, text: "Blood pressure is dropping, Nikhil. Bleeding is heavier than expected." },
+          { speaker: "Nurse Latha", avatar: AV.surgeonLatha, text: "Suction ready, sir. Extra blood units are on standby." },
+          { speaker: "Dr. Menon (Senior Surgeon)", avatar: AV.surgeonMenon, text: "Take a breath. Tell the team what you see and what you need." },
+          { speaker: "Nikhil (You)", avatar: AV.surgeonYou, text: "Panic is the real danger right now. I have to control the bleeding and keep everyone informed." }
+        ],
+        choices: [
+          { text: "Announce the problem calmly, apply pressure to control the bleeding, ask for suction and extra help, and keep the team informed", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Dr. Menon (Senior Surgeon)", avatar: AV.surgeonMenon, text: "That is exactly what a surgeon does - stay calm, control the bleed, use the team. Communication saves as many lives as technique does." } },
+          { text: "Keep operating silently and hope the bleeding stops by itself", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Menon (Senior Surgeon)", avatar: AV.surgeonMenon, text: "Nikhil, silence in the middle of a bleed leaves the team blind. Say it, control it, and call for help early." } }
+        ],
+        betterAdvice: "When unexpected bleeding occurs, stay calm, control it and communicate clearly with the team - silence leaves everyone blind."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Waiting Room - Speaking to the Family",
+        bgImage: "https://images.pexels.com/photos/8459996/pexels-photo-8459996.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "After the surgery, the patient is stable but has a complication that will need a second procedure. The family is waiting anxiously outside.",
+        dialogues: [
+          { speaker: "Dr. Menon (Senior Surgeon)", avatar: AV.surgeonMenon, text: "The family is here. They deserve to hear it from you, Nikhil." },
+          { speaker: "Nurse Latha", avatar: AV.surgeonLatha, text: "The patient's wife has been standing since morning." },
+          { speaker: "Nikhil (You)", avatar: AV.surgeonYou, text: "I can say everything went fine and hope it clears up... or I can tell them the truth in a way they can understand." }
+        ],
+        choices: [
+          { text: "Say the surgery went perfectly and avoid mentioning the complication for now", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Menon (Senior Surgeon)", avatar: AV.surgeonMenon, text: "Nikhil, hiding a complication breaks trust and can hurt the patient. Always tell the truth, gently and clearly." } },
+          { text: "Explain in simple words what happened, what the complication is, what the plan is, and answer their questions honestly", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 1, leadership: 2 },
+            reaction: { speaker: "Dr. Menon (Senior Surgeon)", avatar: AV.surgeonMenon, text: "That's the right way. Honest, simple and caring. Families can handle bad news better than they handle being misled." } }
+        ],
+        betterAdvice: "After a complication, explain it honestly in simple words with a clear plan - hiding it breaks trust and can harm the patient."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // MEDICAL - "Right Dose" (3 episodes)
+  // Role: Pharmacist
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  pharmacist: {
+    title: "Right Dose",
+    genre: "Medical",
+    youDefaultName: "Aisha",
+    role: "Pharmacist",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AishaPharmacistM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AishaPharmacistF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/10827916/pexels-photo-10827916.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Work behind the counter of a busy pharmacy - question a prescription that looks wrong, say no to a customer who wants antibiotics without a doctor, and warn a patient about a dangerous medicine mix.",
+    narration: "A pharmacy looks simple from the outside - hand over the medicine, take the payment. But Aisha knows the last person to check a prescription before it reaches a patient is the pharmacist. Every tablet she gives out carries a small responsibility - and sometimes a big one.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Pharmacy Counter - The Unclear Prescription",
+        bgImage: "https://images.pexels.com/photos/10827916/pexels-photo-10827916.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A customer hands over a prescription with a handwritten dose that could be read two different ways. It could also be a look-alike medicine that sounds similar to another drug.",
+        dialogues: [
+          { speaker: "Mrs. Verma (Customer)", avatar: AV.pharmacistVerma, text: "Just give me the tablets, dear. I'm in a hurry." },
+          { speaker: "Mr. Kapoor (Senior Pharmacist)", avatar: AV.pharmacistKapoor, text: "Aisha, read that dose again. Is that a one, or a seven?" },
+          { speaker: "Aisha (You)", avatar: AV.pharmacistYou, text: "One reading is a normal dose. The other could be dangerous. I can't be fifty percent sure." }
+        ],
+        choices: [
+          { text: "Politely explain to the customer, call the doctor to confirm the dose and medicine, and dispense only after confirmation", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Mr. Kapoor (Senior Pharmacist)", avatar: AV.pharmacistKapoor, text: "Exactly. A two-minute phone call can prevent a serious overdose. If it's unclear, you ask - always." } },
+          { text: "Choose the more likely reading and dispense it to avoid keeping the customer waiting", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Mr. Kapoor (Senior Pharmacist)", avatar: AV.pharmacistKapoor, text: "Aisha, guessing on a dose is how medication errors happen. A waiting customer is an inconvenience; a wrong dose is an injury." } }
+        ],
+        betterAdvice: "If a prescription is unclear, confirm it with the prescriber before dispensing - never guess a dose or a drug name."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Pharmacy Counter - Antibiotics Without a Prescription",
+        bgImage: "https://images.pexels.com/photos/24193871/pexels-photo-24193871.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A young man asks for a strong antibiotic for a common cold. He has no prescription and says he takes it whenever he feels unwell.",
+        dialogues: [
+          { speaker: "Mrs. Verma (Customer)", avatar: AV.pharmacistVerma, text: "Just sell it to him, dear. Every other shop does." },
+          { speaker: "Mr. Kapoor (Senior Pharmacist)", avatar: AV.pharmacistKapoor, text: "Think about what this drug does when it's used the wrong way." },
+          { speaker: "Aisha (You)", avatar: AV.pharmacistYou, text: "He believes he needs it. But a cold is usually caused by a virus, and antibiotics don't work on viruses." }
+        ],
+        choices: [
+          { text: "Sell the antibiotic since he is willing to pay for it", correct: false,
+            skills: { technical: 0, communication: 1, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Mr. Kapoor (Senior Pharmacist)", avatar: AV.pharmacistKapoor, text: "Aisha, selling antibiotics without a prescription helps create drug-resistant infections and is against pharmacy rules. Explain instead of selling." } },
+          { text: "Explain kindly that antibiotics don't work on colds and need a prescription, and suggest seeing a doctor if symptoms continue", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 1, leadership: 1 },
+            reaction: { speaker: "Mr. Kapoor (Senior Pharmacist)", avatar: AV.pharmacistKapoor, text: "Well said. Misusing antibiotics makes bacteria resistant, and that harms everyone. Educating a customer is part of the job." } }
+        ],
+        betterAdvice: "Do not dispense prescription-only medicines without a valid prescription - explain kindly why and guide the customer to a doctor."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Pharmacy Counter - The Risky Combination",
+        bgImage: "https://images.pexels.com/photos/28123678/pexels-photo-28123678.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Mrs. Verma, an elderly customer who takes a blood thinner, asks for a common painkiller that can increase the risk of bleeding when combined with it.",
+        dialogues: [
+          { speaker: "Mrs. Verma (Customer)", avatar: AV.pharmacistVerma, text: "My knee hurts terribly. Just give me my usual strip of painkillers." },
+          { speaker: "Dr. Rao (Physician)", avatar: AV.pharmacistRao, text: "Aisha, I see her regular prescription on file. She's on a blood thinner." },
+          { speaker: "Mr. Kapoor (Senior Pharmacist)", avatar: AV.pharmacistKapoor, text: "Some painkillers and blood thinners do not go well together. Think carefully." },
+          { speaker: "Aisha (You)", avatar: AV.pharmacistYou, text: "The medicine on the shelf is harmless for most people - but not for her." }
+        ],
+        choices: [
+          { text: "Explain the interaction risk, ask her to check with her doctor, and suggest a safer option only if the doctor approves", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Dr. Rao (Physician)", avatar: AV.pharmacistRao, text: "Excellent. You caught a dangerous interaction. Counselling and checking with the doctor is exactly the role of a pharmacist." } },
+          { text: "Sell the usual painkiller because she has bought it before", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Rao (Physician)", avatar: AV.pharmacistRao, text: "Aisha, 'she bought it before' isn't a safety check. A new blood thinner changes everything - always check for interactions." } }
+        ],
+        betterAdvice: "Always check for drug interactions before dispensing - counsel the patient and confirm with the doctor when a medicine may be unsafe with their existing treatment."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // LAW - "The Last Verdict" (3 episodes)
+  // Role: Judge
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  judge: {
+    title: "The Last Verdict",
+    genre: "Law",
+    youDefaultName: "Vidya",
+    role: "Judge",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=VidyaJudgeM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=VidyaJudgeF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Sit on the judge's chair for the first time - decide on repeated adjournments, refuse a private approach from a powerful lawyer, and deliver a verdict while the whole town is watching.",
+    narration: "The courtroom rises as Vidya enters. She is one of the youngest magistrates in the district, and everyone in the room - lawyers, clerks and visitors - is quietly measuring her. A judge's power is enormous, and it is only respected when it is used with patience, fairness and courage.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Courtroom - The Fifth Adjournment",
+        bgImage: "https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "For the fifth time, Advocate Rana asks the court to postpone a case. The other side, a poor family waiting for a decision for three years, is sitting quietly at the back.",
+        dialogues: [
+          { speaker: "Advocate Rana", avatar: AV.judgeRana, text: "Your Honour, my client is unwell. I request another adjournment of four weeks." },
+          { speaker: "Court Master Prakash", avatar: AV.judgePrakash, text: "Madam, this is the fifth adjournment sought in this case. The family has travelled again today." },
+          { speaker: "Justice Bhatt (Senior Judge)", avatar: AV.judgeBhatt, text: "Delay is also a form of denying justice, Vidya. But fairness matters too." },
+          { speaker: "Vidya (You)", avatar: AV.judgeYou, text: "If I grant it automatically, the case never ends. If I refuse without hearing, it may be unfair." }
+        ],
+        choices: [
+          { text: "Grant the adjournment again without asking any questions", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Justice Bhatt (Senior Judge)", avatar: AV.judgeBhatt, text: "Vidya, casual adjournments are why some cases take ten years. A judge must protect the court's time and the waiting party's rights." } },
+          { text: "Ask for proof of the illness, allow a short final date with a clear warning and costs for further delay", correct: true,
+            skills: { technical: 1, communication: 2, problemSolving: 3, leadership: 2 },
+            reaction: { speaker: "Justice Bhatt (Senior Judge)", avatar: AV.judgeBhatt, text: "Balanced and firm. You respected genuine hardship without allowing endless delay. Justice delayed is justice denied." } }
+        ],
+        betterAdvice: "A judge should not grant repeated adjournments automatically - ask for reasons, allow a short final date and discourage delay, while remaining fair."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Chamber - A Private Approach",
+        bgImage: "https://images.pexels.com/photos/8112166/pexels-photo-8112166.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Before the hearing of an important case, a lawyer representing a powerful businessman enters Vidya's chamber alone and starts speaking about the case in a friendly tone.",
+        dialogues: [
+          { speaker: "Advocate Rana", avatar: AV.judgeRana, text: "Madam, I only wish to have a quiet word about the case. It will save everyone's time." },
+          { speaker: "Court Master Prakash", avatar: AV.judgePrakash, text: "Madam, the other side's lawyer is not here." },
+          { speaker: "Justice Bhatt (Senior Judge)", avatar: AV.judgeBhatt, text: "Remember what the robe means, Vidya. Everything you do in the case must happen openly." },
+          { speaker: "Vidya (You)", avatar: AV.judgeYou, text: "He is polite and smiling. But a private conversation about a case is not something a judge can allow." }
+        ],
+        choices: [
+          { text: "Politely refuse to discuss the case privately and ask him to make his points in open court with the other side present", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Justice Bhatt (Senior Judge)", avatar: AV.judgeBhatt, text: "Exactly. A judge hears both sides together. Even a friendly private word can destroy public trust in the court." } },
+          { text: "Listen to what he has to say because it might help understand the case faster", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Justice Bhatt (Senior Judge)", avatar: AV.judgeBhatt, text: "Vidya, one-sided conversations are exactly what a judge must avoid. If the other side isn't present, the discussion can't happen." } }
+        ],
+        betterAdvice: "A judge must never discuss a pending case privately with one side - all arguments must be heard openly with both parties present."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Courtroom - Judgment Day",
+        bgImage: "https://images.pexels.com/photos/34817075/pexels-photo-34817075.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The town has been talking about a case for weeks and newspaper headlines demand a strict punishment. But the evidence on record is weak, and the prosecution cannot prove the charge beyond doubt.",
+        dialogues: [
+          { speaker: "Court Master Prakash", avatar: AV.judgePrakash, text: "Madam, there are journalists in the gallery and a crowd outside." },
+          { speaker: "Justice Bhatt (Senior Judge)", avatar: AV.judgeBhatt, text: "People are angry, Vidya. But a court's duty is different from public opinion." },
+          { speaker: "Advocate Rana", avatar: AV.judgeRana, text: "Your Honour, the law asks for proof, not for feelings." },
+          { speaker: "Vidya (You)", avatar: AV.judgeYou, text: "If I convict because of the noise, I will be punishing someone the evidence doesn't support." }
+        ],
+        choices: [
+          { text: "Give a strict punishment to satisfy the public even though the evidence is weak", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Justice Bhatt (Senior Judge)", avatar: AV.judgeBhatt, text: "Vidya, a verdict built on public pressure and weak evidence can destroy an innocent life. The law asks for proof, not applause." } },
+          { text: "Decide only on the evidence and the law, and explain the reasoning clearly in the judgment, whatever public opinion says", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 2, leadership: 3 },
+            reaction: { speaker: "Justice Bhatt (Senior Judge)", avatar: AV.judgeBhatt, text: "That is the heart of the judiciary. A judge follows evidence and law, not headlines. The reasoning is what protects your decision." } }
+        ],
+        betterAdvice: "A judge decides on evidence and law alone, not public pressure - and explains the reasoning clearly in the judgment."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // LAW - "Voice for Many" (3 episodes)
+  // Role: Legal Aid Lawyer
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  legalaid: {
+    title: "Voice for Many",
+    genre: "Law",
+    youDefaultName: "Farhan",
+    role: "Legal Aid Lawyer",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=FarhanLegalaidM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=FarhanLegalaidF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/8112166/pexels-photo-8112166.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Work at a free legal aid clinic - help a worker who wasn't paid his wages, guide a client through a tough settlement offer, and refuse a bribe to drop the case.",
+    narration: "Farhan could have joined a big firm and earned ten times more. Instead he chose a small legal aid clinic where the clients can't pay a rupee - people who don't know their rights and have nobody else to speak for them. Today, one of them is walking through the door.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Legal Aid Clinic - First Meeting",
+        bgImage: "https://images.pexels.com/photos/8112166/pexels-photo-8112166.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Ramesh, a daily-wage worker, says his employer fired him without paying three months of wages. He has only a few crumpled papers and no formal contract.",
+        dialogues: [
+          { speaker: "Ramesh (Client)", avatar: AV.legalaidRamesh, text: "Sir, I worked hard for three months. The owner just said don't come back, and gave me nothing." },
+          { speaker: "Director Sunita", avatar: AV.legalaidSunita, text: "He doesn't know if he has any rights, Farhan. Explain them simply." },
+          { speaker: "Farhan (You)", avatar: AV.legalaidYou, text: "He wants to hear that he will win. But I can't promise what I don't know." }
+        ],
+        choices: [
+          { text: "Promise him that he will definitely win and get all his money quickly", correct: false,
+            skills: { technical: 0, communication: 1, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Director Sunita", avatar: AV.legalaidSunita, text: "Farhan, no lawyer can guarantee a result. Promising a win sets a client up for heartbreak and destroys trust." } },
+          { text: "Listen fully, explain his rights in simple words, collect whatever documents and witnesses exist and explain the honest next steps", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Director Sunita", avatar: AV.legalaidSunita, text: "Just right. Client trust starts with listening and honesty. You give him clarity, not false promises." } }
+        ],
+        betterAdvice: "Listen carefully, explain rights in simple language and give honest expectations - never promise a guaranteed result to a client."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Clinic - The Settlement Offer",
+        bgImage: "https://images.pexels.com/photos/8428076/pexels-photo-8428076.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The employer's side offers a small settlement - about half the wages owed. Ramesh needs money urgently for his daughter's school fees and is tempted to accept.",
+        dialogues: [
+          { speaker: "Mr. Ahuja (Opposing Lawyer)", avatar: AV.legalaidAhuja, text: "My client is willing to pay half now. Take it, and the matter ends today." },
+          { speaker: "Ramesh (Client)", avatar: AV.legalaidRamesh, text: "Sir, the school fees are due on Monday. Maybe I should just accept." },
+          { speaker: "Director Sunita", avatar: AV.legalaidSunita, text: "It is his life and his decision. Your job is to make sure it is an informed one." },
+          { speaker: "Farhan (You)", avatar: AV.legalaidYou, text: "I could tell him what to do. But the choice is his - and it should be a fully informed choice." }
+        ],
+        choices: [
+          { text: "Explain the offer, his chances, the time the full case may take, and let Ramesh make the final decision himself", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Director Sunita", avatar: AV.legalaidSunita, text: "Correct. A lawyer advises but the client decides. Ramesh now knows exactly what he is choosing and why." } },
+          { text: "Decide for him and reject the offer without discussing his needs", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Director Sunita", avatar: AV.legalaidSunita, text: "Farhan, it is his case and his family. Making decisions for a client takes away the very voice we are here to give them." } }
+        ],
+        betterAdvice: "Advise the client about options, risks and timelines, but let the client make the final decision - never decide on their behalf."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Corridor - An Envelope",
+        bgImage: "https://images.pexels.com/photos/34817075/pexels-photo-34817075.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Outside the courtroom, the opposing lawyer quietly offers Farhan an envelope of cash and says the case would be easier for everyone if it 'did not go forward'.",
+        dialogues: [
+          { speaker: "Mr. Ahuja (Opposing Lawyer)", avatar: AV.legalaidAhuja, text: "No one has to know, Farhan. You have small pay, a small clinic. Take it and let this case fade away." },
+          { speaker: "Director Sunita", avatar: AV.legalaidSunita, text: "Farhan, I am watching this corridor from the door. What you do next matters." },
+          { speaker: "Farhan (You)", avatar: AV.legalaidYou, text: "It would solve a lot of problems for me. But it would destroy the only person who trusted me." }
+        ],
+        choices: [
+          { text: "Take the envelope and let the case slowly fade away", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Director Sunita", avatar: AV.legalaidSunita, text: "Farhan, selling out your client for an envelope ends your career and abandons the person you promised to help. Never." } },
+          { text: "Refuse firmly, walk away and report the bribe attempt to the court and the clinic director", correct: true,
+            skills: { technical: 1, communication: 2, problemSolving: 1, leadership: 3 },
+            reaction: { speaker: "Director Sunita", avatar: AV.legalaidSunita, text: "That's integrity. Refusing and reporting protects your client, your profession and yourself. Well done." } }
+        ],
+        betterAdvice: "Refuse any bribe firmly and report it - a lawyer's duty to the client and the court always comes before personal gain."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // LAW - "Cyber Court" (3 episodes)
+  // Role: Cyber Law Advocate
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  cyberlaw: {
+    title: "Cyber Court",
+    genre: "Law",
+    youDefaultName: "Rhea",
+    role: "Cyber Law Advocate",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RheaCyberlawM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RheaCyberlawF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/37732186/pexels-photo-37732186.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Fight a case where the crime happened online - protect digital evidence, push a platform to remove harmful content, and make sure electronic proof will stand up in court.",
+    narration: "The crime scene in Rhea's cases isn't a street or a room - it's a phone screen. Photos can be deleted in seconds, accounts can vanish overnight, and the proof is made of timestamps and links. Today, a young woman is sitting in her office, terrified by what's being posted about her online.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Law Office - The First Consultation",
+        bgImage: "https://images.pexels.com/photos/37732186/pexels-photo-37732186.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Nisha shows Rhea fake, edited photos of her that have been posted on a social media account. She is frightened and wants to delete all her own messages and photos immediately.",
+        dialogues: [
+          { speaker: "Nisha (Client)", avatar: AV.cyberlawNisha, text: "Please help me, they are everywhere. I want to delete everything and disappear from the internet." },
+          { speaker: "Sameer (IT Expert)", avatar: AV.cyberlawSameer, text: "If she deletes her accounts and messages, we may lose the very evidence that identifies the person behind this." },
+          { speaker: "Adv. Khanna (Senior Partner)", avatar: AV.cyberlawKhanna, text: "The first hour decides half the case, Rhea." },
+          { speaker: "Rhea (You)", avatar: AV.cyberlawYou, text: "She wants the pain to stop. But the evidence must be saved before anything is removed." }
+        ],
+        choices: [
+          { text: "Tell her to delete everything immediately so no one can see it", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Adv. Khanna (Senior Partner)", avatar: AV.cyberlawKhanna, text: "Rhea, deleting everything destroys proof. Content can be reported for removal only after the evidence is safely preserved." } },
+          { text: "Save the evidence first with screenshots showing links and timestamps, note the accounts, and then file a complaint on the cyber crime portal", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Adv. Khanna (Senior Partner)", avatar: AV.cyberlawKhanna, text: "Exactly. Preserve first, then report. Evidence that isn't saved can disappear forever within minutes." } }
+        ],
+        betterAdvice: "In online harassment cases, preserve evidence first (links, timestamps, screenshots) and then report it - deleting everything destroys the proof."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Law Office - The Platform Refuses",
+        bgImage: "https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Nisha's complaint is registered, but the platform has not removed the fake photos even after several requests. Every hour, more people see them.",
+        dialogues: [
+          { speaker: "Nisha (Client)", avatar: AV.cyberlawNisha, text: "It has been two days. They keep saying they are reviewing it." },
+          { speaker: "Adv. Khanna (Senior Partner)", avatar: AV.cyberlawKhanna, text: "Platforms respond to formal legal notices faster than to angry posts." },
+          { speaker: "Sameer (IT Expert)", avatar: AV.cyberlawSameer, text: "We can list every URL and the exact rule the content breaks." },
+          { speaker: "Rhea (You)", avatar: AV.cyberlawYou, text: "Shouting about it publicly may feel powerful, but it could also harm her case." }
+        ],
+        choices: [
+          { text: "Send a formal takedown notice listing the exact links and legal grounds, keep a record of it, and escalate to the grievance officer if there is no action", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Adv. Khanna (Senior Partner)", avatar: AV.cyberlawKhanna, text: "That's the professional route. A precise notice with proper escalation gives the platform a legal duty to act - and creates a record." } },
+          { text: "Start a public campaign attacking the platform on social media", correct: false,
+            skills: { technical: 0, communication: 1, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Adv. Khanna (Senior Partner)", avatar: AV.cyberlawKhanna, text: "Rhea, a public fight can amplify the harmful content and weaken the case. Use the formal legal route first." } }
+        ],
+        betterAdvice: "Send a formal takedown notice with exact links and legal grounds, then escalate through the platform's grievance process - not a public fight."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Chambers - Making Evidence Count",
+        bgImage: "https://images.pexels.com/photos/37732186/pexels-photo-37732186.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The case goes to court. Rhea's only proof is a folder of phone screenshots, and the other side argues they can be easily edited or faked.",
+        dialogues: [
+          { speaker: "Adv. Khanna (Senior Partner)", avatar: AV.cyberlawKhanna, text: "The opposite counsel will challenge every screenshot. We need to make our proof reliable." },
+          { speaker: "Sameer (IT Expert)", avatar: AV.cyberlawSameer, text: "We can use a proper forensic copy of the content and record its digital fingerprint (hash) so any change can be detected." },
+          { speaker: "Rhea (You)", avatar: AV.cyberlawYou, text: "Screenshots alone are easy to attack. Electronic evidence needs a proper certificate and a clear chain of custody." }
+        ],
+        choices: [
+          { text: "Submit the screenshots as they are and rely on the judge trusting them", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Adv. Khanna (Senior Partner)", avatar: AV.cyberlawKhanna, text: "Rhea, unverified screenshots are easy to challenge. Electronic evidence must be authenticated properly if it's going to stand." } },
+          { text: "Get a forensic copy with a hash value, prepare the required certificate for electronic evidence and document who handled it", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "Adv. Khanna (Senior Partner)", avatar: AV.cyberlawKhanna, text: "Perfect. Reliable, certified and documented digital evidence is what makes a court accept it. This is where cyber cases are won." } }
+        ],
+        betterAdvice: "Electronic evidence must be authenticated - use a forensic copy with a hash, the required certificate and a documented chain of custody."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // TEACHING - "Every Child Counts" (3 episodes)
+  // Role: Special Educator
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  specialedu: {
+    title: "Every Child Counts",
+    genre: "Teaching",
+    youDefaultName: "Mansi",
+    role: "Special Educator",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=MansiSpecialeduM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=MansiSpecialeduF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/18395403/pexels-photo-18395403.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Help a bright child who struggles with reading - teach in a way that suits him, talk honestly with a worried parent, and ask the school for the exam support he deserves.",
+    narration: "Aarush is ten, curious and very good with numbers, but the words on the page seem to swim in front of his eyes. He has started hiding his notebook and calling himself stupid. Mansi has been trained for exactly this - to teach the way each child learns, not to force every child to learn the same way.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Classroom - Reading Time",
+        bgImage: "https://images.pexels.com/photos/18395403/pexels-photo-18395403.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "During class, the teacher asks each student to read aloud one by one. Aarush's turn is next, and his hands are trembling.",
+        dialogues: [
+          { speaker: "Aarush (Student)", avatar: AV.specialeduAarush, text: "Ma'am, please don't make me read in front of everyone. They laugh at me." },
+          { speaker: "Coordinator D'Souza", avatar: AV.specialeduDsouza, text: "Mansi, some teachers push a struggling child harder, hoping it will fix things. It usually does the opposite." },
+          { speaker: "Mansi (You)", avatar: AV.specialeduYou, text: "He isn't lazy. He needs a different way in, and he needs to feel safe first." }
+        ],
+        choices: [
+          { text: "Make him read aloud in front of the class so he learns to overcome his fear", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Coordinator D'Souza", avatar: AV.specialeduDsouza, text: "Mansi, forcing a struggling child to read in public builds shame, not skill. Safety first, then skill." } },
+          { text: "Skip the public reading, give him extra time and use a multi-sensory method like listening, tracing letters and colour overlays", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Coordinator D'Souza", avatar: AV.specialeduDsouza, text: "Exactly. Multi-sensory teaching and a safe environment help children like Aarush build skill and confidence at the same time." } }
+        ],
+        betterAdvice: "For a child with reading difficulty, use extra time and multi-sensory teaching in a safe setting - never force public reading."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Meeting Room - A Worried Parent",
+        bgImage: "https://images.pexels.com/photos/18931270/pexels-photo-18931270.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Aarush's mother believes her son is simply not trying hard enough. She is upset and thinks the school is making excuses.",
+        dialogues: [
+          { speaker: "Mrs. Kulkarni (Parent)", avatar: AV.specialeduKulkarni, text: "He is smart when he speaks. He just doesn't want to study. Maybe he needs stricter homework." },
+          { speaker: "Coordinator D'Souza", avatar: AV.specialeduDsouza, text: "Parents are often scared, not angry. Approach it with patience." },
+          { speaker: "Mansi (You)", avatar: AV.specialeduYou, text: "She loves him. She just hasn't been shown what he is going through." }
+        ],
+        choices: [
+          { text: "Share specific examples of what you have observed, explain his strengths and difficulties kindly and suggest strategies that can be used at home", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Coordinator D'Souza", avatar: AV.specialeduDsouza, text: "Well done. Examples and kindness turn a defensive parent into a partner. Now she can actually help him." } },
+          { text: "Tell her that she has not been supporting him enough at home", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Coordinator D'Souza", avatar: AV.specialeduDsouza, text: "Mansi, blaming a parent closes the door. A parent who feels attacked won't listen. Show, don't accuse." } }
+        ],
+        betterAdvice: "With worried parents, share specific observations and strengths kindly and suggest practical strategies - blame closes the conversation."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Principal's Office - Exam Support",
+        bgImage: "https://images.pexels.com/photos/8423020/pexels-photo-8423020.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Board exams are approaching. Aarush needs extra time and a reader for the papers, but the school office says there is a formal process and paperwork.",
+        dialogues: [
+          { speaker: "Coordinator D'Souza", avatar: AV.specialeduDsouza, text: "The school can request accommodations, but only with proper documentation and a formal request." },
+          { speaker: "Mrs. Kulkarni (Parent)", avatar: AV.specialeduKulkarni, text: "I just want him to be treated fairly in the exam hall." },
+          { speaker: "Mansi (You)", avatar: AV.specialeduYou, text: "The rules exist so support is given fairly and properly. I need to follow the process well." }
+        ],
+        choices: [
+          { text: "Just tell the exam supervisor on the day to give him extra time", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Coordinator D'Souza", avatar: AV.specialeduDsouza, text: "Mansi, without approval on file, the supervisor cannot allow it. Support has to be arranged in advance through the official process." } },
+          { text: "Prepare the assessment report, teacher observations and a formal application well before the deadline so the accommodations get approved", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "Coordinator D'Souza", avatar: AV.specialeduDsouza, text: "Exactly. Good documentation and early submission make approval smooth. You've made sure the support reaches him on exam day." } }
+        ],
+        betterAdvice: "Exam accommodations require documented assessment and a formal application well before the deadline - not a last-minute verbal request."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // TEACHING - "The Principal's Office" (3 episodes)
+  // Role: School Principal
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  principal: {
+    title: "The Principal's Office",
+    genre: "Teaching",
+    youDefaultName: "Sunil",
+    role: "School Principal",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=SunilPrincipalM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=SunilPrincipalF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/18931270/pexels-photo-18931270.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Run a school for a day, every day - investigate a bullying complaint fairly, say no to a powerful parent, and choose wisely how to spend a tight budget.",
+    narration: "Sunil was a great teacher for fifteen years. Being a principal is different - now he is responsible for eight hundred students, forty teachers and every decision that affects them. Some days the hardest part of the job isn't teaching. It's fairness.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Principal's Office - The Complaint",
+        bgImage: "https://images.pexels.com/photos/18931270/pexels-photo-18931270.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A teacher reports that a Class 8 student is being repeatedly teased and pushed by a group of classmates. The group says it was only a joke.",
+        dialogues: [
+          { speaker: "Mrs. Iyer (Teacher)", avatar: AV.principalIyer, text: "Sir, he came to me crying twice this week. The other boys say they were joking." },
+          { speaker: "Vice Principal Gupta", avatar: AV.principalGupta, text: "Boys will be boys, Sunil. It will settle itself." },
+          { speaker: "Sunil (You)", avatar: AV.principalYou, text: "If this is bullying and I ignore it, it will get worse. If I punish without hearing everyone, it may be unfair." }
+        ],
+        choices: [
+          { text: "Speak to the student and the other boys separately, gather facts, involve the counsellor and the parents, and set clear consequences and follow-up", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Mrs. Iyer (Teacher)", avatar: AV.principalIyer, text: "That's the right approach. A fair inquiry protects the victim, gives everyone a voice and sets a clear standard for the school." } },
+          { text: "Dismiss it as harmless fun and ask the boys to shake hands", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Mrs. Iyer (Teacher)", avatar: AV.principalIyer, text: "Sir, bullying that is ignored grows. A handshake doesn't fix a pattern - a proper inquiry and follow-up do." } }
+        ],
+        betterAdvice: "Treat bullying complaints seriously - inquire fairly, hear all sides, involve the counsellor and parents and follow up."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Principal's Office - The Powerful Parent",
+        bgImage: "https://images.pexels.com/photos/8423020/pexels-photo-8423020.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "An influential parent arrives, angry that his daughter scored poorly, and demands that her marks be raised. He hints that he 'has a lot of contacts in the education department'.",
+        dialogues: [
+          { speaker: "Mr. Malhotra (Parent)", avatar: AV.principalMalhotra, text: "Sunil, my daughter needs higher marks for her admission. Surely you can fix a few numbers." },
+          { speaker: "Vice Principal Gupta", avatar: AV.principalGupta, text: "He can create trouble for us if we refuse." },
+          { speaker: "Sunil (You)", avatar: AV.principalYou, text: "If I change the marks, I cheat every other student. If I refuse, I risk trouble. But I know which one is right." }
+        ],
+        choices: [
+          { text: "Agree to raise the marks quietly to avoid trouble", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Vice Principal Gupta", avatar: AV.principalGupta, text: "Sunil, changing marks under pressure is dishonest and unfair to every student. Rules are only worth having if they apply to everyone." } },
+          { text: "Politely refuse to change any marks, offer a formal re-evaluation process and suggest extra support for the student", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 1, leadership: 3 },
+            reaction: { speaker: "Vice Principal Gupta", avatar: AV.principalGupta, text: "Right. Fair processes protect everyone. A re-evaluation is the honest answer, and it treats every child equally." } }
+        ],
+        betterAdvice: "Never change marks under pressure - refuse politely and offer the official re-evaluation process, treating all students equally."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Staff Room - The Budget",
+        bgImage: "https://images.pexels.com/photos/31367512/pexels-photo-31367512.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The school has money for only one upgrade this year. One group wants a new smart board. The maintenance staff say the railing on the main staircase is loose and could break.",
+        dialogues: [
+          { speaker: "Mrs. Iyer (Teacher)", avatar: AV.principalIyer, text: "A smart board would help us all teach better, Sir." },
+          { speaker: "Vice Principal Gupta", avatar: AV.principalGupta, text: "Then again, the staircase railing has been loose for a month." },
+          { speaker: "Sunil (You)", avatar: AV.principalYou, text: "Both matter. But one of them is about students getting hurt." }
+        ],
+        choices: [
+          { text: "Consult the teachers openly, fix the unsafe railing first because safety comes before convenience, and plan the smart board for the next budget", correct: true,
+            skills: { technical: 1, communication: 2, problemSolving: 3, leadership: 2 },
+            reaction: { speaker: "Vice Principal Gupta", avatar: AV.principalGupta, text: "Correct. Safety comes first, and by consulting the staff you kept everyone's trust. The smart board can follow." } },
+          { text: "Buy the smart board first because it will impress visitors and parents", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Vice Principal Gupta", avatar: AV.principalGupta, text: "Sunil, impressing visitors is not a reason to leave a broken railing. Student safety is always the first priority." } }
+        ],
+        betterAdvice: "When funds are limited, fix safety hazards first and involve staff in planning the rest - safety comes before convenience or appearance."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // TEACHING - "The Toppers' Batch" (3 episodes)
+  // Role: Coaching Mentor
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  coachmentor: {
+    title: "The Toppers' Batch",
+    genre: "Teaching",
+    youDefaultName: "Rajat",
+    role: "Coaching Mentor",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RajatCoachmentorM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RajatCoachmentorF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/31367512/pexels-photo-31367512.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Teach at a competitive exam coaching centre - help a student who is falling behind, guide a stressed student wisely, and refuse to lie in an advertisement about results.",
+    narration: "Every year, thousands of students pack into coaching centres with one dream - a top rank. Rajat is a mentor for the toughest batch in the institute. The syllabus is heavy, the competition is fierce, and the most important thing he teaches is not a formula. It is how to stay honest, balanced and human under pressure.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Lecture Hall - Falling Behind",
+        bgImage: "https://images.pexels.com/photos/31367512/pexels-photo-31367512.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The batch is moving fast through Physics, but Simran is struggling and afraid to ask questions in front of the toppers.",
+        dialogues: [
+          { speaker: "Simran (Student)", avatar: AV.coachmentorSimran, text: "Sir, I don't understand the last three chapters. Everyone else seems to get it." },
+          { speaker: "Aryan (Topper)", avatar: AV.coachmentorAryan, text: "We have a test next week, Sir. Can we just continue?" },
+          { speaker: "Director Sharma", avatar: AV.coachmentorSharma, text: "The syllabus deadline is fixed, Rajat, but so is your responsibility to each student." },
+          { speaker: "Rajat (You)", avatar: AV.coachmentorYou, text: "If I keep going at this speed, I lose Simran - and probably others who are quiet too." }
+        ],
+        choices: [
+          { text: "Keep going at the same pace because the syllabus can't wait", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Director Sharma", avatar: AV.coachmentorSharma, text: "Rajat, a syllabus finished with half the class lost isn't a success. Find the gap and close it before the next chapter." } },
+          { text: "Find out exactly which concepts are missing, run a short doubt session, and give her a simple plan to catch up", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Director Sharma", avatar: AV.coachmentorSharma, text: "That's good mentoring. Diagnose the gap, fix it, and make it easy to ask questions. A student who is left behind rarely catches up alone." } }
+        ],
+        betterAdvice: "When a student falls behind, identify the specific gaps and give focused support - don't keep moving ahead and leave them behind."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Mentor's Cabin - Exam Stress",
+        bgImage: "https://images.pexels.com/photos/8199142/pexels-photo-8199142.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A week before the big exam, Simran comes to Rajat looking exhausted. She says she has stopped sleeping and is afraid she will let her parents down.",
+        dialogues: [
+          { speaker: "Simran (Student)", avatar: AV.coachmentorSimran, text: "Sir, if I fail, my parents will be so disappointed. I can't stop thinking about it." },
+          { speaker: "Director Sharma", avatar: AV.coachmentorSharma, text: "Pressure builds up quietly in students, Rajat. Listen before you speak." },
+          { speaker: "Rajat (You)", avatar: AV.coachmentorYou, text: "She needs support, not another lecture about working harder." }
+        ],
+        choices: [
+          { text: "Listen kindly, help her make a realistic study and rest plan, and gently involve the counsellor and her parents for support", correct: true,
+            skills: { technical: 0, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Director Sharma", avatar: AV.coachmentorSharma, text: "Exactly right. Rest and realistic goals matter as much as revision. Involving the counsellor and family gives her a support system." } },
+          { text: "Tell her to study more and sleep less because the exam is close", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Director Sharma", avatar: AV.coachmentorSharma, text: "Rajat, an exhausted mind performs badly and suffers. Encouraging her to push harder without rest can hurt her more than a lost mark." } }
+        ],
+        betterAdvice: "For an exam-stressed student, listen, encourage realistic planning with rest and involve counsellors and family - don't push harder without support."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Director's Office - The Advertisement",
+        bgImage: "https://images.pexels.com/photos/8199142/pexels-photo-8199142.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The Director wants a big banner saying '100% Selection' for the batch. In reality, only some students in the batch got top ranks, and some of those toppers only took a single test series.",
+        dialogues: [
+          { speaker: "Director Sharma", avatar: AV.coachmentorSharma, text: "Rajat, everyone advertises big numbers. If we don't, we lose admissions to the next institute." },
+          { speaker: "Aryan (Topper)", avatar: AV.coachmentorAryan, text: "Sir, I only attended the test series, but my photo is on the poster." },
+          { speaker: "Rajat (You)", avatar: AV.coachmentorYou, text: "It would bring more students. But the students and parents who trust the poster would be misled." }
+        ],
+        choices: [
+          { text: "Go along with the banner because everyone else does the same", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Director Sharma", avatar: AV.coachmentorSharma, text: "Rajat, 'everyone does it' doesn't make it honest. Misleading ads cheat families who are making big life decisions." } },
+          { text: "Refuse the misleading claim and suggest advertising honest, verifiable results such as the actual number of selections and the students' real journey", correct: true,
+            skills: { technical: 0, communication: 3, problemSolving: 2, leadership: 3 },
+            reaction: { speaker: "Director Sharma", avatar: AV.coachmentorSharma, text: "Well said. Honest results build long-term trust. Misleading ads can lead to complaints, legal trouble and lost reputation." } }
+        ],
+        betterAdvice: "Refuse misleading advertising - promote honest, verifiable results because students and parents make major decisions based on them."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // POLICE - "Trace the Signal" (3 episodes)
+  // Role: Cyber Crime Officer
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  cybercell: {
+    title: "Trace the Signal",
+    genre: "Police",
+    youDefaultName: "Jai",
+    role: "Cyber Crime Officer",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=JaiCybercellM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=JaiCybercellF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/5380618/pexels-photo-5380618.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Join the cyber crime cell - act fast for a victim of an online money scam, follow the money trail the legal way, and handle seized phones without destroying the evidence.",
+    narration: "In Jai's old police station, crimes had a street address. In the cyber cell, the thief could be a thousand kilometres away and the weapon is a phone call. The clock matters most - money moves through bank accounts in minutes, and every hour of delay makes it harder to get back.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Cyber Cell - The Scam Call",
+        bgImage: "https://images.pexels.com/photos/5380618/pexels-photo-5380618.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A retired teacher, Mr. Gupta, walks in trembling. Twenty minutes ago he shared an OTP with a caller pretending to be from his bank, and money has left his account.",
+        dialogues: [
+          { speaker: "Mr. Gupta (Victim)", avatar: AV.cybercellGupta, text: "Sir, I gave them the OTP. Now eighty thousand rupees are gone from my account." },
+          { speaker: "Constable Neha (Tech Analyst)", avatar: AV.cybercellNeha, text: "Sir, the first hour is the 'golden hour' for freezing the money before it moves further." },
+          { speaker: "SP Malhotra", avatar: AV.cybercellMalhotra, text: "Every minute matters, Jai. What do you do first?" },
+          { speaker: "Jai (You)", avatar: AV.cybercellYou, text: "I can take his written complaint later. Right now, the money is still moving." }
+        ],
+        choices: [
+          { text: "Ask him to come back tomorrow with all documents ready", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "SP Malhotra", avatar: AV.cybercellMalhotra, text: "Jai, by tomorrow the money will have passed through several accounts. In cyber fraud, speed is everything." } },
+          { text: "Immediately report it through the cyber fraud helpline and portal so the bank can freeze the money, then record the full complaint", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "SP Malhotra", avatar: AV.cybercellMalhotra, text: "Perfect. In the golden hour, a fast alert to the bank can stop the money. Paperwork can be finished after the money is safe." } }
+        ],
+        betterAdvice: "In online money fraud, report immediately through the fraud helpline and portal - the first hour is the best chance to freeze the money."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Cyber Cell - Following the Money",
+        bgImage: "https://images.pexels.com/photos/7785075/pexels-photo-7785075.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Neha traces the stolen money to a bank account that seems to belong to an ordinary person - possibly a 'mule' account used to pass money along. Jai wants to see all the account holder's private data at once.",
+        dialogues: [
+          { speaker: "Constable Neha (Tech Analyst)", avatar: AV.cybercellNeha, text: "The money reached an account in another state, then split quickly into several more." },
+          { speaker: "SP Malhotra", avatar: AV.cybercellMalhotra, text: "We follow the money, but we also follow the law, Jai." },
+          { speaker: "Jai (You)", avatar: AV.cybercellYou, text: "I could ask a bank friend to just show me the account details. But evidence collected illegally can fall apart in court." }
+        ],
+        choices: [
+          { text: "Send a formal legal request to the bank for the account records and transaction trail through the proper channel", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "SP Malhotra", avatar: AV.cybercellMalhotra, text: "Right. Records obtained through the proper legal process stand up in court. Shortcuts can destroy a good case." } },
+          { text: "Ask a friend at the bank to quietly share the account holder's details", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "SP Malhotra", avatar: AV.cybercellMalhotra, text: "Jai, evidence gathered informally can be thrown out and can get us into trouble. Do it properly, and the case survives." } }
+        ],
+        betterAdvice: "Obtain bank records through a formal legal request - evidence gathered through informal shortcuts can be rejected in court."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Interrogation Room - The Seized Phone",
+        bgImage: "https://images.pexels.com/photos/10481251/pexels-photo-10481251.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A suspect is arrested with two phones and a laptop. A junior officer starts scrolling through the phone to look for clues and asks Jai if it's okay.",
+        dialogues: [
+          { speaker: "Constable Neha (Tech Analyst)", avatar: AV.cybercellNeha, text: "Sir, please don't let them unlock and scroll through it casually. Every tap can change the data." },
+          { speaker: "SP Malhotra", avatar: AV.cybercellMalhotra, text: "Digital evidence is fragile, Jai. How you handle it now decides everything later." },
+          { speaker: "Jai (You)", avatar: AV.cybercellYou, text: "It's tempting to look right away. But if we change anything, the defence will argue the evidence was tampered with." }
+        ],
+        choices: [
+          { text: "Let the junior officer browse the phone right now to look for clues faster", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "SP Malhotra", avatar: AV.cybercellMalhotra, text: "Jai, browsing a live phone alters its data and breaks the chain of custody. Seal it and let the experts make a copy." } },
+          { text: "Switch the phones to flight mode, seal and label the devices with a proper seizure record, and send them to the forensic lab for a proper copy", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "SP Malhotra", avatar: AV.cybercellMalhotra, text: "Exactly. Isolate, seal, document, and let the forensic team make a verified copy. That keeps the evidence clean and admissible." } }
+        ],
+        betterAdvice: "Seize digital devices properly - isolate, seal, label and have the forensic lab make a verified copy; never browse a seized device casually."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // POLICE - "Trace Evidence" (3 episodes)
+  // Role: Forensic Scientist
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  forensic: {
+    title: "Trace Evidence",
+    genre: "Police",
+    youDefaultName: "Ira",
+    role: "Forensic Scientist",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=IraForensicM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=IraForensicF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/10481251/pexels-photo-10481251.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Work a crime scene as a forensic scientist - collect evidence without contaminating it, report fingerprint findings honestly, and own up to a gap in the chain of custody.",
+    narration: "The detectives ask who did it. The forensic scientist asks a different question - what can the evidence prove? Ira's job is to let objects speak: a fibre, a smudge, a single fingerprint. The smallest mistake can turn a guilty person free, or an innocent person into a suspect.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Crime Scene - Before Touching Anything",
+        bgImage: "https://images.pexels.com/photos/10481251/pexels-photo-10481251.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Ira arrives at a burgled house. Officers are walking in and out, and a constable is about to pick up a glass lying on the floor to 'see if it's important'.",
+        dialogues: [
+          { speaker: "Inspector Bhatia", avatar: AV.forensicBhatia, text: "We've already been in and out. Take whatever you need, Ira." },
+          { speaker: "Ravi (Lab Assistant)", avatar: AV.forensicRavi, text: "That glass on the floor could carry fingerprints or DNA." },
+          { speaker: "Dr. Chandra (Lab Head)", avatar: AV.forensicChandra, text: "A scene can only be examined once, Ira. Contamination can't be undone." },
+          { speaker: "Ira (You)", avatar: AV.forensicYou, text: "Before we touch anything, the scene needs to be protected and recorded exactly as it is." }
+        ],
+        choices: [
+          { text: "Pick up the glass and other items quickly and put them in one bag", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Chandra (Lab Head)", avatar: AV.forensicChandra, text: "Ira, touching items without documenting them and mixing them in one bag can contaminate and destroy the evidence." } },
+          { text: "Restrict entry, wear gloves and protective clothing, photograph and document everything in place, and only then collect and package each item separately", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Dr. Chandra (Lab Head)", avatar: AV.forensicChandra, text: "That's the right sequence: protect, photograph, document, then collect. It keeps the evidence clean and credible." } }
+        ],
+        betterAdvice: "At a crime scene, secure the area, use protective gear, photograph and document everything in place, then package each item separately."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Fingerprint Lab - The Partial Print",
+        bgImage: "https://images.pexels.com/photos/669609/pexels-photo-669609.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Ira finds a partial fingerprint at the scene. It shares some features with a suspect's print but not enough to be certain. The Inspector wants it declared a match today.",
+        dialogues: [
+          { speaker: "Inspector Bhatia", avatar: AV.forensicBhatia, text: "The suspect is already in custody. Just say it's a match and we can close this." },
+          { speaker: "Ravi (Lab Assistant)", avatar: AV.forensicRavi, text: "The print is smudged. I count only a few clear points." },
+          { speaker: "Dr. Chandra (Lab Head)", avatar: AV.forensicChandra, text: "A forensic report is worth exactly as much as its honesty." },
+          { speaker: "Ira (You)", avatar: AV.forensicYou, text: "I feel the pressure. But if I overstate the result, someone might be convicted on weak evidence." }
+        ],
+        choices: [
+          { text: "Report the actual findings, including how many clear points were found and the limits of the comparison, without overstating", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Dr. Chandra (Lab Head)", avatar: AV.forensicChandra, text: "That is scientific integrity. Courts rely on the honesty of your report. Overstating a result is the fastest way to ruin a case and a career." } },
+          { text: "Declare it a definite match so the case can close quickly", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Chandra (Lab Head)", avatar: AV.forensicChandra, text: "Ira, a definite match on a smudged partial print is a false claim. Wrong forensic evidence can convict the wrong person." } }
+        ],
+        betterAdvice: "Report forensic findings objectively with their limits - overstating a result can lead to wrong convictions."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Evidence Room - The Missing Entry",
+        bgImage: "https://images.pexels.com/photos/7785075/pexels-photo-7785075.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "While checking paperwork, Ira notices that a sample bag was in a locker for two hours with no signature on the chain-of-custody form. Nobody else seems to have noticed.",
+        dialogues: [
+          { speaker: "Ravi (Lab Assistant)", avatar: AV.forensicRavi, text: "Ma'am, the register has no entry for that period. Maybe I should just fill it in." },
+          { speaker: "Dr. Chandra (Lab Head)", avatar: AV.forensicChandra, text: "If it is discovered later in court, it will look like we hid it." },
+          { speaker: "Ira (You)", avatar: AV.forensicYou, text: "If I hide the gap, I create a bigger problem. If I report it, the defence may use it. But honesty is the only safe path." }
+        ],
+        choices: [
+          { text: "Fill in the missing entry so the record looks complete", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Chandra (Lab Head)", avatar: AV.forensicChandra, text: "Ira, falsifying a record is a serious offence and destroys the whole case. Report the gap honestly and explain it." } },
+          { text: "Document the gap honestly, report it to the lab head and let the court know if required, with a note on how the sample was protected during that time", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Dr. Chandra (Lab Head)", avatar: AV.forensicChandra, text: "Exactly. An honest gap can be explained; a hidden one destroys credibility. Never fill in an entry you did not witness." } }
+        ],
+        betterAdvice: "If a chain-of-custody gap is found, document and report it honestly - never fill in or falsify a record."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // POLICE - "Night Beat" (3 episodes)
+  // Role: Beat Constable
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  nightbeat: {
+    title: "Night Beat",
+    genre: "Police",
+    youDefaultName: "Karan",
+    role: "Beat Constable",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=KaranNightbeatM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=KaranNightbeatF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/7785075/pexels-photo-7785075.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Walk the night patrol as a beat constable - handle an open shop shutter at 2 a.m., look after a lost child, and cool down a street argument that is about to turn violent.",
+    narration: "At night, the city is a different place. Most people are asleep and the streets belong to the beat constable - the one who knows every lane, every shopkeeper and every dark corner. Karan has walked this beat for six months, and he has learned that most of the job is noticing what doesn't look right.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Market Lane - 2 A.M.",
+        bgImage: "https://images.pexels.com/photos/7785075/pexels-photo-7785075.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "On patrol, Karan finds a shop shutter half open and a light flickering inside. The owner usually closes at ten.",
+        dialogues: [
+          { speaker: "SI Yadav", avatar: AV.nightbeatYadav, text: "Karan, this shop is never open at this hour. Stay alert." },
+          { speaker: "Rafiq (Shopkeeper)", avatar: AV.nightbeatRafiq, text: "Karan bhai, I closed at ten! Something isn't right!" },
+          { speaker: "Karan (You)", avatar: AV.nightbeatYou, text: "Someone could be inside. If I go in alone and there are several of them, I could get hurt and they could escape." }
+        ],
+        choices: [
+          { text: "Stay outside, inform control and SI Yadav, request backup, and secure the exits until help arrives", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "SI Yadav", avatar: AV.nightbeatYadav, text: "Exactly. Backup and covered exits give you the best chance of catching them safely. Bravery without a plan is just risk." } },
+          { text: "Rush in alone to catch them before they escape", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "SI Yadav", avatar: AV.nightbeatYadav, text: "Karan, walking in alone against unknown numbers is how officers get hurt. Wait for backup and cover the exits." } }
+        ],
+        betterAdvice: "When you find a suspected break-in, inform control, wait for backup and cover the exits - never enter alone against unknown numbers."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Bus Stop - The Lost Child",
+        bgImage: "https://images.pexels.com/photos/9862225/pexels-photo-9862225.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Near midnight, Karan finds a small girl, about five years old, crying alone at a bus stop. She cannot say where her home is.",
+        dialogues: [
+          { speaker: "Mrs. Pillai (Resident)", avatar: AV.nightbeatPillai, text: "Poor child, she's been here for a while. Nobody came for her." },
+          { speaker: "SI Yadav", avatar: AV.nightbeatYadav, text: "Karan, this is a moment where kindness matters more than procedure - but procedure protects her too." },
+          { speaker: "Karan (You)", avatar: AV.nightbeatYou, text: "She's scared. I need to calm her down, keep her safe and find her family quickly." }
+        ],
+        choices: [
+          { text: "Leave her at the bus stop and continue the patrol, since someone will come for her", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "SI Yadav", avatar: AV.nightbeatYadav, text: "Karan, a five-year-old alone at midnight cannot be left. Her safety is the first job of the night." } },
+          { text: "Speak gently to comfort her, keep her safe with a woman constable or resident present, inform control and check missing-child reports", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "SI Yadav", avatar: AV.nightbeatYadav, text: "That's it. Calm, safe and reported. She's warm, protected and her family can find her fast." } }
+        ],
+        betterAdvice: "For a lost child, comfort and protect them first, inform control and check missing-child reports - never leave them alone."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Street Corner - The Heated Argument",
+        bgImage: "https://images.pexels.com/photos/9862225/pexels-photo-9862225.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Two groups are shouting at each other over a parking dispute. A crowd is gathering and a man has picked up a stick.",
+        dialogues: [
+          { speaker: "Rafiq (Shopkeeper)", avatar: AV.nightbeatRafiq, text: "They are about to fight, Karan bhai! Do something!" },
+          { speaker: "SI Yadav", avatar: AV.nightbeatYadav, text: "Force is a last resort, Karan. Your voice and your calm come first." },
+          { speaker: "Karan (You)", avatar: AV.nightbeatYou, text: "If I rush in with force, it may turn into a riot. If I do nothing, someone gets hurt." }
+        ],
+        choices: [
+          { text: "Call for backup, stay calm, separate the two groups, ask the man to put down the stick and listen to each side separately", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "SI Yadav", avatar: AV.nightbeatYadav, text: "That's professional policing. Calm authority and separating the groups defuses most situations before they explode." } },
+          { text: "Use force straight away to scare everyone into stopping", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "SI Yadav", avatar: AV.nightbeatYadav, text: "Karan, jumping to force can turn an argument into a riot and get people badly hurt. Start with calm, and escalate only when needed." } }
+        ],
+        betterAdvice: "To defuse a street dispute, call backup, stay calm, separate the parties and listen - use force only as a last resort."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // GOVERNMENT - "Right on Track" (3 episodes)
+  // Role: Railway Station Master
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  railways: {
+    title: "Right on Track",
+    genre: "Government",
+    youDefaultName: "Vishal",
+    role: "Railway Station Master",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=VishalRailwaysM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=VishalRailwaysF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/10662882/pexels-photo-10662882.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Manage a busy railway station - hold trains during a signal failure, control a festival crowd on a packed platform, and stand firm when a VIP wants a train delayed.",
+    narration: "A railway station never sleeps. Trains, passengers, porters, signals - everything moves on a timetable measured in minutes. Vishal is the Assistant Station Master, and one rule has been drilled into him since his first day: in the railways, safety comes before the timetable, every single time.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Control Cabin - Signal Failure",
+        bgImage: "https://images.pexels.com/photos/10662882/pexels-photo-10662882.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "During peak hours the signal at the station's entrance suddenly goes blank. An express train is approaching and passengers are waiting at the platform.",
+        dialogues: [
+          { speaker: "Raju (Signal Maintainer)", avatar: AV.railwaysRaju, text: "Sir, the outer signal has failed. It's showing nothing." },
+          { speaker: "Station Master Pandey", avatar: AV.railwaysPandey, text: "An express is due in four minutes. What are your orders, Vishal?" },
+          { speaker: "Guard Iqbal", avatar: AV.railwaysIqbal, text: "The driver is calling on the radio, sir. He is asking whether he can proceed." },
+          { speaker: "Vishal (You)", avatar: AV.railwaysYou, text: "The route looks clear. But a signal that shows nothing cannot be trusted." }
+        ],
+        choices: [
+          { text: "Stop the train at the signal, follow the failure procedure, and allow it in only with proper written authority after the line is confirmed clear", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Station Master Pandey", avatar: AV.railwaysPandey, text: "Exactly. A failed signal is treated as danger. Procedure and written authority keep everyone alive, even if it delays the train." } },
+          { text: "Wave the train in on a verbal assurance that the line is clear", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Station Master Pandey", avatar: AV.railwaysPandey, text: "Vishal, verbal guesses are what cause accidents. A failed signal means stop, and follow the written procedure." } }
+        ],
+        betterAdvice: "When a signal fails, treat it as danger - stop the train and proceed only under the official failure procedure with proper authority."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Platform 1 - Festival Rush",
+        bgImage: "https://images.pexels.com/photos/7119394/pexels-photo-7119394.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "During a festival, thousands of extra passengers have flooded the platform. The overbridge is jammed and people are pushing near the edge as a train approaches.",
+        dialogues: [
+          { speaker: "Guard Iqbal", avatar: AV.railwaysIqbal, text: "Sir, people are too close to the platform edge. It's getting dangerous." },
+          { speaker: "Station Master Pandey", avatar: AV.railwaysPandey, text: "Crowds can become a disaster in seconds. Act early, Vishal." },
+          { speaker: "Vishal (You)", avatar: AV.railwaysYou, text: "We have to control the crowd before it becomes a stampede." }
+        ],
+        choices: [
+          { text: "Let the crowd sort itself out and focus only on the train timetable", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Station Master Pandey", avatar: AV.railwaysPandey, text: "Vishal, crowds don't sort themselves out. On a packed platform, the edge and the stairs are where people get hurt - act early." } },
+          { text: "Make clear announcements, deploy extra staff and RPF, use barricades and one-way flow, and stop new entries until the platform clears", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 3 },
+            reaction: { speaker: "Station Master Pandey", avatar: AV.railwaysPandey, text: "That's crowd management done right. Announcements, barriers and controlled entry stop a crowd problem before it becomes a tragedy." } }
+        ],
+        betterAdvice: "For a dangerous platform crowd, use announcements, extra staff, barricades and controlled entry early - don't wait for it to become an emergency."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Station Office - The VIP Request",
+        bgImage: "https://images.pexels.com/photos/11811345/pexels-photo-11811345.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A powerful official calls and asks Vishal to hold the departing express for ten minutes because his relatives are running late. The train is already on a tight schedule and another train is waiting behind it.",
+        dialogues: [
+          { speaker: "Station Master Pandey", avatar: AV.railwaysPandey, text: "The official is very senior, Vishal. He is not used to hearing 'no'." },
+          { speaker: "Guard Iqbal", avatar: AV.railwaysIqbal, text: "If we hold the express, the next train has to wait outside on the line." },
+          { speaker: "Vishal (You)", avatar: AV.railwaysYou, text: "It would keep him happy. But it would delay hundreds of passengers and disturb the whole section." }
+        ],
+        choices: [
+          { text: "Politely explain that trains cannot be held for individuals under the rules and offer to help his relatives with the next available train", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Station Master Pandey", avatar: AV.railwaysPandey, text: "Well said. Rules apply to everyone, and you stayed respectful while holding the line. The timetable serves all passengers, not one." } },
+          { text: "Hold the express for him to avoid trouble with a senior official", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Station Master Pandey", avatar: AV.railwaysPandey, text: "Vishal, delaying hundreds of passengers and disrupting the section for one person's convenience isn't service. Rules must be applied equally." } }
+        ],
+        betterAdvice: "Trains cannot be held for personal convenience - politely refuse, explain the rules and offer alternatives, whatever the person's rank."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // GOVERNMENT - "Green Warden" (3 episodes)
+  // Role: Forest Range Officer
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  forestofficer: {
+    title: "Green Warden",
+    genre: "Government",
+    youDefaultName: "Arya",
+    role: "Forest Range Officer",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AryaForestofficerM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AryaForestofficerF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/18691540/pexels-photo-18691540.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Protect a forest range as a young officer - work with villagers who cut trees for fuel, manage a wild elephant entering farmland, and act on a tip about illegal logging.",
+    narration: "The forest range Arya has been posted to covers three hundred square kilometres of woodland, and twelve villages live along its edge. Her job isn't just guarding trees. It is protecting wildlife, water and the livelihoods of people who live beside the forest - and those goals often pull in different directions.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Forest Edge - Firewood Cutting",
+        bgImage: "https://images.pexels.com/photos/18691540/pexels-photo-18691540.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Arya finds a group of villagers cutting young trees for cooking fuel inside the protected forest. They say they have no other way to cook.",
+        dialogues: [
+          { speaker: "Sarpanch Mohan", avatar: AV.forestofficerMohan, text: "Madam, we don't cut for money. We just have nothing else to cook with." },
+          { speaker: "Ranger Gowda", avatar: AV.forestofficerGowda, text: "We can file cases against all of them, Madam. But they'll be back next week." },
+          { speaker: "Arya (You)", avatar: AV.forestofficerYou, text: "Punishing them won't stop the reason they are cutting - and I need them on my side to protect this forest." }
+        ],
+        choices: [
+          { text: "File cases against every villager present and move on", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Ranger Gowda", avatar: AV.forestofficerGowda, text: "Arya, punishment alone doesn't remove the need. Without alternatives, the cutting continues and the village turns against the forest department." } },
+          { text: "Stop the cutting, explain the law and work with the village on alternatives like cooking gas schemes, dead-wood collection and community plantations", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Ranger Gowda", avatar: AV.forestofficerGowda, text: "That's how forests are actually saved - by working with the people who live beside them. Enforcement plus alternatives lasts." } }
+        ],
+        betterAdvice: "Combine lawful enforcement with practical alternatives and community involvement - punishment alone doesn't remove the reason for forest cutting."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Farmland Edge - The Elephant",
+        bgImage: "https://images.pexels.com/photos/30175897/pexels-photo-30175897.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "At dusk, a wild elephant has wandered out of the forest into a field near the village. A crowd has gathered, shouting and throwing things.",
+        dialogues: [
+          { speaker: "Dr. Nandini (Wildlife Biologist)", avatar: AV.forestofficerNandini, text: "The elephant is frightened, not angry. A crowd and noise will make it more dangerous." },
+          { speaker: "Ranger Gowda", avatar: AV.forestofficerGowda, text: "People are getting closer with lights and firecrackers, Madam." },
+          { speaker: "Sarpanch Mohan", avatar: AV.forestofficerMohan, text: "It has already eaten some of our crop. We are scared, Madam." },
+          { speaker: "Arya (You)", avatar: AV.forestofficerYou, text: "Both people and the animal are in danger right now. I have to calm the crowd and guide the elephant back." }
+        ],
+        choices: [
+          { text: "Move the crowd back to a safe distance, bring the rapid response team, guide the elephant gently to its corridor and later help with crop compensation", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 3, leadership: 2 },
+            reaction: { speaker: "Dr. Nandini (Wildlife Biologist)", avatar: AV.forestofficerNandini, text: "Exactly. Keep people safe, give the animal an exit and follow through on compensation. That keeps both villagers and elephants alive." } },
+          { text: "Let the crowd drive the elephant away with firecrackers and noise", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Nandini (Wildlife Biologist)", avatar: AV.forestofficerNandini, text: "Arya, a panicked elephant surrounded by shouting people can charge. Give it space and a safe route, and keep people away." } }
+        ],
+        betterAdvice: "During a human-elephant encounter, move the crowd back, use the rapid response team to guide the animal to safety, and follow up with compensation."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Forest Office - The Tip-Off",
+        bgImage: "https://images.pexels.com/photos/29773044/pexels-photo-29773044.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A villager quietly tells Arya that trucks are cutting and carrying valuable timber out of the forest at night. He is afraid to be named.",
+        dialogues: [
+          { speaker: "Sarpanch Mohan", avatar: AV.forestofficerMohan, text: "Madam, please don't say my name. These people are dangerous." },
+          { speaker: "Ranger Gowda", avatar: AV.forestofficerGowda, text: "We could rush there with two guards and catch them tonight." },
+          { speaker: "Arya (You)", avatar: AV.forestofficerYou, text: "If we go unprepared, they may escape, or the informant may be identified and hurt." }
+        ],
+        choices: [
+          { text: "Rush to the spot tonight with two guards and tell everyone the informant's name", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Ranger Gowda", avatar: AV.forestofficerGowda, text: "Arya, exposing an informant puts a life at risk and an unplanned rush lets the criminals escape. Plan it, and protect your source." } },
+          { text: "Verify the tip, plan the operation with enough staff and vehicles, coordinate with the police if needed and keep the informant's identity confidential", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 2, leadership: 3 },
+            reaction: { speaker: "Ranger Gowda", avatar: AV.forestofficerGowda, text: "That's a professional operation. Verified, planned, backed up and the informant protected. That's how illegal loggers are caught." } }
+        ],
+        betterAdvice: "Verify a tip, plan an operation with enough backup and protect the informant's identity - never rush unprepared or expose your source."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // GOVERNMENT - "Tax Trail" (3 episodes)
+  // Role: Income Tax Officer
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  taxofficer: {
+    title: "Tax Trail",
+    genre: "Government",
+    youDefaultName: "Meenal",
+    role: "Income Tax Officer",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=MeenalTaxofficerM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=MeenalTaxofficerF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Serve as an income tax officer - question a suspicious tax return the fair way, refuse a bribe to 'settle' a case, and decide how to treat an honest business owner who made a mistake.",
+    narration: "Most people picture the tax department as a place people fear. Meenal sees it differently - taxes build roads, schools and hospitals. But she also knows her power is huge, and it must be used with discipline: fairly, by the rules, and never for personal gain.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Tax Office - Mismatch in the Return",
+        bgImage: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Meenal finds that a trader's declared income is very small, but his bank records show large deposits and lifestyle expenses far above his declared earnings.",
+        dialogues: [
+          { speaker: "Inspector Rohit", avatar: AV.taxofficerRohit, text: "Madam, the numbers don't match. He's clearly hiding income. Let's assess the maximum tax." },
+          { speaker: "Commissioner Shukla", avatar: AV.taxofficerShukla, text: "A mismatch is a reason to ask questions, Meenal, not a reason to assume the answer." },
+          { speaker: "Meenal (You)", avatar: AV.taxofficerYou, text: "It looks suspicious. But there might be an explanation I haven't seen yet, like loans, gifts or family money." }
+        ],
+        choices: [
+          { text: "Assume tax evasion and immediately assess the maximum tax and penalty", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Commissioner Shukla", avatar: AV.taxofficerShukla, text: "Meenal, an order without a fair hearing is likely to be struck down on appeal. A mismatch calls for questions, not assumptions." } },
+          { text: "Issue a proper notice asking for explanation and supporting documents, give a fair chance to reply, and decide based on what the evidence shows", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "Commissioner Shukla", avatar: AV.taxofficerShukla, text: "Exactly. Due process protects taxpayers and makes your order stand up on appeal. Questions first, conclusions after." } }
+        ],
+        betterAdvice: "When a return has a mismatch, issue a notice, give the taxpayer a fair chance to explain and decide on evidence - never assume guilt."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Tax Office - The Envelope",
+        bgImage: "https://images.pexels.com/photos/8152735/pexels-photo-8152735.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A representative meets Meenal privately and hints that the taxpayer would be 'very grateful' if the case were closed quickly, and slides forward a gift box.",
+        dialogues: [
+          { speaker: "CA Bansal (Taxpayer's Representative)", avatar: AV.taxofficerBansal, text: "Madam, a small token of appreciation. It's a tradition. It will make everything smoother." },
+          { speaker: "Inspector Rohit", avatar: AV.taxofficerRohit, text: "Madam, it's just a gift box. Nobody will know." },
+          { speaker: "Commissioner Shukla", avatar: AV.taxofficerShukla, text: "Integrity is the only asset a tax officer really owns, Meenal." },
+          { speaker: "Meenal (You)", avatar: AV.taxofficerYou, text: "This is exactly the kind of moment the job is really about." }
+        ],
+        choices: [
+          { text: "Refuse the gift firmly, end the meeting and report the attempt to senior officials as required", correct: true,
+            skills: { technical: 1, communication: 2, problemSolving: 1, leadership: 3 },
+            reaction: { speaker: "Commissioner Shukla", avatar: AV.taxofficerShukla, text: "Right. A gift to a public servant in a pending case is a bribe attempt. Refusing and reporting protects you and the system." } },
+          { text: "Accept the gift because refusing might cause awkwardness", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Commissioner Shukla", avatar: AV.taxofficerShukla, text: "Meenal, accepting a gift in a pending case is corruption, whatever it's called. Politeness never outweighs integrity." } }
+        ],
+        betterAdvice: "Refuse gifts from parties in a pending case and report bribery attempts - a public servant's integrity comes first."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Tax Office - An Honest Mistake",
+        bgImage: "https://images.pexels.com/photos/669622/pexels-photo-669622.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A small shop owner accidentally claimed a deduction he wasn't eligible for. He has no records of hiding anything, and he comes to the office worried and cooperative.",
+        dialogues: [
+          { speaker: "CA Bansal (Taxpayer's Representative)", avatar: AV.taxofficerBansal, text: "He is an honest man, Madam. He just misunderstood the rule. He'll pay whatever is owed." },
+          { speaker: "Inspector Rohit", avatar: AV.taxofficerRohit, text: "Rules are rules, Madam. Charge the highest penalty as a lesson to others." },
+          { speaker: "Commissioner Shukla", avatar: AV.taxofficerShukla, text: "The law distinguishes between a mistake and deliberate evasion. So should you." },
+          { speaker: "Meenal (You)", avatar: AV.taxofficerYou, text: "He isn't hiding anything - he's frightened and confused. I can be firm about the rule and fair about the person." }
+        ],
+        choices: [
+          { text: "Impose the maximum penalty as an example to everyone else", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Commissioner Shukla", avatar: AV.taxofficerShukla, text: "Meenal, punishing an honest mistake like deliberate evasion is unjust and makes people fear the department rather than trust it." } },
+          { text: "Allow him to correct the return, collect the tax due with interest, and apply penalties only as the law and facts justify, explaining the rule clearly", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "Commissioner Shukla", avatar: AV.taxofficerShukla, text: "Fair and firm. You enforced the rule while treating an honest mistake differently from deliberate evasion. That's how trust is built." } }
+        ],
+        betterAdvice: "Treat an honest mistake differently from deliberate evasion - allow correction, collect what's due, and apply penalties only as the law and facts justify."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // GOVERNMENT - "Green Channel" (3 episodes)
+  // Role: Customs Officer
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  customs: {
+    title: "Green Channel",
+    genre: "Government",
+    youDefaultName: "Dev",
+    role: "Customs Officer",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=DevCustomsM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=DevCustomsF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/1815388/pexels-photo-1815388.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Work at the airport customs counter - spot suspicious passengers fairly, handle a gold seizure by the book, and deal humanely with an elderly traveller carrying medicines.",
+    narration: "Every day, thousands of passengers walk through the airport's green channel saying they have nothing to declare. Most are telling the truth. Dev's job is to find the few who aren't - without treating everyone else like a criminal. It takes sharp eyes, good judgement and a lot of patience.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Airport Customs - The Nervous Passenger",
+        bgImage: "https://images.pexels.com/photos/1815388/pexels-photo-1815388.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Among a stream of arriving passengers, one man is unusually nervous, avoids eye contact and keeps holding his bag tightly. He came from a route known for smuggling.",
+        dialogues: [
+          { speaker: "Superintendent Kulkarni", avatar: AV.customsKulkarni, text: "Dev, there are a hundred passengers an hour. We can't search everyone, so how do we choose?" },
+          { speaker: "Constable Bhoomi (K9 Handler)", avatar: AV.customsBhoomi, text: "Sir, my dog has also shown a little interest in that bag." },
+          { speaker: "Dev (You)", avatar: AV.customsYou, text: "Nervousness alone isn't proof - many people are nervous at customs. But several signs together mean something." }
+        ],
+        choices: [
+          { text: "Take him aside politely for a proper check based on risk indicators, explain what you are doing and conduct the search with a witness", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Superintendent Kulkarni", avatar: AV.customsKulkarni, text: "Exactly. Risk-based, respectful and witnessed. That protects the passenger's rights and makes any finding solid." } },
+          { text: "Stop and search every second passenger randomly to be safe", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Superintendent Kulkarni", avatar: AV.customsKulkarni, text: "Dev, random harassment wastes time and makes travellers angry. Use risk indicators and treat people with respect." } }
+        ],
+        betterAdvice: "Select passengers for checks using risk indicators, not random harassment - and conduct searches politely, with a witness."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Customs Cabin - The Undeclared Gold",
+        bgImage: "https://images.pexels.com/photos/33797802/pexels-photo-33797802.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "During the search, a bag reveals gold bars hidden in a false compartment. The passenger offers Dev a large sum of money to 'forget what he saw'.",
+        dialogues: [
+          { speaker: "Passenger", avatar: AV.customsPassenger, text: "Officer, take this and let me go. No one will ever know." },
+          { speaker: "Superintendent Kulkarni", avatar: AV.customsKulkarni, text: "Follow the procedure step by step, Dev. Every step will be checked later." },
+          { speaker: "Dev (You)", avatar: AV.customsYou, text: "This is the moment the whole job comes down to. It's a crime, and now it's also a bribe." }
+        ],
+        choices: [
+          { text: "Take the money and let him go quietly", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Superintendent Kulkarni", avatar: AV.customsKulkarni, text: "Dev, taking a bribe turns you into a criminal and destroys your career. Seizure procedure is there to keep the officer honest as well." } },
+          { text: "Refuse the bribe, seize the gold under a proper record with witnesses, give the passenger a receipt and inform senior officers", correct: true,
+            skills: { technical: 2, communication: 1, problemSolving: 2, leadership: 3 },
+            reaction: { speaker: "Superintendent Kulkarni", avatar: AV.customsKulkarni, text: "Right. A clean seizure with witnesses and a receipt makes the case strong. The bribe attempt only makes it heavier." } }
+        ],
+        betterAdvice: "Refuse any bribe, seize contraband under a proper record with witnesses and a receipt, and inform senior officers immediately."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Customs Hall - The Elderly Traveller",
+        bgImage: "https://images.pexels.com/photos/1815388/pexels-photo-1815388.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "An elderly passenger arrives with a large box of medicines that exceeds the usual quantity. He says they are for his own treatment and that he doesn't speak the local language well.",
+        dialogues: [
+          { speaker: "Mr. D'Souza (Elderly Passenger)", avatar: AV.customsElder, text: "Please sir, these are my heart tablets. My doctor gave them to me. I'm not a smuggler." },
+          { speaker: "Superintendent Kulkarni", avatar: AV.customsKulkarni, text: "Dev, some medicines have limits, but people's health matters too." },
+          { speaker: "Dev (You)", avatar: AV.customsYou, text: "He looks worried. I should be strict about the rules and kind about the person." }
+        ],
+        choices: [
+          { text: "Politely check his doctor's prescription and the rules for personal medicines, and allow the quantity that the rules permit with proper documentation", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Superintendent Kulkarni", avatar: AV.customsKulkarni, text: "Firm and humane. You verified without harassing him, and applied the rule as written. That's good customs work." } },
+          { text: "Confiscate all his medicines immediately to stay on the safe side", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Superintendent Kulkarni", avatar: AV.customsKulkarni, text: "Dev, taking away a patient's heart medicines without checking could seriously harm him. Verify first - rules exist for smugglers, not patients." } }
+        ],
+        betterAdvice: "Verify prescriptions and personal-medicine rules before deciding - be strict about the law and humane toward genuine patients."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // BUSINESS - "Market Open" (3 episodes)
+  // Role: Financial Analyst
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  finance: {
+    title: "Market Open",
+    genre: "Business",
+    youDefaultName: "Rahul",
+    role: "Financial Analyst",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RahulFinanceM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RahulFinanceF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/669621/pexels-photo-669621.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Work at an investment firm as a financial analyst - tell your boss what the numbers really say, refuse an insider tip, and calm a client during a market fall.",
+    narration: "Every morning, the market opens at 9:15 and Rahul's screen fills with red and green numbers. As a junior analyst at an investment firm, his job is to read those numbers honestly and advise people who are trusting the firm with their savings. In finance, one thing matters more than being smart - being trustworthy.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Research Desk - The Favourite Stock",
+        bgImage: "https://images.pexels.com/photos/669621/pexels-photo-669621.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Ms. Kapoor is excited about a popular company's stock and wants Rahul's report to recommend 'Buy'. But Rahul's analysis shows it is expensive compared to its earnings and has high debt.",
+        dialogues: [
+          { speaker: "Ms. Kapoor (Portfolio Head)", avatar: AV.financeKapoor, text: "Rahul, this stock has been a winner all year. Give me a strong Buy report for the client meeting." },
+          { speaker: "Sameer (Senior Trader)", avatar: AV.financeSameer, text: "Everyone in the market likes it. It'll be an easy call." },
+          { speaker: "Rahul (You)", avatar: AV.financeYou, text: "My numbers say it is overvalued, and the debt is a risk. But my boss is expecting a different answer." }
+        ],
+        choices: [
+          { text: "Present the analysis honestly, showing the valuation and debt risks clearly, and let the data support a balanced recommendation", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Ms. Kapoor (Portfolio Head)", avatar: AV.financeKapoor, text: "Good. Honest analysis, even when unpopular, is what protects clients. I may disagree, but I'd rather hear the truth than a comfortable story." } },
+          { text: "Change the assumptions in the model so the report supports a strong Buy", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Ms. Kapoor (Portfolio Head)", avatar: AV.financeKapoor, text: "Rahul, adjusting numbers to please someone is the fastest way to destroy trust and hurt clients. Analysts are paid for independence." } }
+        ],
+        betterAdvice: "An analyst's report must reflect the data honestly, even when it disagrees with the boss or the crowd - never adjust assumptions to fit a preferred answer."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Trading Floor - The Hot Tip",
+        bgImage: "https://images.pexels.com/photos/669612/pexels-photo-669612.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A college friend working at a company calls Rahul and privately tells him that his company will announce a big deal tomorrow that isn't public yet. 'Buy now, before the news comes out.'",
+        dialogues: [
+          { speaker: "Sameer (Senior Trader)", avatar: AV.financeSameer, text: "Rahul, you look like you've heard something interesting." },
+          { speaker: "Ms. Kapoor (Portfolio Head)", avatar: AV.financeKapoor, text: "You are our analyst. What you do with private information matters more than what you know." },
+          { speaker: "Rahul (You)", avatar: AV.financeYou, text: "It would be easy money. But using non-public information to trade is illegal - it's called insider trading." }
+        ],
+        choices: [
+          { text: "Quietly buy the shares in a family member's account so nobody notices", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Ms. Kapoor (Portfolio Head)", avatar: AV.financeKapoor, text: "Rahul, trading through someone else is still insider trading, and regulators trace these trades all the time. Walk away and report it." } },
+          { text: "Refuse to trade on the tip, tell the friend not to share it, and inform the firm's compliance officer", correct: true,
+            skills: { technical: 1, communication: 2, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Ms. Kapoor (Portfolio Head)", avatar: AV.financeKapoor, text: "Correct. Insider trading is a serious offence with jail and heavy fines. Telling compliance protects you and the firm." } }
+        ],
+        betterAdvice: "Never trade on non-public information - refuse the tip and inform the firm's compliance officer."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Client Meeting - The Market Falls",
+        bgImage: "https://images.pexels.com/photos/6340621/pexels-photo-6340621.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The market drops five percent in a day and Mr. Anand, a client, rings in a panic asking to sell everything immediately.",
+        dialogues: [
+          { speaker: "Mr. Anand (Client)", avatar: AV.financeAnand, text: "Rahul, my savings are falling! Sell everything right now before I lose more!" },
+          { speaker: "Ms. Kapoor (Portfolio Head)", avatar: AV.financeKapoor, text: "Panic selling locks in losses. But don't dismiss his fear either." },
+          { speaker: "Rahul (You)", avatar: AV.financeYou, text: "He's scared, and he trusted us with his money. I need to be honest and calm." }
+        ],
+        choices: [
+          { text: "Listen to his worry, explain calmly how markets move, review his goals and risk level with him and then help him decide", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Ms. Kapoor (Portfolio Head)", avatar: AV.financeKapoor, text: "That's how advisors keep clients. You acknowledged the fear, gave perspective and returned to his actual goals." } },
+          { text: "Tell him the market will definitely recover by next week", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Ms. Kapoor (Portfolio Head)", avatar: AV.financeKapoor, text: "Rahul, no one can guarantee a recovery. A false promise creates false hope, and if it fails, it destroys the client's trust." } }
+        ],
+        betterAdvice: "During a market fall, listen to the client, explain calmly and revisit their goals and risk level - never promise a recovery."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // BUSINESS - "Balance Sheet" (3 episodes)
+  // Role: Chartered Accountant
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  ca: {
+    title: "Balance Sheet",
+    genre: "Business",
+    youDefaultName: "Ritika",
+    role: "Chartered Accountant",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RitikaCaM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RitikaCaF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/669612/pexels-photo-669612.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Work as a chartered accountant - refuse to bend a client's books to get a loan, deal with a cash mismatch in an audit, and meet a tax deadline without fake invoices.",
+    narration: "A chartered accountant is called the guardian of a company's honesty. Numbers can be arranged in many ways, but there is only one correct way. Ritika has just qualified, and today a client walks in with a request that will test whether she is a professional or just a person who prepares whatever she is told.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "CA Firm - The Loan Request",
+        bgImage: "https://images.pexels.com/photos/669612/pexels-photo-669612.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A business owner, Mr. Sethi, wants to apply for a big bank loan. His profits are low this year, and he asks Ritika to show a higher profit by hiding some expenses in the accounts.",
+        dialogues: [
+          { speaker: "Mr. Sethi (Client)", avatar: AV.caClient, text: "Ritika, just move a few expenses to next year. The bank will see better profit, and I'll get the loan." },
+          { speaker: "Kavya (Trainee)", avatar: AV.caKavya, text: "Ma'am, isn't that kind of manipulation?" },
+          { speaker: "CA Rajiv Sir (Partner)", avatar: AV.caCaRajivSir, text: "Remember, you sign your name on those statements, Ritika. Not the client." },
+          { speaker: "Ritika (You)", avatar: AV.caYou, text: "If I do this, I'd be helping mislead the bank and putting my licence at risk." }
+        ],
+        choices: [
+          { text: "Refuse to alter the accounts, explain the risks to him, and suggest legitimate ways to improve his loan case, like a proper business plan and collateral", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "CA Rajiv Sir (Partner)", avatar: AV.caCaRajivSir, text: "That's professional integrity. You said no, but you also offered a real solution. That's how clients learn to trust you." } },
+          { text: "Adjust the figures as he asks because he is an important client", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "CA Rajiv Sir (Partner)", avatar: AV.caCaRajivSir, text: "Ritika, manipulating accounts to get a loan is fraud, and your name is on the report. No client is worth your licence." } }
+        ],
+        betterAdvice: "A CA must refuse to manipulate accounts, even for important clients - explain the risks and suggest legitimate alternatives."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Client Office - The Cash Mismatch",
+        bgImage: "https://images.pexels.com/photos/669609/pexels-photo-669609.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "During an audit, Kavya finds that the cash in hand is much lower than the cash book shows. The company's manager says it is a small counting error.",
+        dialogues: [
+          { speaker: "Kavya (Trainee)", avatar: AV.caKavya, text: "Ma'am, the difference is eighty thousand rupees. It's not a small mistake." },
+          { speaker: "Mr. Sethi (Client)", avatar: AV.caClient, text: "It's just a timing error. Adjust it and move on." },
+          { speaker: "CA Rajiv Sir (Partner)", avatar: AV.caCaRajivSir, text: "In audits, the small things you ignore become the headlines later." },
+          { speaker: "Ritika (You)", avatar: AV.caYou, text: "I can't just adjust it away. I need to find out what actually happened." }
+        ],
+        choices: [
+          { text: "Adjust the entries quietly to make the cash balance match", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "CA Rajiv Sir (Partner)", avatar: AV.caCaRajivSir, text: "Ritika, covering a shortfall with an entry hides a possible fraud and makes you part of it. An auditor's job is to find and report, not conceal." } },
+          { text: "Investigate the difference, gather supporting records, document the findings and report the matter to the management and, if needed, in the audit report", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "CA Rajiv Sir (Partner)", avatar: AV.caCaRajivSir, text: "Correct. An unexplained cash shortfall must be examined and reported honestly. That's the whole purpose of an audit." } }
+        ],
+        betterAdvice: "Investigate and document unexplained differences during an audit and report them honestly - never adjust entries to hide a mismatch."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "CA Firm - Deadline Night",
+        bgImage: "https://images.pexels.com/photos/669622/pexels-photo-669622.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The tax filing deadline is midnight. A client hasn't given several bills, and the return can't be completed properly. He suggests creating a few invoices to make the numbers work.",
+        dialogues: [
+          { speaker: "Mr. Sethi (Client)", avatar: AV.caClient, text: "Just make a few bills. Nobody checks them. We can't miss the deadline." },
+          { speaker: "Kavya (Trainee)", avatar: AV.caKavya, text: "We only have proof for about half the expenses, ma'am." },
+          { speaker: "CA Rajiv Sir (Partner)", avatar: AV.caCaRajivSir, text: "A late filing has a penalty. A false filing has consequences you can't take back." },
+          { speaker: "Ritika (You)", avatar: AV.caYou, text: "There's real pressure, but fake bills are a line I will never cross." }
+        ],
+        choices: [
+          { text: "File on time with the expenses that can be properly supported, and inform the client that the rest can be added once the documents arrive, using a revised return if allowed", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "CA Rajiv Sir (Partner)", avatar: AV.caCaRajivSir, text: "Exactly. Filing accurately and revising later is honest and legal. A fake invoice can end a career and lead to prosecution." } },
+          { text: "Create invoices so all expenses look documented and meet the deadline", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "CA Rajiv Sir (Partner)", avatar: AV.caCaRajivSir, text: "Ritika, fabricating invoices is forgery, and it can lead to prosecution. A late fee is small compared to that." } }
+        ],
+        betterAdvice: "Never create fake invoices to meet a deadline - file with supportable figures and revise later if allowed."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // BUSINESS - "Brand New" (3 episodes)
+  // Role: Marketing Manager
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  marketing: {
+    title: "Brand New",
+    genre: "Business",
+    youDefaultName: "Ishika",
+    role: "Marketing Manager",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshikaMarketingM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshikaMarketingF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/6914421/pexels-photo-6914421.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Launch a new product as a marketing manager - pick an audience using research, respond honestly to a social media backlash, and reallocate a shrinking budget wisely.",
+    narration: "Ishika's company is launching a new brand of health drinks in three months. A great product is not enough - people have to know about it, care about it and trust it. Marketing looks glamorous from outside, but Ishika knows it runs on research, honesty and a lot of hard decisions.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Marketing Room - Choosing the Audience",
+        bgImage: "https://images.pexels.com/photos/6914421/pexels-photo-6914421.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The team must decide who the launch campaign should target. The founder feels strongly that it should be aimed at young athletes, but the initial survey data shows something different.",
+        dialogues: [
+          { speaker: "Marketing Head Ms. Sen", avatar: AV.marketingSen, text: "The founder is sure it's for young gym-goers. But look at our survey numbers, Ishika." },
+          { speaker: "Rohit (Designer)", avatar: AV.marketingRohit, text: "The survey says working professionals aged 28 to 40 are far more interested." },
+          { speaker: "Mr. Tandon (Agency)", avatar: AV.marketingTandon, text: "We can build a campaign for whichever audience you choose. But which one will actually buy?" },
+          { speaker: "Ishika (You)", avatar: AV.marketingYou, text: "Gut feelings are useful, but data tells us who will actually pay for the product." }
+        ],
+        choices: [
+          { text: "Use the survey and market research to choose the audience, and test a small campaign with both groups before spending the full budget", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "Marketing Head Ms. Sen", avatar: AV.marketingSen, text: "Exactly. Research first, small test second, big spend third. That's how you protect the budget and find what actually works." } },
+          { text: "Follow the founder's instinct without checking the data", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Marketing Head Ms. Sen", avatar: AV.marketingSen, text: "Ishika, a whole campaign built on a guess is an expensive gamble. Good marketers respect instinct, but check it against data." } }
+        ],
+        betterAdvice: "Choose the target audience using research and test on a small scale before committing a large budget."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Social Media Desk - The Backlash",
+        bgImage: "https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A campaign post accidentally makes fun of a group of people, and the internet reacts angrily within hours. Comments are pouring in and screenshots are being shared everywhere.",
+        dialogues: [
+          { speaker: "Marketing Head Ms. Sen", avatar: AV.marketingSen, text: "The post is trending for all the wrong reasons. We need a plan right now." },
+          { speaker: "Rohit (Designer)", avatar: AV.marketingRohit, text: "We can delete it and pretend it never happened." },
+          { speaker: "Mr. Tandon (Agency)", avatar: AV.marketingTandon, text: "People have already taken screenshots. Deleting won't erase it." },
+          { speaker: "Ishika (You)", avatar: AV.marketingYou, text: "Hiding won't work. People want to see that we understand what went wrong." }
+        ],
+        choices: [
+          { text: "Delete the post quietly and argue with critics that they misunderstood the joke", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Marketing Head Ms. Sen", avatar: AV.marketingSen, text: "Ishika, arguing with an offended audience only makes the story bigger. Own the mistake, apologize and fix the process." } },
+          { text: "Pause the campaign, remove the post, publish a sincere apology explaining what went wrong and what will change, and review the approval process", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Marketing Head Ms. Sen", avatar: AV.marketingSen, text: "That's how brands recover. A sincere apology and real changes rebuild trust faster than silence or defensiveness." } }
+        ],
+        betterAdvice: "After an insensitive post, pause, apologize sincerely, explain what will change and fix the approval process - don't delete and argue."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Boardroom - The Budget Cut",
+        bgImage: "https://images.pexels.com/photos/7792770/pexels-photo-7792770.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Halfway through the campaign, the company cuts the marketing budget by twenty percent. Ishika has performance data showing that some channels bring many more buyers than others.",
+        dialogues: [
+          { speaker: "Marketing Head Ms. Sen", avatar: AV.marketingSen, text: "We have to cut twenty percent, Ishika. Where should it come from?" },
+          { speaker: "Mr. Tandon (Agency)", avatar: AV.marketingTandon, text: "The simplest way is to cut every channel by twenty percent." },
+          { speaker: "Rohit (Designer)", avatar: AV.marketingRohit, text: "But the video ads bring three times more buyers than the print ads." },
+          { speaker: "Ishika (You)", avatar: AV.marketingYou, text: "An equal cut looks fair, but it treats strong and weak channels the same." }
+        ],
+        choices: [
+          { text: "Analyze the return on each channel, cut the weakest ones and protect the ones that bring the most buyers", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "Marketing Head Ms. Sen", avatar: AV.marketingSen, text: "Good thinking. Cutting by results rather than evenly protects your growth. That's what return-on-investment analysis is for." } },
+          { text: "Cut every channel by the same twenty percent so it feels fair", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Marketing Head Ms. Sen", avatar: AV.marketingSen, text: "Ishika, an equal cut weakens your best channels as much as your worst. Cut where the return is lowest, not where it looks fair." } }
+        ],
+        betterAdvice: "When cutting a marketing budget, analyze each channel's return and reduce the weakest ones - an equal cut also hurts the best performers."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // BUSINESS - "People First" (3 episodes)
+  // Role: HR Manager
+  // Written directly in English (same as Wings of Honour / Cleared for Takeoff).
+  // ==================================================
+  hr: {
+    title: "People First",
+    genre: "Business",
+    youDefaultName: "Nandini",
+    role: "HR Manager",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=NandiniHrM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=NandiniHrF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/8428076/pexels-photo-8428076.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Run HR for a growing company - hire fairly when the boss pushes a favourite, handle a harassment complaint correctly, and announce layoffs with respect.",
+    narration: "Companies are built from people, and Nandini's job is to look after them - to hire the right ones, protect the ones already there and make hard decisions in a humane way. It's a job where people bring you their biggest worries, and where a careless word can change someone's life.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "HR Office - The Interview Panel",
+        bgImage: "https://images.pexels.com/photos/8428076/pexels-photo-8428076.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Two candidates are left for an open role. One scored highest in the skills test and interview. The other is a relative of a senior manager who has been quietly pushing for that person.",
+        dialogues: [
+          { speaker: "Team Lead Sushma", avatar: AV.hrSushma, text: "Nandini, the first candidate is clearly stronger on every measure." },
+          { speaker: "Mr. Kapoor (Director)", avatar: AV.hrCeo, text: "The other one is a good boy from a good family. Let's give him the chance." },
+          { speaker: "Nandini (You)", avatar: AV.hrYou, text: "If I hire because of a relationship, I'm being unfair to the better candidate, and the team pays for it later." }
+        ],
+        choices: [
+          { text: "Use the same structured criteria for both, document the scores and select the strongest candidate on merit, explaining the process openly", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Team Lead Sushma", avatar: AV.hrSushma, text: "That's fair hiring. Clear criteria and documented scores protect you, the company and every candidate." } },
+          { text: "Hire the manager's relative to avoid trouble with a senior person", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Team Lead Sushma", avatar: AV.hrSushma, text: "Nandini, favouritism kills morale and the best people leave. Hiring on merit is the foundation of a fair workplace." } }
+        ],
+        betterAdvice: "Hire using structured criteria and documented scores so decisions are based on merit, not relationships."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "HR Office - A Difficult Complaint",
+        bgImage: "https://images.pexels.com/photos/7792770/pexels-photo-7792770.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Arun quietly tells Nandini that his manager repeatedly makes humiliating comments and threatens his job if he speaks up. He is frightened of what will happen if it becomes known.",
+        dialogues: [
+          { speaker: "Arun (Employee)", avatar: AV.hrArun, text: "Please don't tell anyone. I only want it to stop." },
+          { speaker: "Team Lead Sushma", avatar: AV.hrSushma, text: "Nandini, the manager is one of our top performers. Maybe you can just ask Arun to adjust." },
+          { speaker: "Mr. Kapoor (Director)", avatar: AV.hrCeo, text: "Handle it carefully. The company has clear rules for complaints like this." },
+          { speaker: "Nandini (You)", avatar: AV.hrYou, text: "He's scared. I owe him confidentiality, a fair process and protection from any retaliation." }
+        ],
+        choices: [
+          { text: "Advise Arun to adjust because the manager is a top performer", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Mr. Kapoor (Director)", avatar: AV.hrCeo, text: "Nandini, asking a victim to adjust protects the wrong person and exposes the company to serious legal risk. Every complaint deserves a fair process." } },
+          { text: "Listen respectfully, follow the formal complaint process, start a confidential inquiry and protect Arun from any retaliation", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Mr. Kapoor (Director)", avatar: AV.hrCeo, text: "Exactly. Complaints must be taken seriously, handled confidentially and fairly. Protecting the complainant is not optional." } }
+        ],
+        betterAdvice: "Treat harassment complaints seriously - follow the formal process, keep the inquiry confidential and protect the complainant from retaliation."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Boardroom - Difficult News",
+        bgImage: "https://images.pexels.com/photos/6340621/pexels-photo-6340621.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "The company must lay off twenty employees because of financial trouble. Nandini has to plan how the news is delivered to the people affected.",
+        dialogues: [
+          { speaker: "Mr. Kapoor (Director)", avatar: AV.hrCeo, text: "We have no choice, Nandini. How should we tell them?" },
+          { speaker: "Team Lead Sushma", avatar: AV.hrSushma, text: "Some people suggest sending a group email. It's quick and impersonal." },
+          { speaker: "Arun (Employee)", avatar: AV.hrArun, text: "If it happens to me, I hope I'm told with respect, not by an email at midnight." },
+          { speaker: "Nandini (You)", avatar: AV.hrYou, text: "We can't change the decision. But we can control how the people are treated." }
+        ],
+        choices: [
+          { text: "Tell each person privately and in person, explain the reasons, give proper notice and severance and offer help with references and job search", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Mr. Kapoor (Director)", avatar: AV.hrCeo, text: "That's dignified. The decision may be painful, but respect, clarity and support make it far more humane." } },
+          { text: "Send a group email at night to get it over with quickly", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Mr. Kapoor (Director)", avatar: AV.hrCeo, text: "Nandini, an impersonal late-night email shows contempt for people who gave years to the company. How you do it matters as much as what you do." } }
+        ],
+        betterAdvice: "When laying off employees, tell people privately with respect, give proper notice and support - never send an impersonal announcement."
+      }
+
     ]
   }
 };

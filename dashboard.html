@@ -62,12 +62,6 @@
   <!-- ===================== MAIN CONTENT ===================== -->
   <main class="dashboard">
 
-    <!-- "Continue Exploring" row - only shows if user already played something -->
-    <section class="poster-section" id="continueSection" style="display:none;">
-      <h2 class="row-title">Continue Exploring</h2>
-      <div class="poster-row" id="continueRow"></div>
-    </section>
-
     <!-- TRENDING NOW ROW -->
     <section class="poster-section">
       <h2 class="row-title">🔥 Trending Now</h2>
@@ -119,31 +113,53 @@
     <section class="poster-section">
       <h2 class="row-title">🆕 Latest Releases</h2>
       <div class="poster-row">
-        <div class="poster-card" data-title="Wings of Honour Defence New" onclick="openStoryModal('airforce')">
+        <div class="poster-card" data-title="Tower Control Aviation Air Traffic Controller New" onclick="openStoryModal('atc')">
           <span class="poster-badge new-release">NEW</span>
-          <img src="https://images.pexels.com/photos/30698431/pexels-photo-30698431.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Wings of Honour" />
+          <img src="https://images.pexels.com/photos/7899923/pexels-photo-7899923.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Tower Control" />
           <div class="poster-info">
-            <h3>Wings of Honour</h3>
-            <p>5 Episodes • Defence</p>
+            <h3>Tower Control</h3>
+            <p>3 Episodes • Aviation</p>
           </div>
         </div>
-        <div class="poster-card" data-title="The Last Convoy Defence New" onclick="openStoryModal('defence')">
+        <div class="poster-card" data-title="Steady Hands Medical Surgeon New" onclick="openStoryModal('surgeon')">
           <span class="poster-badge new-release">NEW</span>
-          <img src="https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The Last Convoy" />
+          <img src="https://images.pexels.com/photos/6291246/pexels-photo-6291246.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Steady Hands" />
           <div class="poster-info">
-            <h3>The Last Convoy</h3>
-            <p>5 Episodes • Defence</p>
+            <h3>Steady Hands</h3>
+            <p>3 Episodes • Medical</p>
           </div>
         </div>
-        <div class="poster-card" data-title="Firewall IT Cybersecurity New" onclick="openStoryModal('cybersecurity')">
+        <div class="poster-card" data-title="Data Detective IT Data Analyst New" onclick="openStoryModal('datascience')">
           <span class="poster-badge new-release">NEW</span>
-          <img src="https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Firewall" />
+          <img src="https://images.pexels.com/photos/669614/pexels-photo-669614.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Data Detective" />
           <div class="poster-info">
-            <h3>Firewall</h3>
-            <p>5 Episodes • IT</p>
+            <h3>Data Detective</h3>
+            <p>3 Episodes • IT</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="The Last Verdict Law Judge New" onclick="openStoryModal('judge')">
+          <span class="poster-badge new-release">NEW</span>
+          <img src="https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The Last Verdict" />
+          <div class="poster-info">
+            <h3>The Last Verdict</h3>
+            <p>3 Episodes • Law</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Green Warden Government Forest Range Officer New" onclick="openStoryModal('forestofficer')">
+          <span class="poster-badge new-release">NEW</span>
+          <img src="https://images.pexels.com/photos/18691540/pexels-photo-18691540.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Green Warden" />
+          <div class="poster-info">
+            <h3>Green Warden</h3>
+            <p>3 Episodes • Government</p>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- "Continue Exploring" row - sits under Trending + Latest Releases, only shows if user already played something -->
+    <section class="poster-section" id="continueSection" style="display:none;">
+      <h2 class="row-title">Continue Exploring</h2>
+      <div class="poster-row" id="continueRow"></div>
     </section>
 
     <!-- AVIATION & DEFENCE GENRE ROW -->
@@ -169,6 +185,20 @@
           <div class="poster-info">
             <h3>The Last Convoy</h3>
             <p>5 Episodes • Defence</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Tower Control Aviation Air Traffic Controller" onclick="openStoryModal('atc')">
+          <img src="https://images.pexels.com/photos/7899923/pexels-photo-7899923.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Tower Control" />
+          <div class="poster-info">
+            <h3>Tower Control</h3>
+            <p>3 Episodes • Aviation</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Deep Blue Watch Defence Naval Officer" onclick="openStoryModal('navy')">
+          <img src="https://images.pexels.com/photos/18959222/pexels-photo-18959222.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Deep Blue Watch" />
+          <div class="poster-info">
+            <h3>Deep Blue Watch</h3>
+            <p>3 Episodes • Defence</p>
           </div>
         </div>
       </div>
@@ -199,6 +229,20 @@
             <p>5 Episodes • IT</p>
           </div>
         </div>
+        <div class="poster-card" data-title="Data Detective IT Data Analyst" onclick="openStoryModal('datascience')">
+          <img src="https://images.pexels.com/photos/669614/pexels-photo-669614.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Data Detective" />
+          <div class="poster-info">
+            <h3>Data Detective</h3>
+            <p>3 Episodes • IT</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Launch Day IT Mobile App Developer" onclick="openStoryModal('appdev')">
+          <img src="https://images.pexels.com/photos/5474282/pexels-photo-5474282.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Launch Day" />
+          <div class="poster-info">
+            <h3>Launch Day</h3>
+            <p>3 Episodes • IT</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -225,6 +269,20 @@
           <div class="poster-info">
             <h3>Fast Break</h3>
             <p>5 Episodes • Sports</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Photo Finish Sports Track Athlete" onclick="openStoryModal('athlete')">
+          <img src="https://images.pexels.com/photos/5274777/pexels-photo-5274777.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Photo Finish" />
+          <div class="poster-info">
+            <h3>Photo Finish</h3>
+            <p>3 Episodes • Sports</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Match Point Sports Tennis Player" onclick="openStoryModal('tennis')">
+          <img src="https://images.pexels.com/photos/5739161/pexels-photo-5739161.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Match Point" />
+          <div class="poster-info">
+            <h3>Match Point</h3>
+            <p>3 Episodes • Sports</p>
           </div>
         </div>
       </div>
@@ -255,6 +313,20 @@
             <p>5 Episodes • Medical</p>
           </div>
         </div>
+        <div class="poster-card" data-title="Steady Hands Medical Surgeon" onclick="openStoryModal('surgeon')">
+          <img src="https://images.pexels.com/photos/6291246/pexels-photo-6291246.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Steady Hands" />
+          <div class="poster-info">
+            <h3>Steady Hands</h3>
+            <p>3 Episodes • Medical</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Right Dose Medical Pharmacist" onclick="openStoryModal('pharmacist')">
+          <img src="https://images.pexels.com/photos/10827916/pexels-photo-10827916.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Right Dose" />
+          <div class="poster-info">
+            <h3>Right Dose</h3>
+            <p>3 Episodes • Medical</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -274,6 +346,27 @@
           <div class="poster-info">
             <h3>Hidden Clause</h3>
             <p>5 Episodes • Law</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="The Last Verdict Law Judge" onclick="openStoryModal('judge')">
+          <img src="https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The Last Verdict" />
+          <div class="poster-info">
+            <h3>The Last Verdict</h3>
+            <p>3 Episodes • Law</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Voice for Many Law Legal Aid Lawyer" onclick="openStoryModal('legalaid')">
+          <img src="https://images.pexels.com/photos/8112166/pexels-photo-8112166.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Voice for Many" />
+          <div class="poster-info">
+            <h3>Voice for Many</h3>
+            <p>3 Episodes • Law</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Cyber Court Law Cyber Law Advocate" onclick="openStoryModal('cyberlaw')">
+          <img src="https://images.pexels.com/photos/37732186/pexels-photo-37732186.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Cyber Court" />
+          <div class="poster-info">
+            <h3>Cyber Court</h3>
+            <p>3 Episodes • Law</p>
           </div>
         </div>
       </div>
@@ -297,6 +390,27 @@
             <p>5 Episodes • Teaching</p>
           </div>
         </div>
+        <div class="poster-card" data-title="Every Child Counts Teaching Special Educator" onclick="openStoryModal('specialedu')">
+          <img src="https://images.pexels.com/photos/18395403/pexels-photo-18395403.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Every Child Counts" />
+          <div class="poster-info">
+            <h3>Every Child Counts</h3>
+            <p>3 Episodes • Teaching</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="The Principal's Office Teaching School Principal" onclick="openStoryModal('principal')">
+          <img src="https://images.pexels.com/photos/18931270/pexels-photo-18931270.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The Principal's Office" />
+          <div class="poster-info">
+            <h3>The Principal's Office</h3>
+            <p>3 Episodes • Teaching</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="The Toppers' Batch Teaching Coaching Mentor" onclick="openStoryModal('coachmentor')">
+          <img src="https://images.pexels.com/photos/31367512/pexels-photo-31367512.jpeg?auto=compress&cs=tinysrgb&w=500" alt="The Toppers' Batch" />
+          <div class="poster-info">
+            <h3>The Toppers' Batch</h3>
+            <p>3 Episodes • Teaching</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -318,6 +432,27 @@
             <p>5 Episodes • Police</p>
           </div>
         </div>
+        <div class="poster-card" data-title="Trace the Signal Police Cyber Crime Officer" onclick="openStoryModal('cybercell')">
+          <img src="https://images.pexels.com/photos/5380618/pexels-photo-5380618.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Trace the Signal" />
+          <div class="poster-info">
+            <h3>Trace the Signal</h3>
+            <p>3 Episodes • Police</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Trace Evidence Police Forensic Scientist" onclick="openStoryModal('forensic')">
+          <img src="https://images.pexels.com/photos/10481251/pexels-photo-10481251.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Trace Evidence" />
+          <div class="poster-info">
+            <h3>Trace Evidence</h3>
+            <p>3 Episodes • Police</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Night Beat Police Beat Constable" onclick="openStoryModal('nightbeat')">
+          <img src="https://images.pexels.com/photos/7785075/pexels-photo-7785075.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Night Beat" />
+          <div class="poster-info">
+            <h3>Night Beat</h3>
+            <p>3 Episodes • Police</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -332,6 +467,34 @@
             <p>5 Episodes • Government</p>
           </div>
         </div>
+        <div class="poster-card" data-title="Right on Track Government Railway Station Master" onclick="openStoryModal('railways')">
+          <img src="https://images.pexels.com/photos/10662882/pexels-photo-10662882.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Right on Track" />
+          <div class="poster-info">
+            <h3>Right on Track</h3>
+            <p>3 Episodes • Government</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Green Warden Government Forest Range Officer" onclick="openStoryModal('forestofficer')">
+          <img src="https://images.pexels.com/photos/18691540/pexels-photo-18691540.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Green Warden" />
+          <div class="poster-info">
+            <h3>Green Warden</h3>
+            <p>3 Episodes • Government</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Tax Trail Government Income Tax Officer" onclick="openStoryModal('taxofficer')">
+          <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Tax Trail" />
+          <div class="poster-info">
+            <h3>Tax Trail</h3>
+            <p>3 Episodes • Government</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Green Channel Government Customs Officer" onclick="openStoryModal('customs')">
+          <img src="https://images.pexels.com/photos/1815388/pexels-photo-1815388.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Green Channel" />
+          <div class="poster-info">
+            <h3>Green Channel</h3>
+            <p>3 Episodes • Government</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -344,6 +507,34 @@
           <div class="poster-info">
             <h3>Deal Maker</h3>
             <p>5 Episodes • Business</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Market Open Business Financial Analyst" onclick="openStoryModal('finance')">
+          <img src="https://images.pexels.com/photos/669621/pexels-photo-669621.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Market Open" />
+          <div class="poster-info">
+            <h3>Market Open</h3>
+            <p>3 Episodes • Business</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Balance Sheet Business Chartered Accountant" onclick="openStoryModal('ca')">
+          <img src="https://images.pexels.com/photos/669612/pexels-photo-669612.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Balance Sheet" />
+          <div class="poster-info">
+            <h3>Balance Sheet</h3>
+            <p>3 Episodes • Business</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="Brand New Business Marketing Manager" onclick="openStoryModal('marketing')">
+          <img src="https://images.pexels.com/photos/6914421/pexels-photo-6914421.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Brand New" />
+          <div class="poster-info">
+            <h3>Brand New</h3>
+            <p>3 Episodes • Business</p>
+          </div>
+        </div>
+        <div class="poster-card" data-title="People First Business HR Manager" onclick="openStoryModal('hr')">
+          <img src="https://images.pexels.com/photos/8428076/pexels-photo-8428076.jpeg?auto=compress&cs=tinysrgb&w=500" alt="People First" />
+          <div class="poster-info">
+            <h3>People First</h3>
+            <p>3 Episodes • Business</p>
           </div>
         </div>
       </div>
@@ -397,7 +588,7 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          Every story has 5 episodes. You play as the main character, make decisions at key moments, and see
+          Every story has 3 to 5 episodes. You play as the main character, make decisions at key moments, and see
           how each choice changes the scene - just like a real day in that job.
         </div>
       </div>
@@ -466,7 +657,32 @@
       detective:    { title: "The Investigation", role: "Detective", genre: "Police", img: "https://images.pexels.com/photos/10464475/pexels-photo-10464475.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Crack real cases as a crime branch detective - examine evidence, interrogate suspects, and follow the clues to the truth." },
       pilot:        { title: "Cleared for Takeoff", role: "Commercial Pilot", genre: "Aviation", img: "https://images.pexels.com/photos/4269510/pexels-photo-4269510.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Fly as a young first officer through a real squall line, clear-air turbulence near the coffin corner, and a tight fuel decision - with your best friend from flight school on the radio in Ops." },
       airforce:     { title: "Wings of Honour", role: "Air Force Officer", genre: "Defence", img: "https://images.pexels.com/photos/30698431/pexels-photo-30698431.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Fly a rescue helicopter into the mountains as a young Air Force pilot, racing an avalanche and thin high-altitude air to reach stranded survivors - with your Academy friend orbiting overhead as your only link to base." },
-      defence:      { title: "The Last Convoy", role: "Army Officer", genre: "Defence", img: "https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Race the closing winter as a young Army officer, repairing a landslide-hit supply road to a forward border post before the pass shuts for the season - with your Academy friend on the radio keeping the convoy connected." }
+      defence:      { title: "The Last Convoy", role: "Army Officer", genre: "Defence", img: "https://images.pexels.com/photos/11874071/pexels-photo-11874071.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Race the closing winter as a young Army officer, repairing a landslide-hit supply road to a forward border post before the pass shuts for the season - with your Academy friend on the radio keeping the convoy connected." },
+      atc: { title: "Tower Control", role: "Air Traffic Controller", genre: "Aviation", img: "https://images.pexels.com/photos/7899923/pexels-photo-7899923.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Guide planes safely through a busy airport as a young air traffic controller - keep runways clear, separate crossing aircraft, and handle a fuel emergency in the middle of a storm.", episodes: 3 },
+      navy: { title: "Deep Blue Watch", role: "Naval Officer", genre: "Defence", img: "https://images.pexels.com/photos/18959222/pexels-photo-18959222.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Stand the night watch on a naval patrol ship - track an unknown vessel on radar, handle an engine problem far from port, and decide how to answer a fishing boat's distress call.", episodes: 3 },
+      datascience: { title: "Data Detective", role: "Data Analyst", genre: "IT", img: "https://images.pexels.com/photos/669614/pexels-photo-669614.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Work as a data analyst at a growing online store - question a suspicious sales spike, present honest charts under pressure, and decide whether a 95% accurate model is really as good as it looks.", episodes: 3 },
+      appdev: { title: "Launch Day", role: "Mobile App Developer", genre: "IT", img: "https://images.pexels.com/photos/5474282/pexels-photo-5474282.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Ship a mobile app to real users - handle a last-minute feature request, deal with a crash on older phones, and figure out why users are complaining after launch.", episodes: 3 },
+      athlete: { title: "Photo Finish", role: "Track Athlete", genre: "Sports", img: "https://images.pexels.com/photos/5274777/pexels-photo-5274777.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Train and race as a 400-metre runner - stay calm at the start, handle a pulled muscle honestly, and run your own race in a national final where a fraction of a second decides everything.", episodes: 3 },
+      tennis: { title: "Match Point", role: "Tennis Player", genre: "Sports", img: "https://images.pexels.com/photos/5739161/pexels-photo-5739161.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Play through a big tournament as a young tennis player - fix a serve that breaks under pressure, stay calm after a bad line call, and win a tie-break by playing smart, not just hard.", episodes: 3 },
+      surgeon: { title: "Steady Hands", role: "Surgeon", genre: "Medical", img: "https://images.pexels.com/photos/6291246/pexels-photo-6291246.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Step into the operating theatre as a young surgeon - run the safety checklist before the first cut, stay calm when bleeding starts, and talk honestly to a worried family after a complication.", episodes: 3 },
+      pharmacist: { title: "Right Dose", role: "Pharmacist", genre: "Medical", img: "https://images.pexels.com/photos/10827916/pexels-photo-10827916.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Work behind the counter of a busy pharmacy - question a prescription that looks wrong, say no to a customer who wants antibiotics without a doctor, and warn a patient about a dangerous medicine mix.", episodes: 3 },
+      judge: { title: "The Last Verdict", role: "Judge", genre: "Law", img: "https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Sit on the judge's chair for the first time - decide on repeated adjournments, refuse a private approach from a powerful lawyer, and deliver a verdict while the whole town is watching.", episodes: 3 },
+      legalaid: { title: "Voice for Many", role: "Legal Aid Lawyer", genre: "Law", img: "https://images.pexels.com/photos/8112166/pexels-photo-8112166.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Work at a free legal aid clinic - help a worker who wasn't paid his wages, guide a client through a tough settlement offer, and refuse a bribe to drop the case.", episodes: 3 },
+      cyberlaw: { title: "Cyber Court", role: "Cyber Law Advocate", genre: "Law", img: "https://images.pexels.com/photos/37732186/pexels-photo-37732186.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Fight a case where the crime happened online - protect digital evidence, push a platform to remove harmful content, and make sure electronic proof will stand up in court.", episodes: 3 },
+      specialedu: { title: "Every Child Counts", role: "Special Educator", genre: "Teaching", img: "https://images.pexels.com/photos/18395403/pexels-photo-18395403.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Help a bright child who struggles with reading - teach in a way that suits him, talk honestly with a worried parent, and ask the school for the exam support he deserves.", episodes: 3 },
+      principal: { title: "The Principal's Office", role: "School Principal", genre: "Teaching", img: "https://images.pexels.com/photos/18931270/pexels-photo-18931270.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Run a school for a day, every day - investigate a bullying complaint fairly, say no to a powerful parent, and choose wisely how to spend a tight budget.", episodes: 3 },
+      coachmentor: { title: "The Toppers' Batch", role: "Coaching Mentor", genre: "Teaching", img: "https://images.pexels.com/photos/31367512/pexels-photo-31367512.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Teach at a competitive exam coaching centre - help a student who is falling behind, guide a stressed student wisely, and refuse to lie in an advertisement about results.", episodes: 3 },
+      cybercell: { title: "Trace the Signal", role: "Cyber Crime Officer", genre: "Police", img: "https://images.pexels.com/photos/5380618/pexels-photo-5380618.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Join the cyber crime cell - act fast for a victim of an online money scam, follow the money trail the legal way, and handle seized phones without destroying the evidence.", episodes: 3 },
+      forensic: { title: "Trace Evidence", role: "Forensic Scientist", genre: "Police", img: "https://images.pexels.com/photos/10481251/pexels-photo-10481251.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Work a crime scene as a forensic scientist - collect evidence without contaminating it, report fingerprint findings honestly, and own up to a gap in the chain of custody.", episodes: 3 },
+      nightbeat: { title: "Night Beat", role: "Beat Constable", genre: "Police", img: "https://images.pexels.com/photos/7785075/pexels-photo-7785075.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Walk the night patrol as a beat constable - handle an open shop shutter at 2 a.m., look after a lost child, and cool down a street argument that is about to turn violent.", episodes: 3 },
+      railways: { title: "Right on Track", role: "Railway Station Master", genre: "Government", img: "https://images.pexels.com/photos/10662882/pexels-photo-10662882.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Manage a busy railway station - hold trains during a signal failure, control a festival crowd on a packed platform, and stand firm when a VIP wants a train delayed.", episodes: 3 },
+      forestofficer: { title: "Green Warden", role: "Forest Range Officer", genre: "Government", img: "https://images.pexels.com/photos/18691540/pexels-photo-18691540.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Protect a forest range as a young officer - work with villagers who cut trees for fuel, manage a wild elephant entering farmland, and act on a tip about illegal logging.", episodes: 3 },
+      taxofficer: { title: "Tax Trail", role: "Income Tax Officer", genre: "Government", img: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Serve as an income tax officer - question a suspicious tax return the fair way, refuse a bribe to 'settle' a case, and decide how to treat an honest business owner who made a mistake.", episodes: 3 },
+      customs: { title: "Green Channel", role: "Customs Officer", genre: "Government", img: "https://images.pexels.com/photos/1815388/pexels-photo-1815388.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Work at the airport customs counter - spot suspicious passengers fairly, handle a gold seizure by the book, and deal humanely with an elderly traveller carrying medicines.", episodes: 3 },
+      finance: { title: "Market Open", role: "Financial Analyst", genre: "Business", img: "https://images.pexels.com/photos/669621/pexels-photo-669621.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Work at an investment firm as a financial analyst - tell your boss what the numbers really say, refuse an insider tip, and calm a client during a market fall.", episodes: 3 },
+      ca: { title: "Balance Sheet", role: "Chartered Accountant", genre: "Business", img: "https://images.pexels.com/photos/669612/pexels-photo-669612.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Work as a chartered accountant - refuse to bend a client's books to get a loan, deal with a cash mismatch in an audit, and meet a tax deadline without fake invoices.", episodes: 3 },
+      marketing: { title: "Brand New", role: "Marketing Manager", genre: "Business", img: "https://images.pexels.com/photos/6914421/pexels-photo-6914421.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Launch a new product as a marketing manager - pick an audience using research, respond honestly to a social media backlash, and reallocate a shrinking budget wisely.", episodes: 3 },
+      hr: { title: "People First", role: "HR Manager", genre: "Business", img: "https://images.pexels.com/photos/8428076/pexels-photo-8428076.jpeg?auto=compress&cs=tinysrgb&w=1200", summary: "Run HR for a growing company - hire fairly when the boss pushes a favourite, handle a harassment complaint correctly, and announce layoffs with respect.", episodes: 3 }
     };
 
     // Which stories appear in the top hero carousel, in order.
@@ -548,7 +764,7 @@
 
       document.getElementById("modalPoster").src = info.img;
       document.getElementById("modalTitle").innerText = info.title;
-      document.getElementById("modalMeta").innerText = "5 Episodes • " + info.genre + " • You play: " + info.role;
+      document.getElementById("modalMeta").innerText = (info.episodes || 5) + " Episodes • " + info.genre + " • You play: " + info.role;
       document.getElementById("modalSummary").innerText =
         "You play as a " + info.role + ". " + info.summary;
       document.getElementById("modalPlayBtn").onclick = function () { openStory(storyId); };
