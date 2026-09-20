@@ -101,7 +101,7 @@
       <div class="settings-row">
         <div class="settings-row-text">
           <strong>Clear "Continue Exploring"</strong>
-          <span>Removes the last played story card from the Home page. <em id="sumLastPlayed"></em></span>
+          <span>Removes every card from the Continue Exploring row on Home, including stories you stopped half-way. <em id="sumLastPlayed"></em></span>
         </div>
         <button class="s-btn secondary" onclick="handleClear('lastplayed')">Clear</button>
       </div>
@@ -254,8 +254,9 @@
 
     // Shows small live counts next to each clear option
     function renderDataSummary() {
+      const continueCount = getContinueItems().length;
       document.getElementById("sumLastPlayed").textContent =
-        getLastPlayed() ? "(1 story remembered)" : "(nothing to clear)";
+        continueCount > 0 ? "(" + continueCount + " on the row)" : "(nothing to clear)";
 
       const saved = getWishlist().length;
       document.getElementById("sumSaved").textContent = "(" + saved + " saved)";

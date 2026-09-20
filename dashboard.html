@@ -814,20 +814,57 @@
       menu.style.display = (menu.style.display === "block") ? "none" : "block";
     }
 
-    // If the user has already played a story before, show a
-    // "Continue Exploring" card for it at the top of the dashboard.
+    // "Continue Exploring" row. It shows:
+    //  - stories the user started but has NOT finished (with the episode
+    //    they will resume at and a small progress bar), and
+    //  - the last story they finished ("Play again").
+    // The data comes from getContinueItems() in script.js.
     function showContinueExploring() {
-      const lastId = getLastPlayed();  // function from script.js
-      if (!lastId || !storyInfo[lastId]) return;
+      const items = getContinueItems().filter(function (item) { return storyInfo[item.id]; });
+      const section = document.getElementById("continueSection");
+      const row = document.getElementById("continueRow");
 
-      const info = storyInfo[lastId];
+      if (items.length === 0) {
+        section.style.display = "none";
+        row.innerHTML = "";
+        return;
+      }
 
-      document.getElementById("continueSection").style.display = "block";
-      document.getElementById("continueRow").innerHTML =
-        '<div class="poster-card" onclick="openStoryModal(\'' + lastId + '\')">' +
-        '  <img src="' + info.img + '" alt="' + info.title + '" />' +
-        '  <div class="poster-info"><h3>' + info.title + '</h3><p>Play again</p></div>' +
-        '</div>';
+      let html = "";
+      items.forEach(function (item) {
+        const info = storyInfo[item.id];
+        const isProgress = item.type === "progress";
+        const label = isProgress ? "Episode " + (item.episode + 1) + " of " + item.total + " \u2022 Continue" : "Play again";
+        const clickCode = isProgress
+          ? "continueStory('" + item.id + "')"
+          : "openStoryModal('" + item.id + "')";
+
+        html += '<div class="poster-card" onclick="' + clickCode + '">' +
+          '  <button class="continue-remove" title="Remove from Continue Exploring" onclick="removeFromContinue(event, \'' + item.id + '\')">\u2715</button>' +
+          '  <img src="' + info.img + '" alt="' + info.title + '" />' +
+          '  <div class="poster-info"><h3>' + info.title + '</h3><p>' + label + '</p></div>';
+        if (isProgress) {
+          const percent = Math.round((item.episode / item.total) * 100);
+          html += '  <div class="progress-track"><div class="progress-fill" style="width:' + percent + '%"></div></div>';
+        }
+        html += '</div>';
+      });
+
+      row.innerHTML = html;
+      section.style.display = "block";
+    }
+
+    // Goes straight to the story - story.html itself notices the saved
+    // progress and offers "Continue from Episode X".
+    function continueStory(storyId) {
+      window.location.href = "story.html?story=" + storyId;
+    }
+
+    // The small X on a Continue Exploring card
+    function removeFromContinue(event, storyId) {
+      event.stopPropagation();          // don't also open the story
+      removeContinueItem(storyId);      // from script.js
+      showContinueExploring();
     }
 
     // Opens/closes one FAQ accordion item when its question row is clicked.

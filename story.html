@@ -14,6 +14,18 @@
 
   <!-- CHARACTER SETUP SCREEN (shown before Episode 1 starts) -->
   <main class="setup-screen" id="setupScreen">
+
+    <!-- Shown only when this story was left half-way: lets the player
+         continue from the saved episode or start again. -->
+    <div class="resume-box" id="resumeBox" style="display:none;">
+      <h2>Welcome back! 👋</h2>
+      <p id="resumeText"></p>
+      <div class="resume-buttons">
+        <button class="hero-btn" id="resumeContinueBtn" onclick="resumeSavedStory()">▶ Continue</button>
+        <button class="hero-btn hero-btn-secondary" onclick="startOverSavedStory()">↺ Start Over</button>
+      </div>
+    </div>
+
     <h1>Who are you in this story?</h1>
     <p class="section-hint" id="setupHint">Choose a name and how you'd like your character to look.</p>
 
@@ -164,7 +176,75 @@
       // selectLanguage() also shows the "not translated yet" note if needed
       // (translations.js only covers some stories).
       selectLanguage(getPreferredLanguage());
+
+      // If this story was left half-way last time, offer to continue it
+      checkForSavedProgress();
     };
+
+    // ---------------------------------------------------
+    // SAVED PROGRESS (resume where you left off)
+    // The helper functions (saveResumePoint, getResumePoint ...) are in
+    // script.js. Progress is saved after every choice, so closing the
+    // website never loses more than the episode being played.
+    // ---------------------------------------------------
+
+    // Saves where the player is. nextEpisode = the episode to play next
+    // (starting from 0), so it is 1 higher than the episode just finished.
+    function saveResume(nextEpisode) {
+      saveResumePoint(currentStoryId, {
+        episode: nextEpisode,
+        total: currentStory.episodes.length,
+        score: score,
+        wrongFeedbacks: wrongFeedbacks,
+        playerName: playerName,
+        gender: selectedGender,
+        language: selectedLanguage,
+        updatedAt: Date.now()
+      });
+    }
+
+    // Shows the "Welcome back" box if there is saved progress for this story
+    function checkForSavedProgress() {
+      const saved = getResumePoint(currentStoryId);
+      if (!saved || saved.episode >= currentStory.episodes.length) return;
+
+      document.getElementById("resumeText").innerText =
+        "You are " + saved.playerName + " and you stopped before Episode " + (saved.episode + 1) +
+        " of " + currentStory.episodes.length + ". Score so far: " + saved.score + ".";
+      document.getElementById("resumeContinueBtn").innerText = "▶ Continue from Episode " + (saved.episode + 1);
+      document.getElementById("resumeBox").style.display = "block";
+    }
+
+    // "Continue" button - restores everything and jumps to the saved episode
+    function resumeSavedStory() {
+      const saved = getResumePoint(currentStoryId);
+      if (!saved) return;
+
+      playerName = saved.playerName;
+      selectedGender = saved.gender === "female" ? "female" : "male";
+      playerAvatar = selectedGender === "male" ? currentStory.youAvatarMale : currentStory.youAvatarFemale;
+      selectLanguage(saved.language || "hinglish");
+      score = saved.score || 0;
+      wrongFeedbacks = saved.wrongFeedbacks || [];
+      currentEpisode = saved.episode;
+
+      document.getElementById("setupScreen").style.display = "none";
+      document.getElementById("storyScreen").style.display = "block";
+      renderEpisode();
+    }
+
+    // "Start Over" button - forgets the saved progress, shows the normal setup
+    function startOverSavedStory() {
+      removeResumePoint(currentStoryId);
+      document.getElementById("resumeBox").style.display = "none";
+    }
+
+    // Story completed: no longer "in progress", remember it as finished
+    function markStoryFinished() {
+      removeResumePoint(currentStoryId);
+      saveLastPlayed(currentStoryId);
+      addCompletedStory(currentStoryId);
+    }
 
     // Called when the user clicks one of the two avatar options
     function selectGender(gender) {
@@ -241,6 +321,13 @@
       // If they didn't type a name, fall back to the story's default name
       playerName = typedName === "" ? currentStory.youDefaultName : typedName;
       playerAvatar = selectedGender === "male" ? currentStory.youAvatarMale : currentStory.youAvatarFemale;
+
+      // Start of a fresh run: make sure nothing old is carried over and
+      // remember this story as "in progress" from Episode 1
+      score = 0;
+      wrongFeedbacks = [];
+      currentEpisode = 0;
+      saveResume(0);
 
       document.getElementById("setupScreen").style.display = "none";
       showStoryIntro();
@@ -434,6 +521,14 @@
         });
       }
 
+      // Save progress right away. If this was the last episode the story
+      // is finished; otherwise remember that the NEXT episode comes next.
+      if (currentEpisode < currentStory.episodes.length - 1) {
+        saveResume(currentEpisode + 1);
+      } else {
+        markStoryFinished();
+      }
+
       // Hide the choice buttons
       document.getElementById("choicesBox").style.display = "none";
 
@@ -506,12 +601,10 @@
         });
       }
 
-      // Save this story as "last played" so the dashboard can show a
-      // "Continue Exploring" card next time the user logs in.
-      saveLastPlayed(getQueryParam("story"));
-
-      // Mark this story as completed - used on the Profile page
-      addCompletedStory(getQueryParam("story"));
+      // Remember the story as finished: it leaves the "in progress" list,
+      // becomes the "last played" card and counts as completed
+      // (used on the Profile page).
+      markStoryFinished();
     }
   </script>
 

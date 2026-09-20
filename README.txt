@@ -1,6 +1,65 @@
 CAREERFLIX - CODE EXPLANATION (FOR VIVA)
 ==========================================
 
+LATEST UPDATE - EASTER EGG: DIRECTOR MODE
+--------------------------------------------------------------------------
+Click the CareerFlix logo 3 times quickly (within 1.2 seconds) on ANY page
+to open "DIRECTOR MODE UNLOCKED": a quote, a status line, the project
+version and build date, and an animated fake "system scan" that ends with
+"Scan complete." Close it with the X, a click outside the box, or Esc.
+The code is at the end of script.js ("EASTER EGG - DIRECTOR MODE"):
+CAREERFLIX_VERSION and CAREERFLIX_BUILD_DATE hold the version/date, and
+DIRECTOR_SCAN_LINES holds the scan lines (edit them to add your own jokes).
+The styling is at the end of style.css.
+
+
+LATEST UPDATE - USING CAREERFLIX WITHOUT INTERNET (OFFLINE IMAGES)
+--------------------------------------------------------------------------
+1. PROBLEM: all photos come from images.pexels.com and all character
+   avatars from api.dicebear.com, so without internet only the pictures
+   the browser had already cached are visible.
+
+2. FIX - download_images.py (run ONCE with internet):
+      python download_images.py
+   It finds every picture link in the .html/.js/.css files (89 photos and
+   257 avatars), saves them in images/pexels and images/avatars, and
+   rewrites the links to local paths. The changed files are backed up in
+   _online_backup/. Other commands: --check (only count) and --restore
+   (go back to the online links). Failed downloads keep their online
+   link, and running the script again only downloads what is missing.
+
+3. PLACEHOLDER (script.js, "IMAGE FALLBACK"): if any picture still cannot
+   load, a dark placeholder (poster) or silhouette (avatar) is shown
+   instead of a broken-image icon.
+
+
+LATEST UPDATE - RESUME STORIES FROM WHERE YOU LEFT (CONTINUE EXPLORING)
+--------------------------------------------------------------------------
+1. SAVED PROGRESS: while a story is played, story.html saves a "resume
+   point" in localStorage (key careerflix_resume) - the next episode to
+   play, score so far, wrong-answer tips, character name, look and
+   language. It is saved when the player enters the story and after
+   every choice, so it is still there after closing the tab or browser.
+   Helper functions (saveResumePoint, getResumePoint, removeResumePoint,
+   getContinueItems ...) are in script.js under "RESUME POINTS".
+
+2. CONTINUE EXPLORING (dashboard.html): the row now shows every story the
+   user stopped half-way ("Episode 3 of 5 - Continue" with a red progress
+   bar, newest first), followed by the last finished story ("Play again").
+   A small X on a card removes it from the row.
+
+3. RESUMING (story.html): opening a half-played story shows "Welcome back"
+   with two buttons - "Continue from Episode X" (restores the name, look,
+   language, score and jumps straight to that episode) or "Start Over".
+
+4. FINISHING: after the last choice the story leaves the in-progress list,
+   becomes the "Play again" card and counts as completed (markStoryFinished
+   in story.html).
+
+5. SETTINGS: "Clear Continue Exploring", "Reset Story Progress" and
+   "Clear Everything" now also clear the saved resume points.
+
+
 LATEST UPDATE - 4 CHOICES PER EPISODE + RANDOM ORDER
 --------------------------------------------------------------------------
 1. EVERY EPISODE NOW HAS 4 CHOICES (all 45 stories, 175 episodes):

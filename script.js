@@ -97,6 +97,86 @@ function getLastPlayed() {
 }
 
 // =====================================================
+// RESUME POINTS (progress of stories that are only partly finished)
+// While a story is being played, story.html saves a "resume point"
+// after every choice. It is stored in localStorage as ONE JSON object
+// with the story id as the key:
+//   careerflix_resume = {
+//     atc: { episode: 2, total: 3, score: 1, wrongFeedbacks: [...],
+//            playerName: "Meera", gender: "female", language: "hinglish",
+//            updatedAt: 1758345600000 }
+//   }
+// "episode" is the episode number (starting from 0) the player will
+// play NEXT, so episode: 2 means "Episodes 1 and 2 are done, resume
+// at Episode 3". Because it lives in localStorage it is still there
+// after the browser or the tab is closed.
+// =====================================================
+
+function getAllResumePoints() {
+  const saved = localStorage.getItem("careerflix_resume");
+  if (saved === null) {
+    return {};
+  }
+  try {
+    return JSON.parse(saved) || {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveResumePoint(storyId, data) {
+  const all = getAllResumePoints();
+  all[storyId] = data;
+  localStorage.setItem("careerflix_resume", JSON.stringify(all));
+}
+
+// Returns the saved progress of one story, or null if there is none.
+function getResumePoint(storyId) {
+  return getAllResumePoints()[storyId] || null;
+}
+
+function removeResumePoint(storyId) {
+  const all = getAllResumePoints();
+  delete all[storyId];
+  localStorage.setItem("careerflix_resume", JSON.stringify(all));
+}
+
+function clearAllResumePoints() {
+  localStorage.removeItem("careerflix_resume");
+}
+
+// Builds the list for the "Continue Exploring" row:
+//  1. stories that are only partly finished (newest first), then
+//  2. the last story the user finished, shown as "Play again".
+// Each item is { id, type: "progress" | "played", episode, total }.
+function getContinueItems() {
+  const items = [];
+  const all = getAllResumePoints();
+
+  Object.keys(all)
+    .filter(function (id) { return all[id] && all[id].episode < all[id].total; })
+    .sort(function (a, b) { return (all[b].updatedAt || 0) - (all[a].updatedAt || 0); })
+    .forEach(function (id) {
+      items.push({ id: id, type: "progress", episode: all[id].episode, total: all[id].total });
+    });
+
+  const lastId = getLastPlayed();
+  if (lastId && !items.some(function (item) { return item.id === lastId; })) {
+    items.push({ id: lastId, type: "played" });
+  }
+  return items;
+}
+
+// Removes ONE card from "Continue Exploring" (its saved progress and,
+// if it was the last finished story, that memory too).
+function removeContinueItem(storyId) {
+  removeResumePoint(storyId);
+  if (getLastPlayed() === storyId) {
+    localStorage.removeItem("careerflix_lastplayed");
+  }
+}
+
+// =====================================================
 // SKILLS SYSTEM
 // Every choice a user makes (in any story) carries a small
 // "skills" object, e.g. { technical: 3, communication: 0,
@@ -442,9 +522,11 @@ function changePassword(currentPassword, newPassword, confirmPassword) {
 
 // ---------- Clear history / progress ----------
 
-// Removes the "Continue Exploring" card from the dashboard
+// Empties the whole "Continue Exploring" row on the dashboard
+// (the last finished story AND all partly-finished stories)
 function clearLastPlayed() {
   localStorage.removeItem("careerflix_lastplayed");
+  clearAllResumePoints();
 }
 
 // Empties "My List"
@@ -456,6 +538,7 @@ function clearWishlist() {
 // (this also locks all achievements again, because badges are
 // worked out from these three values)
 function clearStoryProgress() {
+  clearAllResumePoints();               // partly finished stories are progress too
   localStorage.removeItem("careerflix_completed");
   localStorage.removeItem("careerflix_choicecount");
   localStorage.removeItem("careerflix_skills");
@@ -497,3 +580,177 @@ function getPreferredLanguage() {
 function savePreferredLanguage(lang) {
   localStorage.setItem("careerflix_language", lang);
 }
+
+
+// =====================================================
+// IMAGE FALLBACK (when a picture cannot be loaded, for example
+// because there is no internet)
+// Photos and avatars are loaded from the internet unless you ran
+// download_images.py. If one cannot be loaded, this shows a simple
+// dark placeholder instead of a broken-image icon. The placeholders
+// are built into the code (data: links), so they always work offline.
+// =====================================================
+(function setUpImageFallback() {
+  const POSTER_PLACEHOLDER = "data:image/svg+xml;utf8," + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice">' +
+    '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+    '<stop offset="0" stop-color="#3a1216"/><stop offset="1" stop-color="#0d0d0d"/></linearGradient></defs>' +
+    '<rect width="400" height="240" fill="url(#g)"/>' +
+    '<circle cx="200" cy="120" r="34" fill="none" stroke="#e50914" stroke-width="4" opacity="0.8"/>' +
+    '<path d="M191 104 L191 136 L220 120 Z" fill="#e50914" opacity="0.8"/></svg>'
+  );
+  const AVATAR_PLACEHOLDER = "data:image/svg+xml;utf8," + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">' +
+    '<rect width="100" height="100" fill="#2b2b2b"/>' +
+    '<circle cx="50" cy="38" r="19" fill="#8a8a8a"/>' +
+    '<path d="M14 100 Q14 66 50 66 Q86 66 86 100 Z" fill="#8a8a8a"/></svg>'
+  );
+
+  function useFallback(img) {
+    const src = img.getAttribute("src");
+    if (!src || src.indexOf("data:") === 0) return;      // placeholder itself: stop here
+    img.src = src.indexOf("dicebear") !== -1 || src.indexOf("avatars/") !== -1
+      ? AVATAR_PLACEHOLDER
+      : POSTER_PLACEHOLDER;
+  }
+
+  // Pictures that fail after the page is ready (or are added later)
+  document.addEventListener("error", function (event) {
+    if (event.target && event.target.tagName === "IMG") useFallback(event.target);
+  }, true);
+
+  // Pictures that had already failed before this code ran. We test them
+  // again with a fresh Image object (a picture whose size is 0 is not
+  // always broken - some SVG files simply have no fixed size).
+  window.addEventListener("load", function () {
+    document.querySelectorAll("img").forEach(function (img) {
+      if (img.complete && img.naturalWidth === 0 && img.getAttribute("src")) {
+        const probe = new Image();
+        probe.onerror = function () { useFallback(img); };
+        probe.src = img.src;
+      }
+    });
+  });
+})();
+
+
+// =====================================================
+// EASTER EGG - "DIRECTOR MODE"
+// Click the CareerFlix logo 3 times (quickly) on any page and a
+// backstage screen appears with a funny fake "system scan".
+// To change the version or date shown, edit the two lines below.
+// =====================================================
+const CAREERFLIX_VERSION = "2.0";
+const CAREERFLIX_BUILD_DATE = "20 September 2026";
+
+// One entry per line of the fake scan. cls decides the colour:
+// ok = green, warn = amber, bad = red, dots = animated "..." (never finishes)
+const DIRECTOR_SCAN_LINES = [
+  { text: "Scanning CareerFlix...", cls: "head" },
+  { label: "Stories", value: "✅", cls: "ok" },
+  { label: "Careers", value: "✅", cls: "ok" },
+  { label: "Easter eggs", value: "✅ (you just found one!)", cls: "ok" },
+  { label: "Bugs", value: "99 little bugs... patched one... now 127 🐛", cls: "warn" },
+  { label: "Student", value: "⚠️ Still deciding career", cls: "warn" },
+  { label: "Attendance", value: "Loading", cls: "dots" },
+  { label: "Assignments", value: "Pending...", cls: "warn" },
+  { label: "Viva preparation", value: "404 (not found)", cls: "bad" },
+  { label: "Sleep", value: "0%", cls: "bad" },
+  { label: "Chai level", value: "☕ critically high", cls: "ok" }
+];
+
+let directorTimers = [];   // so closing the screen also stops the animation
+
+function openDirectorMode() {
+  if (document.getElementById("directorOverlay")) return;   // already open
+
+  const overlay = document.createElement("div");
+  overlay.className = "director-overlay";
+  overlay.id = "directorOverlay";
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.innerHTML =
+    '<div class="director-box">' +
+    '  <button class="director-close" title="Close">✕</button>' +
+    '  <div class="director-title">🎬 DIRECTOR MODE UNLOCKED</div>' +
+    '  <p class="director-quote">“You found the backstage of CareerFlix.”</p>' +
+    '  <p class="director-status">Status: <span>Somehow still debugging...</span></p>' +
+    '  <p class="director-version">CareerFlix v' + CAREERFLIX_VERSION + ' &bull; Build ' + CAREERFLIX_BUILD_DATE + '</p>' +
+    '  <div class="director-terminal" id="directorLines"></div>' +
+    '  <div class="director-bar"><div class="director-bar-fill" id="directorBarFill"></div></div>' +
+    '  <p class="director-hint" id="directorHint">Click outside or press Esc to close</p>' +
+    '</div>';
+  document.body.appendChild(overlay);
+
+  // Closing: X button, click on the dark background, or the Esc key
+  overlay.querySelector(".director-close").onclick = closeDirectorMode;
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay) closeDirectorMode();
+  });
+  document.addEventListener("keydown", directorEscHandler);
+
+  // Show the scan lines one by one
+  const linesBox = document.getElementById("directorLines");
+  const barFill = document.getElementById("directorBarFill");
+  const total = DIRECTOR_SCAN_LINES.length;
+
+  DIRECTOR_SCAN_LINES.forEach(function (line, index) {
+    const timer = setTimeout(function () {
+      const row = document.createElement("div");
+      row.className = "director-line " + line.cls;
+      if (line.text) {
+        row.textContent = line.text;
+      } else {
+        row.innerHTML = '<span class="director-label"></span><span class="director-value"></span>';
+        row.querySelector(".director-label").textContent = line.label + ": ";
+        row.querySelector(".director-value").textContent = line.value;
+      }
+      linesBox.appendChild(row);
+      barFill.style.width = Math.round(((index + 1) / total) * 100) + "%";
+      overlay.querySelector(".director-box").scrollTop = overlay.querySelector(".director-box").scrollHeight;
+    }, 300 + index * 550);
+    directorTimers.push(timer);
+  });
+
+  // Final line
+  const doneTimer = setTimeout(function () {
+    const done = document.createElement("div");
+    done.className = "director-line done";
+    done.textContent = "✔ Scan complete.";
+    linesBox.appendChild(done);
+  }, 300 + total * 550 + 300);
+  directorTimers.push(doneTimer);
+}
+
+function directorEscHandler(event) {
+  if (event.key === "Escape") closeDirectorMode();
+}
+
+function closeDirectorMode() {
+  directorTimers.forEach(clearTimeout);
+  directorTimers = [];
+  document.removeEventListener("keydown", directorEscHandler);
+  const overlay = document.getElementById("directorOverlay");
+  if (overlay) overlay.remove();
+}
+
+// Connects the 3-click trigger to the logo on whichever page is open
+document.addEventListener("DOMContentLoaded", function () {
+  const logo = document.querySelector(".logo");
+  if (!logo) return;
+
+  let clickTimes = [];
+  logo.style.userSelect = "none";              // no text highlight on fast clicks
+  logo.addEventListener("mousedown", function (event) {
+    if (event.detail > 1) event.preventDefault();
+  });
+  logo.addEventListener("click", function () {
+    const now = Date.now();
+    clickTimes = clickTimes.filter(function (t) { return now - t < 1200; });  // only clicks from the last 1.2 s
+    clickTimes.push(now);
+    if (clickTimes.length >= 3) {
+      clickTimes = [];
+      openDirectorMode();
+    }
+  });
+});

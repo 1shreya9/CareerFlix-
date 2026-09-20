@@ -1743,3 +1743,185 @@ footer {
 .danger-zone {
   border: 1px solid #5a2222;
 }
+
+
+/* ===============================================
+   CONTINUE EXPLORING - progress bar, remove button, resume box
+   =============================================== */
+.progress-track {
+  height: 4px;
+  background: #3a3a3a;
+}
+.progress-fill {
+  height: 100%;
+  background: #e50914;
+}
+.continue-remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 12px;
+  line-height: 24px;
+  padding: 0;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+}
+.poster-card:hover .continue-remove { opacity: 1; }
+.continue-remove:hover { background: #e50914; }
+@media (hover: none) {
+  .continue-remove { opacity: 1; }      /* phones have no hover */
+}
+
+.resume-box {
+  max-width: 520px;
+  margin: 0 auto 26px auto;
+  padding: 20px 22px;
+  background: #181818;
+  border: 1px solid #e50914;
+  border-radius: 12px;
+  text-align: center;
+}
+.resume-box h2 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+.resume-box p {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin-bottom: 14px;
+}
+.resume-box .resume-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* ===============================================
+   EASTER EGG - DIRECTOR MODE (click the logo 3 times)
+   =============================================== */
+.director-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: directorFade 0.3s ease;
+}
+.director-box {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 26px 26px 20px 26px;
+  background: #101010;
+  border: 1px solid #e50914;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(229, 9, 20, 0.35);
+  text-align: center;
+  animation: directorPop 0.35s ease;
+}
+.director-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: #262626;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.director-close:hover { background: #e50914; }
+.director-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #e50914;
+  margin-bottom: 8px;
+}
+.director-quote {
+  font-style: italic;
+  color: #dddddd;
+  margin-bottom: 10px;
+}
+.director-status {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin-bottom: 4px;
+}
+.director-status span { color: #ffb020; }
+.director-version {
+  font-size: 12px;
+  color: #808080;
+  margin-bottom: 16px;
+}
+.director-terminal {
+  min-height: 210px;
+  text-align: left;
+  padding: 14px 16px;
+  background: #050505;
+  border: 1px solid #2b2b2b;
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.director-line { animation: directorFade 0.3s ease; }
+.director-line.head { color: #ffffff; margin-bottom: 4px; }
+.director-line .director-label { color: #b3b3b3; }
+.director-line.ok .director-value { color: #46d369; }
+.director-line.warn .director-value { color: #ffb020; }
+.director-line.bad .director-value { color: #ff5a5f; }
+.director-line.dots .director-value { color: #ffb020; }
+.director-line.dots .director-value::after {
+  content: "";
+  animation: directorDots 1.2s steps(4, end) infinite;
+}
+.director-line.done {
+  margin-top: 8px;
+  color: #46d369;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(70, 211, 105, 0.6);
+}
+.director-bar {
+  height: 6px;
+  margin-top: 12px;
+  background: #262626;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.director-bar-fill {
+  width: 0;
+  height: 100%;
+  background: #e50914;
+  transition: width 0.5s ease;
+}
+.director-hint {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #666666;
+}
+@keyframes directorFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes directorPop { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes directorDots {
+  0%   { content: ""; }
+  25%  { content: "."; }
+  50%  { content: ".."; }
+  75%  { content: "..."; }
+}
