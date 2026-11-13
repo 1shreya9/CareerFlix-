@@ -270,7 +270,31 @@ const AV = {
   hrYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=NandiniHrYou&backgroundColor=d6e8ff",
   hrSushma: "https://api.dicebear.com/9.x/adventurer/svg?seed=TeamLeadSushma&backgroundColor=ffd6e8",
   hrArun: "https://api.dicebear.com/9.x/adventurer/svg?seed=ArunEmployeeHR&backgroundColor=ffe5b4",
-  hrCeo: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrKapoorDirector&backgroundColor=c9c9ff"
+  hrCeo: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrKapoorDirector&backgroundColor=c9c9ff",
+
+  // ---- NEW: Psychology stories ----
+  scYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshitaSchoolCounsellor&backgroundColor=d6e8ff",
+  scSharma: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrsSharmaSeniorCounsellor&backgroundColor=ffe0d6",
+  scVerma: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrVermaClassTeacher&backgroundColor=d6ffe0",
+  scAman: "https://api.dicebear.com/9.x/adventurer/svg?seed=AmanClassTenStudent&backgroundColor=ffe5b4",
+  scRiya: "https://api.dicebear.com/9.x/adventurer/svg?seed=RiyaClassTenStudent&backgroundColor=ffd6ec",
+  scFather: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrKapoorParent&backgroundColor=e6d6ff",
+  cpYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=NehaClinicalPsychologist&backgroundColor=d6e8ff",
+  cpAnand: "https://api.dicebear.com/9.x/adventurer/svg?seed=DrAnandSeniorPsychologist&backgroundColor=ffe0b3",
+  cpMehra: "https://api.dicebear.com/9.x/adventurer/svg?seed=DrMehraPsychiatrist&backgroundColor=c9f7d1",
+  cpRohit: "https://api.dicebear.com/9.x/adventurer/svg?seed=RohitPatientTwentyFour&backgroundColor=ffd6d6",
+  chYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=AnayaChildPsychologist&backgroundColor=d6e8ff",
+  chRekha: "https://api.dicebear.com/9.x/adventurer/svg?seed=DrRekhaChildClinic&backgroundColor=ffe0cc",
+  chPihu: "https://api.dicebear.com/9.x/adventurer/svg?seed=PihuSixYearOld&backgroundColor=ffd6ec",
+  chMother: "https://api.dicebear.com/9.x/adventurer/svg?seed=MrsJoshiMother&backgroundColor=e0f7ff",
+  spYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=RheaSportsPsychologist&backgroundColor=d6e8ff",
+  spRaghav: "https://api.dicebear.com/9.x/adventurer/svg?seed=CoachRaghavAthletics&backgroundColor=ffd6d6",
+  spKaran: "https://api.dicebear.com/9.x/adventurer/svg?seed=KaranJuniorSprinter&backgroundColor=d6ffe6",
+  spAnita: "https://api.dicebear.com/9.x/adventurer/svg?seed=AnitaPhysiotherapist&backgroundColor=fff0cc",
+  fpYou: "https://api.dicebear.com/9.x/adventurer/svg?seed=AditiForensicPsychologist&backgroundColor=d6e8ff",
+  fpMalhotra: "https://api.dicebear.com/9.x/adventurer/svg?seed=DrMalhotraForensic&backgroundColor=e6d6ff",
+  fpRathore: "https://api.dicebear.com/9.x/adventurer/svg?seed=InspectorRathoreCase&backgroundColor=ccd9ff",
+  fpSunil: "https://api.dicebear.com/9.x/adventurer/svg?seed=SunilShopkeeperWitness&backgroundColor=ffe5b4",
 };
 
 const storiesData = {
@@ -4828,6 +4852,436 @@ const storiesData = {
             reaction: { speaker: "Mr. Kapoor (Director)", avatar: AV.hrCeo, text: "Nandini, an impersonal late-night email shows contempt for people who gave years to the company. How you do it matters as much as what you do." } }
         ],
         betterAdvice: "When laying off employees, tell people privately with respect, give proper notice and support - never send an impersonal announcement."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // PSYCHOLOGY - "The Quiet Bench" (3 episodes)
+  // Role: School Counsellor
+  // Written directly in English (same as the Aviation stories).
+  // ==================================================
+  counsellor: {
+    title: "The Quiet Bench",
+    genre: "Psychology",
+    youDefaultName: "Ishita",
+    role: "School Counsellor",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshitaSchoolCounsellorM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=IshitaSchoolCounsellorF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/23496574/pexels-photo-23496574.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Join a school as a young counsellor - reach a student who has gone silent, calm a girl's panic attack in the middle of the pre-board exams, and protect a child's trust when a parent demands every detail.",
+    narration: "It is the busy pre-board season. In a small counselling room at the end of the corridor, Ishita keeps a box of tissues, a jug of water and a very important rule: students must feel safe here. Today, three students and one worried parent will test how well she listens.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Staff Room - A Teacher's Worry",
+        bgImage: "https://images.pexels.com/photos/5306438/pexels-photo-5306438.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Aman of Class 10 was a top-three student all year. Over the last month his marks have fallen, he sits alone at the last bench, and he has stopped answering even easy questions.",
+        dialogues: [
+          { speaker: "Mr. Verma (Class Teacher)", avatar: AV.scVerma, text: "Ishita ma'am, I don't know what happened to Aman. He used to answer first. Now he looks at the floor all period." },
+          { speaker: "Mrs. Sharma (Senior Counsellor)", avatar: AV.scSharma, text: "A sudden change in a child who was doing well is a signal, not a discipline problem. How we approach him matters a lot." },
+          { speaker: "Mr. Verma (Class Teacher)", avatar: AV.scVerma, text: "Should I just ask him in class tomorrow what is going on? Maybe the whole class can encourage him." },
+          { speaker: "Ishita (You)", avatar: AV.scYou, text: "If he is already hiding, being pointed out in front of thirty classmates could push him further away. I need a way to reach him that feels safe." }
+        ],
+        choices: [
+          { text: "Invite Aman for a relaxed one-to-one chat in a private space, with no mention of his marks first, and tell him that what he shares stays between you within the limits of safety", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 1, leadership: 0 },
+            reaction: { speaker: "Mrs. Sharma", avatar: AV.scSharma, text: "Good, Ishita. A private, unhurried start tells a child 'you are not in trouble'. Trust has to come before questions, and marks are never the first topic." } },
+          { text: "Ask Aman in front of the class why his marks have dropped so that everyone can encourage him", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Mrs. Sharma", avatar: AV.scSharma, text: "Ishita, public questioning feels like exposure to a teenager who is already struggling. He will go quieter, not talk more. Always start privately." } }
+        ],
+        betterAdvice: "When a student's behaviour changes suddenly, approach them privately and gently, and never begin with marks or blame."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Exam Corridor - Panic Before the Paper",
+        bgImage: "https://images.pexels.com/photos/23496570/pexels-photo-23496570.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Ten minutes before the Maths pre-board paper, Riya from Class 10 is standing against the wall breathing very fast, her hands shaking. She says she cannot breathe and 'everything is going blank'.",
+        dialogues: [
+          { speaker: "Mr. Verma (Class Teacher)", avatar: AV.scVerma, text: "Ishita ma'am, Riya was fine yesterday. Now she says she cannot sit the paper. The bell rings in ten minutes!" },
+          { speaker: "Riya (Student)", avatar: AV.scRiya, text: "I studied everything, but my chest is tight and my mind has gone empty. I think something is wrong with me." },
+          { speaker: "Mrs. Sharma (Senior Counsellor)", avatar: AV.scSharma, text: "It sounds like a panic response. It feels frightening, but it passes. What she needs now is a calm person and a calm voice." },
+          { speaker: "Ishita (You)", avatar: AV.scYou, text: "If I show worry or rush her, she will panic more. I need to slow everything down, starting with myself." }
+        ],
+        choices: [
+          { text: "Tell her to stop being dramatic because everyone is nervous, and send her straight into the exam hall", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 1, leadership: 0 },
+            reaction: { speaker: "Mrs. Sharma", avatar: AV.scSharma, text: "Ishita, 'stop being dramatic' makes a frightened student feel ignored and ashamed. Her panic is real even if the reason is exams. Help her calm down first." } },
+          { text: "Take her to a quiet corner, speak in a slow calm voice, guide her through slow breathing and the 5-4-3-2-1 grounding exercise, and reassure her that the feeling will pass", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Mrs. Sharma", avatar: AV.scSharma, text: "Well done. Slow breathing and grounding calm the body first, and a steady voice tells her she is safe. Talk about the exam only after she feels better." } }
+        ],
+        betterAdvice: "In a panic attack, stay calm, use slow breathing and grounding, and reassure the student - never dismiss the feeling or push the student away."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Counsellor's Office - A Parent's Demand",
+        bgImage: "https://images.pexels.com/photos/5336939/pexels-photo-5336939.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "After a few sessions, Aman is slowly opening up. His father arrives at the school and says, 'I pay the fees. Tell me everything my son has told you, word for word.'",
+        dialogues: [
+          { speaker: "Mr. Kapoor (Aman's Father)", avatar: AV.scFather, text: "I am his father. If he is telling you something, I have a right to know. Is it about his studies? Is he in some bad company?" },
+          { speaker: "Mrs. Sharma (Senior Counsellor)", avatar: AV.scSharma, text: "Ishita, this is one of the hardest moments in school counselling. The parent is worried, and so is the child, who must be able to trust you." },
+          { speaker: "Mr. Kapoor (Aman's Father)", avatar: AV.scFather, text: "I just want to help him. Why will no one tell me anything?" },
+          { speaker: "Ishita (You)", avatar: AV.scYou, text: "His worry is genuine. But if I repeat everything Aman told me, he will never open up to anyone again." }
+        ],
+        choices: [
+          { text: "Explain that sessions are confidential except where there is a risk to safety, share only general progress and ways the family can help, and offer a joint meeting once Aman agrees", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Mrs. Sharma", avatar: AV.scSharma, text: "That is the right balance, Ishita. You respect the child's trust, you keep the parent involved and you explained the exceptions honestly. Both of them leave feeling heard." } },
+          { text: "Share everything Aman has said so far, since the father is paying the fees and is clearly worried", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Mrs. Sharma", avatar: AV.scSharma, text: "Ishita, a child's private words cannot be handed over because someone pays the fees. The moment Aman finds out, he will stop talking, and the father will lose his only way to understand him." } }
+        ],
+        betterAdvice: "Explain the limits of confidentiality kindly: protect the child's private words, share general progress and strategies, and involve the family with the student's consent."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // PSYCHOLOGY - "Mind Matters" (3 episodes)
+  // Role: Clinical Psychologist
+  // Written directly in English (same as the Aviation stories).
+  // ==================================================
+  clinicalpsy: {
+    title: "Mind Matters",
+    genre: "Psychology",
+    youDefaultName: "Neha",
+    role: "Clinical Psychologist",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=NehaClinicalPsychologistM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=NehaClinicalPsychologistF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/5699471/pexels-photo-5699471.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Work in a hospital's mental health clinic - meet a young man who thinks he is 'going mad', pick the right way to assess his anxiety, and decide when therapy alone is no longer enough.",
+    narration: "The hospital's mental health clinic is quiet in the morning. Neha has a notepad, a box of tissues and a lot of patience. Today a 24-year-old named Rohit is walking in for the first time, after weeks of sudden, frightening attacks that his family calls 'just an attitude problem'.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Clinic Room - The First Session",
+        bgImage: "https://images.pexels.com/photos/5699455/pexels-photo-5699455.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Rohit, 24, has had four sudden attacks of racing heart, shaking and fear in the last month. He tells you quietly, 'My family says I am faking. Maybe I am going mad.'",
+        dialogues: [
+          { speaker: "Dr. Anand (Senior Psychologist)", avatar: AV.cpAnand, text: "Neha, remember that the first session sets the tone for the whole treatment. Many people arrive ashamed, and some have waited years to ask for help." },
+          { speaker: "Rohit (Patient)", avatar: AV.cpRohit, text: "Doctor, my heart races, my hands shake, and I feel like I will die. Then it passes. No one believes me." },
+          { speaker: "Dr. Anand (Senior Psychologist)", avatar: AV.cpAnand, text: "Panic attacks are very common and very treatable. But first he needs to feel heard." },
+          { speaker: "Neha (You)", avatar: AV.cpYou, text: "He is scared and embarrassed. If I rush him or label him, I lose his trust before we even begin." }
+        ],
+        choices: [
+          { text: "Listen without interrupting, take a careful history of the attacks, explain that panic is common and treatable, and agree on a plan and on confidentiality together", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Dr. Anand", avatar: AV.cpAnand, text: "That is how a first session should go, Neha. He feels believed, he has a name for what is happening and he knows what comes next. Good therapy starts there." } },
+          { text: "Tell him it is just stress, to stop worrying, and finish the session in ten minutes", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 1, leadership: 0 },
+            reaction: { speaker: "Dr. Anand", avatar: AV.cpAnand, text: "Neha, 'just stress, don't worry' is exactly what his family has been telling him. He needs to be heard and understood, not hurried out." } }
+        ],
+        betterAdvice: "In a first session, listen fully, explain the problem in simple words and agree on a plan - never rush a patient or dismiss the fear."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Assessment Room - Measuring the Anxiety",
+        bgImage: "https://images.pexels.com/photos/4098374/pexels-photo-4098374.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Before starting therapy, you need to know how severe Rohit's anxiety is and whether low mood or anything else is present. Two options are on your desk: a validated clinical scale and a free 'Which anxiety type are you?' quiz from a popular app.",
+        dialogues: [
+          { speaker: "Dr. Anand (Senior Psychologist)", avatar: AV.cpAnand, text: "Assessment is not guesswork, Neha. What tools do you plan to use, and why?" },
+          { speaker: "Rohit (Patient)", avatar: AV.cpRohit, text: "My cousin showed me a quiz on his phone that says I have 'severe anxiety type B'. Is that right?" },
+          { speaker: "Dr. Anand (Senior Psychologist)", avatar: AV.cpAnand, text: "An app quiz is made to entertain. A clinical scale is tested on large groups and checked for accuracy." },
+          { speaker: "Neha (You)", avatar: AV.cpYou, text: "Rohit trusts the result because it looks official. I must be careful about what I show him and what I conclude." }
+        ],
+        choices: [
+          { text: "Use the popular app quiz because it is quick, free and Rohit already trusts it", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Anand", avatar: AV.cpAnand, text: "Neha, an app quiz has no proven accuracy and can mislabel someone. Treatment based on a bad assessment can go in the wrong direction. Use validated tools." } },
+          { text: "Use a standardised, validated scale together with a structured clinical interview, and read the results in the context of Rohit's history", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Dr. Anand", avatar: AV.cpAnand, text: "Exactly. A validated scale plus a proper interview gives you a reliable picture. Scores alone never tell the whole story, and a quiz tells you almost nothing." } }
+        ],
+        betterAdvice: "Assess with validated tools and a structured interview - never rely on app quizzes, one-line questions or first impressions."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Case Conference - Beyond Talk Therapy",
+        bgImage: "https://images.pexels.com/photos/3958426/pexels-photo-3958426.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "After three sessions, Rohit tells you he has hardly slept for weeks, has lost his appetite and no longer enjoys anything. His panic attacks are getting worse. Dr. Mehra, the hospital psychiatrist, is available this afternoon.",
+        dialogues: [
+          { speaker: "Rohit (Patient)", avatar: AV.cpRohit, text: "I lie awake till four every night. I don't feel like eating or meeting friends. Maybe talking is not enough for me." },
+          { speaker: "Dr. Mehra (Psychiatrist)", avatar: AV.cpMehra, text: "Neha, in our hospital the psychologist and the psychiatrist work together. Only a doctor can decide on medicines, and that decision needs a medical evaluation." },
+          { speaker: "Dr. Anand (Senior Psychologist)", avatar: AV.cpAnand, text: "Knowing the limits of your role is a strength. What will you do for Rohit now?" },
+          { speaker: "Neha (You)", avatar: AV.cpYou, text: "He is getting worse, and I want to help him. But helping him might mean sharing the work with someone else." }
+        ],
+        choices: [
+          { text: "Explain the reasons to Rohit, refer him to Dr. Mehra for a medical evaluation with his consent, and continue therapy while the two of you coordinate", correct: true,
+            skills: { technical: 2, communication: 2, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Dr. Anand", avatar: AV.cpAnand, text: "That is professional teamwork, Neha. Rohit gets the medical review he needs, keeps a therapist he trusts and understands why. Referring is not failing." } },
+          { text: "Keep treating him alone because a referral might make him feel even more 'mad'", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Anand", avatar: AV.cpAnand, text: "Neha, holding on to a case beyond your scope puts the patient at risk. Done sensitively, a referral shows him he is being taken seriously, not that he is 'mad'." } }
+        ],
+        betterAdvice: "Know the limits of your role - refer a patient for a medical evaluation when symptoms go beyond therapy, and keep working together as a team."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // PSYCHOLOGY - "Little Voices" (3 episodes)
+  // Role: Child Psychologist
+  // Written directly in English (same as the Aviation stories).
+  // ==================================================
+  childpsy: {
+    title: "Little Voices",
+    genre: "Psychology",
+    youDefaultName: "Anaya",
+    role: "Child Psychologist",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AnayaChildPsychologistM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AnayaChildPsychologistF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/8654102/pexels-photo-8654102.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Run a children's clinic's play room - win the trust of a six-year-old who speaks only at home, guide an anxious mother through a slow assessment, and listen to a child's drawing without putting words in her mouth.",
+    narration: "The play room at the child guidance clinic is full of soft toys, crayons and a tiny kitchen set. Anaya has learned that children rarely say what they feel - they show it. Today, a six-year-old girl named Pihu is about to show her something important.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Play Room - The Silent Child",
+        bgImage: "https://images.pexels.com/photos/7447271/pexels-photo-7447271.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Pihu, 6, chats non-stop at home but has not spoken a single word at school or to any stranger since she started Class 1. She hides behind her mother's dupatta as you introduce yourself.",
+        dialogues: [
+          { speaker: "Mrs. Joshi (Pihu's Mother)", avatar: AV.chMother, text: "At home she sings, argues, tells long stories. But at school she goes completely silent. The teacher thinks she is rude." },
+          { speaker: "Dr. Rekha (Supervisor)", avatar: AV.chRekha, text: "Anaya, a child who is silent in some places and chatty in others is usually frightened, not rude. Pressure to speak makes that fear worse." },
+          { speaker: "Pihu (Child)", avatar: AV.chPihu, text: "..." },
+          { speaker: "Anaya (You)", avatar: AV.chYou, text: "If I ask question after question, she will freeze even more. I need to make this room feel like a place where she does not have to say anything." }
+        ],
+        choices: [
+          { text: "Sit on the floor at her level, start playing with the toys beside her without asking questions, and let her choose when and how to join in", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Dr. Rekha", avatar: AV.chRekha, text: "Lovely, Anaya. Play is a child's language. When she feels there is no pressure, her voice will return in her own time, often first through whispers or gestures." } },
+          { text: "Ask her many direct questions and tell her to say hello nicely until she answers", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Rekha", avatar: AV.chRekha, text: "Anaya, pressing a frightened child to speak only deepens her silence. Let her set the pace and build trust through play." } }
+        ],
+        betterAdvice: "With a silent or fearful child, never force speech - create a safe, pressure-free space through play and let the child lead."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Clinic Office - The Worried Mother",
+        bgImage: "https://images.pexels.com/photos/5336930/pexels-photo-5336930.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "After the first session, Mrs. Joshi is anxious. She compares Pihu to her talkative cousin and asks, 'Just tell me today - does my daughter have autism or something? I cannot wait.'",
+        dialogues: [
+          { speaker: "Mrs. Joshi (Pihu's Mother)", avatar: AV.chMother, text: "My sister's son is the same age and never stops talking. People at school are whispering about Pihu. Please, just give me an answer." },
+          { speaker: "Dr. Rekha (Supervisor)", avatar: AV.chRekha, text: "A label given too early can do more harm than good. But a worried parent also needs something real to hold on to." },
+          { speaker: "Mrs. Joshi (Pihu's Mother)", avatar: AV.chMother, text: "I am afraid of waiting. What if I am wasting time?" },
+          { speaker: "Anaya (You)", avatar: AV.chYou, text: "She needs honesty and hope together. A quick label may calm her tonight but could be wrong, and a child lives with it for years." }
+        ],
+        choices: [
+          { text: "Give a diagnosis in this first visit so the mother can finally relax", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 1, leadership: 0 },
+            reaction: { speaker: "Dr. Rekha", avatar: AV.chRekha, text: "Anaya, one play session is not enough to diagnose a child. A wrong or hasty label can shape how family and school treat Pihu for years. Explain the process instead." } },
+          { text: "Explain that a proper assessment needs time - observing Pihu at home and school, speaking to the teacher, using standardised tools - and give practical support to try in the meantime", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Dr. Rekha", avatar: AV.chRekha, text: "That is honest and caring, Anaya. You told her why the process takes time, what happens next and what she can do now. Parents cope better when they have a plan." } }
+        ],
+        betterAdvice: "Do not label a child quickly - explain that a proper assessment takes time and observation, and give the parent practical help meanwhile."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Play Room - A Drawing About Home",
+        bgImage: "https://images.pexels.com/photos/7447263/pexels-photo-7447263.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "By the fifth session Pihu is whispering to you. She draws her house with two big figures at opposite corners and a small girl in the middle. Softly she says, 'Mama and Papa shout loudly.'",
+        dialogues: [
+          { speaker: "Pihu (Child)", avatar: AV.chPihu, text: "This is my house. This is Mama. This is Papa. They are far away. I am here." },
+          { speaker: "Dr. Rekha (Supervisor)", avatar: AV.chRekha, text: "Anaya, careful. Children are very sensitive to what adults say. Suggestive questions can plant ideas and make a child say what she thinks you want to hear." },
+          { speaker: "Pihu (Child)", avatar: AV.chPihu, text: "When they shout, I hide under the table with my teddy." },
+          { speaker: "Anaya (You)", avatar: AV.chYou, text: "She trusts me enough to show this. I must listen to her words and her feelings, and not push my own guesses into them." }
+        ],
+        choices: [
+          { text: "Respond with open, gentle prompts such as 'Tell me more about your picture', reflect her feelings in simple words, and later speak to the parents about family support", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Dr. Rekha", avatar: AV.chRekha, text: "That is exactly right, Anaya. Open prompts let Pihu tell her own story. Reflecting her feelings tells her she is understood, and the parents can then be guided carefully." } },
+          { text: "Ask her directly, 'It is Papa's fault, isn't it? He shouts the most, right?'", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Rekha", avatar: AV.chRekha, text: "Anaya, that is a leading question. It puts blame into her head and can distort what she really feels. Ask open questions and let her describe in her own words." } }
+        ],
+        betterAdvice: "With children, use open, non-leading questions and reflect their feelings - never put words or blame into a child's mouth."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // PSYCHOLOGY - "Pressure Point" (3 episodes)
+  // Role: Sports Psychologist
+  // Written directly in English (same as the Aviation stories).
+  // ==================================================
+  sportspsych: {
+    title: "Pressure Point",
+    genre: "Psychology",
+    youDefaultName: "Rhea",
+    role: "Sports Psychologist",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RheaSportsPsychologistM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=RheaSportsPsychologistF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/9559290/pexels-photo-9559290.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Support a junior state-level sprinter who runs fast in practice but freezes in finals - build a calm pre-race routine, rebuild his confidence after an injury and protect his privacy when the coach asks for details.",
+    narration: "The state athletics meet is two weeks away. On the practice track, 17-year-old Karan clocks his best-ever 400-metre time. But Coach Raghav has seen this movie before: in the final, Karan's legs always seem to turn to stone. Rhea has been called in to work on the mind, not the muscles.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Practice Track - Freezing in Finals",
+        bgImage: "https://images.pexels.com/photos/19787364/pexels-photo-19787364.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "In practice Karan runs 400 metres comfortably under his target. In last month's final he finished last, saying, 'My legs went heavy and my mind went blank.' Another final is two weeks away.",
+        dialogues: [
+          { speaker: "Coach Raghav", avatar: AV.spRaghav, text: "He has the speed, Rhea. I keep telling him 'just relax and think positive', but nothing changes." },
+          { speaker: "Karan (Athlete)", avatar: AV.spKaran, text: "The moment I reach the starting line, I only think, 'What if I lose again? Everyone is watching.' Then I cannot feel my legs." },
+          { speaker: "Coach Raghav", avatar: AV.spRaghav, text: "Can't you just teach him not to think about losing?" },
+          { speaker: "Rhea (You)", avatar: AV.spYou, text: "Telling someone not to think about something only makes the thought louder. He needs something to focus on instead, not something to fight." }
+        ],
+        choices: [
+          { text: "Teach a short pre-race routine - slow breathing, one cue word and a focus on his own lane and first 100 metres - and rehearse it with visualisation in practice", correct: true,
+            skills: { technical: 3, communication: 2, problemSolving: 2, leadership: 0 },
+            reaction: { speaker: "Coach Raghav", avatar: AV.spRaghav, text: "That makes sense. Give his mind a job to do and it has less room to panic. Routines like this are what top athletes rely on under pressure." } },
+          { text: "Tell him to stop thinking about losing and just stay positive", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 1, leadership: 0 },
+            reaction: { speaker: "Coach Raghav", avatar: AV.spRaghav, text: "Rhea, 'stop thinking about losing' is what I have been saying, and it has not worked. Trying not to think of something keeps it in mind. Give him a focus and a routine." } }
+        ],
+        betterAdvice: "Under pressure, give the athlete something to focus on - a breathing and cue-word routine plus process goals - instead of telling them not to think about losing."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Physio Room - Fear of Injury",
+        bgImage: "https://images.pexels.com/photos/3718433/pexels-photo-3718433.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "Karan pulled a hamstring two months ago. The physiotherapist has cleared him to run at full speed, but he keeps slowing down near the last 100 metres and touching the back of his leg.",
+        dialogues: [
+          { speaker: "Anita (Physiotherapist)", avatar: AV.spAnita, text: "Medically his leg is healed, Rhea. The scan is clean. But every time he accelerates, he holds back." },
+          { speaker: "Karan (Athlete)", avatar: AV.spKaran, text: "I know it is fine. But I keep feeling that it will tear again. I cannot make myself go all out." },
+          { speaker: "Coach Raghav", avatar: AV.spRaghav, text: "Maybe we just make him sprint full speed three times and he'll get over it." },
+          { speaker: "Rhea (You)", avatar: AV.spYou, text: "His fear is not stupid, it is protective. But if he gives in to it every time, it will grow. We need small steps, and Anita and I must work together." }
+        ],
+        choices: [
+          { text: "Make him sprint at full speed straight away and tell him that his fear is nonsense", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Anita", avatar: AV.spAnita, text: "Rhea, forcing a full sprint and calling the fear nonsense can trigger a setback, physically and mentally. Confidence has to be rebuilt in steps." } },
+          { text: "Work with the physio on a graded return to speed - small, planned steps with clear targets - and help Karan track his successes to rebuild trust in his leg", correct: true,
+            skills: { technical: 2, communication: 1, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "Anita", avatar: AV.spAnita, text: "Exactly. A graded return lets his body and his confidence catch up together. Each successful step proves to him that the leg is ready." } }
+        ],
+        betterAdvice: "After an injury, rebuild confidence with a graded return planned together with the physiotherapist - never force the athlete or keep them out unnecessarily."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Stadium - After the Race",
+        bgImage: "https://images.pexels.com/photos/104675/pexels-photo-104675.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "At the state meet Karan finishes second, a fraction behind the winner. The selection committee meets tomorrow. Coach Raghav pulls you aside and says, 'Tell me everything Karan has said in your private sessions so I can plan his selection.'",
+        dialogues: [
+          { speaker: "Coach Raghav", avatar: AV.spRaghav, text: "He ran well today, but I need to know his weak points. What has he told you? It will help me argue for him." },
+          { speaker: "Karan (Athlete)", avatar: AV.spKaran, text: "Ma'am, I told you things I have never told anyone. I hope they stay between us." },
+          { speaker: "Anita (Physiotherapist)", avatar: AV.spAnita, text: "The coach means well, Rhea. But so does Karan's trust in you." },
+          { speaker: "Rhea (You)", avatar: AV.spYou, text: "If I share his private fears, I may lose his trust and his willingness to open up to anyone. The coach does need useful information, though." }
+        ],
+        choices: [
+          { text: "Keep the sessions confidential, agree with Karan what may be shared, give the coach only performance-related strategies and encourage Karan to talk to the coach himself", correct: true,
+            skills: { technical: 1, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Anita", avatar: AV.spAnita, text: "That protects Karan and still helps the coach. When an athlete decides what to share, he stays honest in sessions and trusts the team more." } },
+          { text: "Share everything Karan told you so that the coach has the full picture for selection", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Anita", avatar: AV.spAnita, text: "Rhea, sharing private session content without consent would break his trust and could hurt his selection chances. Agree with Karan what can be shared first." } }
+        ],
+        betterAdvice: "Keep private sessions confidential - share only what the athlete agrees to, focus on performance strategies and encourage the athlete to speak with the coach."
+      }
+
+    ]
+  },
+
+  // ==================================================
+  // PSYCHOLOGY - "The Honest Witness" (3 episodes)
+  // Role: Forensic Psychologist
+  // Written directly in English (same as the Aviation stories).
+  // ==================================================
+  forensicpsy: {
+    title: "The Honest Witness",
+    genre: "Psychology",
+    youDefaultName: "Aditi",
+    role: "Forensic Psychologist",
+    youAvatarMale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AditiForensicPsychologistM&backgroundColor=d6e8ff",
+    youAvatarFemale: "https://api.dicebear.com/9.x/adventurer/svg?seed=AditiForensicPsychologistF&backgroundColor=ffd6e8",
+    posterImage: "https://images.pexels.com/photos/5699431/pexels-photo-5699431.jpeg?auto=compress&cs=tinysrgb&w=800",
+    summary: "Work with the police and the courts as a forensic psychologist - help a nervous shopkeeper remember a robbery without planting false details, assess whether an accused can face trial, and resist pressure to name a culprit from two clues.",
+    narration: "Where psychology meets the law, a single careless question can change a case. Aditi has joined the district's forensic psychology unit. Her work will not decide who is guilty - that is for the court - but it can decide whether the evidence in front of the court can be trusted.",
+
+    episodes: [
+      // ---------- EPISODE 1 ----------
+      {
+        location: "Police Station - The Eyewitness",
+        bgImage: "https://images.pexels.com/photos/5699500/pexels-photo-5699500.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A jewellery shop was robbed last night. Sunil, the shopkeeper, saw the thief for a few seconds and is still shaken. The inspector wants a quick identification so that the case can move.",
+        dialogues: [
+          { speaker: "Inspector Rathore", avatar: AV.fpRathore, text: "We have a suspect in custody. Show Sunil his photo and ask, 'Is this the man?' It will take two minutes." },
+          { speaker: "Dr. Malhotra (Senior Forensic Psychologist)", avatar: AV.fpMalhotra, text: "Aditi, memory is not a video recording. Suggestion and stress can change it, and a wrong identification can send an innocent person to jail." },
+          { speaker: "Sunil (Witness)", avatar: AV.fpSunil, text: "Madam, it all happened so fast. I think he had a cap, maybe a beard... I am not sure." },
+          { speaker: "Aditi (You)", avatar: AV.fpYou, text: "He is trying to please us, and the inspector is hurrying him. I need a way to get his real memory out without shaping it." }
+        ],
+        choices: [
+          { text: "Use a cognitive-style interview - build rapport, let him recall freely in his own words, avoid leading questions and use a fair line-up instead of a single photo", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 1 },
+            reaction: { speaker: "Dr. Malhotra", avatar: AV.fpMalhotra, text: "Excellent, Aditi. Free recall protects his real memory and a fair line-up protects an innocent person. This is how evidence stays reliable." } },
+          { text: "Show him the suspect's single photo and ask, 'Is this the man?' to save time", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Malhotra", avatar: AV.fpMalhotra, text: "Aditi, a single photo is a suggestion, not a test. A nervous witness is likely to agree, and the court may later throw out the identification. Use a fair procedure." } }
+        ],
+        betterAdvice: "Protect a witness's memory - use open free recall, avoid leading questions and use fair line-ups instead of showing a single suspect."
+      },
+
+      // ---------- EPISODE 2 ----------
+      {
+        location: "Prison Interview Room - Fitness for Trial",
+        bgImage: "https://images.pexels.com/photos/5699431/pexels-photo-5699431.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "A court has asked for an opinion on whether an accused man, Ramesh, can understand the charges against him and instruct his lawyer. He seems confused and gives odd answers in the first five minutes.",
+        dialogues: [
+          { speaker: "Inspector Rathore", avatar: AV.fpRathore, text: "Madam, he is putting on an act to avoid trial. Look at how he behaves. I would say he is fine." },
+          { speaker: "Dr. Malhotra (Senior Forensic Psychologist)", avatar: AV.fpMalhotra, text: "Aditi, your report goes to the court. It must rest on evidence, not on how someone looks or what the police believe." },
+          { speaker: "Ramesh (Accused)", avatar: AV.fpSunil, text: "Which court? Who are you? I only came to sell some utensils." },
+          { speaker: "Aditi (You)", avatar: AV.fpYou, text: "He could be unwell, or he could be pretending. I cannot tell from five minutes, and neither can anyone else." }
+        ],
+        choices: [
+          { text: "Decide on the spot after five minutes that he is acting, since he looks guilty", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 0, leadership: 0 },
+            reaction: { speaker: "Dr. Malhotra", avatar: AV.fpMalhotra, text: "Aditi, 'looks guilty' is not an assessment. A rushed opinion based on appearance is unfair to the accused and will fall apart under cross-examination." } },
+          { text: "Conduct a structured clinical interview and standardised tests over more than one session, review hospital and family records, and report objectively what you found and its limits", correct: true,
+            skills: { technical: 3, communication: 1, problemSolving: 3, leadership: 1 },
+            reaction: { speaker: "Dr. Malhotra", avatar: AV.fpMalhotra, text: "That is a defensible assessment, Aditi. Multiple sources and standard methods mean your opinion can be tested in court. Your job is to inform the court, not to take sides." } }
+        ],
+        betterAdvice: "A forensic assessment must be thorough and independent - use structured methods, several sources and more than one session, never first impressions or pressure."
+      },
+
+      // ---------- EPISODE 3 ----------
+      {
+        location: "Station Office - The Profile Pressure",
+        bgImage: "https://images.pexels.com/photos/9862225/pexels-photo-9862225.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        scene: "After a series of break-ins, the inspector wants a 'criminal profile' for a press briefing tomorrow. You have only two crime scenes and a few details. He says, 'Just tell me what kind of man he is. The public wants an answer.'",
+        dialogues: [
+          { speaker: "Inspector Rathore", avatar: AV.fpRathore, text: "The media is after me, Aditi. Say it confidently - age, background, habits. A profile makes us look serious." },
+          { speaker: "Dr. Malhotra (Senior Forensic Psychologist)", avatar: AV.fpMalhotra, text: "Profiling is useful, but it gives probabilities and leads, not certainties. A confident wrong profile can send the whole investigation in the wrong direction." },
+          { speaker: "Inspector Rathore", avatar: AV.fpRathore, text: "Then at least tell me the culprit is a lonely man who lives nearby. That sounds reasonable." },
+          { speaker: "Aditi (You)", avatar: AV.fpYou, text: "Two crime scenes cannot support that. If I guess, innocent neighbours could be targeted and the real culprit could be missed." }
+        ],
+        choices: [
+          { text: "Explain that two crime scenes only support cautious hypotheses, share behavioural observations as investigative leads with their limits, and decline to state a firm profile for the press", correct: true,
+            skills: { technical: 2, communication: 3, problemSolving: 2, leadership: 2 },
+            reaction: { speaker: "Dr. Malhotra", avatar: AV.fpMalhotra, text: "That is professional integrity, Aditi. You gave the inspector something usable without pretending to know more than the evidence shows." } },
+          { text: "Give a confident, detailed profile with age and background so that the briefing goes well", correct: false,
+            skills: { technical: 0, communication: 0, problemSolving: 1, leadership: 0 },
+            reaction: { speaker: "Dr. Malhotra", avatar: AV.fpMalhotra, text: "Aditi, a confident profile built on two data points is a guess in a uniform. It can lead the police to the wrong person. Be honest about what the evidence can and cannot say." } }
+        ],
+        betterAdvice: "Profiling offers cautious leads, not certainty - never present guesses from two data points as fact, and never name a culprit to satisfy pressure."
       }
 
     ]

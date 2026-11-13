@@ -289,13 +289,15 @@ const GENRE_STORY_IDS = {
   teaching:   ["teaching", "college", "specialedu", "principal", "coachmentor"],
   police:     ["police", "detective", "cybercell", "forensic", "nightbeat"],
   government: ["government", "railways", "forestofficer", "taxofficer", "customs"],
-  business:   ["business", "finance", "ca", "marketing", "hr"]
+  business:   ["business", "finance", "ca", "marketing", "hr"],
+  psychology: ["counsellor", "clinicalpsy", "childpsy", "sportspsych", "forensicpsy"]
 };
-// Every story in the app (9 genres x 5 stories = 45)
+// Every story in the app (10 genres x 5 stories = 50)
 const ALL_STORY_IDS = [].concat(
   GENRE_STORY_IDS.aviation, GENRE_STORY_IDS.medical, GENRE_STORY_IDS.sports,
   GENRE_STORY_IDS.it, GENRE_STORY_IDS.law, GENRE_STORY_IDS.teaching,
-  GENRE_STORY_IDS.police, GENRE_STORY_IDS.government, GENRE_STORY_IDS.business
+  GENRE_STORY_IDS.police, GENRE_STORY_IDS.government, GENRE_STORY_IDS.business,
+  GENRE_STORY_IDS.psychology
 );
 
 // Checks if the user has completed ALL the stories in a given genre group

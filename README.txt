@@ -1,6 +1,35 @@
 CAREERFLIX - CODE EXPLANATION (FOR VIVA)
 ==========================================
 
+LATEST UPDATE - PSYCHOLOGY GENRE (5 NEW STORIES, 50 TOTAL)
+--------------------------------------------------------------------------
+1. NEW GENRE "Psychology" (10 genres x 5 stories = 50 stories), 3 episodes
+   each, 4 choices per episode (right, wrong, extra wrong, funny), written
+   in English like the Aviation stories:
+   - The Quiet Bench (counsellor)     - School Counsellor
+   - Mind Matters (clinicalpsy)       - Clinical Psychologist
+   - Little Voices (childpsy)         - Child Psychologist
+   - Pressure Point (sportspsych)     - Sports Psychologist
+   - The Honest Witness (forensicpsy) - Forensic Psychologist
+   Each one is a different real-life situation: a withdrawn student, a
+   panic attack, parent confidentiality, a first therapy session, choosing
+   a validated assessment, referring to a psychiatrist, play therapy,
+   avoiding leading questions, pre-race pressure, injury fear, witness
+   memory, fitness for trial and the limits of criminal profiling.
+2. WHERE IT WAS ADDED (same 5 places as every story): storyData.js (stories
+   + avatars), extraChoices.js (wrong + funny choice per episode),
+   dashboard.html (new "Psychology Careers" row + storyInfo), mylist.html
+   (storyInfo), profile.html (storyDisplayInfo), script.js (GENRE_STORY_IDS
+   and ALL_STORY_IDS - Completionist now needs all 50).
+3. LATEST RELEASES (dashboard.html) now shows the 5 new Psychology stories.
+4. IMAGES: the new stories use new Pexels photos of counselling, therapy,
+   child therapy and sprinting (links are images.pexels.com, so
+   download_images.py picks them up like all other photos - run it once
+   with internet to save them offline). Three scenes reuse photos that were
+   already in the project: the physio room and stadium (Pressure Point) and
+   the police station (The Honest Witness, episode 3).
+
+
 LATEST UPDATE - EASTER EGG: DIRECTOR MODE
 --------------------------------------------------------------------------
 Click the CareerFlix logo 3 times quickly (within 1.2 seconds) on ANY page

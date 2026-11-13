@@ -815,6 +815,76 @@ const extraChoices = {
         reaction: "Nandini, that is disrespectful. Tell each person privately with proper notice and support." },
       { text: "Send everyone a friendly balloon with the news inside",
         reaction: "Nandini, balloons and layoffs don't mix! Tell each person privately, with respect and support.", funny: true } ]
+  ],
+  counsellor: [
+    [ { text: "Wait until the pre-boards are over, because it is probably just a phase",
+        reaction: "Ishita, a month of withdrawal is long enough to act on. Waiting can let a small problem grow. Offer a private, gentle conversation now." },
+      { text: "Stick a 'Smile, it's free!' poster on his desk and hope that fixes it",
+        reaction: "Ishita, nice poster, but a sticker cannot do a counsellor's job! Invite him privately and listen without judging.", funny: true } ],
+    [ { text: "Tell her to skip all the remaining exams so she never has to feel this way again",
+        reaction: "Ishita, avoiding exams brings short relief but makes the fear stronger next time. Help her calm down now and plan support for the rest of the exams." },
+      { text: "Ask her to hold her breath for as long as she can so that her body 'resets'",
+        reaction: "Ishita, holding the breath makes panic worse! Slow, steady breathing is what calms the body. Guide her through that.", funny: true } ],
+    [ { text: "Tell the father it is none of his business and ask him to leave the room",
+        reaction: "Ishita, a rude refusal turns a worried parent into an angry one. Be kind, explain confidentiality and show him how he can still help." },
+      { text: "Hand over your session notes along with a box of sweets to keep the family happy",
+        reaction: "Ishita, sweets are lovely but notes are private! Explain confidentiality and share only general progress and support ideas.", funny: true } ]
+  ],
+  clinicalpsy: [
+    [ { text: "Ask him to search his symptoms online and come back with a self-diagnosis next week",
+        reaction: "Neha, online searches usually make anxiety worse and are no substitute for a proper assessment. Take the history yourself and explain what you find." },
+      { text: "Give him a lucky lemon-and-chilli charm to ward off the attacks",
+        reaction: "Neha, the charm will not help, though it smells interesting! Take his history and explain that panic attacks are treatable with therapy.", funny: true } ],
+    [ { text: "Decide the diagnosis from one question: 'Do you feel scared often?'",
+        reaction: "Neha, one question is far too thin to build a diagnosis on. Use a validated scale and a full interview." },
+      { text: "Judge his anxiety by how fast his leg is bouncing and write 'severe' in the file",
+        reaction: "Neha, a bouncing leg is not a test result, though it makes a great drum solo! Use a validated scale and a structured interview.", funny: true } ],
+    [ { text: "Suggest a tablet name you once heard from a friend's prescription to help him sleep tonight",
+        reaction: "Neha, recommending medicine is outside a psychologist's role and could be dangerous. Refer him to the psychiatrist for a proper evaluation." },
+      { text: "Tell him that counting ten thousand sheep every night cures any sleeplessness",
+        reaction: "Neha, even the fluffiest sheep cannot treat this! Explain why a medical review is needed and refer him to Dr. Mehra.", funny: true } ]
+  ],
+  childpsy: [
+    [ { text: "Promise her a chocolate for every word she says",
+        reaction: "Anaya, rewards for speaking turn it into a test and add pressure. Build safety first through play, and the words will follow." },
+      { text: "Hand her a megaphone and ask her to say hello to the whole clinic",
+        reaction: "Anaya, a megaphone for a child who can barely whisper? Great circus idea, terrible therapy! Sit with her and play at her own pace.", funny: true } ],
+    [ { text: "Tell her not to worry because every child grows out of everything",
+        reaction: "Anaya, false comfort does not help a parent who is already worried, and some difficulties do need support. Explain the assessment and offer practical steps." },
+      { text: "Tell her you will check a children's horoscope book to decide what is wrong",
+        reaction: "Anaya, horoscopes are great for festival chats but not for assessments! Explain the proper steps: observation, teacher input and standardised tools.", funny: true } ],
+    [ { text: "Tell her not to worry and quickly change the topic to colouring",
+        reaction: "Anaya, changing the topic tells her that her feelings are too big to talk about. Listen and invite her to say more, gently." },
+      { text: "Ask her to redraw the picture with a pet dinosaur and happy parents, and put that one in the file",
+        reaction: "Anaya, a dinosaur would be wonderful for the clinic wall, but the case file needs her real picture! Listen to what she shows and says.", funny: true } ]
+  ],
+  sportspsych: [
+    [ { text: "Advise him to skip all big races until he feels fully ready",
+        reaction: "Rhea, avoiding big races keeps the fear alive. He needs tools to handle pressure, not a way around it." },
+      { text: "Tell him to imagine every person in the stadium in funny costumes",
+        reaction: "Rhea, that old trick makes a good joke, but it will not give him a plan! Teach a routine of breathing, a cue word and focus on his own race.", funny: true } ],
+    [ { text: "Ask the physio to declare him unfit for another month just to be safe",
+        reaction: "Rhea, the scan says he is fit, and keeping him out reinforces the fear. Plan a gradual return with the physio instead." },
+      { text: "Suggest he runs blindfolded so he cannot see his leg and stops worrying",
+        reaction: "Rhea, blindfolded sprinting is a great way to find the nearest wall! Build a graded return with small steps and clear targets.", funny: true } ],
+    [ { text: "Post a summary of his fears in the team WhatsApp group so everyone can support him",
+        reaction: "Rhea, a group chat is the least private place there is. Support is welcome, but it must be on Karan's terms and with his consent." },
+      { text: "Whisper his secrets to the coach in rhyme so it technically is not sharing",
+        reaction: "Rhea, a rhyme is still sharing! Keep the sessions confidential and agree with Karan what can be passed on.", funny: true } ]
+  ],
+  forensicpsy: [
+    [ { text: "Tell Sunil to just say yes, so that the case closes quickly and he can go home",
+        reaction: "Aditi, pushing a witness to say yes is the fastest way to a wrong identification. Use free recall and a fair line-up." },
+      { text: "Ask Sunil to draw the thief on the station wall while the whole police team watches",
+        reaction: "Aditi, a wall drawing before an audience would make any witness nervous! Use a calm interview, free recall and a fair line-up.", funny: true } ],
+    [ { text: "Write the report the way the police would like it to read",
+        reaction: "Aditi, a report shaped to please one side destroys your independence. Report only what the assessment shows, with its limits." },
+      { text: "Ask him to recite the national anthem backwards to prove whether he is sane",
+        reaction: "Aditi, that would stump half the courtroom too! Use a structured interview and standardised tests over more than one session.", funny: true } ],
+    [ { text: "Tell the inspector to arrest the neighbour who seems a bit strange",
+        reaction: "Aditi, 'seems strange' is not evidence, and arrests based on it ruin innocent lives. Offer cautious leads and explain their limits." },
+      { text: "Say that only a man with a moustache commits crimes like these",
+        reaction: "Aditi, moustaches do not make criminals! Share cautious behavioural leads and explain the limits of the evidence.", funny: true } ]
   ]
 };
 
